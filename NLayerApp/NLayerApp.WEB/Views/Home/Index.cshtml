@@ -1,4 +1,52 @@
 ﻿@{
+    Layout = null;
+}
+<!-- мы указываем, что мастер-страница не будет применяться к этому представлению -->
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+    <title>Rieltors</title>
+</head>
+<body>
+    <div>
+        <h3>Обьекты для продажи</h3>
+        <table>
+            <tr>
+                <td>
+                    <p>Id </p>
+                </td>
+                <td>
+                    <p>Название населенного пункта</p>
+                </td>
+            </tr>
+            <!--
+            Чтобы обратиться к контроллеру HomeController или отправить ему запрос,
+            нам надо указать в строке запроса его имя - Home. Кроме того, после имени
+            контроллера нам надо через слеш указать действие или метод контроллера, к
+            которому отправляется запрос.
+            -->
+            <!-- При нажатии на эту ссылку методу Buy контроллера HomeController будет отправляться запрос, в котором вместо ("b.Id") будет указан id книги -->
+
+            @foreach (var b in ViewBag.Villages)
+            {
+                <tr>
+                    <td><p>@b.Id</p></td>
+                    <td><p>@b.VillageName</p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+
+
+@*@{
     ViewBag.Title = "Home Page";
 }
 
@@ -28,4 +76,4 @@
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
-</div>
+</div>*@
