@@ -86,7 +86,7 @@ namespace NLayerApp.DataAccessLayer.Repository
         /// <inheritdoc />
         public void Delete(object id)
         {
-            var entity = this.FindById(id);
+            var entity = this.Find(id);
             this.Delete(entity);
         }
 
