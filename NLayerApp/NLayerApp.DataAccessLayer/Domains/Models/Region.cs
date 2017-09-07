@@ -24,16 +24,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
             /// </value>
             public string RegionName { get; set; }
 
-            //Links:
-            /// <summary>
-            /// The navigation property.
-            /// The link to the class"Info" (one to many communication
-            /// </summary> 
-            public ICollection<Info> Infos { get; set; }
-            public Region()
-            {
-                Infos = new List<Info>();
-            }
+            
         }
     
 }
