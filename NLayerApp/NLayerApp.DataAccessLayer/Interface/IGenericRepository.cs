@@ -11,7 +11,7 @@ namespace NLayerApp.DataAccessLayer.Interface
     /// To increase the flexibility of connecting to a database, repositories are used
     /// Add the IRepository repository interface
     /// </summary>
-    /// <typeparam name="TEntity">
+    /// <typeparam name="T">
     /// Any reference type 
     /// </typeparam>
     public interface IGenericRepository<T>
