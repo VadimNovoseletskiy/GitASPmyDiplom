@@ -11,6 +11,13 @@ namespace NLayerApp.DataAccessLayer.Domains
 {
     public class MyContext:DbContext,IDbContext
     {
+        /// <summary>
+        /// Add Initializer in the static constructor
+        /// </summary>
+        static MyContext()
+        {
+            Database.SetInitializer<MyContext>(new MyContextInitializer());
+        }
 
 
         /// <summary>
