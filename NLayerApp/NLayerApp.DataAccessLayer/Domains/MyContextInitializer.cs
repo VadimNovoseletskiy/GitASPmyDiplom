@@ -8,7 +8,7 @@ using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.DataAccessLayer.Domains
 {
-    public class MyConntextInitializer:DropCreateDatabaseAlways<MyContext>
+    public class MyContextInitializer:DropCreateDatabaseAlways<MyContext>
     {
         protected override void Seed(MyContext dbContext)
         {
