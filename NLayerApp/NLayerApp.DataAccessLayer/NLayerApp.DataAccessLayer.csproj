@@ -52,13 +52,20 @@
     <Compile Include="Domains\Models\Info.cs" />
     <Compile Include="Domains\Models\Region.cs" />
     <Compile Include="Domains\Models\Village.cs" />
+    <Compile Include="Domains\MyContextInitializer.cs" />
+    <Compile Include="Domains\MyContext.cs" />
     <Compile Include="Interface\IDbContext.cs" />
+    <Compile Include="Interface\IGenericRepository.cs" />
+    <Compile Include="Interface\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Repository\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
