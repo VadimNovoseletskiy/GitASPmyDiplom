@@ -76,8 +76,13 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public int? VillageId { get; set; }
         public Village Village { get; set; }
-
-
+       
+        /// <summary>
+        /// The Foreign Key.
+        /// The link to the class "Region"(one to many communication)
+        /// </summary> 
+        public int? RegionId { get; set; }
+        public Region Region { get; set; }
 
     }
 }
