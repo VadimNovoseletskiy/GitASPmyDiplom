@@ -12,6 +12,8 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// The property Id 
         /// </summary>
         public int Id { get; set; }
+
+
         /// <summary>
         /// The property NameInfo 
         /// </summary>
@@ -19,6 +21,8 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Short title 
         /// </value>
         public string NameInfo { get; set; }
+
+
         /// <summary>
         /// The property DetailsInfo
         /// </summary>
@@ -26,6 +30,8 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Detailed description of the property  
         /// </value>
         public string DetailsInfo { get; set; }
+
+
         /// <summary>
         /// The property Type 
         /// </summary>
@@ -33,6 +39,8 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Object type 
         /// </value>
         public int Type { get; set; }
+
+
         /// <summary>
         /// The property TotalAreaInfo 
         /// </summary>
@@ -40,6 +48,8 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Common object
         /// </value>
         public float TotalAreaInfo { get; set; }
+
+
         /// <summary>
         /// The property GrnPrice
         /// </summary>
@@ -47,6 +57,8 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// The price of the object in UAN
         /// </value>
         public int GrnPrice { get; set; }
+
+
         /// <summary>
         /// The property DollarPrice
         /// </summary>
@@ -56,5 +68,16 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public int DollarPrice { get; set; }
 
         
+        //Links:
+
+        /// <summary>
+        /// Foreign Key
+        /// The link to the class "Village"(one to many communication) 
+        /// </summary>
+        public int? VillageId { get; set; }
+        public Village Village { get; set; }
+
+
+
     }
 }
