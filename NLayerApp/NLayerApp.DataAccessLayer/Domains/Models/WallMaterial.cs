@@ -27,5 +27,14 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// The name of the material for the walls 
         /// </value>
         public string NameWallMaterils { get; set; }
+
+        //Links:
+
+        /// <summary>
+        /// The Foreign Key.
+        /// The link to the class "Material"  (one to many communication)
+        /// </summary>
+        public int? MaterialId { get; set; }
+        public Material Material { get; set; }
     }
 }
