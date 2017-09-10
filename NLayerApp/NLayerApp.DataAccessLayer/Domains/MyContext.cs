@@ -42,6 +42,8 @@ namespace NLayerApp.DataAccessLayer.Domains
         public DbSet<Region> Regions { get; set; }
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<House> Houses { get; set; }
+        public DbSet<Commercial> Commercials { get; set; }
+
 
 
 
