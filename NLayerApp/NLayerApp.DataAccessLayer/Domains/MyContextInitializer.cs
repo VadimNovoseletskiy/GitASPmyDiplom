@@ -39,12 +39,12 @@ namespace NLayerApp.DataAccessLayer.Domains
             };
             Info i1=new Info
             {
-                NameInfo = "Продам 2 во кімнатну квартиру ",
-                DetailsInfo = "Продам гарну 2 кімнатну квартиру в новобуді ЖК Європейський квартал 9 секця 64.99 м кв по 8450 за 1м кв",
-                Type = 1,
-                DollarPrice = 3500000,
-                GrnPrice = 202001093,
-                TotalAreaInfo = 356,
+                NameInfo = "Продам хороший будинок біля лісу",
+                DetailsInfo = "Продам гарний будинок в їорошому районі, з усіма удобствами, готовий до проживаня. Можливий торг.",
+                Type = 2,
+                DollarPrice = 7000000,
+                GrnPrice = 302001093,
+                TotalAreaInfo = 656,
                 Village = v2,
                 Region = r1
             };
@@ -67,21 +67,28 @@ namespace NLayerApp.DataAccessLayer.Domains
 
 
             };
-            Apartment ap1=new Apartment
+           
+
+            dbContext.Apartments.AddRange(new List<Apartment> {ap0});
+            
+            
+            //add House
+            House h0=new House
             {
                 Id = i1.Id,
-                TotalFloorApartment = 14,
-                BalconyApartment = 2,
-                BathRoomApartment = "смежная",
-                FloorApartment = 6,
-                KitchenAreaApartment = 24.7f,
-                LivingAreaApartment = 68.6f,
-                RoomsApartment = 6,
-                ReadinessApartment = "готовность к вселению",
+                TypeHouse = "коттедж",
+                FloorHouse = 2,
+                KitchenAreaHouse = 25.4f,
+                LandAreaHouse = 50.4f,
+                LivingAreaHouse = 100.4f,
+                PartHouse = "1/2",
+                RoomsHouse = 12,
                 Info = i1
             };
 
-            dbContext.Apartments.AddRange(new List<Apartment> {ap1,ap0});
+            dbContext.Houses.Add(h0);
+
+
 
             //add wall materials
             //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
