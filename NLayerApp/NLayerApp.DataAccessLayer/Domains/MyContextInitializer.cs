@@ -51,6 +51,38 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             dbContext.Infos.AddRange(new List<Info> {i1, i0});
 
+            //add apartments 
+            Apartment ap0=new Apartment
+            {
+                Id =i0.Id, 
+                TotalFloorApartment = 10,
+                BalconyApartment = 1,
+                BathRoomApartment = "смежная",
+                FloorApartment = 4,
+                KitchenAreaApartment = 40.7f,
+                LivingAreaApartment = 80.6f,
+                RoomsApartment = 5,
+                ReadinessApartment = "готовность к вселению",
+                Info = i0
+
+
+            };
+            Apartment ap1=new Apartment
+            {
+                Id = i1.Id,
+                TotalFloorApartment = 14,
+                BalconyApartment = 2,
+                BathRoomApartment = "смежная",
+                FloorApartment = 6,
+                KitchenAreaApartment = 24.7f,
+                LivingAreaApartment = 68.6f,
+                RoomsApartment = 6,
+                ReadinessApartment = "готовность к вселению",
+                Info = i1
+            };
+
+            dbContext.Apartments.AddRange(new List<Apartment> {ap1,ap0});
+
             //add wall materials
             //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
             //WallMaterial w1 = new WallMaterial { NameWallMaterils = "NameWallMaterils_1" };

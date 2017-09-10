@@ -40,6 +40,8 @@ namespace NLayerApp.DataAccessLayer.Domains
         public DbSet<Info> Infos { get; set; }
         public DbSet<Village> Villages { get; set; }
         public DbSet<Region> Regions { get; set; }
+        public DbSet<Apartment> Apartments { get; set; }
+
 
 
         /// <inheritdoc/>
