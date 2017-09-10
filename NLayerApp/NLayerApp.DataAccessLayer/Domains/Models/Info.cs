@@ -97,6 +97,11 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public House House { get; set; }
 
 
+        /// <summary>
+        /// The link to the Child class "Commercial" (one to one communication)
+        /// </summary>
+        public Commercial Commercial { get; set; }
+
 
     }
 }
