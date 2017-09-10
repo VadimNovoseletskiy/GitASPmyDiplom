@@ -84,5 +84,11 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public int? RegionId { get; set; }
         public Region Region { get; set; }
 
+
+        /// <summary>
+        /// The link to the Child class"Apartment"(one to one communication) 
+        /// </summary>
+        public Apartment Apartment { get; set; }
+
     }
 }
