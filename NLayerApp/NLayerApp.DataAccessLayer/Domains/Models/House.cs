@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,13 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
     /// </summary>
     public class House
     {
+        /// <summary>
+        ///The Foreign Key (one to one communication). Link to the class "Info" 
+        /// </summary>
+        [Key]
+        [ForeignKey("Info")]
         public int Id { get; set; }
+
 
         /// <summary>
         /// The property TypeHouse 
@@ -76,5 +84,11 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public float LandAreaHouse { get; set; }
 
 
+        //Links: 
+
+        /// <summary>
+        ///The link to the Parent Class"Info"(one to one communication) 
+        /// </summary>
+        public Info Info { get; set; }
     }
 }
