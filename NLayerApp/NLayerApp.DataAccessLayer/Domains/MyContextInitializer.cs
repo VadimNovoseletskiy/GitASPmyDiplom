@@ -112,6 +112,7 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             };
 
+            dbContext.Commercials.Add(c0);
 
 
             //add wall materials
