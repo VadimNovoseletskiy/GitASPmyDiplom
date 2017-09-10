@@ -49,7 +49,19 @@ namespace NLayerApp.DataAccessLayer.Domains
                 Region = r1
             };
 
-            dbContext.Infos.AddRange(new List<Info> {i1, i0});
+            Info i2=new Info
+            {
+                NameInfo = "Продам Крммерційну нерухомість",
+                DetailsInfo = "Детальна інформація про коммерційну нерухомість ",
+                Type = 3,
+                DollarPrice = 8000000,
+                GrnPrice = 402001093,
+                TotalAreaInfo = 756.4f,
+                Village = v3,
+                Region = r0
+            };
+
+            dbContext.Infos.AddRange(new List<Info> {i1, i0,i2});
 
             //add apartments 
             Apartment ap0=new Apartment
@@ -87,6 +99,18 @@ namespace NLayerApp.DataAccessLayer.Domains
             };
 
             dbContext.Houses.Add(h0);
+
+            Commercial c0=new Commercial
+            {   Id=i2.Id,
+                TypeCommercial = "Офісно адміністративне",
+                EffectiveAreaCommercial = 25.7f,
+                LandAreaCommercial = 46.5f,
+                FloorCommercial = 4,
+                StateCommercial = "відмінний",
+                TotalFloorCommercial = 10,
+                Info = i2
+
+            };
 
 
 
