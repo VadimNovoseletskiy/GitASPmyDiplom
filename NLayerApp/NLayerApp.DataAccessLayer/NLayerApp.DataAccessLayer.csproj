@@ -53,6 +53,7 @@
     <Compile Include="Domains\Models\Apartment.cs" />
     <Compile Include="Domains\Models\Communication.cs" />
     <Compile Include="Domains\Models\FloorMaterial.cs" />
+    <Compile Include="Domains\Models\House.cs" />
     <Compile Include="Domains\Models\Info.cs" />
     <Compile Include="Domains\Models\Material.cs" />
     <Compile Include="Domains\Models\OutBuilding.cs" />
