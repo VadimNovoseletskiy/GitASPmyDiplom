@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Domains\Models\AdditionalEquipment.cs" />
     <Compile Include="Domains\Models\Apartment.cs" />
+    <Compile Include="Domains\Models\Commercial.cs" />
     <Compile Include="Domains\Models\Communication.cs" />
     <Compile Include="Domains\Models\FloorMaterial.cs" />
     <Compile Include="Domains\Models\House.cs" />
