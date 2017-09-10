@@ -37,9 +37,16 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public ICollection<WallMaterial> WallMaterials { get; set; }
 
+        /// <summary>
+        /// The navigation property.
+        /// The link to the class "FloorMaterial"(one to many communication)
+        /// </summary>
+        public ICollection<FloorMaterial> FloorMaterials { get; set; }
+
         public Material()
         {
             WallMaterials = new List<WallMaterial>();
+            FloorMaterials=new List<FloorMaterial>();
         }
 
 
