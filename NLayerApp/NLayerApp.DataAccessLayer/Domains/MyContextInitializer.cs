@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -39,17 +40,41 @@ namespace NLayerApp.DataAccessLayer.Domains
             };
             Info i1=new Info
             {
-                NameInfo = "Продам 2 во кімнатну квартиру ",
-                DetailsInfo = "Продам гарну 2 кімнатну квартиру в новобуді ЖК Європейський квартал 9 секця 64.99 м кв по 8450 за 1м кв",
-                Type = 1,
-                DollarPrice = 3500000,
-                GrnPrice = 202001093,
-                TotalAreaInfo = 356,
+                NameInfo = "Продам хороший будинок біля лісу",
+                DetailsInfo = "Продам гарний будинок в їорошому районі, з усіма удобствами, готовий до проживаня. Можливий торг.",
+                Type = 2,
+                DollarPrice = 7000000,
+                GrnPrice = 302001093,
+                TotalAreaInfo = 656,
                 Village = v2,
                 Region = r1
             };
 
-            dbContext.Infos.AddRange(new List<Info> {i1, i0});
+            Info i2=new Info
+            {
+                NameInfo = "Продам Крммерційну нерухомість",
+                DetailsInfo = "Детальна інформація про коммерційну нерухомість ",
+                Type = 3,
+                DollarPrice = 8000000,
+                GrnPrice = 402001093,
+                TotalAreaInfo = 756.4f,
+                Village = v3,
+                Region = r0
+            };
+
+            Info i3=new Info
+            {
+                NameInfo = "Коротке повідомлення про продаж  земельної ділянки ",
+                DetailsInfo = "Детальна інформація про продаж зеельної ділянки ",
+                Type = 4,
+                DollarPrice = 9000000,
+                GrnPrice = 502001093,
+                TotalAreaInfo = 756.4f,
+                Village = v0,
+                Region = r1
+            };
+
+            dbContext.Infos.AddRange(new List<Info> {i1, i0,i2});
 
             //add apartments 
             Apartment ap0=new Apartment
@@ -67,32 +92,226 @@ namespace NLayerApp.DataAccessLayer.Domains
 
 
             };
-            Apartment ap1=new Apartment
+           
+
+            dbContext.Apartments.AddRange(new List<Apartment> {ap0});
+            
+            
+            //add House
+            House h0=new House
             {
                 Id = i1.Id,
-                TotalFloorApartment = 14,
-                BalconyApartment = 2,
-                BathRoomApartment = "смежная",
-                FloorApartment = 6,
-                KitchenAreaApartment = 24.7f,
-                LivingAreaApartment = 68.6f,
-                RoomsApartment = 6,
-                ReadinessApartment = "готовность к вселению",
+                TypeHouse = "коттедж",
+                FloorHouse = 2,
+                KitchenAreaHouse = 25.4f,
+                LandAreaHouse = 50.4f,
+                LivingAreaHouse = 100.4f,
+                PartHouse = "1/2",
+                RoomsHouse = 12,
                 Info = i1
             };
 
-            dbContext.Apartments.AddRange(new List<Apartment> {ap1,ap0});
+            dbContext.Houses.Add(h0);
 
-            //add wall materials
-            //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
-            //WallMaterial w1 = new WallMaterial { NameWallMaterils = "NameWallMaterils_1" };
-            //WallMaterial w2 = new WallMaterial { NameWallMaterils = "NameWallMaterils_2" };
+            //add Commercial
+            Commercial c0=new Commercial
+            {   Id=i2.Id,
+                TypeCommercial = "Офісно адміністративне",
+                EffectiveAreaCommercial = 25.7f,
+                LandAreaCommercial = 46.5f,
+                FloorCommercial = 4,
+                StateCommercial = "відмінний",
+                TotalFloorCommercial = 10,
+                Info = i2
+
+            };
+
+            dbContext.Commercials.Add(c0);
+
+            Land l0=new Land
+            {
+                Id=i3.Id,
+                Info = i3,
+                LandArea = 120.4f,
+                SpecialLand = "сільсько господарське"
+
+            };
+
+            dbContext.Land.Add(l0);
+
+
+            //add Communication
+            Communication cm0=new Communication
+            {
+                Id = l0.Id,
+                AutonomousWaterCommunications = true,
+                AutonomousSewerageCommunications = false,
+                AutonomusHeatingCommunications = false,
+                CentralHeatingCommunications = false,
+                CentralSewerageCommunications = false,
+                CentralWaterCommunications = true,
+                ElectricityCommunications = true,
+                GasCommunications = false,
+                Land = l0
+
+            };
+
+            Communication cm1=new Communication
+            {
+                Id = c0.Id,
+                AutonomousWaterCommunications = false,
+                AutonomousSewerageCommunications = false,
+                AutonomusHeatingCommunications = true,
+                CentralHeatingCommunications = false,
+                CentralSewerageCommunications =true,
+                CentralWaterCommunications = true,
+                ElectricityCommunications = true,
+                GasCommunications = true,
+                Commercial = c0
+                
+            };
+
+            Communication cm2=new Communication
+            {
+                Id = h0.Id,
+                AutonomousWaterCommunications = true,
+                AutonomousSewerageCommunications = true,
+                AutonomusHeatingCommunications = true,
+                CentralHeatingCommunications = true,
+                CentralSewerageCommunications = true,
+                CentralWaterCommunications = true,
+                ElectricityCommunications = true,
+                GasCommunications = true,
+                House = h0
+            };
+
+            Communication cm3=new Communication
+            {
+                Id = ap0.Id,
+                AutonomousWaterCommunications = true,
+                AutonomousSewerageCommunications = true,
+                AutonomusHeatingCommunications = true,
+                CentralHeatingCommunications = true,
+                CentralSewerageCommunications = true,
+                CentralWaterCommunications = true,
+                ElectricityCommunications = true,
+                GasCommunications = true,
+                Apartment = ap0
+            };
+            dbContext.Communications.AddRange(new List<Communication> {cm0,cm1,cm2,cm3});
+
+            //add OutBuildigs
+            OutBuilding otbl0=new OutBuilding
+            {
+                Id=h0.Id,
+                BahtHouseOutBuilding = true,
+                BarnOutBuildings = false,
+                GarageOutBuildings = true,
+                GreenHouseOutBuildings = false,
+                SummerKitchenOutBuildings = true,
+                SwimmingOutBuildings = false,
+                Well1OutBuildings = true,
+                WellOutBuildings = false,
+                House = h0
+
+            };
+            dbContext.OutBuildings.Add(otbl0);
+
+            //add AdditionalEquipment
+
+            AdditionalEquipment ad0=new AdditionalEquipment
+            {
+                Id = ap0.Id,
+                AirConditioningAdditionalEquipment = true,
+                BoilerAdditionalEquipment = true,
+                CableTVadditionalEquipment = false,
+                FirePlaceAdditionalEquipment = false,
+                IntercomAdditionalEquipment = false,
+                InternetAdditionalEquipment = true,
+                SatelliteTVadditionalEquipment = true,
+                SignalingAdditionalEquipment = false,
+                Apartment = ap0
+            };
+
+            AdditionalEquipment ad1=new AdditionalEquipment
+            {
+                Id = h0.Id,
+                AirConditioningAdditionalEquipment = true,
+                BoilerAdditionalEquipment = true,
+                CableTVadditionalEquipment = false,
+                FirePlaceAdditionalEquipment = false,
+                IntercomAdditionalEquipment = false,
+                InternetAdditionalEquipment = true,
+                SatelliteTVadditionalEquipment = true,
+                SignalingAdditionalEquipment = false,
+                House= h0
+            };
+
+            AdditionalEquipment ad2=new AdditionalEquipment
+            {
+                Id = c0.Id,
+                AirConditioningAdditionalEquipment = true,
+                BoilerAdditionalEquipment = true,
+                CableTVadditionalEquipment = false,
+                FirePlaceAdditionalEquipment = false,
+                IntercomAdditionalEquipment = false,
+                InternetAdditionalEquipment = false,
+                SatelliteTVadditionalEquipment = false,
+                SignalingAdditionalEquipment = false,
+                Commercial= c0
+            };
+            dbContext.AdditionalEquipments.AddRange(new List<AdditionalEquipment> {ad0,ad1,ad2});
+
+            
+           
+
+            //add Material 
+            Material m0=new Material
+            {
+                Id=ap0.Id,
+                Apartment = ap0
+
+            };
+
+            Material m1=new Material
+            {
+                Id = h0.Id,
+                House = h0
+            };
+
+            Material m2=new Material
+            {
+                Id=c0.Id,
+                Commercial = c0
+            };
+
+            dbContext.Materials.AddRange(new List<Material> {m0,m1,m2});
+
+            //add WallMaterial
+            WallMaterial w0 = new WallMaterial { NameWallMaterils = "NameWallMaterils_0", Material =m2};
+            WallMaterial w1 = new WallMaterial { NameWallMaterils = "NameWallMaterils_1", Material = m2};
+            WallMaterial w2 = new WallMaterial { NameWallMaterils = "NameWallMaterils_2", Material = m2};
+            WallMaterial w3 = new WallMaterial { NameWallMaterils = "NameWallMaterils_3", Material = m1};
+            WallMaterial w4 = new WallMaterial { NameWallMaterils = "NameWallMaterils_4", Material = m1};
+            WallMaterial w5 = new WallMaterial { NameWallMaterils = "NameWallMaterils_5", Material = m0};
+            WallMaterial w6 = new WallMaterial { NameWallMaterils = "NameWallMaterils_6", Material = m0};
+            WallMaterial w7 = new WallMaterial { NameWallMaterils = "NameWallMaterils_7", Material = m0};
+            WallMaterial w8 = new WallMaterial { NameWallMaterils = "NameWallMaterils_8", Material = m0};
+
+            dbContext.WallMaterials.AddRange(new List<WallMaterial> { w0, w1, w2,w4,w5,w6,w7,w8 });
+
 
             //add floor materials 
-            //FloorMaterial fm0=new FloorMaterial {NameFloorMaterils = "NameFloorMaterils_0" };
-            //FloorMaterial fm1 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_1" };
-            //FloorMaterial fm2 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_2" };
+            FloorMaterial fm0 =new FloorMaterial {NameFloorMaterils = "NameFloorMaterils_0", Material = m0};
+            FloorMaterial fm1 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_1", Material = m0};
+            FloorMaterial fm2 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_2", Material = m0};
+            FloorMaterial fm3 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_3", Material = m0};
+            FloorMaterial fm4 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_4", Material = m2};
+            FloorMaterial fm5 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_5", Material = m2};
+            FloorMaterial fm6 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_6", Material = m1};
+            FloorMaterial fm7 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_7", Material = m1};
 
+            dbContext.FloorMaterials.AddRange(new List<FloorMaterial> {fm1, fm2, fm3, fm4, fm5, fm6, fm7});
 
 
             dbContext.SaveChanges();

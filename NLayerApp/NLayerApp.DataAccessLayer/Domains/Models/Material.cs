@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,24 +14,14 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
 
     public class Material
     {
+        /// <summary>
+        /// The  Foreign Key(one to one communication). Link to the Parent  class "Apartment" "House"
+        /// </summary>
+        [Key]
         public int Id { get; set; }
 
-        /// <summary>
-        /// The property NameWallMaterial
-        /// </summary>
-        ///<value>
-        /// Wall material
-        /// </value>
-        public string NameWallMaterial { get; set; }
 
-
-        /// <summary>
-        /// The property NameFloorMaterial 
-        /// </summary>
-        /// <value>
-        /// Floor material  
-        /// </value>
-        public string NameFloorMaterial { get; set; }
+        //Links:
 
         /// <summary>
         /// The navigation property.
@@ -49,6 +41,20 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
             FloorMaterials=new List<FloorMaterial>();
         }
 
+        /// <summary>
+        /// The link to the parent class Apartment(one to one communication)
+        /// </summary>
+        public Apartment Apartment { get; set; }
+
+        /// <summary>
+        /// The link to the parent class House(one to one communication)
+        /// </summary>
+        public House House { get; set; }
+
+        /// <summary>
+        /// The link to the parent class Commercial(one to one communication)
+        /// </summary>
+        public Commercial Commercial { get; set; }
 
     }
 }

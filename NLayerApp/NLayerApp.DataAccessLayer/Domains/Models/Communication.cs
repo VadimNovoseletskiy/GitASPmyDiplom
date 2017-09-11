@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,10 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
     /// </summary>
     public class Communication
     {
-
+        /// <summary>
+        /// The Foreign Key (one to one communication). Link to the Parent Class "Land,Commercial,House "
+        /// </summary>
+        [Key]
         public int Id { get; set; }
 
 
@@ -85,6 +90,30 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Describe communication : autonomous heating
         /// </value>
         public bool AutonomusHeatingCommunications { get; set; }
+
+        //Links:
+
+
+        /// <summary>
+        /// The link to the Parent class"Land"
+        /// </summary> 
+        public Land Land { get; set; }
+
+        /// <summary>
+        /// The link to the Parent class "Commercial"
+        /// </summary>
+        public Commercial Commercial { get; set; }
+
+        /// <summary>
+        /// The link to the Parent class "House"
+        /// </summary>
+        public House House { get; set; }
+
+        /// <summary>
+        /// The link to the Parent class "Apartment "
+        /// </summary>
+        public Apartment Apartment { get; set; }
+
 
 
 

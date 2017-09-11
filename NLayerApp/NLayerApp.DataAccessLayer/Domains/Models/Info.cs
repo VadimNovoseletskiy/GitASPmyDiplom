@@ -90,5 +90,18 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public Apartment Apartment { get; set; }
 
+
+        /// <summary>
+        /// The link to the Child class"House"(one to one communication) 
+        /// </summary>
+        public House House { get; set; }
+
+
+        /// <summary>
+        /// The link to the Child class "Commercial" (one to one communication)
+        /// </summary>
+        public Commercial Commercial { get; set; }
+
+
     }
 }
