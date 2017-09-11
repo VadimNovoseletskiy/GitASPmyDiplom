@@ -61,6 +61,18 @@ namespace NLayerApp.DataAccessLayer.Domains
                 Region = r0
             };
 
+            Info i3=new Info
+            {
+                NameInfo = "Коротке повідомлення про продаж  земельної ділянки ",
+                DetailsInfo = "Детальна інформація про продаж зеельної ділянки ",
+                Type = 4,
+                DollarPrice = 9000000,
+                GrnPrice = 502001093,
+                TotalAreaInfo = 756.4f,
+                Village = v0,
+                Region = r1
+            };
+
             dbContext.Infos.AddRange(new List<Info> {i1, i0,i2});
 
             //add apartments 
@@ -100,6 +112,7 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             dbContext.Houses.Add(h0);
 
+            //add Commercial
             Commercial c0=new Commercial
             {   Id=i2.Id,
                 TypeCommercial = "Офісно адміністративне",
@@ -114,6 +127,16 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             dbContext.Commercials.Add(c0);
 
+            Land l0=new Land
+            {
+                Id=i3.Id,
+                Info = i3,
+                LandArea = 120.4f,
+                SpecialLand = "сільсько господарське"
+
+            };
+
+            dbContext.Land.Add(l0);
 
             //add wall materials
             //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
