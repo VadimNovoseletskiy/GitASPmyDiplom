@@ -121,5 +121,11 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// The link to the Parent Class "House" (one to one communication)
         /// </summary>
         public House House { get; set; }
+
+
+        /// <summary>
+        /// The link to the Parent Class "Commercial" (one to one communication)
+        /// </summary>
+        public Commercial Commercial { get; set; }
     }
 }
