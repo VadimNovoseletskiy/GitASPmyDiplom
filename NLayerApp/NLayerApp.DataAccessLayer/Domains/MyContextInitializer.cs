@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -138,6 +139,24 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             dbContext.Land.Add(l0);
 
+
+            //add Communication
+            Communication cm0=new Communication
+            {
+                Id = l0.Id,
+                AutonomousWaterCommunications = true,
+                AutonomousSewerageCommunications = false,
+                AutonomusHeatingCommunications = false,
+                CentralHeatingCommunications = false,
+                CentralSewerageCommunications = false,
+                CentralWaterCommunications = true,
+                ElectricityCommunications = true,
+                GasCommunications = false,
+                Land = l0
+
+            };
+
+            dbContext.Communications.Add(cm0);
             //add wall materials
             //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
             //WallMaterial w1 = new WallMaterial { NameWallMaterils = "NameWallMaterils_1" };
