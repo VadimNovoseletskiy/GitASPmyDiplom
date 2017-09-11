@@ -270,7 +270,14 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             };
 
-            dbContext.Materials.AddRange(new List<Material> {m0});
+            Material m1=new Material
+            {
+                Id = h0.Id,
+                House = h0
+            };
+
+            dbContext.Materials.AddRange(new List<Material> {m0,m1});
+
 
 
             //add wall materials
