@@ -109,6 +109,13 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public House House { get; set; }
 
+        /// <summary>
+        /// The link to the Parent class "Apartment "
+        /// </summary>
+        public Apartment Apartment { get; set; }
+
+
+
 
     }
 }
