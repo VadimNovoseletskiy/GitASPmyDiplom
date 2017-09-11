@@ -261,7 +261,10 @@ namespace NLayerApp.DataAccessLayer.Domains
                 Commercial= c0
             };
             dbContext.AdditionalEquipments.AddRange(new List<AdditionalEquipment> {ad0,ad1,ad2});
+
             
+           
+
             //add Material 
             Material m0=new Material
             {
@@ -284,18 +287,31 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             dbContext.Materials.AddRange(new List<Material> {m0,m1,m2});
 
+            //add WallMaterial
+            WallMaterial w0 = new WallMaterial { NameWallMaterils = "NameWallMaterils_0", Material =m2};
+            WallMaterial w1 = new WallMaterial { NameWallMaterils = "NameWallMaterils_1", Material = m2};
+            WallMaterial w2 = new WallMaterial { NameWallMaterils = "NameWallMaterils_2", Material = m2};
+            WallMaterial w3 = new WallMaterial { NameWallMaterils = "NameWallMaterils_3", Material = m1};
+            WallMaterial w4 = new WallMaterial { NameWallMaterils = "NameWallMaterils_4", Material = m1};
+            WallMaterial w5 = new WallMaterial { NameWallMaterils = "NameWallMaterils_5", Material = m0};
+            WallMaterial w6 = new WallMaterial { NameWallMaterils = "NameWallMaterils_6", Material = m0};
+            WallMaterial w7 = new WallMaterial { NameWallMaterils = "NameWallMaterils_7", Material = m0};
+            WallMaterial w8 = new WallMaterial { NameWallMaterils = "NameWallMaterils_8", Material = m0};
 
+            dbContext.WallMaterials.AddRange(new List<WallMaterial> { w0, w1, w2,w4,w5,w6,w7,w8 });
 
-            //add wall materials
-            //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
-            //WallMaterial w1 = new WallMaterial { NameWallMaterils = "NameWallMaterils_1" };
-            //WallMaterial w2 = new WallMaterial { NameWallMaterils = "NameWallMaterils_2" };
 
             //add floor materials 
-            //FloorMaterial fm0=new FloorMaterial {NameFloorMaterils = "NameFloorMaterils_0" };
-            //FloorMaterial fm1 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_1" };
-            //FloorMaterial fm2 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_2" };
+            FloorMaterial fm0 =new FloorMaterial {NameFloorMaterils = "NameFloorMaterils_0", Material = m0};
+            FloorMaterial fm1 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_1", Material = m0};
+            FloorMaterial fm2 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_2", Material = m0};
+            FloorMaterial fm3 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_3", Material = m0};
+            FloorMaterial fm4 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_4", Material = m2};
+            FloorMaterial fm5 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_5", Material = m2};
+            FloorMaterial fm6 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_6", Material = m1};
+            FloorMaterial fm7 = new FloorMaterial { NameFloorMaterils = "NameFloorMaterils_7", Material = m1};
 
+            dbContext.FloorMaterials.AddRange(new List<FloorMaterial> {fm1, fm2, fm3, fm4, fm5, fm6, fm7});
 
 
             dbContext.SaveChanges();
