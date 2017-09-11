@@ -14,7 +14,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
     public class Communication
     {
         /// <summary>
-        /// The Foreign Key (one to one communication). Link to the Parent Class "Land"
+        /// The Foreign Key (one to one communication). Link to the Parent Class "Land,Commercial,House "
         /// </summary>
         [Key]
         public int Id { get; set; }
@@ -103,6 +103,11 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// The link to the Parent class "Commercial"
         /// </summary>
         public Commercial Commercial { get; set; }
+
+        /// <summary>
+        /// The link to the Parent class "House"
+        /// </summary>
+        public House House { get; set; }
 
 
     }
