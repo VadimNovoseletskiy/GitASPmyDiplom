@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// The  Foreign Key(one to one communication). Link to the Parent  class "Apartment, House Commercial"
         /// </summary>
         [Key]
+        [ForeignKey("Apartment")]
         public int Id { get; set; }
 
 
