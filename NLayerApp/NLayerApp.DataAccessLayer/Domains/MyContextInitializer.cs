@@ -261,6 +261,17 @@ namespace NLayerApp.DataAccessLayer.Domains
                 Commercial= c0
             };
             dbContext.AdditionalEquipments.AddRange(new List<AdditionalEquipment> {ad0,ad1,ad2});
+            
+
+            Material m0=new Material
+            {
+                Id=ap0.Id,
+                Apartment = ap0
+
+            };
+
+            dbContext.Materials.AddRange(new List<Material> {m0});
+
 
             //add wall materials
             //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
