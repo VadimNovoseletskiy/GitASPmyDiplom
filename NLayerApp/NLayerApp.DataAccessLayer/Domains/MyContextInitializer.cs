@@ -233,7 +233,21 @@ namespace NLayerApp.DataAccessLayer.Domains
                 Apartment = ap0
             };
 
-            dbContext.AdditionalEquipments.AddRange(new List<AdditionalEquipment> {ad0});
+            AdditionalEquipment ad1=new AdditionalEquipment
+            {
+                Id = h0.Id,
+                AirConditioningAdditionalEquipment = true,
+                BoilerAdditionalEquipment = true,
+                CableTVadditionalEquipment = false,
+                FirePlaceAdditionalEquipment = false,
+                IntercomAdditionalEquipment = false,
+                InternetAdditionalEquipment = true,
+                SatelliteTVadditionalEquipment = true,
+                SignalingAdditionalEquipment = false,
+                House= h0
+            };
+
+            dbContext.AdditionalEquipments.AddRange(new List<AdditionalEquipment> {ad0,ad1});
 
             //add wall materials
             //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
