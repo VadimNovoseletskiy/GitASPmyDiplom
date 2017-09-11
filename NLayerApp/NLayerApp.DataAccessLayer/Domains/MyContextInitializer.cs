@@ -156,7 +156,22 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             };
 
-            dbContext.Communications.Add(cm0);
+            Communication cm1=new Communication
+            {
+                Id = c0.Id,
+                AutonomousWaterCommunications = true,
+                AutonomousSewerageCommunications = false,
+                AutonomusHeatingCommunications = false,
+                CentralHeatingCommunications = false,
+                CentralSewerageCommunications = false,
+                CentralWaterCommunications = true,
+                ElectricityCommunications = true,
+                GasCommunications = false,
+
+                
+            };
+
+            dbContext.Communications.AddRange(new List<Communication> {cm0,cm1});
             //add wall materials
             //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
             //WallMaterial w1 = new WallMaterial { NameWallMaterils = "NameWallMaterils_1" };
