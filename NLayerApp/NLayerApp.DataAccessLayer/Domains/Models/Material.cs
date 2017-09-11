@@ -20,8 +20,6 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         [Key]
         public int Id { get; set; }
 
-       
-
 
         //Links:
 
@@ -53,7 +51,10 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public House House { get; set; }
 
-
+        /// <summary>
+        /// The link to the parent class Commercial(one to one communication)
+        /// </summary>
+        public Commercial Commercial { get; set; }
 
     }
 }
