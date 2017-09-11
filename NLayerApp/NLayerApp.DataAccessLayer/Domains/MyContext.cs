@@ -43,7 +43,7 @@ namespace NLayerApp.DataAccessLayer.Domains
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<House> Houses { get; set; }
         public DbSet<Commercial> Commercials { get; set; }
-        public DbSet<Land> LanDbSet { get; set; }
+        public DbSet<Land> Land{ get; set; }
 
 
 
