@@ -48,6 +48,8 @@ namespace NLayerApp.DataAccessLayer.Domains
         public DbSet<OutBuilding> OutBuildings { get; set; }
         public DbSet<AdditionalEquipment> AdditionalEquipments { get; set; }
         public DbSet<Material> Materials { get; set; }
+        public DbSet<WallMaterial> WallMaterials { get; set; }
+        public DbSet<FloorMaterial> FloorMaterials { get; set; }
 
 
 
