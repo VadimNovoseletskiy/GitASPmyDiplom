@@ -21,22 +21,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         [ForeignKey("Apartment")]
         public int Id { get; set; }
 
-        /// <summary>
-        /// The property NameWallMaterial
-        /// </summary>
-        ///<value>
-        /// Wall material
-        /// </value>
-        public string NameWallMaterial { get; set; }
-
-
-        /// <summary>
-        /// The property NameFloorMaterial 
-        /// </summary>
-        /// <value>
-        /// Floor material  
-        /// </value>
-        public string NameFloorMaterial { get; set; }
+       
 
 
         //Links:
