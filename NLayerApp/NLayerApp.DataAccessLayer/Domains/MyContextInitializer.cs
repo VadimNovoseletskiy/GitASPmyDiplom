@@ -199,6 +199,24 @@ namespace NLayerApp.DataAccessLayer.Domains
                 Apartment = ap0
             };
             dbContext.Communications.AddRange(new List<Communication> {cm0,cm1,cm2,cm3});
+
+            //add OutBuildigs
+            OutBuilding otbl0=new OutBuilding
+            {
+                Id=h0.Id,
+                BahtHouseOutBuilding = true,
+                BarnOutBuildings = false,
+                GarageOutBuildings = true,
+                GreenHouseOutBuildings = false,
+                SummerKitchenOutBuildings = true,
+                SwimmingOutBuildings = false,
+                Well1OutBuildings = true,
+                WellOutBuildings = false,
+                House = h0
+
+            };
+            dbContext.OutBuildings.Add(otbl0);
+
             //add wall materials
             //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
             //WallMaterial w1 = new WallMaterial { NameWallMaterils = "NameWallMaterils_1" };
