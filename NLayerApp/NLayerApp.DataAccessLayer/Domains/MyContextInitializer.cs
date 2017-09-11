@@ -262,7 +262,7 @@ namespace NLayerApp.DataAccessLayer.Domains
             };
             dbContext.AdditionalEquipments.AddRange(new List<AdditionalEquipment> {ad0,ad1,ad2});
             
-
+            //add Material 
             Material m0=new Material
             {
                 Id=ap0.Id,
@@ -276,7 +276,13 @@ namespace NLayerApp.DataAccessLayer.Domains
                 House = h0
             };
 
-            dbContext.Materials.AddRange(new List<Material> {m0,m1});
+            Material m2=new Material
+            {
+                Id=c0.Id,
+                Commercial = c0
+            };
+
+            dbContext.Materials.AddRange(new List<Material> {m0,m1,m2});
 
 
 
