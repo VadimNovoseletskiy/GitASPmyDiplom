@@ -99,5 +99,10 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         ///The link to the Parent Class"Info"(one to one communication) 
         /// </summary>
         public Info Info { get; set; }
+
+        /// <summary>
+        /// The  link to the Child Class"Additional Equipment" (one to one communication ) 
+        /// </summary>
+        public AdditionalEquipment AdditionalEquipment { get; set; }
     }
 }
