@@ -99,6 +99,10 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary> 
         public Land Land { get; set; }
 
+        /// <summary>
+        /// The link to the Parent class "Commercial"
+        /// </summary>
+        public Commercial Commercial { get; set; }
 
 
     }
