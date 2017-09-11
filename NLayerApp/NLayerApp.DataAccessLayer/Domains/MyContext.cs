@@ -47,6 +47,8 @@ namespace NLayerApp.DataAccessLayer.Domains
         public DbSet<Communication> Communications { get; set; }
         public DbSet<OutBuilding> OutBuildings { get; set; }
         public DbSet<AdditionalEquipment> AdditionalEquipments { get; set; }
+        public DbSet<Material> Materials { get; set; }
+
 
 
 
