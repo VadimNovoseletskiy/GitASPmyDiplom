@@ -217,6 +217,24 @@ namespace NLayerApp.DataAccessLayer.Domains
             };
             dbContext.OutBuildings.Add(otbl0);
 
+            //add AdditionalEquipment
+
+            AdditionalEquipment ad0=new AdditionalEquipment
+            {
+                Id = ap0.Id,
+                AirConditioningAdditionalEquipment = true,
+                BoilerAdditionalEquipment = true,
+                CableTVadditionalEquipment = false,
+                FirePlaceAdditionalEquipment = false,
+                IntercomAdditionalEquipment = false,
+                InternetAdditionalEquipment = true,
+                SatelliteTVadditionalEquipment = true,
+                SignalingAdditionalEquipment = false,
+                Apartment = ap0
+            };
+
+            dbContext.AdditionalEquipments.AddRange(new List<AdditionalEquipment> {ad0});
+
             //add wall materials
             //WallMaterial w0=new WallMaterial {NameWallMaterils = "NameWallMaterils_0" };
             //WallMaterial w1 = new WallMaterial { NameWallMaterils = "NameWallMaterils_1" };
