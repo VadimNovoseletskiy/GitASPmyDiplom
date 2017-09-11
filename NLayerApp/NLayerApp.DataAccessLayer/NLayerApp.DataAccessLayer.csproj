@@ -56,6 +56,7 @@
     <Compile Include="Domains\Models\FloorMaterial.cs" />
     <Compile Include="Domains\Models\House.cs" />
     <Compile Include="Domains\Models\Info.cs" />
+    <Compile Include="Domains\Models\Land.cs" />
     <Compile Include="Domains\Models\Material.cs" />
     <Compile Include="Domains\Models\OutBuilding.cs" />
     <Compile Include="Domains\Models\Region.cs" />
