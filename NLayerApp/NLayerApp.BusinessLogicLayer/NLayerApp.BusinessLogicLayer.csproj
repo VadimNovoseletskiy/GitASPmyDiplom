@@ -44,6 +44,7 @@
     <Compile Include="DataTransferObject\ApartmentDataTransferLayer.cs" />
     <Compile Include="DataTransferObject\CommercialDataTransferLayer.cs" />
     <Compile Include="DataTransferObject\CommunicationDataTransferLayer.cs" />
+    <Compile Include="DataTransferObject\FloorMaterialDataTransferModel.cs" />
     <Compile Include="DataTransferObject\HouseDataTransferLayer.cs" />
     <Compile Include="DataTransferObject\InfoDataTransferObject.cs" />
     <Compile Include="DataTransferObject\LandDataTransferLayer.cs" />
