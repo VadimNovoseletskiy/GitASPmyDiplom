@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataTransferObject\ApartmentDataTransferLayer.cs" />
+    <Compile Include="DataTransferObject\CommercialDataTransferLayer.cs" />
     <Compile Include="DataTransferObject\HouseDataTransferLayer.cs" />
     <Compile Include="DataTransferObject\RegionDataTransferLayer.cs" />
     <Compile Include="DataTransferObject\VillageDataTransferObject.cs" />
