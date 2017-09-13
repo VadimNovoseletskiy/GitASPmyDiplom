@@ -51,6 +51,7 @@
     <Compile Include="DataTransferObject\OutBuildingDataTransferObject.cs" />
     <Compile Include="DataTransferObject\RegionDataTransferLayer.cs" />
     <Compile Include="DataTransferObject\VillageDataTransferObject.cs" />
+    <Compile Include="DataTransferObject\WallMaterialDataTransferObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
