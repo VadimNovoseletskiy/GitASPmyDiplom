@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayerApp.WEB", "NLayerApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayerApp.DataAccessLayer", "NLayerApp.DataAccessLayer\NLayerApp.DataAccessLayer.csproj", "{EDF7C1A6-8B8F-456B-BC8D-693100C937DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLayerApp.BusinessLogicLayer", "NLayerApp.BusinessLogicLayer\NLayerApp.BusinessLogicLayer.csproj", "{8185BF34-D65C-4023-933B-DC860C31EB3B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{EDF7C1A6-8B8F-456B-BC8D-693100C937DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDF7C1A6-8B8F-456B-BC8D-693100C937DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDF7C1A6-8B8F-456B-BC8D-693100C937DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8185BF34-D65C-4023-933B-DC860C31EB3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8185BF34-D65C-4023-933B-DC860C31EB3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8185BF34-D65C-4023-933B-DC860C31EB3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8185BF34-D65C-4023-933B-DC860C31EB3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
