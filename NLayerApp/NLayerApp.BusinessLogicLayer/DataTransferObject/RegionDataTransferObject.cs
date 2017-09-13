@@ -10,7 +10,7 @@ namespace NLayerApp.BusinessLogicLayer.DataTransferObject
     /// Describes the areas where the property is located   
     /// </summary>
     /// 
-    class RegionDataTransferObject
+    public class RegionDataTransferObject
     {
         /// <summary>
         /// The property Id 
