@@ -40,6 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTransferObject\AdditionalEquipmentDataTransferObject.cs" />
+    <Compile Include="DataTransferObject\ApartmentDataTransferObject.cs" />
+    <Compile Include="DataTransferObject\CommercialDataTransferObject.cs" />
+    <Compile Include="DataTransferObject\HouseDataTransferObject.cs" />
+    <Compile Include="DataTransferObject\InfoDataTransferObject.cs" />
+    <Compile Include="DataTransferObject\LandDataTransferObject.cs" />
+    <Compile Include="DataTransferObject\RegionDataTransferObject.cs" />
     <Compile Include="DataTransferObject\VillageDataTransferObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
