@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTransferObject\RegionDataTransferLayer.cs" />
     <Compile Include="DataTransferObject\VillageDataTransferObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
