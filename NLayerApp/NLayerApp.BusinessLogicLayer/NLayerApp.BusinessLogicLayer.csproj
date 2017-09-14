@@ -40,19 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTransferObject\AdditionalEquipmentDataTransferObject.cs" />
-    <Compile Include="DataTransferObject\ApartmentDataTransferLayer.cs" />
-    <Compile Include="DataTransferObject\CommercialDataTransferLayer.cs" />
-    <Compile Include="DataTransferObject\CommunicationDataTransferLayer.cs" />
-    <Compile Include="DataTransferObject\FloorMaterialDataTransferModel.cs" />
-    <Compile Include="DataTransferObject\HouseDataTransferLayer.cs" />
-    <Compile Include="DataTransferObject\InfoDataTransferObject.cs" />
-    <Compile Include="DataTransferObject\LandDataTransferLayer.cs" />
-    <Compile Include="DataTransferObject\MaterialDataTransferObject.cs" />
-    <Compile Include="DataTransferObject\OutBuildingDataTransferObject.cs" />
-    <Compile Include="DataTransferObject\RegionDataTransferLayer.cs" />
-    <Compile Include="DataTransferObject\VillageDataTransferObject.cs" />
-    <Compile Include="DataTransferObject\WallMaterialDataTransferObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +47,9 @@
       <Project>{edf7c1a6-8b8f-456b-bc8d-693100c937df}</Project>
       <Name>NLayerApp.DataAccessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Handler\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
