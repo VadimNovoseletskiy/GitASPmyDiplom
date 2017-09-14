@@ -43,6 +43,7 @@
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
     <Compile Include="Handler\CommercialHandlerOutPut.cs" />
     <Compile Include="Handler\HouseHandlerOutPut.cs" />
+    <Compile Include="Handler\LandHandlerOutPut.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
