@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handler\ApartmentHandler.cs" />
+    <Compile Include="Handler\CommercialHandler.cs" />
     <Compile Include="Handler\HouseHandler.cs" />
     <Compile Include="Handler\InfoHandler.cs" />
     <Compile Include="Handler\RegionHandler.cs" />
