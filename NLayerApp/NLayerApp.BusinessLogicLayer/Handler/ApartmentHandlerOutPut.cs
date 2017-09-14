@@ -8,16 +8,16 @@ using NLayerApp.DataAccessLayer.Repository;
 
 namespace NLayerApp.BusinessLogicLayer.Handler
 {
-    public class HandlerOutPut
+    public class ApartmentHandlerOutPut
     {
         private readonly IUnitOfWork unitOfWork;
 
-        public HandlerOutPut(IUnitOfWork unitOfWork)
+        public ApartmentHandlerOutPut(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
         }
 
-        public HandlerOutPut() : this(new UnitOfWork())
+        public ApartmentHandlerOutPut() : this(new UnitOfWork())
         {
 
         }
