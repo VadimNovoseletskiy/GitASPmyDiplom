@@ -51,6 +51,7 @@
     <Compile Include="HandlerOutPut\OutBuilding.cs" />
     <Compile Include="HandlerOutPut\RegionHandler.cs" />
     <Compile Include="HandlerOutPut\VillageHandler.cs" />
+    <Compile Include="HandlerOutPut\WallMaterialHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
