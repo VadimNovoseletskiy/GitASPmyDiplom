@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.WEB.Models
 {
@@ -29,5 +30,19 @@ namespace NLayerApp.WEB.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Info> Infos { get; set; }
+        public DbSet<Village> Villages { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<Apartment> Apartments { get; set; }
+        public DbSet<House> Houses { get; set; }
+        public DbSet<Commercial> Commercials { get; set; }
+        public DbSet<Land> Land { get; set; }
+        public DbSet<Communication> Communications { get; set; }
+        public DbSet<OutBuilding> OutBuildings { get; set; }
+        public DbSet<AdditionalEquipment> AdditionalEquipments { get; set; }
+        public DbSet<Material> Materials { get; set; }
+        public DbSet<WallMaterial> WallMaterials { get; set; }
+        public DbSet<FloorMaterial> FloorMaterials { get; set; }
     }
 }
