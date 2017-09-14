@@ -40,19 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HandlerOutPut\AdditionalEquipmentHantler.cs" />
-    <Compile Include="HandlerOutPut\ApartmentHandler.cs" />
-    <Compile Include="HandlerOutPut\CommercialHandler.cs" />
-    <Compile Include="HandlerOutPut\CommunicationHandler.cs" />
-    <Compile Include="HandlerOutPut\FloorMaterialHandler.cs" />
-    <Compile Include="HandlerOutPut\HouseHandler.cs" />
-    <Compile Include="HandlerOutPut\InfoHandler.cs" />
-    <Compile Include="HandlerOutPut\LandHahdler.cs" />
-    <Compile Include="HandlerOutPut\MaterialHandler.cs" />
-    <Compile Include="HandlerOutPut\OutBuilding.cs" />
-    <Compile Include="HandlerOutPut\RegionHandler.cs" />
-    <Compile Include="HandlerOutPut\VillageHandler.cs" />
-    <Compile Include="HandlerOutPut\WallMaterialHandler.cs" />
+    <Compile Include="Handler\HandlerOutPut.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 using NLayerApp.DataAccessLayer.Interface;
 using NLayerApp.DataAccessLayer.Repository;
 
-namespace NLayerApp.BusinessLogicLayer.HandlerOutPut
+namespace NLayerApp.BusinessLogicLayer.Handler
 {
-    public class AdditionalEquipmentHantler
+    public class HandlerOutPut
     {
         private readonly IUnitOfWork unitOfWork;
 
-        public AdditionalEquipmentHantler(IUnitOfWork unitOfWork)
+        public HandlerOutPut(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
         }
 
-        public AdditionalEquipmentHantler() : this(new UnitOfWork())
+        public HandlerOutPut() : this(new UnitOfWork())
         {
 
         }
