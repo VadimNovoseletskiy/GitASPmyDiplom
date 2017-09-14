@@ -47,6 +47,7 @@
     <Compile Include="HandlerOutPut\HouseHandler.cs" />
     <Compile Include="HandlerOutPut\InfoHandler.cs" />
     <Compile Include="HandlerOutPut\LandHahdler.cs" />
+    <Compile Include="HandlerOutPut\OutBuilding.cs" />
     <Compile Include="HandlerOutPut\RegionHandler.cs" />
     <Compile Include="HandlerOutPut\VillageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
