@@ -278,6 +278,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NLayerApp.BusinessLogicLayer\NLayerApp.BusinessLogicLayer.csproj">
+      <Project>{f5c04d63-eca1-4295-83be-6cdab91a5aeb}</Project>
+      <Name>NLayerApp.BusinessLogicLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NLayerApp.DataAccessLayer\NLayerApp.DataAccessLayer.csproj">
       <Project>{edf7c1a6-8b8f-456b-bc8d-693100c937df}</Project>
       <Name>NLayerApp.DataAccessLayer</Name>
