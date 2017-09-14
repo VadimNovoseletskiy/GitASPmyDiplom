@@ -44,6 +44,7 @@
     <Compile Include="HandlerOutPut\ApartmentHandler.cs" />
     <Compile Include="HandlerOutPut\CommercialHandler.cs" />
     <Compile Include="HandlerOutPut\CommunicationHandler.cs" />
+    <Compile Include="HandlerOutPut\FloorMaterialHandler.cs" />
     <Compile Include="HandlerOutPut\HouseHandler.cs" />
     <Compile Include="HandlerOutPut\InfoHandler.cs" />
     <Compile Include="HandlerOutPut\LandHahdler.cs" />
