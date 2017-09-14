@@ -206,7 +206,6 @@
     <Compile Include="Models\CommercialViewModel.cs" />
     <Compile Include="Models\HouseViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\InfoViewModel.cs" />
     <Compile Include="Models\LandViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
