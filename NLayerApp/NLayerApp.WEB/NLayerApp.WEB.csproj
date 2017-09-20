@@ -195,6 +195,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BusinessLogicLayer\HandlerOutPut\ApartmentHandlerOutPut.cs" />
+    <Compile Include="BusinessLogicLayer\HandlerOutPut\CommercialHandlerOutPut.cs" />
+    <Compile Include="BusinessLogicLayer\HandlerOutPut\HouseHandlerOutPut.cs" />
+    <Compile Include="BusinessLogicLayer\HandlerOutPut\LandHandlerOutPut.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
