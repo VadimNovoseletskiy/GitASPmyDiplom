@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using NLayerApp.DataAccessLayer.Interface;
 using NLayerApp.DataAccessLayer.Repository;
 
+
 namespace NLayerApp.BusinessLogicLayer.Handler
-{
+{ 
+
     public class ApartmentHandlerOutPut
     {
         private readonly IUnitOfWork unitOfWork;
@@ -21,5 +23,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         {
 
         }
+        public IEnumerable<ApartmentViewModel>
+
     }
 }
