@@ -222,10 +222,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\image_fb.jpg" />
-    <Content Include="Images\image_myHome.jpg" />
-    <Content Include="Images\logo_z.jpg" />
-    <Content Include="Images\small_logo.JPG" />
+    <Content Include="Image\image_fb.jpg" />
+    <Content Include="Image\image_myHome.jpg" />
+    <Content Include="Image\logo_z.jpg" />
+    <Content Include="Image\small_logo.JPG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -277,6 +277,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_SearchApartmentForm.cshtml" />
+    <Content Include="Views\Home\ApartmentForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
