@@ -18,10 +18,20 @@ namespace NLayerApp.WEB.Controllers
             return View();
         }
 
+
+
+
+
         public ActionResult ApartmentForm()
         {
             return View();
         }
+
+        public ActionResult HouseForm()
+        {
+            return View();
+        }
+
 
     }
 }
