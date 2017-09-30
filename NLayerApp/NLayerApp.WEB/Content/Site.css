@@ -1,24 +1,515 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+body {
+   width: 960px;
+	margin: 15px auto;
+    height: auto;
+	min-width: 500px;
+	max-width: 1100px;
+	outline: 0px dashed #808080;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 18px;
+
 }
 
+												/*header*/
+header#header{
+
+	width: 960px;
+	height: 132px;
+	/*outline: 0px dashed #808080;*/
+    /*border-bottom: 2px solid #000;*/
+}
+.logo{
+	width: 200px;
+	height: 132px;
+	float:left;
+	outline: 0px dashed #808080;
+}
+.logo_1{
+	float:left;
+	margin-right:10px;
+}
+
+.telephone{
+	font-size: 20px;
+	float: right;
+	color: #007BC0;
+	padding-top: 10px;
+	padding-right: 12px;
+}
+.schedule{
+	color: #000;
+	font-size:15px;
+	font-weight: bold;
+}
+
+
+            											/*end header*/
+												        /*nav*/
+
+nav#nav{
+
+	/*border-top: 2px solid #000;*/
+	background-color: #449E18;
+    /*outline: 2px dashed #808080;*/
+
+}
+
+nav#nav li{
+	float: left;
+	list-style: none;
+
+}
+
+nav#nav a{
+	display: block;
+	text-decoration: none;
+	color: white;
+	border-right: 1px solid #FFF;
+	padding:0px 12px;
+	background-color: #449E18;
+}
+nav#nav li:last-child a{
+	border-right: none;
+}
+
+nav#nav a:hover{
+	font-weight: bold;
+	color: white;
+	background-color: #000;
+}
+
+nav#nav:after{
+	content: " ";
+	display: table;
+	clear: both;
+}
+													/*end nav*/
+													/*end nav*/
+
+													/*sidebar*/
+aside#sidebar{
+	float: left;
+	/*list-style:none;*/
+	width: 23%;
+	height: auto;
+}
+/*заголовок рубрики */
+h2{
+	text-align: center;
+	font-style: oblique;
+	font-size: 20px;
+	width: 100%;
+	background: #F8C301;
+}
+
+h3 {
+    text-align: center;
+}
+
+/*рубрики*/
+
+li.stolb a{
+	display: block;
+	width: 112px;
+	height: auto;
+	text-decoration: none;
+	padding: 5px;
+	color: #007BC0;
+	border-bottom: 1px solid #E8E8E8;
+	text-align: center;
+	font-size: 16px;
+	align-content: center;
+
+}
+
+li.stolb:first-child{
+	border-top: 0px solid #E8E8E8;
+}
+
+li.stolb:hover{
+	color: #000;
+	background-color: #F8C301;
+}
+aside#sidebar p{
+  color: red;
+	text-align: center;
+
+}
+
+
+/*end рубрика*/
+
+/*форма выборки*/
+section#form{
+	float: left;
+	width: 23%;
+	height: auto;
+	margin-top: 2px;
+	outline: 0px dashed #000;
+	border-right: 2px solid #449E18;
+	border-top: 2px solid #449E18;
+	background-color: #C9D8EA;
+}
+
+legend {
+    color: red;
+    font-style: oblique;
+}
+.room_type{
+	width: 100px;
+	height: 20px;
+	text-align: center;
+}
+.room_quantity {
+    width: 120px;
+	height: 20px;
+	text-align: center;
+}
+
+.house_type {
+    width: 100px;
+	height: 20px;
+	text-align: center;
+}
+
+.house_part {
+     width: 30px;
+	height: 20px;
+	text-align: center;
+}
+
+.commercial_type {
+    width: 100px;
+	height: 20px;
+	text-align: center;
+}
+
+.number_price{
+	width: 50px;
+	height: 20px;
+}
+
+.kategory{
+	width: 150px;
+	height: 22px;
+	text-align: center;
+}
+.button{
+	width: 80px
+
+}
+
+/*section#form{
+
+
+}*/
+
+section#form p{
+	text-align: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	font-size: 16px;
+	color: #447418;
+
+}
+
+h2.select{
+	background-color: #F8C301;
+}
+
+/* общее поле валют*/
+/*поле долара */
+label.valuta, input.valuta{
+	font-size: 25px;
+	float: left;
+	margin-left: 5px;
+
+}
+
+
+/*скрытый блок информер валют */
+/*при переключении на значек долара  проявление блока информера */
+a.nevedimka {
+	display: none;
+}
+
+:checked+a {
+	display: block;
+	float: right;
+	margin-right: 5px;
+	padding-left: 20px;
+}
+
+
+
+.nevedimkaRent{
+    display: none;
+
+}
+:checked~div{
+	display: block;
+
+
+}
+
+.nevedimkaBuy {
+    display: none;
+}
+
+:checked+p{
+	display: block;
+
+}
+/*
+пример когда ссылка является картинкой
+a.evro:hover ~ a.nevedimka_1{
+	display: block;
+	float: right;
+	padding-left: 20px;
+}
+*/
+/*end форма выборки*/
+
+											/*end sidebar*/
+
+
+
+
+												/*main*/
+main {
+	border-top: 2px solid #FFF;
+	width: 100%;
+	height: auto;
+}
+
+section.main_information{
+	float: right;
+	width: 76%;
+	height: auto;
+	/*background-color: yellow;*/
+	/*outline: 2px solid #000;*/
+
+}
+									/*блок обьявления обьекта продажи*/
+article.apartment{
+	width: 100%;
+	height: 170px;
+	margin-top: 10px;
+
+	/*outline: 2px dashed #000;*/
+}
+/*картинка обьекта продажи*/
+div.apartment_img{
+	float: left;
+	height: 120px;
+	width: 120px;
+	/*outline: 2px dashed #DB0800*/
+}
+/* название обьявления (ссылка) */
+div.apartment_ad a{
+	float: left;
+	width: 605px;
+    height: auto;
+	margin-left: 10px;
+	font-size: 20px;
+}
+/* цена обьекта  */
+div.apartment_price{
+	float: right;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+/* аддрес обьекта  */
+div.apartment_adress{
+	float: left;
+	height: 15px;
+	margin: 15px 0 0 10px;
+}
+/* район нахождения обьекта */
+div.region{
+	float: left;
+}
+/* количество комнат  */
+div.rooms{
+	float: left;
+	padding-left:5px;
+	margin-left: 5px;
+	border-left: 2px solid #2FACE6;
+
+}
+/* площадь обьекта  */
+div.square{
+	float: left;
+	padding-left: 5px;
+	margin-left: 5px;
+	border-left: 2px solid #2FACE6;
+}
+/* этаж нахождения  */
+div.floor{
+	float: left;
+	padding-left: 5px;
+	margin-left: 5px;
+	border-left: 2px solid #2FACE6;
+}
+/* описание обьекта  */
+div.description{
+	float: left;
+	color: #737373;
+	border-bottom: 2px solid #737373;
+}
+
+div.description p{
+	padding-bottom:20px;
+}
+									/*конец блока продажи */
+
+								/* детальная информация по обьекту */
+div.apartment_details_img{
+	float: left;
+	height: auto;
+	width: auto;
+	/*outline: 2px dashed #DB0800*/
+}
+
+div.apartment_details_ad p{
+	float: left;
+	width: 680px;
+	height: auto;
+	margin: 0 0 10px 10px;
+	font-size: 20px;
+
+}
+
+footer#footer{
+    float: right;
+	width: 100%;
+	height: 49px;
+	background-color: #449E18;
+}
+
+div.apartment_details_price{
+	float: right;
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+div.apartment_details_description{
+	float: right;
+	margin-top: 10px;
+	width: 300px;
+}
+
+div.apartment_details_town{
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+
+div.apartment_details_region{
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+
+div.apartment_details_material{
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+
+div.apartment_details_Floor{
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+
+div.apartment_details_floor{
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+
+div.apartment_details_square{
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+
+div.apartment_details_rooms{
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+}
+									/*конец блока  детальная информация по обьекту */
+
+												/*end main*/
+
+												/*footerIcons*/
+
+footer#footer  {
+
+}
+
+.icons{
+	float: right;
+	margin-top: 5px;
+	/*margin-left:752px;*/
+	padding-left: 0px;
+	width: 71px;
+	height: 39px;
+	outline: 0px solid #FFF;
+}
+
+footer#footer article.icons a{
+	float: left;
+	margin-left: 7px;
+}
+
+footer#footer article.icons a:hover{
+	border: 2px solid #FFF;
+}
+
+
+
+/*end footer*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}*/
+
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
+/*.dl-horizontal dt {
     white-space: normal;
-}
+}*/
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
