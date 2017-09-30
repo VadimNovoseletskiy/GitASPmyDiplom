@@ -222,6 +222,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\image_fb.jpg" />
+    <Content Include="Images\image_myHome.jpg" />
+    <Content Include="Images\logo_z.jpg" />
+    <Content Include="Images\small_logo.JPG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
