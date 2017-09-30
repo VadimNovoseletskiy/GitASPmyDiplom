@@ -3,33 +3,81 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using NLayerApp.DataAccessLayer.Domains;
-using NLayerApp.DataAccessLayer.Domains.Models;
+//using NLayerApp.DataAccessLayer.Domains;
+//using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.WEB.Controllers
 {
     public class HomeController : Controller
     {
-        MyContext dbContext=new MyContext();
+        //MyContext dbContext=new MyContext();
         public ActionResult Index()
         {
-            IQueryable<Village> villages = dbContext.Villages;
-            ViewBag.vill = villages;
+            //IQueryable<Village> villages = dbContext.Villages;
+            //ViewBag.vill = villages;
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Services()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult ApartmentForm()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
+
+        public ActionResult HouseForm()
+        {
+            return View();
+        }
+
+        public ActionResult CommercialForm()
+        {
+            return View();
+        }
+
+        public ActionResult LandForm()
+        {
+            return View();
+        }
+
+
+
+        public ActionResult InputApartmentForm()
+        {
+            return View();
+        }
+
+        public ActionResult InputHouseForm()
+        {
+            return View();
+        }
+
+        public ActionResult InputCommercialForm()
+        {
+            return View();
+        }
+
+        public ActionResult InputLandForm()
+        {
+            return View();
+        }
+
+
+        //public ActionResult About()
+        //{
+        //    ViewBag.Message = "Your application description page.";
+
+        //    return View();
+        //}
+
+        //public ActionResult Contact()
+        //{
+        //    ViewBag.Message = "Your contact page.";
+
+        //    return View();
+        //}
     }
 }
