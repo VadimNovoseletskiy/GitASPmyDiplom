@@ -8,7 +8,7 @@ using NLayerApp.DataAccessLayer.Repository;
 
 
 namespace NLayerApp.BusinessLogicLayer.Handler
-{ 
+{
 
     public class ApartmentHandlerOutPut
     {
@@ -23,7 +23,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         {
 
         }
-        public IEnumerable<ApartmentViewModel>
 
     }
 }
