@@ -265,9 +265,24 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Shared\_SearchApartmentForm.cshtml" />
+    <Content Include="Views\Home\ApartmentForm.cshtml" />
+    <Content Include="Views\Shared\_SearchHouseForm.cshtml" />
+    <Content Include="Views\Home\HouseForm.cshtml" />
+    <Content Include="Views\Shared\_SearchCommercialForm.cshtml" />
+    <Content Include="Views\Home\CommercialForm.cshtml" />
+    <Content Include="Views\Shared\_SearchLandForm.cshtml" />
+    <Content Include="Views\Home\LandForm.cshtml" />
+    <Content Include="Views\Shared\_InputObjectForm.cshtml" />
+    <Content Include="Views\Home\InputApartmentForm.cshtml" />
+    <Content Include="Views\Home\InputHouseForm.cshtml" />
+    <Content Include="Views\Home\InputCommercialForm.cshtml" />
+    <Content Include="Views\Home\InputLandForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -278,6 +293,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NLayerApp.BusinessLogicLayer\NLayerApp.BusinessLogicLayer.csproj">
+      <Project>{f5c04d63-eca1-4295-83be-6cdab91a5aeb}</Project>
+      <Name>NLayerApp.BusinessLogicLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NLayerApp.DataAccessLayer\NLayerApp.DataAccessLayer.csproj">
       <Project>{edf7c1a6-8b8f-456b-bc8d-693100c937df}</Project>
       <Name>NLayerApp.DataAccessLayer</Name>
