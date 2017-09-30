@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using System.Drawing;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -34,8 +33,7 @@ namespace NLayerApp.WEB.Models
 
         public DbSet<Info> Infos { get; set; }
         public DbSet<Village> Villages { get; set; }
-        //public DbSet<Region> Regions { get; set; }
-        public DbSet<DataAccessLayer.Domains.Models.Region> Regions { get; set; }
+        public DbSet<Region> Regions { get; set; }
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<House> Houses { get; set; }
         public DbSet<Commercial> Commercials { get; set; }
