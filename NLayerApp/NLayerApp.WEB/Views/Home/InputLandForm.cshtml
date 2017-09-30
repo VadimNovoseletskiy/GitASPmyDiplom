@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewBag.Title = "InputLandForm";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Земля</h2>
+<form>
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
+        
+        
+        <!--Населені пункти -->
+        <p>
+            <label>Населений пункт:</label>
+            <select>
+                <option>Черкаси</option>
+                <option>Байбузи</option>
+                <option>Білозірья</option>
+                <option>Березняки</option>
+                <option>Будище</option>
+                <option>Бузуків</option>
+                <option>Вергуни</option>
+                <option>Геронімовка</option>
+                <option>Гута Межиречська</option>
+                <option>Дубіївка</option>
+                <option>Думанці</option>
+                <option>Ірдинь</option>
+                <option>Крещатик</option>
+                <option>Кумейки</option>
+                <option>Леськи</option>
+                <option>Лозівок</option>
+                <option>Мошгогірья</option>
+                <option>Нечаївка</option>
+                <option>Первомайськ</option>
+                <option>Руська Поляна</option>
+                <option>Сагунівка</option>
+                <option>Свидівок</option>
+                <option>Сокирно</option>
+                <option>Софієвка</option>
+                <option>Степанки</option>
+                <option>Тубільці</option>
+                <option>Хацьки</option>
+                <option>Худяки</option>
+                <option>Хутори</option>
+                <option>Червона Слобода</option>
+                <option>Чернявка</option>
+                <option>Шелепухи</option>
+                <option>Яснозірья</option>
+            </select>
+        </p>
+        <!--Мікрорайон-->
+        <p>
+            <label>Мікронайони міста</label>
+            <select>
+                <option>700 річчя</option>
+                <option>Василини</option>
+                <option>Волоканал</option>
+                <option>Газораздатка</option>
+                <option>Вантажний порт</option>
+                <option>Дахнівка</option>
+                <option>Залізничний Вокзал</option>
+                <option>Зелена</option>
+                <option>Казбет</option>
+                <option>Кінотеатр "Мир"</option>
+                <option>Корольова</option>
+                <option>Луначарського</option>
+                <option>Можайського</option>
+                <option>Молокозавод</option>
+                <option>Митниця</option>
+                <option>Мясокомбінат</option>
+                <option>Оборонна</option>
+                <option>Район "Д"</option>
+                <option>Річний порт</option>
+                <option>Сєдова</option>
+                <option>Літак</option>
+                <option>Сосновка</option>
+                <option>Хімселище</option>
+                <option>Центр</option>
+                <option>Шкільна</option>
+                <option>Південно західний район</option>
+            </select>
+        </p>
+        <!--вулиця -->
+        <p>
+            <label>Вулиця:</label>
+            <input type="text" id="street" name="street" />
+        </p>
+        <!--Номер будинку-->
+        <p>
+            <label>Будинок № :</label>
+            <input type="number" id="adress_number" name="adress_number" min="1"/>
+        </p>
+
+        <label for="operation">Вид операції:</label>
+        <select id="operation" name="operation">
+            <option>продаж</option>
+            <option>оренда</option>
+        </select><br />
+    </fieldset>
+
+    <!-- +++++++++++++++++++++++++++ Детальна інформація +++++++++++++++++++++++++++++++ -->
+
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
+
+        <!-- Призначення земельної ділянки -->
+        <p>
+            <label>Призначення:</label>
+            <select>
+                <option>Індивідуальне</option>
+                <option>Комерційне</option>
+                <option>Сільськогосподарське</option>
+            </select>
+        </p>
+
+        <!-- Площа земельної ділянки -->
+        <p>
+            <label> Площа земельної ділянки:</label><!--???????????????????????????????????-->
+            <input type="number" id="land_area" name="land_area" min="0.1" step="0.1" /> (Га)
+        </p>
+    </fieldset>
+    <!-- ++++++++++++++++++++++++++ Комунікаціїї ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
+        <p>
+        <p>
+            <input type="checkbox" />Газ
+        </p>
+        <p>
+            <input type="checkbox" />Залізнична дорога
+        </p>
+        <p>
+            <input type="checkbox" />Центральна каналізація
+        </p>
+        <p>
+            <input type="checkbox" />Центральне водопостачання
+        </p>
+        <p>
+            <input type="checkbox" />Центральне отоплення
+        </p>
+        <p>
+            <input type="checkbox" />Електроенергія
+        </p>
+
+        </p>
+    </fieldset>
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
+
+        <!-- Коротка інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
+            <textarea id="" name="" cols="120" rows="5"></textarea>
+        </p>
+
+        <!-- Детальна інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
+            <textarea id="" name="" cols="120" rows="5"></textarea>
+        </p>
+        <!-- Приватна інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
+            <textarea id="" name="" cols="120" rows="5"></textarea>
+        </p>
+        <!-- ціна в гривнях -->
+        <p>
+            <label>Ціна:</label>
+            <input type="number" id="" name="" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
+        </p>
+        <!-- ціна в доларах -->
+        <p>
+            <label>Ціна:</label>
+            <input type="number" id="" name="" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
+        </p>
+    </fieldset>
+    <!-- +++++++++++++++++++++++++++++++++++++ Додавання фото +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Додати фото</legend>
+        <p>
+            <input type="file" name="foto" multiple />
+        </p>
+    </fieldset>
+    <p>
+        <button type="submit">Зберегти обьєкт</button>
+        <button type="reset">Очистити форму</button>
+        <button type="button">Видалити обьєкт</button>
+        
+    </p>
+</form>
+

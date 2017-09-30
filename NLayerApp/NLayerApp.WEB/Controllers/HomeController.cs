@@ -32,6 +32,39 @@ namespace NLayerApp.WEB.Controllers
             return View();
         }
 
+        public ActionResult CommercialForm()
+        {
+            return View();
+        }
+
+        public ActionResult LandForm()
+        {
+            return View();
+        }
+
+
+
+        public ActionResult InputApartmentForm()
+        {
+            return View();
+        }
+
+        public ActionResult InputHouseForm()
+        {
+            return View();
+        }
+
+        public ActionResult InputCommercialForm()
+        {
+            return View();
+        }
+
+        public ActionResult InputLandForm()
+        {
+            return View();
+        }
+
+
 
     }
 }
