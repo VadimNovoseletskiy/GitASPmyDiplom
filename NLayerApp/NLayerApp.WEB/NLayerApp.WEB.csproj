@@ -280,6 +280,7 @@
     <Content Include="Views\Shared\_SearchApartmentForm.cshtml" />
     <Content Include="Views\Home\ApartmentForm.cshtml" />
     <Content Include="Views\Shared\_SearchHouseForm.cshtml" />
+    <Content Include="Views\Home\HouseForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
