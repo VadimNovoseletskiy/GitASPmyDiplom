@@ -10,11 +10,11 @@ namespace NLayerApp.WEB.Controllers
 {
     public class HomeController : Controller
     {
-        MyContext dbContext=new MyContext();
+        //MyContext dbContext=new MyContext();
         public ActionResult Index()
         {
-            IQueryable<Village> villages = dbContext.Villages;
-            ViewBag.vill = villages;
+           // IQueryable<Village> villages = dbContext.Villages;
+            //ViewBag.vill = villages;
             return View();
         }
 
