@@ -1,0 +1,177 @@
+﻿
+@using System.Web.UI.WebControls
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+
+</head>
+<body>
+    <!-- header page -->
+    <div>
+        <header id="header">
+
+            <article>
+                <div class="logo">
+                    <img src="../Image/small_logo.JPG">
+                </div>
+                <div class="logo_1">
+                    <img src="../Image/logo_z.jpg">
+                </div>
+                <div class="telephone">
+                    <p>+38(067)984-80-96</p>
+                    <p class="schedule"> Пн- Пт с 09:00 до 18:00 </p>
+                    <p class="schedule"> (Сб-Нд по домовленності)</p>
+                </div>
+            </article>
+        </header>
+    </div>
+    <!-- end header page-->
+    <!-- новигация  -->
+    <nav id="nav">
+        <ul>
+
+            <li>@Html.ActionLink("Головна", "Index", "Home")</li>
+            <li>@Html.ActionLink("Послуги", "Services", "Home")</li>
+
+
+
+            <li><a href="kredit.html">Кредитування</a></li>
+            <li><a href="contact.html">Контактна інформація</a></li>
+            <li><a href="about.html">Про нас</a></li>
+        </ul>
+    </nav>
+    <!--end новигация -->
+    <main id="main" role="main">
+
+        <!-- форма выборки   -->
+        <section id="form">
+            <h2 class="select">Квартири</h2>
+
+            <form action="">
+                @* Village *@
+                <p>Населений пункт/район </p>
+                <p>
+                    <select class="kategory" required id="city">
+                        <option value=""></option>
+                        <optgroup label="м.Черкаси">
+                            <option value="">р-н Центр</option>
+                            <option value="">р-н Казбет</option>
+                            <option value="">р-н Митниця</option>
+                        </optgroup>
+                        <optgroup label="Черкаський район">
+                            <option value="">с.Вергуни</option>
+                            <option value="">с.Степанки</option>
+                            <option value="">с.Нечаївка</option>
+                            <option value="">с.Думанці</option>
+                            <option value="">с.Хутори</option>
+                        </optgroup>
+                    </select>
+                </p>
+                @* end Village *@
+
+                @* rooms *@
+                <div>
+                    <fieldset>
+                        <legend class="roomApartment">Кімнати</legend>
+                        <p>
+                            <label>Тип:</label>
+                            <select class="room_type" name="room_start" id="room_start" required>
+                                <option>всі типи</option>
+                                <option>роздільні</option>
+                                <option>суміжні</option>
+                                <option>комбіновані</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label>Кількість:</label>
+                            <select class="room_quantity" name="room_quantity" id="room_quantity" required>
+                                <option>1 кімната</option>
+                                <option>2 кімнати</option>
+                                <option>3 кімнати</option>
+                                <option>4 кімнати</option>
+                                <option>5 кім.і більше</option>
+                            </select>
+                        </p>
+                    </fieldset>
+                </div>
+                @* end rooms *@
+
+                @* the cost  *@
+                <fieldset>
+                    <legend>Вартість</legend>
+                    <input type="radio" value="rent" name="select" />аренда
+                    <input type="radio" value="buy" name="select" />купити
+
+                    <p class="nevedimkaBuy" id="buy" target="_blank">
+                        <label>від</label>
+                        <input class="number_price" type="number" placeholder="1000" min="1000" name="room_start" size="3" maxlength="3" width="20px">
+                        <label>до</label>
+                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="room_end" size="3">
+                        <label>$</label>
+                    </p>
+                    <div>
+                        <p class="nevedimkaRent" id="rent" target="_blank">
+                            <label>від</label>
+                            <input class="number_price" type="number" placeholder="1000" min="1000" name="room_start" size="3" maxlength="3" width="20px">
+                            <label>до</label>
+                            <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="room_end" size="3">
+                            <label>GRN</label>
+                        </p>
+                    </div>
+                </fieldset>
+                @* end the cost *@
+
+                @* the button  *@
+                <p>
+                    <!-- <input class="button" type="reset" name="" value="Очистити"> -->
+                    <input class="button" type="submit" name="search" value="Пошук">
+                </p>
+                @* end the button *@
+
+            </form>
+            @* end the form *@
+            <h2>Курси валют</h2>
+            <p>
+
+                <label class="valuta">$</label>
+                <input class="valuta" type="radio" value="dollar" checked="" name="valuta">
+                <a class="nevedimka" id="dollar" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp11_b15_c0_l1.png" border="0" alt="Курс долара"></a>
+
+                <label class="valuta">€</label>
+                <input class="valuta" type="radio" value="evro" name="valuta">
+                <a class="nevedimka" id="evro" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp13_b15_c2_l1.png" border="0" alt="Курс євро"></a>
+
+            </p>
+
+        </section>
+        <!--end форма выборки   -->
+
+
+        @RenderBody()
+
+    </main>
+    <footer id="footer">
+        <!-- иконки социальные сети  -->
+        <article class="icons">
+            <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
+                <img src="../Image/image_fb.jpg" alt="Ми на Facebook">
+            </a>
+        </article>
+        <!-- end социальные сети-->
+    </footer>
+
+</body>
+</html>
+
+
+
+
+
