@@ -40,10 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
-    <Compile Include="Handler\CommercialHandlerOutPut.cs" />
-    <Compile Include="Handler\HouseHandlerOutPut.cs" />
     <Compile Include="Handler\LandHandlerOutPut.cs" />
+    <Compile Include="Interface\IHandler.cs" />
+    <Compile Include="Models\LandSearchParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
