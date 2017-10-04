@@ -102,6 +102,11 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public Commercial Commercial { get; set; }
 
+        /// <summary>
+        /// The link to the Child class "Land" (one to one communication)
+        /// </summary>
+        public Land Land { get; set; }
+
 
     }
 
