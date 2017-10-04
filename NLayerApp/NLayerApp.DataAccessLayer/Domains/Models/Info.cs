@@ -38,7 +38,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Object type 
         /// </value>
-        public int Type { get; set; }
+        public PropertyType Type { get; set; }
 
 
         /// <summary>
@@ -103,5 +103,13 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public Commercial Commercial { get; set; }
 
 
+    }
+
+    public enum PropertyType
+    {
+        House,
+        Apartment,
+        Commercial, 
+        Land
     }
 }
