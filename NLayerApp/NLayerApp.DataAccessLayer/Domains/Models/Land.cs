@@ -27,7 +27,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         ///<value>
         /// Describe special Land
         /// </value>
-        public string SpecialLand { get; set; }
+        public SpecialTypeLand SpecialLand { get; set; }
 
 
         /// <summary>
@@ -47,4 +47,34 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
 
 
     }
+
+    public enum SpecialTypeLand
+    {
+        Individual,
+        Commercial,
+        Agricultural
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
