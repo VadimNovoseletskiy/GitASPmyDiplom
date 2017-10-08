@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Handler\LandHandlerOutPut.cs" />
     <Compile Include="Models\LandSearchParameters.cs" />
-    <Compile Include="Models\LandViewModels.cs" />
+    <Compile Include="Models\LandViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
