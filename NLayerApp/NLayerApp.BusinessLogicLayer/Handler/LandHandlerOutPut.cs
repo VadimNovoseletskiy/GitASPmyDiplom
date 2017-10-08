@@ -26,9 +26,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             
         }
 
-        public List<LandViewModels> GetInformation(LandSearchParameters parameters)
+        public List<LandViewModel> GetInformation(LandSearchParameters parameters)
         {
-            var resulst = this.unitOfWork.GenericRepository<Info>().Get()
+            List<LandViewModel> resulst = this.unitOfWork.GenericRepository<Info>().Get()
                 .Where(p => p.Type == PropertyType.Land
                         && p.Region.RegionName == parameters.Region
                         && p.Village.VillageName == parameters.Village
@@ -36,7 +36,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         && p.DollarPrice < parameters.CostTo
                         && p.Land.SpecialLand == parameters.SpecialLand)
                
-                .Select( p=>new LandViewModels
+                .Select( p=>new LandViewModel
                                                 {
                                                     NameInfo = p.NameInfo,
                                                     Region = p.Region.RegionName,
@@ -46,7 +46,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                                     TotalAreaInfo = p.TotalAreaInfo
                                                 } 
                         )
-                .ToList<LandViewModels>();
+                .ToList<LandViewModel>();
 
                 return resulst;
 
