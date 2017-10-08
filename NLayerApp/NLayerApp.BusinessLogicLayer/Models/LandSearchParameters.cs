@@ -1,4 +1,6 @@
-﻿namespace NLayerApp.BusinessLogicLayer.Models
+﻿using NLayerApp.DataAccessLayer.Domains.Models;
+
+namespace NLayerApp.BusinessLogicLayer.Models
 {
     /// <summary>
     /// Describes an object"Land"
@@ -6,11 +8,11 @@
     public class LandSearchParameters
     {
 
-        public string SpecialType { get; set; }
+        public string Village{ get; set; }
 
-        public string VillageRegion { get; set; }
+        public string Region { get; set;}
 
-        public string SpecialLand { get; set; }
+        public SpecialTypeLand SpecialLand { get; set; }
 
         public float LandArea { get; set; }
 
