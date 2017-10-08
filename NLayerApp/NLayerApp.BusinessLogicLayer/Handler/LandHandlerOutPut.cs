@@ -9,6 +9,7 @@ using NLayerApp.DataAccessLayer.Interface;
 using NLayerApp.DataAccessLayer.Repository;
 
 
+
 namespace NLayerApp.BusinessLogicLayer.Handler
 {
     public class LandHandlerOutPut
@@ -25,18 +26,29 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             
         }
 
-        void GetInformation(LandSearchParameters parameters)
+        public List<LandViewModels> GetInformation(LandSearchParameters parameters)
         {
-            this.unitOfWork.GenericRepository<Info>().Get().Where(p => p.Type == PropertyType.Land
-                                                            && p.Region.RegionName==parameters.VillageRegion        
-                                                            || p.Land.SpecialLand == SpecialTypeLand.Commercial
-                                                            || p.Land.SpecialLand == SpecialTypeLand.Agricultural
-                                                            || p.Land.SpecialLand == SpecialTypeLand.Individual
-                                                            && p.DollarPrice > parameters.CostFrom
-                                                            && p.DollarPrice< parameters.CostTo
-                                                            ).Select(IQueryable<>)
-                                                          
+            var resulst = this.unitOfWork.GenericRepository<Info>().Get()
+                .Where(p => p.Type == PropertyType.Land
+                        && p.Region.RegionName == parameters.Region
+                        && p.Village.VillageName == parameters.Village
+                        && p.DollarPrice > parameters.CostFrom
+                        && p.DollarPrice < parameters.CostTo
+                        && p.Land.SpecialLand == parameters.SpecialLand)
+               
+                .Select( p=>new LandViewModels
+                                                {
+                                                    NameInfo = p.NameInfo,
+                                                    Region = p.Region.RegionName,
+                                                    Village = p.Village.VillageName,
+                                                    DollarPrice = p.DollarPrice,
+                                                    GrnPrice = p.GrnPrice,
+                                                    TotalAreaInfo = p.TotalAreaInfo
+                                                } 
+                        )
+                .ToList<LandViewModels>();
 
+                return resulst;
 
         }
     }
