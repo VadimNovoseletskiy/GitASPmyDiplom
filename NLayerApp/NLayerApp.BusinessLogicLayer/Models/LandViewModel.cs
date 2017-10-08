@@ -1,6 +1,6 @@
 ﻿namespace NLayerApp.BusinessLogicLayer.Models
 {
-    public class LandViewModels
+    public class LandViewModel
     {
         public string NameInfo { get; set; }
         public string Region { get; set; }
