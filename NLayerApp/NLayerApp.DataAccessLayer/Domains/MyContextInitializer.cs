@@ -31,7 +31,7 @@ namespace NLayerApp.DataAccessLayer.Domains
             {
                 NameInfo = "Продам 1 но кімнатну квартиру ",
                 DetailsInfo = " Квартира знаходиться у 10 секції на 4 поверсі, на стадії будівництва було перепланування у якому була збільшена кухня",
-                Type = 1,
+                Type = PropertyType.Apartment,
                 DollarPrice = 3400000,
                 GrnPrice = 101001093,
                 TotalAreaInfo = 123,
@@ -42,7 +42,7 @@ namespace NLayerApp.DataAccessLayer.Domains
             {
                 NameInfo = "Продам хороший будинок біля лісу",
                 DetailsInfo = "Продам гарний будинок в їорошому районі, з усіма удобствами, готовий до проживаня. Можливий торг.",
-                Type = 2,
+                Type = PropertyType.House,
                 DollarPrice = 7000000,
                 GrnPrice = 302001093,
                 TotalAreaInfo = 656,
@@ -54,7 +54,7 @@ namespace NLayerApp.DataAccessLayer.Domains
             {
                 NameInfo = "Продам Крммерційну нерухомість",
                 DetailsInfo = "Детальна інформація про коммерційну нерухомість ",
-                Type = 3,
+                Type = PropertyType.Commercial,
                 DollarPrice = 8000000,
                 GrnPrice = 402001093,
                 TotalAreaInfo = 756.4f,
@@ -66,7 +66,7 @@ namespace NLayerApp.DataAccessLayer.Domains
             {
                 NameInfo = "Коротке повідомлення про продаж  земельної ділянки ",
                 DetailsInfo = "Детальна інформація про продаж зеельної ділянки ",
-                Type = 4,
+                Type = PropertyType.Land,
                 DollarPrice = 9000000,
                 GrnPrice = 502001093,
                 TotalAreaInfo = 756.4f,
@@ -133,7 +133,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 Id=i3.Id,
                 Info = i3,
                 LandArea = 120.4f,
-                SpecialLand = "сільсько господарське"
+                SpecialLand = SpecialTypeLand.Agricultural
 
             };
 
