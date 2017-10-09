@@ -29,6 +29,7 @@ namespace NLayerApp.DataAccessLayer.Domains
             //add info
             Info i0=new Info
             {
+                NameCaptionLink = "Заголовок, продаж квартири",
                 NameInfo = "Продам 1 но кімнатну квартиру ",
                 DetailsInfo = " Квартира знаходиться у 10 секції на 4 поверсі, на стадії будівництва було перепланування у якому була збільшена кухня",
                 Type = PropertyType.Apartment,
@@ -40,6 +41,7 @@ namespace NLayerApp.DataAccessLayer.Domains
             };
             Info i1=new Info
             {
+                NameCaptionLink = "Заголовок продаж будинку ",
                 NameInfo = "Продам хороший будинок біля лісу",
                 DetailsInfo = "Продам гарний будинок в їорошому районі, з усіма удобствами, готовий до проживаня. Можливий торг.",
                 Type = PropertyType.House,
@@ -52,6 +54,7 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             Info i2=new Info
             {
+                NameCaptionLink = "Заголовок продаж  комерційної неоухомості",
                 NameInfo = "Продам Крммерційну нерухомість",
                 DetailsInfo = "Детальна інформація про коммерційну нерухомість ",
                 Type = PropertyType.Commercial,
@@ -64,6 +67,7 @@ namespace NLayerApp.DataAccessLayer.Domains
 
             Info i3=new Info
             {
+                NameCaptionLink = "Коротке повідомдення про продж землі",
                 NameInfo = "Коротке повідомлення про продаж  земельної ділянки ",
                 DetailsInfo = "Детальна інформація про продаж зеельної ділянки ",
                 Type = PropertyType.Land,
