@@ -13,13 +13,13 @@ namespace NLayerApp.WEB.Controllers
    
     public class LandController : Controller
     {
-        MyContext dbContext=new MyContext();
+        MyContext dbContext=new MyContext();//test out put
         // GET: Land
         [HttpGet]
         public ActionResult Index()
         {
-            IQueryable<Land> lands = dbContext.Land;
-            ViewBag.vill = lands;
+            IQueryable<Land> lands = dbContext.Land;//test out put
+            ViewBag.land = lands;//test out put
             return View();
         }
         
