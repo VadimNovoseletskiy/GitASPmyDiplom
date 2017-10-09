@@ -18,8 +18,8 @@ namespace NLayerApp.WEB.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            IQueryable<Village> villages = dbContext.Villages;
-            ViewBag.vill = villages;
+            IQueryable<Land> lands = dbContext.Land;
+            ViewBag.vill = lands;
             return View();
         }
         
