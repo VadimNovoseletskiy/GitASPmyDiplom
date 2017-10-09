@@ -13,6 +13,13 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public int Id { get; set; }
 
+        /// <summary>
+        /// The property NameCaptionLink
+        /// </summary>
+        /// <value>
+        /// short caption link 
+        /// </value>
+        public string NameCaptionLink { get; set; }
 
         /// <summary>
         /// The property NameInfo 
