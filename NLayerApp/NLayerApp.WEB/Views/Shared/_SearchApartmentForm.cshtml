@@ -1,5 +1,4 @@
-﻿
-@using System.Web.UI.WebControls
+﻿@using System.Web.UI.WebControls
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,9 +38,8 @@
         <ul>
 
             <li>@Html.ActionLink("Головна", "Index", "Home")</li>
-            <li>@Html.ActionLink("Послуги", "Services", "Home")</li>
-
-
+            <li>@Html.ActionLink("Послуги", "Index", "Home")</li>
+@* не готовые ссылки  *@
 
             <li><a href="kredit.html">Кредитування</a></li>
             <li><a href="contact.html">Контактна інформація</a></li>
@@ -55,49 +53,45 @@
         <section id="form">
             <h2 class="select">Квартири</h2>
 
-            <form action="">
-                @* Village *@
-                <p>Населений пункт/район </p>
+            <form method="POST" action="">
+                @* Regions *@
+                <p>Райони:</p>
                 <p>
-                    <select class="kategory" required id="city">
-                        <option value=""></option>
-                        <optgroup label="м.Черкаси">
-                            <option value="">р-н Центр</option>
-                            <option value="">р-н Казбет</option>
-                            <option value="">р-н Митниця</option>
-                        </optgroup>
-                        <optgroup label="Черкаський район">
-                            <option value="">с.Вергуни</option>
-                            <option value="">с.Степанки</option>
-                            <option value="">с.Нечаївка</option>
-                            <option value="">с.Думанці</option>
-                            <option value="">с.Хутори</option>
-                        </optgroup>
+                    @Html.DropDownList("regionName",ViewBag.regionName as SelectList)
+                </p>
+                @* Village *@
+                <p>Населений пункт:</p>
+                <p>
+                    @Html.DropDownList("villageRegion", ViewBag.VillageRegion as SelectList)
+                </p>
+                @* Type of operation*@
+                <p>Тип операції:</p>
+                <p>
+                    <select name="OperationType" class="room_type" required>
+                        <option>Оренда</option>
+                        <option>Продаж</option>
                     </select>
                 </p>
-                @* end Village *@
-
                 @* rooms *@
                 <div>
                     <fieldset>
                         <legend class="roomApartment">Кімнати</legend>
                         <p>
                             <label>Тип:</label>
-                            <select class="room_type" name="room_start" id="room_start" required>
-                                <option>всі типи</option>
-                                <option>роздільні</option>
-                                <option>суміжні</option>
-                                <option>комбіновані</option>
+                            <select class="room_type" name="TypeRoom" id="" required>
+                                <option value="0">роздільні</option>
+                                <option value="1">суміжні</option>
+                                <option value="2">комбіновані</option>
                             </select>
                         </p>
                         <p>
                             <label>Кількість:</label>
-                            <select class="room_quantity" name="room_quantity" id="room_quantity" required>
-                                <option>1 кімната</option>
-                                <option>2 кімнати</option>
-                                <option>3 кімнати</option>
-                                <option>4 кімнати</option>
-                                <option>5 кім.і більше</option>
+                            <select class="room_quantity" name="NumberOfRooms" id="" required>
+                                <option value="1">1 кімната</option>
+                                <option value="2">2 кімнати</option>
+                                <option value="3">3 кімнати</option>
+                                <option value="4">4 кімнати</option>
+                                <option value=">4">5 кім.і більше</option>
                             </select>
                         </p>
                     </fieldset>
@@ -107,25 +101,20 @@
                 @* the cost  *@
                 <fieldset>
                     <legend>Вартість</legend>
-                    <input type="radio" value="rent" name="select" />аренда
-                    <input type="radio" value="buy" name="select" />купити
-
-                    <p class="nevedimkaBuy" id="buy" target="_blank">
+                    <p>
                         <label>від</label>
-                        <input class="number_price" type="number" placeholder="1000" min="1000" name="room_start" size="3" maxlength="3" width="20px">
+                        <input class="number_price" type="number" placeholder="1000" min="1000" name="GrnCostFrom" size="3" maxlength="3" width="20px">
                         <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="room_end" size="3">
+                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="GrnCostTo" size="3">
+                        <label>GRN</label>
+                    </p>
+                    <p>
+                        <label>від</label>
+                        <input class="number_price" type="number" placeholder="1000" min="1000" name="DollarCostFrom" size="3" maxlength="3" width="20px">
+                        <label>до</label>
+                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="DollarCostTo" size="3">
                         <label>$</label>
                     </p>
-                    <div>
-                        <p class="nevedimkaRent" id="rent" target="_blank">
-                            <label>від</label>
-                            <input class="number_price" type="number" placeholder="1000" min="1000" name="room_start" size="3" maxlength="3" width="20px">
-                            <label>до</label>
-                            <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="room_end" size="3">
-                            <label>GRN</label>
-                        </p>
-                    </div>
                 </fieldset>
                 @* end the cost *@
 
