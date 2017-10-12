@@ -46,6 +46,14 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Object type 
         /// </value>
         public PropertyType Type { get; set; }
+        
+        /// <summary>
+        /// The property "Operation Type"
+        /// </summary>
+        /// <value>
+        /// Enum type of operation(sale, lease)
+        /// </value>
+        public TypeOfOperation OperationType { get; set; }
 
 
         /// <summary>
@@ -123,5 +131,12 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         Apartment,
         Commercial, 
         Land
+    }
+
+    public enum TypeOfOperation
+    {
+        //аренда, продажа
+        Lease,
+        Sale
     }
 }
