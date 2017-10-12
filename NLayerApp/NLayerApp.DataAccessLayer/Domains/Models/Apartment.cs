@@ -108,7 +108,9 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public Info Info { get; set; }
         
     }
-
+    /// <summary>
+    /// Enu.Describes type of room
+    /// </summary>
     public enum SpecialTypeRoom
     {
         SeparateRooms,
