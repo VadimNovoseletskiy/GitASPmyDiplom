@@ -41,6 +41,7 @@ namespace NLayerApp.DataAccessLayer.Repository
                 var repositoryType = typeof(GenericRepository<>);
                 var repository =
                     Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)), this.context);
+                this.respositories.Add(type,repository);
             }
             return (IGenericRepository<TEntity>)this.respositories[type];
         }
