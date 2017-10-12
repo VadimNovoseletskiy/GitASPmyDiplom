@@ -44,7 +44,7 @@ namespace NLayerApp.WEB.Controllers
 
             VillageHandler myVillageHandler=new VillageHandler();
             var resultVillage = myVillageHandler.GetVillage();
-            SelectList listVillage=new SelectList(resultVillage,"Id","Vallue");
+            SelectList listVillage=new SelectList(resultVillage,"Id","Value");
             ViewBag.villageName = listVillage;
         }
 
