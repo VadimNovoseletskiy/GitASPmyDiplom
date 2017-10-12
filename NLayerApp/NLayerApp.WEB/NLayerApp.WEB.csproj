@@ -202,7 +202,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handler\RegionHandler.cs" />
+    <Compile Include="Handler\VillageHandler.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DropDownViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,6 +220,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Image\image_fb.jpg" />
     <Content Include="Image\image_myHome.jpg" />
+    <Content Include="Image\land.jpg" />
     <Content Include="Image\logo_z.jpg" />
     <Content Include="Image\small_logo.JPG" />
     <Content Include="Scripts\bootstrap.js" />
