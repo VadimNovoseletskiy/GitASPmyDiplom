@@ -30,19 +30,20 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         {
             List<LandViewModel> resulst = this.unitOfWork.GenericRepository<Info>().Get()
                 .Where(p => p.Type == PropertyType.Land
-                        && p.Region.RegionName == parameters.Region
-                        && p.Village.VillageName == parameters.Village
+                        && p.Region.Id == parameters.Region
+                        && p.Village.Id == parameters.Village
                         && p.DollarPrice > parameters.CostFrom
                         && p.DollarPrice < parameters.CostTo
                         && p.Land.SpecialLand == parameters.SpecialLand)
-               
+                        
                 .Select( p=>new LandViewModel
                                                 {
+                                                    Id    = p.Id,
+                                                    CaptionLink = p.NameCaptionLink,
                                                     NameInfo = p.NameInfo,
                                                     Region = p.Region.RegionName,
                                                     Village = p.Village.VillageName,
                                                     DollarPrice = p.DollarPrice,
-                                                    GrnPrice = p.GrnPrice,
                                                     TotalAreaInfo = p.TotalAreaInfo
                                                 } 
                         )
