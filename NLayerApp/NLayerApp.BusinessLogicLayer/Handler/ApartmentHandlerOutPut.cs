@@ -36,8 +36,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             && p.DollarPrice >parameters.DollarCostFrom
                             && p.DollarPrice<parameters.DollarCostTo
                             && p.GrnPrice > parameters.GrnCostFrom
-                            && p.GrnPrice<parameters.GrnCostTo
-                            && p.NameInfo==parameters.NameInfo)
+                            && p.GrnPrice<parameters.GrnCostTo)
 
                 .Select(p => new ApartmentViewModel
                 {
