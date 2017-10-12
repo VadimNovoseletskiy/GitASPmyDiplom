@@ -1,4 +1,4 @@
-﻿@* Вывод результатов поиска  по земле *@
+﻿@model List<NLayerApp.BusinessLogicLayer.Models.LandViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_SearchLandForm.cshtml";
@@ -6,26 +6,55 @@
 
 <h2>Знайдені земельні ділянки </h2>
 <div>
-    
-    <table style="border:2px dashed orange">
-        <tr>
-            <td>
-                <p>Id </p>
-            </td>
-            <td colspan="8">
-                <p style="text-align: center">Інформація</p>
-            </td>
-        </tr>
-       
+    @if ((Model?.Count ?? 0) > 0)
+    {
+        //когда просто открывается страница (метода ж два, а вьюха одна) то модель пустая а ты это не обработал
+        <table border="1" cols="4" width="auto">
 
-        @foreach (var b in ViewBag.land)
-            {
             <tr>
-                <td><p>@b.Id</p></td>
-               
+                <td width="30">
+                    <p>Id </p>
+                </td>
+
+                <td colspan="3">
+                    <p style="text-align: center">Інформація</p>
+                </td>
             </tr>
-        }
-    </table>
+
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td rowspan="5">@b.Id</td>
+                    <td rowspan="5">
+                        <table width="100">
+                            <tr>
+                                <td>
+                                    <img src="../../Image/land.jpg"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="2">
+                        <a href="Index.cshtml" style="font-size: 17px; text-align: center">@b.CaptionLink</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td >Загальна площа: @b.TotalAreaInfo Га</td>
+                    <td style="text-align: right">Ціна: @b.DollarPrice у.о.</td>
+                </tr>
+
+                <tr><td colspan="2">Населений пункт: @b.Village</td></tr>
+                <tr><td colspan="2">Район: @b.Region</td></tr>
+                <tr >
+                    <td style="font-size: 14px" colspan="3">
+                       @b.NameInfo
+                    </td>
+
+                </tr>
+            }
+        </table>
+    }
 </div>
 
 
