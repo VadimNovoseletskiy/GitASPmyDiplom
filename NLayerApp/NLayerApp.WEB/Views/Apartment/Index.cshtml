@@ -1,8 +1,67 @@
-﻿
+﻿@model List<NLayerApp.BusinessLogicLayer.Models.ApartmentViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_SearchApartmentForm.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Знайдені квартири</h2>
+<div>
+    @if ((Model?.Count ?? 0) > 0)
+    {
+        //когда просто открывается страница (метода ж два, а вьюха одна) то модель пустая а ты это не обработал
+        //это то же что если то что в скобках считать за метод то это тоже что и:
+        //if (Model != null)
+        //{
+        //    return Model.Count;
+        //}
+        //return 0;
+        //или Model != null ? Model.Count : 0;
+        <table border="1" cols="4" width="auto">
+
+            <tr>
+                <td width="30">
+                    <p>Id </p>
+                </td>
+
+                <td colspan="3">
+                    <p style="text-align: center">Інформація</p>
+                </td>
+            </tr>
+
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td rowspan="5">@b.Id</td>
+                    <td rowspan="5">
+                        <table width="100">
+                            <tr>
+                                <td>
+                                    <img src="../../Image/apartment.jpg" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="2">
+                        <a href="Index.cshtml" style="font-size: 17px; text-align: center">@b.CaptionLink</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td style="text-align: right">Ціна:@b.GrnPrice грн. (@b.DollarPrice у.о.)</td>
+                </tr>
+
+                <tr><td colspan="2">Населений пункт: @b.Village</td></tr>
+                <tr><td colspan="2">Район: @b.Region | Поверх: @b.Floor | Кімнат: @b.NumberOfRooms | Загальна площа: @b.TotalAreaInfo </td></tr>
+                <tr>
+                    <td style="font-size: 14px" colspan="3">
+                        @b.NameInfo
+                    </td>
+
+                </tr>
+            }
+        </table>
+    }
+
+</div>
 
