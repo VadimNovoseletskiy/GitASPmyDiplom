@@ -14,71 +14,73 @@ namespace NLayerApp.DataAccessLayer.Domains
         protected override void Seed(MyContext dbContext)
         {
             //add village
-            Village v0 = new Village { VillageName = "VillageName_0" };
-            Village v1 = new Village { VillageName = "VillageName_1" };
-            Village v2 = new Village { VillageName = "VillageName_2" };
-            Village v3 = new Village { VillageName = "VillageName_3" };
+            Village v0 = new Village { VillageName = "г.Черкассы" };
+            Village v1 = new Village { VillageName = "с.Вергуны" };
+            Village v2 = new Village { VillageName = "с.Леськи" };
+            Village v3 = new Village { VillageName = "с.Хуторы" };
 
             dbContext.Villages.AddRange(new List<Village> {v0, v1, v2, v3 });
 
             //add region
-            Region r0 = new Region { RegionName = "RegionName_0" };
-            Region r1 = new Region { RegionName = "RegionName_1" };
-            dbContext.Regions.AddRange(new List<Region> {r0, r1});
+            Region r0 = new Region { RegionName = "Черкасский р-н" };
+            Region r1 = new Region { RegionName = "р-н Центр(м.Черкаси)" };
+            Region r2 = new Region { RegionName = "р-н Митниця(м.Черкаси)" };
+            Region r3 = new Region { RegionName = "р-н Казбет(м.Черкаси)" };
+            dbContext.Regions.AddRange(new List<Region> {r0, r1,r2,r3});
 
             //add info
             Info i0=new Info
             {
-                NameCaptionLink = "Заголовок, продаж квартири",
-                NameInfo = "Продам 1 но кімнатну квартиру ",
-                DetailsInfo = " Квартира знаходиться у 10 секції на 4 поверсі, на стадії будівництва було перепланування у якому була збільшена кухня",
+                NameCaptionLink = "Заголовок: Продаж квартири",
+                NameInfo = "Коротко:Продам 1 но кімнатну квартиру ",
+                DetailsInfo = "Детально: Квартира знаходиться у 10 секції на 4 поверсі, на стадії будівництва було перепланування у якому була збільшена кухня",
                 Type = PropertyType.Apartment,
-                DollarPrice = 3400000,
-                GrnPrice = 101001093,
-                TotalAreaInfo = 123,
+                DollarPrice = 10000,
+                GrnPrice = 250000,
+                TotalAreaInfo = 60,
                 Village= v0,
                 Region = r1
             };
             Info i1=new Info
             {
-                NameCaptionLink = "Заголовок продаж будинку ",
-                NameInfo = "Продам хороший будинок біля лісу",
-                DetailsInfo = "Продам гарний будинок в їорошому районі, з усіма удобствами, готовий до проживаня. Можливий торг.",
+                NameCaptionLink = "Заголовок: Продаж будинку ",
+                NameInfo = "Коротко:Продам хороший будинок біля лісу",
+                DetailsInfo = "Детально: Продам гарний будинок в їорошому районі, з усіма удобствами, готовий до проживаня. Можливий торг.",
                 Type = PropertyType.House,
-                DollarPrice = 7000000,
-                GrnPrice = 302001093,
-                TotalAreaInfo = 656,
-                Village = v2,
-                Region = r1
+                DollarPrice = 15000,
+                GrnPrice = 375000,
+                TotalAreaInfo = 120.5f,
+                Village = v1,
+                Region = r0
             };
 
             Info i2=new Info
             {
-                NameCaptionLink = "Заголовок продаж  комерційної неоухомості",
-                NameInfo = "Продам Крммерційну нерухомість",
-                DetailsInfo = "Детальна інформація про коммерційну нерухомість ",
+                NameCaptionLink = "Заголовок: Продаж  комерційної неоухомості",
+                NameInfo = "Коротко:Продам Крммерційну нерухомість",
+                DetailsInfo = "Детально: Інформація про коммерційну нерухомість ",
                 Type = PropertyType.Commercial,
-                DollarPrice = 8000000,
-                GrnPrice = 402001093,
+                DollarPrice = 20000,
+                GrnPrice = 500000,
                 TotalAreaInfo = 756.4f,
-                Village = v3,
-                Region = r0
+                Village = v0,
+                Region = r3
             };
 
             Info i3=new Info
             {
-                NameCaptionLink = "Коротке повідомдення про продж землі",
-                NameInfo = "Коротке повідомлення про продаж  земельної ділянки ",
-                DetailsInfo = "Детальна інформація про продаж зеельної ділянки ",
+                NameCaptionLink = "Заголовок:Продаж землі",
+                NameInfo = "Коротко: Повідомлення про продаж  земельної ділянки ",
+                DetailsInfo = "Детально: Інформація про продаж зеельної ділянки ",
                 Type = PropertyType.Land,
-                DollarPrice = 9000000,
-                GrnPrice = 502001093,
-                TotalAreaInfo = 756.4f,
-                Village = v0,
-                Region = r1
+                DollarPrice = 2000,
+                GrnPrice = 50000,
+                TotalAreaInfo = 956.4f,
+                Village = v2,
+                Region = r0
             };
 
-            dbContext.Infos.AddRange(new List<Info> {i1, i0,i2});
+            dbContext.Infos.AddRange(new List<Info> {i0,i1,i2,i3});
 
             //add apartments 
             Apartment ap0=new Apartment
