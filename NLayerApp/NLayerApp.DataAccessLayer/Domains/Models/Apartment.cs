@@ -65,6 +65,13 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </value>
         public int RoomsApartment { get; set; }
 
+        /// <summary>
+        /// Property type room apartment
+        /// </summary>
+        /// <value>
+        /// Describes the type of room in the Apartment.
+        /// </value>
+        public SpecialTypeRoom TypeRoom { get; set; }
 
         /// <summary>
         /// Property BathRoomApartment
