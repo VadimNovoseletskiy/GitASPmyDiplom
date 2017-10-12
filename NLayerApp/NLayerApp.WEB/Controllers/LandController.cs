@@ -17,7 +17,7 @@ namespace NLayerApp.WEB.Controllers
    
     public class LandController : Controller
     {
-        //MyContext dbContext=new MyContext();//test out put
+        
         IUnitOfWork unitOfWork=new UnitOfWork();
 
         // GET: Land
@@ -26,8 +26,7 @@ namespace NLayerApp.WEB.Controllers
         {
            MySelect();
 
-           
-            return View(/*new List<LandViewModel>()*/);
+           return View();
         }
         
         //POST:Land 
