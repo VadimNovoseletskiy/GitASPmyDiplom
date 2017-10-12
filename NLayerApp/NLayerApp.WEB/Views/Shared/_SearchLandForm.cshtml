@@ -1,6 +1,4 @@
-﻿
-
-@using System.Web.UI.WebControls
+﻿@using System.Web.UI.WebControls
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,10 +38,8 @@
         <ul>
 
             <li>@Html.ActionLink("Головна", "Index", "Home")</li>
-            <li>@Html.ActionLink("Послуги", "Services", "Home")</li>
-
-
-
+            <li>@Html.ActionLink("Послуги", "Index", "Home")</li>
+@* не готовые ссылки  *@
             <li><a href="kredit.html">Кредитування</a></li>
             <li><a href="contact.html">Контактна інформація</a></li>
             <li><a href="about.html">Про нас</a></li>
@@ -56,42 +52,30 @@
         <section id="form">
             <h2 class="select">Земельні ділянки</h2>
 
-            <form action="">
-
-                <p>Населений пункт/район </p>
+            <form method="POST" action="">
+                <p>Райони: </p>
                 <p>
-                    <select class="kategory" required id="city">
-                        <option value="">Всі населені пункти і райони</option>
-                        <optgroup label="м.Черкаси">
-                            <option value="">р-н Центр</option>
-                            <option value="">р-н Казбет</option>
-                            <option value="">р-н Митниця</option>
-                        </optgroup>
-                        <optgroup label="Черкаський район">
-                            <option value="">с.Вергуни</option>
-                            <option value="">с.Степанки</option>
-                            <option value="">с.Нечаївка</option>
-                            <option value="">с.Думанці</option>
-                            <option value="">с.Хутори</option>
-                        </optgroup>
-                    </select>
+                    @Html.DropDownList("Region",ViewBag.regionName as SelectList )
+                </p>
+                <p>Населені пункти:</p>
+                <p>
+                   @Html.DropDownList("Village",ViewBag.villageName as SelectList)
                 </p>
                 <p>Призначення</p>
                 <p>
-                    <select class="kategory" required>
-                        <option>Всі категорії</option>
-                        <option>Індивдуальне</option>
-                        <option>Сільськосподарське</option>
-                        <option>Комерційне</option>
+                    <select name="SpecialLand" class="kategory" required>
+                        <option value="0">Індивдуальне</option>
+                        <option value="1">Комерційне</option>
+                        <option value="2">Сільськосподарське</option>
                     </select>
                 </p>
                 <fieldset>
                     <legend>Вартість</legend>
                     <p>
                         <label>від</label>
-                        <input class="number_price" type="number" placeholder="1000" min="1000" name="room_start" size="3" maxlength="3" width="20px">
+                        <input class="number_price" type="number" placeholder="1000" min="1000" name="CostFrom" size="3" maxlength="3" width="20">
                         <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="room_end" size="3">
+                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="CostTo" size="3">
                         <label>$</label>
                     </p>
                 </fieldset>
