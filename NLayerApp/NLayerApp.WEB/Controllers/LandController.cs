@@ -25,7 +25,7 @@ namespace NLayerApp.WEB.Controllers
         public ActionResult Index()
         {
            MySelect();
-
+                
            return View();
         }
         
