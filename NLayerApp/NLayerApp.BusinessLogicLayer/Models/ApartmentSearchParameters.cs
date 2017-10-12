@@ -18,5 +18,6 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int DollarCostTo { get; set; }
         public int GrnCostFrom { get; set; }
         public int GrnCostTo { get; set; }
+        public string NameInfo { get; set; }
     }
 }

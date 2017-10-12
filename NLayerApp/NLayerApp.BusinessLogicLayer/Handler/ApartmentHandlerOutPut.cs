@@ -36,7 +36,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             && p.DollarPrice >parameters.DollarCostFrom
                             && p.DollarPrice<parameters.DollarCostTo
                             && p.GrnPrice > parameters.GrnCostFrom
-                            && p.GrnPrice<parameters.GrnCostTo)
+                            && p.GrnPrice<parameters.GrnCostTo
+                            && p.NameInfo==parameters.NameInfo)
 
                 .Select(p => new ApartmentViewModel
                 {
@@ -48,7 +49,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     NumberOfRooms = p.Apartment.RoomsApartment,
                     TotalAreaInfo = p.TotalAreaInfo,
                     DollarPrice = p.DollarPrice,
-                    GrnPrice = p.GrnPrice
+                    GrnPrice = p.GrnPrice,
+                    NameInfo = p.NameInfo
                 }
     )
             .ToList<ApartmentViewModel>();
