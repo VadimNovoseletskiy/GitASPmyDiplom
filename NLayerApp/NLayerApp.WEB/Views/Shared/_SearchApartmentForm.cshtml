@@ -54,25 +54,21 @@
             <h2 class="select">Квартири</h2>
 
             <form method="POST" action="">
-                @* Regions *@
                 <p>Райони:</p>
                 <p>
-                    @Html.DropDownList("regionName",ViewBag.regionName as SelectList)
+                   @Html.DropDownList("Region", ViewBag.regionName as SelectList)
                 </p>
-                @* Village *@
                 <p>Населений пункт:</p>
                 <p>
-                    @Html.DropDownList("villageRegion", ViewBag.VillageRegion as SelectList)
+                    @Html.DropDownList("Village", ViewBag.villageName as SelectList)
                 </p>
-                @* Type of operation*@
                 <p>Тип операції:</p>
                 <p>
                     <select name="OperationType" class="room_type" required>
-                        <option>Оренда</option>
-                        <option>Продаж</option>
+                        <option value="0">Оренда</option>
+                        <option value="1">Продаж</option>
                     </select>
                 </p>
-                @* rooms *@
                 <div>
                     <fieldset>
                         <legend class="roomApartment">Кімнати</legend>
@@ -91,21 +87,19 @@
                                 <option value="2">2 кімнати</option>
                                 <option value="3">3 кімнати</option>
                                 <option value="4">4 кімнати</option>
-                                <option value=">4">5 кім.і більше</option>
+                                <option value="5">5 кім.і більше</option>
                             </select>
                         </p>
                     </fieldset>
                 </div>
-                @* end rooms *@
-
-                @* the cost  *@
+             
                 <fieldset>
                     <legend>Вартість</legend>
                     <p>
                         <label>від</label>
                         <input class="number_price" type="number" placeholder="1000" min="1000" name="GrnCostFrom" size="3" maxlength="3" width="20px">
                         <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="GrnCostTo" size="3">
+                        <input class="number_price" type="number" min="1000" max="500000" placeholder="500000" name="GrnCostTo" size="3">
                         <label>GRN</label>
                     </p>
                     <p>
@@ -116,17 +110,15 @@
                         <label>$</label>
                     </p>
                 </fieldset>
-                @* end the cost *@
-
-                @* the button  *@
+               
                 <p>
                     <!-- <input class="button" type="reset" name="" value="Очистити"> -->
                     <input class="button" type="submit" name="search" value="Пошук">
                 </p>
-                @* end the button *@
+               
 
             </form>
-            @* end the form *@
+           
             <h2>Курси валют</h2>
             <p>
 
