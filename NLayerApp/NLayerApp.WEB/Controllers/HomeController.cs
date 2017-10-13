@@ -21,19 +21,6 @@ namespace NLayerApp.WEB.Controllers
         }
 
 
-
-
-
-       
-
-        public ActionResult CommercialForm()
-        {
-            return View();
-        }
-
-       
-
-
         public ActionResult InputApartmentForm()
         {
             return View();

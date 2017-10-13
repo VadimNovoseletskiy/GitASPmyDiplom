@@ -35,7 +35,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             && p.DollarPrice >= parameters.DollarPriceFrom
                             && p.DollarPrice <= parameters.DollarPriceTo
                             && p.GrnPrice >= parameters.GrnPriceFrom
-                            && p.GrnPrice <= parameters.DollarPriceTo
+                            && p.GrnPrice <= parameters.GrnPriceTo
 
                 )
                 .Select(p => new CommercialViewModel

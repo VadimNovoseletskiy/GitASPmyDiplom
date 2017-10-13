@@ -11,6 +11,7 @@ namespace NLayerApp.DataAccessLayer.Domains
 {
     public class MyContextInitializer:DropCreateDatabaseAlways<MyContext>
     {
+
         protected override void Seed(MyContext dbContext)
         {
             //add village
@@ -62,7 +63,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 NameInfo = "Коротко:Продам Крммерційну нерухомість",
                 DetailsInfo = "Детально: Інформація про коммерційну нерухомість ",
                 Type = PropertyType.Commercial,
-                OperationType = TypeOfOperation.Lease,
+                OperationType = TypeOfOperation.Sale,
                 DollarPrice = 20000,
                 GrnPrice = 500000,
                 TotalAreaInfo = 756.4f,
@@ -127,12 +128,12 @@ namespace NLayerApp.DataAccessLayer.Domains
             //add Commercial
             Commercial c0=new Commercial
             {   Id=i2.Id,
-                TypeCommercial = "Офісно адміністративне",
+                TypeCommercial = "Офісно-адміністративне",
                 EffectiveAreaCommercial = 25.7f,
                 LandAreaCommercial = 46.5f,
-                FloorCommercial = 4,
+                FloorCommercial = 1,
                 StateCommercial = "відмінний",
-                TotalFloorCommercial = 10,
+                TotalFloorCommercial = 2,
                 Info = i2
 
             };
