@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NLayerApp.BusinessLogicLayer.Handler;
+using NLayerApp.BusinessLogicLayer.Models;
 using NLayerApp.DataAccessLayer.Interface;
 using NLayerApp.DataAccessLayer.Repository;
 using NLayerApp.WEB.Handler;
@@ -22,10 +24,12 @@ namespace NLayerApp.WEB.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index()
+        public ActionResult Index(CommercialSearchParameters parameters)
         {
             MySelect();
-            return View();
+            CommercialHandlerOutPut myCommercialHandlerOutPut=new CommercialHandlerOutPut(unitOfWork);
+            var resultCommercial = myCommercialHandlerOutPut.GetCommercial(parameters);
+            return View(resultCommercial);
         }
 
         void MySelect()
