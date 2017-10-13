@@ -47,7 +47,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                     TotalArea = p.TotalAreaInfo,
                                     DollarPrice = p.DollarPrice,
                                     GrnPrice = p.GrnPrice,
-                                    NameInfo = p.NameInfo
+                                    NameInfo = p.NameInfo,
+                                    CaptionLink = p.NameCaptionLink
                                 }
                 )
                 .ToList<CommercialViewModel>();
