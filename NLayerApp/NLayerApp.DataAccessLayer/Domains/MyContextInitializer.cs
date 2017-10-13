@@ -112,12 +112,12 @@ namespace NLayerApp.DataAccessLayer.Domains
             House h0=new House
             {
                 Id = i1.Id,
-                TypeHouse = SpecialTypeHouse.House,
+                TypeHouse = "Будинок",
                 FloorHouse = 2,
                 KitchenAreaHouse = 25.4f,
                 LandAreaHouse = 50.4f,
                 LivingAreaHouse = 100.4f,
-                PartHouse = SpecialPartHouse.half,
+                PartHouse = "1",
                 RoomsHouse = 12,
                 Info = i1
             };

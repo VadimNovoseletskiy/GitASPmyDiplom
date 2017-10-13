@@ -1,4 +1,4 @@
-﻿
+﻿@model List<NLayerApp.BusinessLogicLayer.Models.HouseViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_SearchHouseForm.cshtml";
@@ -29,7 +29,7 @@
                         <table width="100">
                             <tr>
                                 <td>
-                                    <img src="../../Image/apartment.jpg" />
+                                    <img src="../../Image/house.jpg" />
                                 </td>
                             </tr>
                         </table>
@@ -45,7 +45,7 @@
                 </tr>
 
                 <tr><td colspan="2">Населений пункт: @b.Village</td></tr>
-                <tr><td colspan="2">Район: @b.Region | Поверх: @b.Floor | Кімнат: @b.NumberOfRooms | Загальна площа: @b.TotalAreaInfo m2 </td></tr>
+                <tr><td colspan="2">Район: @b.Region | Тип будинку: @b.TypeHouse| Кількість поверхів : @b.Floor| Загальна площа: @b.TotalArea m2 </td></tr>
                 <tr>
                     <td style="font-size: 14px" colspan="3">
                         @b.NameInfo

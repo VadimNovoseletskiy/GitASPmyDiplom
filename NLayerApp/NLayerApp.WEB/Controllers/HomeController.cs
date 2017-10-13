@@ -24,15 +24,7 @@ namespace NLayerApp.WEB.Controllers
 
 
 
-        public ActionResult ApartmentForm()
-        {
-            return View();
-        }
-
-        public ActionResult HouseForm()
-        {
-            return View();
-        }
+       
 
         public ActionResult CommercialForm()
         {

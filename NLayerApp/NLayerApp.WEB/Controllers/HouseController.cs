@@ -16,6 +16,7 @@ namespace NLayerApp.WEB.Controllers
         IUnitOfWork unitOfWork=new UnitOfWork();
 
         // GET: House
+        [HttpGet]
         public ActionResult Index()
         {
             MySelect();
@@ -24,6 +25,7 @@ namespace NLayerApp.WEB.Controllers
 
 
         //POST:House(form) 
+        [HttpPost]
         public ActionResult Index(HouseSearchParameters parameters)
         {
             MySelect();
