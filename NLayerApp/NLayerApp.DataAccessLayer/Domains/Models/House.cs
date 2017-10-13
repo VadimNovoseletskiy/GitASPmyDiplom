@@ -27,7 +27,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         ///<value>
         /// Type of House   
         /// </value>
-        public string TypeHouse { get; set; }
+        public SpecialTypeHouse TypeHouse { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Part of House 
         ///  </value>
-        public string PartHouse { get; set; }
+        public int PartHouse { get; set; }
 
 
         /// <summary>
@@ -91,4 +91,16 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public Info Info { get; set; }
     }
+
+    /// <summary>
+    /// The enum. Describes the type 
+    /// of the house
+    /// </summary>
+    public enum SpecialTypeHouse 
+    {
+        House,
+        Cottage,
+        SummerHouse
+    }
+
 }
