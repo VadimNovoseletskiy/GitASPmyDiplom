@@ -57,11 +57,11 @@
             <form action="">
                 <p>Райони: </p>
                 <p>
-
+                    @Html.DropDownList("Region", ViewBag.regionName as SelectList)
                 </p>
                 <p>Населені пункти: </p>
                 <p>
-
+                    @Html.DropDownList("Village", ViewBag.villageName as SelectList)
                 </p>
 
                 <p>Тип операції:</p>
