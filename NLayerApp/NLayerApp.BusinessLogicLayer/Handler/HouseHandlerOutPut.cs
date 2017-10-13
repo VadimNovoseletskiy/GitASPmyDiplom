@@ -41,12 +41,15 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .Select(p => new HouseViewModel
                         {
                             Id = p.Id,
-                            CaptionLint = p.NameCaptionLink,
+                            CaptionLink = p.NameCaptionLink,
                             Village = p.Village.VillageName,
                             Region = p.Region.RegionName,
                             TypeHouse = p.House.TypeHouse,
                             Floor = p.House.FloorHouse,
-                            TotalArea = p.TotalAreaInfo
+                            TotalArea = p.TotalAreaInfo,
+                            DollarPrice = p.DollarPrice,
+                            GrnPrice = p.GrnPrice,
+                            NameInfo = p.NameInfo
 
                         }
                 )
