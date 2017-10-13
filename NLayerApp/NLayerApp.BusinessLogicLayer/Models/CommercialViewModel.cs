@@ -12,6 +12,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int Id { get; set; }
         public string Region { get; set; }
         public string Village { get; set; }
+        public string CaptionLink { get; set; }
         public string NameInfo { get; set; }
         public string StateCommercial { get; set; }
         public float TotalArea { get; set; }
