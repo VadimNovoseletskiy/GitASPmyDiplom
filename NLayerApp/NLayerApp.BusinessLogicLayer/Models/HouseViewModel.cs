@@ -11,7 +11,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
     public class HouseViewModel
     {
         public int Id { get; set; }
-        public string CaptionLint { get; set; }
+        public string CaptionLink { get; set; }
         public string Village{ get; set; }
         public string Region { get; set; }
         public SpecialTypeHouse TypeHouse { get; set; }
