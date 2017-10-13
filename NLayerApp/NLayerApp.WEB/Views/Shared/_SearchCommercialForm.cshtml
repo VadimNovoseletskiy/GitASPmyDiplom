@@ -1,5 +1,4 @@
-﻿
-@using System.Web.UI.WebControls
+﻿@using System.Web.UI.WebControls
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +38,7 @@
         <ul>
 
             <li>@Html.ActionLink("Головна", "Index", "Home")</li>
-            <li>@Html.ActionLink("Послуги", "Services", "Home")</li>
+            <li>@Html.ActionLink("Послуги", "Index", "Home")</li>
 
 
 
@@ -52,65 +51,56 @@
     <main id="main" role="main">
 
         <!-- форма выборки   -->
-        <section id="form">
+        <section  id="form">
             <h2 class="select">Комерційна нерухомість</h2>
 
-            <form action="">
+            <form method="POST" action="">
 
-                <p>Населений пункт/район </p>
+                <p>Райони:</p>
                 <p>
-                    <select class="kategory" required id="city">
-                        <option value=""></option>
-                        <optgroup label="м.Черкаси">
-                            <option value="">р-н Центр</option>
-                            <option value="">р-н Казбет</option>
-                            <option value="">р-н Митниця</option>
-                        </optgroup>
-                        <optgroup label="Черкаський район">
-                            <option value="">с.Вергуни</option>
-                            <option value="">с.Степанки</option>
-                            <option value="">с.Нечаївка</option>
-                            <option value="">с.Думанці</option>
-                            <option value="">с.Хутори</option>
-                        </optgroup>
+                    @Html.DropDownList("Region",ViewBag.regionName as SelectList)
+                </p>
+                <p>Населені пункти:</p>
+                <p>
+                    @Html.DropDownList("Village", ViewBag.nameVillage as SelectList)
+                </p>
+
+                <p>Тип операції:</p>
+                <p>
+                    <select name="TypeOperation" class="room_type" required>
+                        <option value="0">Оренда</option>
+                        <option value="1">Продаж</option>
                     </select>
                 </p>
 
-
                 <p>Призначення</p>
                 <p>
-                    <select class="commercial_type" name="room_end" id="room_end" required>
-                        <option>Всі типи</option>
-                        <option>Офісно-адміністративне</option>
-                        <option>Виробниче</option>
-                        <option>Складське</option>
-                        <option>Торгове</option>
-                        <option>Розважальне</option>
-                        <option>Гараж</option>
-                        <option>Вільне призначення</option>
+                    <select class="commercial_type"  name="TypeCommercial" required>
+                        <option value="Офісно-адміністративне">Офісно-адміністративне</option>
+                        <option value="Виробниче">Виробниче</option>
+                        <option value="Складське">Складське</option>
+                        <option value="Торгове">Торгове</option>
+                        <option value="Розважальне">Розважальне</option>
+                        <option value="Гараж">Гараж</option>
+                        <option value="Вільне призначення">Вільне призначення</option>
                     </select>
                 </p>
                 <fieldset>
                     <legend>Вартість</legend>
-                    <input type="radio" value="rent" name="select"/>аренда
-                    <input type="radio" value="buy" name="select"/>купити
-
-                    <p class="nevedimkaBuy" id="buy" target="_blank">
+                    <p>
                         <label>від</label>
-                        <input class="number_price" type="number" placeholder="1000" min="1000" name="room_start" size="3" maxlength="3" width="20px">
+                        <input class="number_price" type="number" placeholder="1000" min="1000" name="GrnPriceFrom" size="3" maxlength="3" width="20">
                         <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="room_end" size="3">
+                        <input class="number_price" type="number" min="1000" max="500000" placeholder="500000" name="GrnPriceTo" size="3">
+                        <label>GRN</label>
+                    </p>
+                    <p>
+                        <label>від</label>
+                        <input class="number_price" type="number" placeholder="1000" min="1000" name="DollarPriceFrom" size="3" maxlength="3" width="20">
+                        <label>до</label>
+                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="DollarPriceTo" size="3">
                         <label>$</label>
                     </p>
-                    <div>
-                        <p class="nevedimkaRent" id="rent" target="_blank">
-                            <label>від</label>
-                            <input class="number_price" type="number" placeholder="1000" min="1000" name="room_start" size="3" maxlength="3" width="20px">
-                            <label>до</label>
-                            <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="room_end" size="3">
-                            <label>GRN</label>
-                        </p>
-                    </div>
                 </fieldset>
                 <p>
                     <!-- <input class="button" type="reset" name="" value="Очистити"> -->
