@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NLayerApp.BusinessLogicLayer.Handler;
+using NLayerApp.BusinessLogicLayer.Models;
 using NLayerApp.DataAccessLayer.Interface;
 using NLayerApp.DataAccessLayer.Repository;
 using NLayerApp.WEB.Handler;
@@ -22,10 +24,13 @@ namespace NLayerApp.WEB.Controllers
 
 
         //POST:House(form) 
-        public ActionResult Index()
+        public ActionResult Index(HouseSearchParameters parameters)
         {
             MySelect();
-            return View();
+            HouseHandlerOutPut myHouseHandlerOutPut=new HouseHandlerOutPut(unitOfWork);
+            var resultHouse = myHouseHandlerOutPut.GetHouse(parameters);
+
+            return View(resultHouse);
         }
 
         void MySelect()
