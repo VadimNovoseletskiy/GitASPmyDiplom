@@ -41,9 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
+    <Compile Include="Handler\HouseHandlerOutPut.cs" />
     <Compile Include="Handler\LandHandlerOutPut.cs" />
     <Compile Include="Models\ApartmentSearchParameters.cs" />
     <Compile Include="Models\ApartmentViewModel.cs" />
+    <Compile Include="Models\HouseSearchParameters.cs" />
+    <Compile Include="Models\HouseViewModel.cs" />
     <Compile Include="Models\LandSearchParameters.cs" />
     <Compile Include="Models\LandViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
