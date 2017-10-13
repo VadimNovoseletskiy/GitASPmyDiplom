@@ -8,7 +8,9 @@ namespace NLayerApp.WEB.Controllers
 {
     public class CommercialController : Controller
     {
+
         // GET: Commercial
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
