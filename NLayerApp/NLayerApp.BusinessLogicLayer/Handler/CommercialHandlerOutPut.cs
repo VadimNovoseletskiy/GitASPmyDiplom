@@ -39,19 +39,17 @@ namespace NLayerApp.BusinessLogicLayer.Handler
 
                 )
                 .Select(p => new CommercialViewModel
-                {
-                    Id = p.Id,
-                    Village = p.Village.VillageName,
-                    Region = p.Region.RegionName,
-                    StateCommercial = p.Commercial.StateCommercial,
-                    TotalArea = p.TotalAreaInfo,
-                    DollarPrice = p.DollarPrice,
-                    GrnPrice = p.GrnPrice
-                }
-
+                                {
+                                    Id = p.Id,
+                                    Village = p.Village.VillageName,
+                                    Region = p.Region.RegionName,
+                                    StateCommercial = p.Commercial.StateCommercial,
+                                    TotalArea = p.TotalAreaInfo,
+                                    DollarPrice = p.DollarPrice,
+                                    GrnPrice = p.GrnPrice,
+                                    NameInfo = p.NameInfo
+                                }
                 )
                 .ToList<CommercialViewModel>();
-
-
     }
 }
