@@ -36,7 +36,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Part of House 
         ///  </value>
-        public int PartHouse { get; set; }
+        public SpecialPartHouse PartHouse { get; set; }
 
 
         /// <summary>
@@ -101,6 +101,21 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         House,
         Cottage,
         SummerHouse
+    }
+
+    /// <summary>
+    /// The Enum. Describes the part of the house.
+    /// </summary>
+    public enum SpecialPartHouse
+    {
+        wholePart,
+        half,
+        oneThird,
+        oneQuarter,
+        oneFifth,
+        twoThirds,
+        twoFifth
+        
     }
 
 }
