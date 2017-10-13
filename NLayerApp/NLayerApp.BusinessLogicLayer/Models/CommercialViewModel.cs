@@ -9,6 +9,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
 {
     public class CommercialViewModel
     {
+        public int Id { get; set; }
         public string Region { get; set; }
         public string Village { get; set; }
         public string StateCommercial { get; set; }
