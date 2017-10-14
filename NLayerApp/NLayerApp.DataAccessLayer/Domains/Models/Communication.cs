@@ -27,7 +27,14 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Describe communication:gas
         /// </value>
         public bool GasCommunications { get; set; }
-
+        
+        /// <summary>
+        /// The property RailWay
+        /// </summary>
+        /// <value>
+        /// Describe communication:rail way
+        /// </value>
+        public bool RailWay { get; set; }
 
         /// <summary>
         /// The property Electricity
