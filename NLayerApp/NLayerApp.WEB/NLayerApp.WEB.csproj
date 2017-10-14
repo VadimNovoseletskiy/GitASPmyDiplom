@@ -299,10 +299,10 @@
     <Content Include="Views\Apartment\Index.cshtml" />
     <Content Include="Views\House\Index.cshtml" />
     <Content Include="Views\Commercial\Index.cshtml" />
+    <Content Include="Views\LandInput\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\LandInput\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
