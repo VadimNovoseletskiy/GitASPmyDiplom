@@ -199,6 +199,7 @@
     <Compile Include="Controllers\ApartmentController.cs" />
     <Compile Include="Controllers\ApartmentInputController.cs" />
     <Compile Include="Controllers\CommercialController.cs" />
+    <Compile Include="Controllers\CommercialInputController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HouseController.cs" />
     <Compile Include="Controllers\HouseInputController.cs" />
@@ -307,6 +308,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CommercialInput\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
