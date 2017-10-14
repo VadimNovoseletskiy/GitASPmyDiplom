@@ -305,10 +305,10 @@
     <Content Include="Views\LandInput\Index.cshtml" />
     <Content Include="Views\ApartmentInput\Index.cshtml" />
     <Content Include="Views\HouseInput\Index.cshtml" />
+    <Content Include="Views\CommercialInput\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CommercialInput\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
