@@ -43,6 +43,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 NameCaptionLink = "Заголовок: Продаж квартири",
                 NameInfo = "Коротко:Продам 1 но кімнатну квартиру ",
                 DetailsInfo = "Детально: Квартира знаходиться у 10 секції на 4 поверсі, на стадії будівництва було перепланування у якому була збільшена кухня",
+                PrivateInfo = "Приватна інформація Приватна інформація Приватна інформація Приватна інформація Приватна інформація Приватна інформація",
                 Type = PropertyType.Apartment,
                 OperationType = TypeOfOperation.Lease,
                 DollarPrice = 10000,
@@ -59,6 +60,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 NameCaptionLink = "Заголовок: Продаж будинку ",
                 NameInfo = "Коротко:Продам хороший будинок біля лісу",
                 DetailsInfo = "Детально: Продам гарний будинок в їорошому районі, з усіма удобствами, готовий до проживаня. Можливий торг.",
+                PrivateInfo = "Приватна інформація Приватна інформація Приватна інформація Приватна інформація Приватна інформація Приватна інформація",
                 Type = PropertyType.House,
                 OperationType = TypeOfOperation.Sale,
                 DollarPrice = 15000,
@@ -75,6 +77,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 NameCaptionLink = "Заголовок: Продаж  комерційної неоухомості",
                 NameInfo = "Коротко:Продам Крммерційну нерухомість",
                 DetailsInfo = "Детально: Інформація про коммерційну нерухомість ",
+                PrivateInfo = "Приватна інформація Приватна інформація Приватна інформація Приватна інформація Приватна інформація Приватна інформація",
                 Type = PropertyType.Commercial,
                 OperationType = TypeOfOperation.Sale,
                 DollarPrice = 20000,
@@ -91,6 +94,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 NameCaptionLink = "Заголовок:Продаж землі",
                 NameInfo = "Коротко: Повідомлення про продаж  земельної ділянки ",
                 DetailsInfo = "Детально: Інформація про продаж зеельної ділянки ",
+                PrivateInfo = "Приватна інформація Приватна інформація Приватна інформація Приватна інформація Приватна інформація Приватна інформація",
                 Type = PropertyType.Land,
                 OperationType = TypeOfOperation.Sale,
                 DollarPrice = 2000,
@@ -181,6 +185,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 CentralWaterCommunications = true,
                 ElectricityCommunications = true,
                 GasCommunications = false,
+                RailWay = true,
                 Land = l0
 
             };
@@ -196,6 +201,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 CentralWaterCommunications = true,
                 ElectricityCommunications = true,
                 GasCommunications = true,
+                RailWay = false,
                 Commercial = c0
                 
             };
@@ -211,6 +217,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 CentralWaterCommunications = true,
                 ElectricityCommunications = true,
                 GasCommunications = true,
+                RailWay = true,
                 House = h0
             };
 
@@ -225,6 +232,7 @@ namespace NLayerApp.DataAccessLayer.Domains
                 CentralWaterCommunications = true,
                 ElectricityCommunications = true,
                 GasCommunications = true,
+                RailWay = false,
                 Apartment = ap0
             };
             dbContext.Communications.AddRange(new List<Communication> {cm0,cm1,cm2,cm3});
