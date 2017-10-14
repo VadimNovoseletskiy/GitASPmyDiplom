@@ -13,31 +13,31 @@
     <!--Населені пункти -->
     <p>
         <label>Населений пункт:</label>
-        <input type="text" id="village" name="" required />
+        <input type="text" id="village" name="Village" required />
        
     </p>
     <!--Мікрорайон-->
     <p>
         <label>Район:</label>
-        <input type="text" id="region" name=""/>
+        <input type="text" id="region" name="Region"/>
     </p>
     <!--вулиця -->
     <p>
         <label>Вулиця:</label>
-        <input type="text" id="street" name="" />
+        <input type="text" id="street" name="Street" />
     </p>
     <!--Номер будинку-->
     <p>
         <label>Будинок № :</label>
-        <input type="text" id="adress_number" name="" />
+        <input type="text" id="adress_number" name="NumberAdress" />
     </p>
 
     <label for="operation">Вид операції:</label>
-    <select id="operation" name="">
-        <option>продаж</option>
-        <option>оренда</option>
+    <select id="operation" name="OperationType">
+        <option value="0">оренда</option>
+        <option value="1">продаж</option>
     </select><br />
-</fieldset>
+</fieldset>`
 
 <!-- +++++++++++++++++++++++++++ Детальна інформація +++++++++++++++++++++++++++++++ -->
 
@@ -46,18 +46,18 @@
 
     <!-- Призначення земельної ділянки -->
     <p>
-        <label>Призначення:</label>
-        <select name="">
-            <option>Індивідуальне</option>
-            <option>Комерційне</option>
-            <option>Сільськогосподарське</option>
+        <label> Призначення земельної ділянки:</label>
+        <select name="TypeLand">
+            <option value="0">Індивідуальне</option>
+            <option value="1">Комерційне</option>
+            <option value="2">Сільськогосподарське</option>
         </select>
     </p>
 
     <!-- Площа земельної ділянки -->
     <p>
         <label> Площа земельної ділянки:</label>
-        <input type="number" id="land_area" name="land_area" min="0.1" step="0.1" /> (Га)
+        <input type="number" id="land_area" name="LandArea" min="0.1" step="0.1" /> (Га)
     </p>
 </fieldset>
 <!-- ++++++++++++++++++++++++++ Комунікаціїї ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -65,54 +65,58 @@
     <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
     <p>
     <p>
-        <input type="checkbox" />Газ
+        <input name="Gas" type="checkbox" />Газ
     </p>
     <p>
-        <input type="checkbox" />Залізнична дорога
+        <input name="RailWay" type="checkbox" />Залізнична дорога
     </p>
     <p>
-        <input type="checkbox" />Центральна каналізація
+        <input name="CentralSewerage" type="checkbox" />Центральна каналізація
     </p>
     <p>
-        <input type="checkbox" />Центральне водопостачання
+        <input name="CentralWater" type="checkbox" />Центральне водопостачання
     </p>
     <p>
-        <input type="checkbox" />Центральне отоплення
+        <input name="CentralHeating" type="checkbox" />Центральне отоплення
     </p>
     <p>
-        <input type="checkbox" />Електроенергія
+        <input name="Electricity" type="checkbox" />Електроенергія
     </p>
 
     </p>
 </fieldset>
 <fieldset>
     <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
-
+    <!-- Заголовок -->
+    <p>
+        <label style="color: crimson; font-size: 15px; font-style: oblique;">Заголовок :</label><br />
+        <textarea id="" name="CaptionLink" cols="120" rows="2"></textarea>
+    </p>
     <!-- Коротка інформація -->
     <p>
         <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
-        <textarea id="" name="" cols="120" rows="5"></textarea>
+        <textarea id="" name="NameInfo" cols="120" rows="5"></textarea>
     </p>
 
     <!-- Детальна інформація -->
     <p>
         <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
-        <textarea id="" name="" cols="120" rows="5"></textarea>
+        <textarea id="" name="InfoDetails" cols="120" rows="5"></textarea>
     </p>
     <!-- Приватна інформація -->
     <p>
         <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
-        <textarea id="" name="" cols="120" rows="5"></textarea>
+        <textarea id="" name="InfoPrivat" cols="120" rows="5"></textarea>
     </p>
     <!-- ціна в гривнях -->
     <p>
         <label>Ціна:</label>
-        <input type="number" id="" name="" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
+        <input type="number" id="" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
     </p>
     <!-- ціна в доларах -->
     <p>
         <label>Ціна:</label>
-        <input type="number" id="" name="" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
+        <input type="number" id="" name="DollarPrice" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
     </p>
 </fieldset>
 <!-- +++++++++++++++++++++++++++++++++++++ Додавання фото +++++++++++++++++++++++++++++++++++++++++++++++++ -->
