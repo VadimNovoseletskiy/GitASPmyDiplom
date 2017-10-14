@@ -5,7 +5,7 @@
 }
 
 <h2>Земля</h2>
-<form>
+<form method="POST" action="">
 <fieldset>
     <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
 
@@ -60,32 +60,37 @@
         <input type="number" id="land_area" name="LandArea" min="0.1" step="0.1" /> (Га)
     </p>
 </fieldset>
-<!-- ++++++++++++++++++++++++++ Комунікаціїї ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
-<fieldset>
-    <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
-    <p>
-    <p>
-        <input name="Gas" type="checkbox" />Газ
-    </p>
-    <p>
-        <input name="RailWay" type="checkbox" />Залізнична дорога
-    </p>
-    <p>
-        <input name="CentralSewerage" type="checkbox" />Центральна каналізація
-    </p>
-    <p>
-        <input name="CentralWater" type="checkbox" />Центральне водопостачання
-    </p>
-    <p>
-        <input name="CentralHeating" type="checkbox" />Центральне отоплення
-    </p>
-    <p>
-        <input name="Electricity" type="checkbox" />Електроенергія
-    </p>
+    <!-- ++++++++++++++++++++++++++ Комунікаціїї ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-    </p>
-</fieldset>
-<fieldset>
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
+        <!--
+        <p>
+            <p>
+                <input name="Gas" type="checkbox"/>Газ
+            </p>
+            <p>
+                <input name="RailWay" type="checkbox"/>Залізнична дорога
+            </p>
+            <p>
+                <input name="CentralSewerage" type="checkbox"/>Центральна каналізація
+            </p>
+            <p>
+                <input name="CentralWater" type="checkbox"/>Центральне водопостачання
+            </p>
+            <p>
+                <input name="CentralHeating" type="checkbox"/>Центральне отоплення
+            </p>
+            <p>
+                <input name="Electricity" type="checkbox"/>Електроенергія
+            </p>
+
+        </p>
+            -->
+    </fieldset>
+    
+    <!--+++++++++++++++++++++++++++++ Опис обьєкту ++++++++++++++++++++++++++++++++++++ -->
+    <fieldset>
     <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
     <!-- Заголовок -->
     <p>
