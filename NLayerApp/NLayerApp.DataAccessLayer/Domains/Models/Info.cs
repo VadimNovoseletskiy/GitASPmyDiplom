@@ -38,6 +38,14 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </value>
         public string DetailsInfo { get; set; }
 
+        /// <summary>
+        /// The property Private info
+        /// </summary>
+        /// <value>
+        /// Description secret info
+        /// </value>
+        public string PrivateInfo { get; set; }
+
 
         /// <summary>
         /// The property Type 
