@@ -60,6 +60,7 @@
     <Compile Include="Domains\Models\Material.cs" />
     <Compile Include="Domains\Models\OutBuilding.cs" />
     <Compile Include="Domains\Models\Region.cs" />
+    <Compile Include="Domains\Models\Street.cs" />
     <Compile Include="Domains\Models\Village.cs" />
     <Compile Include="Domains\Models\WallMaterial.cs" />
     <Compile Include="Domains\MyContextInitializer.cs" />
