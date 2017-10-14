@@ -99,6 +99,13 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public int? RegionId { get; set; }
         public Region Region { get; set; }
 
+        /// <summary>
+        /// The Foreign Key.
+        /// The link to the class "Street"(one to many communication)
+        /// </summary> 
+        public int? StreetId { get; set; }
+        public Street Street { get; set; }
+
 
         /// <summary>
         /// The link to the Child class"Apartment"(one to one communication) 
