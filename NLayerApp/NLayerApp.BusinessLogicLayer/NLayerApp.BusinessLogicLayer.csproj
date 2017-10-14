@@ -51,6 +51,7 @@
     <Compile Include="Models\CommercialViewModel.cs" />
     <Compile Include="Models\HouseSearchParameters.cs" />
     <Compile Include="Models\HouseViewModel.cs" />
+    <Compile Include="Models\LandInputParameters.cs" />
     <Compile Include="Models\LandSearchParameters.cs" />
     <Compile Include="Models\LandViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
