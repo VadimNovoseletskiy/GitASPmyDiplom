@@ -55,6 +55,11 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </value>
         public TypeOfOperation OperationType { get; set; }
 
+        /// <summary>
+        /// The property "Address Number" 
+        /// Describes the number  of the house.
+        /// </summary>
+        public string AddressNumber { get; set; }
 
         /// <summary>
         /// The property TotalAreaInfo 
