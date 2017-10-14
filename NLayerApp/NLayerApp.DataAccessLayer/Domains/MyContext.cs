@@ -16,7 +16,7 @@ namespace NLayerApp.DataAccessLayer.Domains
         /// </summary>
         static MyContext()
         {
-         Database.SetInitializer<MyContext>(new MyContextInitializer());
+                 //Database.SetInitializer<MyContext>(new MyContextInitializer());
         }
 
 
