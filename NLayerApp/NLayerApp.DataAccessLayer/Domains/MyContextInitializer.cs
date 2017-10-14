@@ -29,6 +29,14 @@ namespace NLayerApp.DataAccessLayer.Domains
             Region r3 = new Region { RegionName = "р-н Казбет(м.Черкаси)" };
             dbContext.Regions.AddRange(new List<Region> {r0, r1,r2,r3});
 
+            //add street
+            Street s0 = new Street {StreetName = "Шевченка"};
+            Street s1 = new Street {StreetName = "Л.Українки"};
+            Street s2 = new Street { StreetName ="Соборна" };
+            Street s3 = new Street { StreetName ="Франка" };
+            Street s4 = new Street { StreetName = "Сумгаїтська"};
+            dbContext.Streets.AddRange(new List<Street> {s0,s1,s2,s3,s4});
+
             //add info
             Info i0=new Info
             {
@@ -41,7 +49,10 @@ namespace NLayerApp.DataAccessLayer.Domains
                 GrnPrice = 250000,
                 TotalAreaInfo = 60,
                 Village= v0,
-                Region = r1
+                Region = r1,
+                Street = s0,
+                AddressNumber = "11"
+                
             };
             Info i1=new Info
             {
@@ -54,7 +65,9 @@ namespace NLayerApp.DataAccessLayer.Domains
                 GrnPrice = 375000,
                 TotalAreaInfo = 120.5f,
                 Village = v1,
-                Region = r0
+                Region = r0,
+                Street = s1,
+                AddressNumber = "22"
             };
 
             Info i2=new Info
@@ -68,7 +81,9 @@ namespace NLayerApp.DataAccessLayer.Domains
                 GrnPrice = 500000,
                 TotalAreaInfo = 756.4f,
                 Village = v0,
-                Region = r3
+                Region = r3,
+                Street = s2,
+                AddressNumber = "33"
             };
 
             Info i3=new Info
@@ -82,7 +97,9 @@ namespace NLayerApp.DataAccessLayer.Domains
                 GrnPrice = 50000,
                 TotalAreaInfo = 956.4f,
                 Village = v2,
-                Region = r0
+                Region = r0,
+                Street = s3,
+                AddressNumber = "44"
             };
 
             dbContext.Infos.AddRange(new List<Info> {i0,i1,i2,i3});
