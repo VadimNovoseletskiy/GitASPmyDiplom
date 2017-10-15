@@ -49,7 +49,7 @@
     <Compile Include="Handler\LandHandlerOutPut.cs" />
     <Compile Include="Models\ApartmentSearchParameters.cs" />
     <Compile Include="Models\ApartmentViewModel.cs" />
-    <Compile Include="Models\ApartmerntInputParameters.cs" />
+    <Compile Include="Models\ApartmentInputParameters.cs" />
     <Compile Include="Models\CommercialSearchParameters.cs" />
     <Compile Include="Models\CommercialViewModel.cs" />
     <Compile Include="Models\HouseInputParameters.cs" />

@@ -3,11 +3,66 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NLayerApp.BusinessLogicLayer.Models;
+using NLayerApp.DataAccessLayer.Domains.Models;
+using NLayerApp.DataAccessLayer.Interface;
+using NLayerApp.DataAccessLayer.Repository;
 
 namespace NLayerApp.BusinessLogicLayer.Handler
 {
     public class ApartmentHandlerInput
     {
+        private readonly IUnitOfWork unitOfWork;
 
+        public ApartmentHandlerInput(IUnitOfWork unitOfWork)
+        {
+            this.unitOfWork = unitOfWork;
+        }
+
+        public ApartmentHandlerInput() : this(new UnitOfWork())
+        {
+        }
+
+        public void InsertApartment(ApartmentInputParameters parameters)
+        {
+            Info myInfo = new Info
+            {
+                Region = new Region { RegionName = parameters.Region },
+                Village = new Village { VillageName = parameters.Village },
+                Street = new Street { StreetName = parameters.Street },
+                NameCaptionLink = parameters.CaptionLink,
+                NameInfo = parameters.NameInfo,
+                DetailsInfo = parameters.InfoDetails,
+                PrivateInfo = parameters.InfoPrivat,
+                Type = parameters.Type,
+                OperationType = parameters.OperationType,
+                AddressNumber = parameters.NumberAdress,
+                TotalAreaInfo = parameters.TotalArea,
+                GrnPrice = parameters.GrnPrice,
+                DollarPrice = parameters.DollarPrice,
+                Apartment = new Apartment
+                {
+                    ConditionOfApartment = parameters.ConditionOfApartment,
+                    TotalFloorApartment = parameters.TotalFloor,
+                    FloorApartment = parameters.FloorApartment,
+                    LivingAreaApartment = parameters.LivingAreaApartment,
+                    KitchenAreaApartment = parameters.KitchenAreaApartment,
+                    RoomsApartment = parameters.RoomsApartment,
+                    TypeRoom = parameters.RoomType,
+                    BathRoomApartment = parameters.BathRoomApartment,
+                    BalconyApartment = parameters.BalconyApartment,
+                    ReadinessApartment = parameters.ReadinessApartment
+                }
+               
+            };
+
+            this.unitOfWork.GenericRepository<Info>().InsertPhoto(myInfo);
+
+        }
+
+        public void SaveObject()
+        {
+            this.unitOfWork.SaveChanges();
+        }
     }
 }
