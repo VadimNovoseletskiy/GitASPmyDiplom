@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handler\ApartmentHandlerInput.cs" />
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
     <Compile Include="Handler\CommercialHandlerOutPut.cs" />
     <Compile Include="Handler\HouseHandlerInput.cs" />
