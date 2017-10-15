@@ -37,112 +37,108 @@
             <option value="0">оренда</option>
             <option value="1">продаж</option>
         </select><br />
-        <!--прододжить разбоп с этого места -->
     </fieldset>
     <!-- +++++++++++++++++++++++++++ Детальна інформація +++++++++++++++++++++++++++++++ -->
     <fieldset>
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
+        <!--Призначення обьекту-->
         <p>
             <label>Призначення:</label>
-            <select>
-                <option>Офісно-адміністративне</option>
-                <option>Виробниче</option>
-                <option>Складське</option>
-                <option>Торгове</option>
-                <option>Розважальне</option>
-                <option>Гараж</option>
-                <option>Вільне призначення</option>
+            <select name="TypeCommercial">
+                <option value="Офісно-адміністративне">Офісно-адміністративне</option>
+                <option value="Виробниче">Виробниче</option>
+                <option value="Складське">Складське</option>
+                <option value="Торгове">Торгове</option>
+                <option value="Розважальне">Розважальне</option>
+                <option value="Гараж">Гараж</option>
+                <option value="Вільне призначення" >Вільне призначення</option>
             </select>
         </p>
 
         <!--Стан обьекту-->
         <p>
             <label>Стан:</label>
-            <select>
-                <option>відмінний</option>
-                <option>хороший</option>
-                <option>задовільний</option>
-                <option>потрібний ремонт</option>
-                <option>оздоблювальні роботи</option>
+            <select name="StateCommercial">
+                <option value="відмінний">відмінний</option>
+                <option value="хороший">хороший</option>
+                <option value="задовільний">задовільний</option>
+                <option value="потрібний ремонт">потрібний ремонт</option>
+                <option value="оздоблювальні роботи">оздоблювальні роботи</option>
             </select>
         </p>
         <!-- Поверх -->
         <p>
             <label>Поверх:</label>
-            <select>
-                <option>підвал</option>
-                <option>цоколь</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-                <option>11</option>
-                <option>12</option>
-                <option>13</option>
-                <option>14</option>
-                <option>15</option>
-                <option>16</option>
-                <option>17</option>
-                <option>18</option>
-                <option>19</option>
-                <option>20</option>
-                <option>21</option>
-                <option>22</option>
-                <option>23</option>
-                <option>24</option>
+            <select name="FloorCommercial">
+                <option value="-1">підвал</option>
+                <option value="0">цоколь</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16+</option>
             </select>
         </p>
         <!-- зангальні кількість поверхів -->
         <p>
             <label>Загальна кількість поверхів:</label>
-            <input type="number" id="float_number" name="float_number" min="1" max="24" />
+            <input type="number" id="float_number" name="TotalFloorCommercial" min="1" max="16" />
         </p>
         <!-- Матеріал підлоги -->
         <p>
             <label>Матеріал підлоги:</label>
-            <select>
-                <option>паркет</option>
-                <option>ламінат</option>
-                <option>лінолеум</option>
-                <option>кахель</option>
-                <option>ковралін</option>
-                <option>дошка</option>
-                <option>ДВП</option>
-                <option>бетон</option>
-            </select>
+        <!--
+        <select>
+            <option>паркет</option>
+            <option>ламінат</option>
+            <option>лінолеум</option>
+            <option>кахель</option>
+            <option>ковралін</option>
+            <option>дошка</option>
+            <option>ДВП</option>
+            <option>бетон</option>
+        </select>
+            -->
         </p>
         <!-- Матеріал стін -->
         <p>
             <label>Матеріал стін:</label>
-            <select>
-                <option>цегла</option>
-                <option>панель</option>
-                <option>моноліт</option>
-                <option>дерево</option>
-                <option>дерево-цегла</option>
-            </select>
+        <!--
+        <select>
+            <option>цегла</option>
+            <option>панель</option>
+            <option>моноліт</option>
+            <option>дерево</option>
+            <option>дерево-цегла</option>
+        </select>
         </p>
+            -->
         <!-- Загальна площа -->
         <p>
             <label>Загальна площа:</label>
-            <input type="number" id="total_area" name="total_area" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
+            <input type="number" id="total_area" name="TotalArea" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
         </p>
         <!-- Корисна  плоша -->
         <p>
             <label>Корисна площа </label><!--???????????????????????????????????-->
-            <input type="number" id="living_area" name="living_area" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
+            <input type="number" id="living_area" name="EffectiveAreaCommercial" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
         </p>
         <!-- Площа земельної ділянки  -->
         <p>
-            <label> Площа земельної ділянки:</label><!--???????????????????????????????????-->
-            <input type="number" id="kitchen_area" name="kitchen_area" min="0.1" max="200.9" step="0.1" /> (Га)
-        </p>
+            <label> Площа прилягаючої земельної ділянки:</label><!--???????????????????????????????????-->
+            <input type="number" id="" name="LandAreaCommercial" min="0.1" max="200.9" step="0.1" /> (Га)
+        </p>    
     </fieldset>
     <!-- ++++++++++++++++++++++++++ Комунікаціїї ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
@@ -228,45 +224,52 @@
     <!-- ++++++++++++++++++++++++++++++++++++++ Опис обєкту ++++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
-
+        <!-- Заголовок -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Заголовок :</label><br />
+            <textarea id="" name="CaptionLink" cols="120" rows="2"></textarea>
+        </p>
         <!-- Коротка інформація -->
         <p>
             <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
-            <textarea id="" name="" cols="120" rows="5"></textarea>
+            <textarea id="" name="NameInfo" cols="120" rows="5"></textarea>
         </p>
 
         <!-- Детальна інформація -->
         <p>
             <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
-            <textarea id="" name="" cols="120" rows="5"></textarea>
+            <textarea id="" name="InfoDetails" cols="120" rows="5"></textarea>
         </p>
         <!-- Приватна інформація -->
         <p>
             <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
-            <textarea id="" name="" cols="120" rows="5"></textarea>
+            <textarea id="" name="InfoPrivat" cols="120" rows="5"></textarea>
         </p>
         <!-- ціна в гривнях -->
         <p>
             <label>Ціна:</label>
-            <input type="number" id="" name="" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
+            <input type="number" id="" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
         </p>
         <!-- ціна в доларах -->
         <p>
             <label>Ціна:</label>
-            <input type="number" id="" name="" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
+            <input type="number" id="" name="DollarPrice" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
         </p>
     </fieldset>
     <!-- +++++++++++++++++++++++++++++++++++++ Додавання фото +++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Додати фото</legend>
+        <!--
         <p>
-            <input type="file" name="foto" multiple />
+            <input type="file" name="foto" multiple/>
         </p>
+    -->
+
     </fieldset>
     <p>
         <button type="submit">Зберегти обьєкт</button>
         <button type="reset">Очистити форму</button>
-        <button type="button">Видалити обьєкт</button>
+       
     </p>
 
 </form>
