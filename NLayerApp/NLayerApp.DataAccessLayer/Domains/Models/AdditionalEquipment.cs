@@ -97,9 +97,18 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Property Double glazed windows
         /// </summary>
         /// <value>
-        /// Additional Equipment : Additional Equipment :
+        /// Additional Equipment : Additional Equipment 
         /// </value>
         public bool WindowsAdditionalEquipment { get; set; }
+
+
+        /// <summary>
+        /// Property Furniture
+        /// </summary>
+        /// <value>
+        /// Additional Equipment : Furniture
+        /// </value>
+        public bool FurnitureAdditionalEquipment { get; set; }
 
 
         /// <summary>
@@ -109,6 +118,16 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Additional Equipment :Telephone  
         /// </value>
         public bool TelephoneAdditionalEqipment { get; set; }
+
+        /// <summary>
+        /// Property WashingMachineAdditionalEqipment
+        /// </summary>
+        /// <value>
+        /// AdditionalEqipment:WashingMachine
+        /// </value>
+        public bool WashingMachineAdditionalEqipment { get; set; }
+
+
 
         //Links:
 
