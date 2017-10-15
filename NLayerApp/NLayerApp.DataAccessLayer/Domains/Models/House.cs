@@ -31,6 +31,15 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
 
 
         /// <summary>
+        /// The property ConditionOfHouse
+        /// </summary>
+        /// <value>
+        /// The condition of the house
+        /// </value>
+        public string ConditionOfHouse { get; set; }
+
+
+        /// <summary>
         /// The property PartHouse
         /// </summary>
         /// <value>
