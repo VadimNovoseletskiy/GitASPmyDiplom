@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Handler\ApartmentHandlerInput.cs" />
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
+    <Compile Include="Handler\CommercialHandlerInput.cs" />
     <Compile Include="Handler\CommercialHandlerOutPut.cs" />
     <Compile Include="Handler\HouseHandlerInput.cs" />
     <Compile Include="Handler\HouseHandlerOutPut.cs" />
