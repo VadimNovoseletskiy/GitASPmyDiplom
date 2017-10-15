@@ -20,6 +20,14 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         [ForeignKey("Info")]
         public int Id { get; set; }
 
+        /// <summary>
+        /// Property ConditionOfApartment
+        /// </summary>
+        /// <value>
+        /// Describes the condition of the apartment
+        /// </value>
+        public string ConditionOfApartment { get; set; }
+
 
         /// <summary>
         /// Property Number of floors in the house
