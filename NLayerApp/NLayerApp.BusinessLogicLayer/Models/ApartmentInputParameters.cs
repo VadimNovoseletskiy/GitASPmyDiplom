@@ -7,7 +7,7 @@ using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.BusinessLogicLayer.Models
 {
-    public class ApartmerntInputParameters
+    public class ApartmentInputParameters
     {
         public PropertyType Type = PropertyType.Apartment;
         //Address
