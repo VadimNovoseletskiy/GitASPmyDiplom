@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_InputObjectForm.cshtml";
 }
@@ -29,7 +28,7 @@
     <!--Номер будинку-->
     <p>
         <label>Будинок № :</label>
-        <input type="text" id="adress_number" name="NumberAdress" />
+        @Html.DropDownList("Street", ViewBag.streetName as SelectList)
     </p>
 
     <label for="operation">Вид операції:</label>

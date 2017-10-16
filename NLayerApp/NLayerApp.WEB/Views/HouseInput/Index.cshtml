@@ -22,7 +22,7 @@
         <!--вулиця -->
         <p>
             <label>Вулиця:</label>
-            <input type="text" id="street" name="Street" />
+            @Html.DropDownList("Street", ViewBag.streetName as SelectList)
         </p>
         <!--Номер будинку-->
         <p>
