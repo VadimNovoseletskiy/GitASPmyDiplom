@@ -44,6 +44,7 @@
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
     <Compile Include="Handler\CommercialHandlerInput.cs" />
     <Compile Include="Handler\CommercialHandlerOutPut.cs" />
+    <Compile Include="Handler\DictunaryHandler.cs" />
     <Compile Include="Handler\HouseHandlerInput.cs" />
     <Compile Include="Handler\HouseHandlerOutPut.cs" />
     <Compile Include="Handler\LandHandlerInput.cs" />
@@ -60,6 +61,8 @@
     <Compile Include="Models\LandInputParameters.cs" />
     <Compile Include="Models\LandSearchParameters.cs" />
     <Compile Include="Models\LandViewModel.cs" />
+    <Compile Include="Models\RegionInputParameters.cs" />
+    <Compile Include="Models\RegionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

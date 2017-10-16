@@ -200,6 +200,7 @@
     <Compile Include="Controllers\ApartmentInputController.cs" />
     <Compile Include="Controllers\CommercialController.cs" />
     <Compile Include="Controllers\CommercialInputController.cs" />
+    <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HouseController.cs" />
     <Compile Include="Controllers\HouseInputController.cs" />
@@ -310,6 +311,7 @@
     <Content Include="Views\CommercialInput\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\MyAbout.cshtml" />
+    <Content Include="Views\Dictionary\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
