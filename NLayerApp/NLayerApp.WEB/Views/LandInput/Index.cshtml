@@ -9,17 +9,17 @@
 <fieldset>
     <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
 
-
+    
     <!--Населені пункти -->
     <p>
         <label>Населений пункт:</label>
-        <input type="text" id="village" name="Village" required />
+        @Html.DropDownList("Village", ViewBag.villageName as SelectList)
        
     </p>
     <!--район-->
     <p>
         <label>Район:</label>
-        <input type="text" id="region" name="Region"/>
+        @Html.DropDownList("Region", ViewBag.regionName as SelectList)
     </p>
     <!--вулиця -->
     <p>

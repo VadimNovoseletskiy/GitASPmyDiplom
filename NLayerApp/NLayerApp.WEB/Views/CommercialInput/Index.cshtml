@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_InputObjectForm.cshtml";
 }
@@ -10,16 +9,17 @@
     <!-- ++++++++++++++++++++++++++   Адреса  ++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
+        
 
         <!--Населені пункти -->
         <p>
             <label>Населений пункт:</label>
-            <input type="text" id="village" name="Village" required />
+            @Html.DropDownList("Village", ViewBag.villageName as SelectList)
         </p>
         <!--Райони-->
         <p>
             <label>Район:</label>
-            <input type="text" id="region" name="Region" required />
+            @Html.DropDownList("Region", ViewBag.regionName as SelectList)
         </p>
         <!--вулиця -->
         <p>
