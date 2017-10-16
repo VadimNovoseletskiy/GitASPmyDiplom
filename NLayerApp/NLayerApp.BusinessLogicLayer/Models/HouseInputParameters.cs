@@ -11,9 +11,9 @@ namespace NLayerApp.BusinessLogicLayer.Models
     {
         public PropertyType Type = PropertyType.House;
   //Address
-        public string Village { get; set; }
-        public string Region { get; set; }
-        public string Street { get; set; }
+        public int Village { get; set; }
+        public int Region { get; set; }
+        public int Street { get; set; }
         public string NumberAdress { get; set; }
         public TypeOfOperation OperationType { get; set; }
 
@@ -23,7 +23,8 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string ConditionHouse { get; set; }
         public int RoomsHouse { get; set; }//
         public int FloorHouse { get; set; }//
-       //?? таблица "Материалы"(нету полей 1."материал стен материал" 2."материал пола")
+        public int FloorMaterial { get; set; }
+        public int WallMaterial { get; set; }
         public float TotalAreaInfo { get; set; }
         public float LivingAreaHouse { get; set; }//
         public float KitchenAreaHouse { get; set; }//

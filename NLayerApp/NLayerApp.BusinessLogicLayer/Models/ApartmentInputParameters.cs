@@ -11,9 +11,9 @@ namespace NLayerApp.BusinessLogicLayer.Models
     {
         public PropertyType Type = PropertyType.Apartment;
         //Address
-        public string Village { get; set; }
-        public string Region { get; set; }
-        public string Street { get; set; }
+        public int Village { get; set; }
+        public int Region { get; set; }
+        public int Street { get; set; }
         public string NumberAdress { get; set; }
         public TypeOfOperation OperationType { get; set; }
 
@@ -26,8 +26,8 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int BalconyApartment { get; set; }
         public int FloorApartment { get; set; }
         public int TotalFloor { get; set; }
-        //материал пола
-        //материал стен
+        public int FloorMaterial { get; set; }
+        public int WallMaterial { get; set; }
         public float TotalArea { get; set; }
         public float LivingAreaApartment { get; set; }
         public float KitchenAreaApartment { get; set; }

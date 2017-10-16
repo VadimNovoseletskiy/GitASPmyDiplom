@@ -11,9 +11,9 @@ namespace NLayerApp.BusinessLogicLayer.Models
     {
         public PropertyType Type = PropertyType.Commercial;
 //Address
-        public string Village { get; set; }
-        public string Region { get; set; }
-        public string Street { get; set; }
+        public int Village { get; set; }
+        public int Region { get; set; }
+        public int Street { get; set; }
         public string NumberAdress { get; set; }
         public TypeOfOperation OperationType { get; set; }
 
@@ -23,8 +23,8 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string StateCommercial { get; set; }
         public int FloorCommercial { get; set; }
         public int TotalFloorCommercial { get; set; }
-        //Материал пола 
-        //Материал стен
+        public int FloorMaterial { get; set; }
+        public int WallMaterial { get; set; }
         public float TotalArea { get; set; }
         public float EffectiveAreaCommercial { get; set; }
         public float LandAreaCommercial { get; set; }

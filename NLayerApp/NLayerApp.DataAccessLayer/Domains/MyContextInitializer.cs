@@ -37,6 +37,25 @@ namespace NLayerApp.DataAccessLayer.Domains
             Street s4 = new Street { StreetName = "Сумгаїтська"};
             dbContext.Streets.AddRange(new List<Street> {s0,s1,s2,s3,s4});
 
+            //add wall material
+            WallMaterial w0 = new WallMaterial { NameWallMaterils = "цегла" };
+            WallMaterial w1 = new WallMaterial { NameWallMaterils = "панель" };
+            WallMaterial w2 = new WallMaterial { NameWallMaterils = "моноліт" };
+            WallMaterial w3 = new WallMaterial { NameWallMaterils = "дерево" };
+            WallMaterial w4 = new WallMaterial { NameWallMaterils = "дерево-цегла" };
+            dbContext.WallMaterials.AddRange(new List<WallMaterial> {w0, w1, w2, w3, w4});
+
+            //Add floor material
+            FloorMaterial fm0 = new FloorMaterial { NameFloorMaterils = "паркет" };
+            FloorMaterial fm1 = new FloorMaterial { NameFloorMaterils = "ламінат" };
+            FloorMaterial fm2 = new FloorMaterial { NameFloorMaterils = "лінолеум" };
+            FloorMaterial fm3 = new FloorMaterial { NameFloorMaterils = "кахель" };
+            FloorMaterial fm4 = new FloorMaterial { NameFloorMaterils = "ковралін" };
+            FloorMaterial fm5 = new FloorMaterial { NameFloorMaterils = "дошка" };
+            FloorMaterial fm6 = new FloorMaterial { NameFloorMaterils = "ДВП" };
+            FloorMaterial fm7 = new FloorMaterial { NameFloorMaterils = "бетон" };
+            dbContext.FloorMaterials.AddRange(new List<FloorMaterial> {fm0, fm1, fm2, fm3, fm4, fm5, fm6, fm7}); 
+            
             ////add info
             //Info i0=new Info
             //{
@@ -53,7 +72,7 @@ namespace NLayerApp.DataAccessLayer.Domains
             //    Region = r1,
             //    Street = s0,
             //    AddressNumber = "11"
-                
+
             //};
             //Info i1=new Info
             //{
@@ -125,11 +144,11 @@ namespace NLayerApp.DataAccessLayer.Domains
 
 
             //};
-           
+
 
             //dbContext.Apartments.AddRange(new List<Apartment> {ap0});
-            
-            
+
+
             ////add House
             //House h0=new House
             //{
@@ -203,7 +222,7 @@ namespace NLayerApp.DataAccessLayer.Domains
             //    GasCommunications = true,
             //    RailWay = false,
             //    //Commercial = c0
-                
+
             //};
 
             //Communication cm2=new Communication
@@ -299,8 +318,8 @@ namespace NLayerApp.DataAccessLayer.Domains
             //};
             //dbContext.AdditionalEquipments.AddRange(new List<AdditionalEquipment> {ad0,ad1,ad2});
 
-            
-           
+
+
 
             ////add Material 
             //Material m0=new Material

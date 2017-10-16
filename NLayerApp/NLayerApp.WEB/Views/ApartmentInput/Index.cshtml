@@ -134,31 +134,14 @@
         <!-- Матеріал підлоги -->
         <p>
             <label>Матеріал підлоги:</label>
-        <!--
-        <select>
-            <option>паркет</option>
-            <option>ламінат</option>
-            <option>лінолеум</option>
-            <option>кахель</option>
-            <option>ковралін</option>
-            <option>дошка</option>
-            <option>ДВП</option>
-            <option>бетон</option>
-        </select>
-            -->
+            @Html.DropDownList("FloorMaterial", ViewBag.floorMaterialName as SelectList)
+            
         </p>
         <!-- Матеріал стін -->
         <p>
             <label>Матеріал стін:</label>
-            <!--
-            <select>
-                <option>цегла</option>
-                <option>панель</option>
-                <option>моноліт</option>
-                <option>дерево</option>
-                <option>дерево-цегла</option>
-            </select>
-            -->
+            @Html.DropDownList("WallMaterial", ViewBag.wallMaterialName as SelectList)
+           
         </p>
         <!-- Загальна площа -->
         <p>

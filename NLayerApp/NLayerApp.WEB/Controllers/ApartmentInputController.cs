@@ -50,6 +50,16 @@ namespace NLayerApp.WEB.Controllers
             var resultStreet = myStreetHandler.GetStreet();
             SelectList listStreet=new SelectList(resultStreet, "Id","Value");
             ViewBag.streetName = listStreet;
+
+            FloorMaterialHandler myFloorMaterialHandler=new FloorMaterialHandler(unitOfWork);
+            var resultFloorMaterial = myFloorMaterialHandler.GetFloorMaterial();
+            SelectList listFoorMaterial=new SelectList(resultFloorMaterial,"Id","Value");
+            ViewBag.floorMaterialName = listFoorMaterial;
+
+            WallMaterialHandler myWallMaterialHandler = new WallMaterialHandler(unitOfWork);
+            var resultWallMaterial = myWallMaterialHandler.GetWallMaterial();
+            SelectList listWallMaterial = new SelectList(resultWallMaterial, "Id", "Value");
+            ViewBag.wallMaterialName = listWallMaterial;
         }
     }
 }

@@ -22,20 +22,32 @@ namespace NLayerApp.WEB.Handler
 
         }
 
-        public List<DropDownViewModel> GetRegion()
-        {
 
-            List<DropDownViewModel> result= this.unitOfWork.GenericRepository<Region>()
-                .Get()
-                .Select(
-                    p => new DropDownViewModel
-                    {
-                        Id = p.Id,
-                        Value = p.RegionName
-                    }
-                )
-                .ToList<DropDownViewModel>();
-            return result;
-        }
+        public List<DropDownViewModel> GetRegion() =>
+           this.unitOfWork.GenericRepository<Region>()
+               .Get()
+               .Select(
+                   p => new DropDownViewModel
+                   {
+                       Id = p.Id,
+                       Value = p.RegionName
+                   }
+               )
+               .ToList();
+        //public List<DropDownViewModel> GetRegion()
+        //{
+
+        //    List<DropDownViewModel> result= this.unitOfWork.GenericRepository<Region>()
+        //        .Get()
+        //        .Select(
+        //            p => new DropDownViewModel
+        //            {
+        //                Id = p.Id,
+        //                Value = p.RegionName
+        //            }
+        //        )
+        //        .ToList<DropDownViewModel>();
+        //    return result;
+        //}
     }
 }

@@ -27,9 +27,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         {
             Info myInfo = new Info
             {
-                Region = new Region { RegionName = parameters.Region },
-                Village = new Village { VillageName = parameters.Village },
-                Street = new Street { StreetName = parameters.Street },
+                RegionId = parameters.Region  ,
+                VillageId = parameters.Village,  
+                StreetId = parameters.Street,
                 NameCaptionLink = parameters.CaptionLink,
                 NameInfo = parameters.NameInfo,
                 DetailsInfo = parameters.InfoDetails,
@@ -40,6 +40,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 TotalAreaInfo = parameters.TotalArea,
                 GrnPrice = parameters.GrnPrice,
                 DollarPrice = parameters.DollarPrice,
+                FloorMaterialId = parameters.FloorMaterial,
+                WallMaterialId = parameters.WallMaterial,
                 Apartment = new Apartment
                 {
                     ConditionOfApartment = parameters.ConditionOfApartment,
