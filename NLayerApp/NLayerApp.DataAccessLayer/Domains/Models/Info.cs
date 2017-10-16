@@ -119,6 +119,12 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public int? StreetId { get; set; }
         public Street Street { get; set; }
 
+        // <summary>
+        /// The Foreign Key
+        /// The link to the class "Communication" (one to many communication).
+        /// </summary>
+        public int? CommunicationId { get; set; }
+        public Communication Communication { get; set; }
 
         /// <summary>
         /// The Foreign Key
@@ -127,6 +133,19 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public int? AdditionalEquipmentId { get; set; }
         public AdditionalEquipment AdditionalEquipment { get; set; }
 
+        /// <summary>
+        /// The Foreign Key
+        /// The link to the class "WallMaterial" (one to many communication).
+        /// </summary>
+        public int? WallMaterialId { get; set; }
+        public WallMaterial WallMaterial { get; set; }
+
+        /// <summary>
+        /// The Foreign Key
+        /// The link to the class "FloorMaterial" (one to many communication).
+        /// </summary>
+        public int? FloorMaterialId { get; set; }
+        public FloorMaterial FloorMaterial { get; set; }
 
         /// <summary>
         /// The link to the Child class"Apartment"(one to one communication) 
@@ -150,8 +169,6 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public Land Land { get; set; }
 
-        public int? CommunicationId { get; set; }
-        public Communication Communication { get; set; }
 
 
     }

@@ -14,47 +14,47 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
 
     public class Material
     {
-        /// <summary>
-        /// The  Foreign Key(one to one communication). Link to the Parent  class "Apartment" "House"
-        /// </summary>
-        [Key]
-        public int Id { get; set; }
+        ///// <summary>
+        ///// The  Foreign Key(one to one communication). Link to the Parent  class "Apartment" "House"
+        ///// </summary>
+        //[Key]
+        //public int Id { get; set; }
 
 
-        //Links:
+        ////Links:
 
-        /// <summary>
-        /// The navigation property.
-        /// The link to the class "WallMaterial"(one to many communication)
-        /// </summary>
-        public ICollection<WallMaterial> WallMaterials { get; set; }
+        ///// <summary>
+        ///// The navigation property.
+        ///// The link to the class "WallMaterial"(one to many communication)
+        ///// </summary>
+        //public ICollection<WallMaterial> WallMaterials { get; set; }
 
-        /// <summary>
-        /// The navigation property.
-        /// The link to the class "FloorMaterial"(one to many communication)
-        /// </summary>
-        public ICollection<FloorMaterial> FloorMaterials { get; set; }
+        ///// <summary>
+        ///// The navigation property.
+        ///// The link to the class "FloorMaterial"(one to many communication)
+        ///// </summary>
+        //public ICollection<FloorMaterial> FloorMaterials { get; set; }
 
-        public Material()
-        {
-            WallMaterials = new List<WallMaterial>();
-            FloorMaterials=new List<FloorMaterial>();
-        }
+        //public Material()
+        //{
+        //    WallMaterials = new List<WallMaterial>();
+        //    FloorMaterials=new List<FloorMaterial>();
+        //}
 
-        /// <summary>
-        /// The link to the parent class Apartment(one to one communication)
-        /// </summary>
-        public Apartment Apartment { get; set; }
+        ///// <summary>
+        ///// The link to the parent class Apartment(one to one communication)
+        ///// </summary>
+        //public Apartment Apartment { get; set; }
 
-        /// <summary>
-        /// The link to the parent class House(one to one communication)
-        /// </summary>
-        public House House { get; set; }
+        ///// <summary>
+        ///// The link to the parent class House(one to one communication)
+        ///// </summary>
+        //public House House { get; set; }
 
-        /// <summary>
-        /// The link to the parent class Commercial(one to one communication)
-        /// </summary>
-        public Commercial Commercial { get; set; }
+        ///// <summary>
+        ///// The link to the parent class Commercial(one to one communication)
+        ///// </summary>
+        //public Commercial Commercial { get; set; }
 
     }
 }
