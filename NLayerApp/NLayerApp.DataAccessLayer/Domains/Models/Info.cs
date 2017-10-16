@@ -121,6 +121,14 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
 
 
         /// <summary>
+        /// The Foreign Key
+        /// The link to the class "AdditionalEquipment" (one to many communication).
+        /// </summary>
+        public int? AdditionalEquipmentId { get; set; }
+        public AdditionalEquipment AdditionalEquipment { get; set; }
+
+
+        /// <summary>
         /// The link to the Child class"Apartment"(one to one communication) 
         /// </summary>
         public Apartment Apartment { get; set; }
