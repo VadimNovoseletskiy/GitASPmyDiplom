@@ -142,6 +142,9 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public Land Land { get; set; }
 
+        public int? CommunicationId { get; set; }
+        public Communication Communication { get; set; }
+
 
     }
 
