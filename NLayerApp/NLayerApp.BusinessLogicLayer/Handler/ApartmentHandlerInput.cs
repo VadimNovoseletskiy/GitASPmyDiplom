@@ -52,6 +52,21 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     BathRoomApartment = parameters.BathRoomApartment,
                     BalconyApartment = parameters.BalconyApartment,
                     ReadinessApartment = parameters.ReadinessApartment
+                },
+                AdditionalEquipment = new AdditionalEquipment
+                {
+                    AirConditioningAdditionalEquipment = parameters.Air,
+                    BoilerAdditionalEquipment = parameters.Boiler,
+                    CableTVadditionalEquipment = parameters.CableTv,
+                    FirePlaceAdditionalEquipment = parameters.FirePlace,
+                    FurnitureAdditionalEquipment = parameters.Furniture,
+                    IntercomAdditionalEquipment = parameters.Intercom,
+                    InternetAdditionalEquipment = parameters.Internet,
+                    SignalingAdditionalEquipment = parameters.Signaling,
+                    SatelliteTVadditionalEquipment = parameters.SatelliteTv,
+                    WashingMachineAdditionalEqipment = parameters.WashingMachine,
+                    WindowsAdditionalEquipment = parameters.MyWindows,
+                    TelephoneAdditionalEqipment = parameters.Telephone
                 }
                
             };
