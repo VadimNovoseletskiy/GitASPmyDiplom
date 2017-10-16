@@ -49,7 +49,35 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                     TotalFloorCommercial = parameters.TotalFloorCommercial,
                                     EffectiveAreaCommercial = parameters.EffectiveAreaCommercial,
                                     LandAreaCommercial = parameters.LandAreaCommercial
-                                }
+                                },
+                Communication = new Communication
+                {
+                    GasCommunications = parameters.Gas,
+                    RailWay = parameters.RailWay,
+                    ElectricityCommunications = parameters.Electricity,
+                    CentralSewerageCommunications = parameters.CentralSewerage,
+                    CentralWaterCommunications = parameters.CentralWater,
+                    CentralHeatingCommunications = parameters.CentralHeating,
+                    AutonomousSewerageCommunications = parameters.AutonomousSewerage,
+                    AutonomousWaterCommunications = parameters.AutonomousWater,
+                    AutonomusHeatingCommunications = parameters.CentralHeating
+                },
+                AdditionalEquipment = new AdditionalEquipment
+                {
+                    AirConditioningAdditionalEquipment = parameters.Air,
+                    BoilerAdditionalEquipment = parameters.Boiler,
+                    CableTVadditionalEquipment = parameters.CableTv,
+                    FirePlaceAdditionalEquipment = parameters.FirePlace,
+                    FurnitureAdditionalEquipment = parameters.Furniture,
+                    IntercomAdditionalEquipment = parameters.Intercom,
+                    InternetAdditionalEquipment = parameters.Internet,
+                    SignalingAdditionalEquipment = parameters.Signaling,
+                    SatelliteTVadditionalEquipment = parameters.SatelliteTv,
+                    WashingMachineAdditionalEqipment = parameters.WashingMachine,
+                    WindowsAdditionalEquipment = parameters.MyWindows,
+                    TelephoneAdditionalEqipment = parameters.Telephone
+
+                }
             };
 
             this.unitOfWork.GenericRepository<Info>().InsertPhoto(myInfo);

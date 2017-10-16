@@ -28,35 +28,35 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public float TotalArea { get; set; }
         public float EffectiveAreaCommercial { get; set; }
         public float LandAreaCommercial { get; set; }
-       
 
 
-     //Additional Equipment 
-        //public bool Boiler { get; set; }
-        //public bool Intercom { get; set; }
-        //public bool Internet { get; set; }
-        //public bool CableTv { get; set; }
-        //public bool FirePlace { get; set; }
-        //public bool Air { get; set; }
-        //public bool Furniture { get; set; }
-        //public bool Signaling { get; set; }
-        //public bool SatelliteTv{ get; set; }
-        //public bool MyWindows { get; set; }
-        //public bool Telephone { get; set; }
-        //public bool WashingMachine { get; set; }
 
-   //communications
-        //public bool Gas { get; set; }
-        //public bool RailWay { get; set; }
-        //public bool CentralSewerage { get; set; }
-        //public bool CentralWater { get; set; }
-        //public bool CentralHeating { get; set; }
-        //public bool Electricity { get; set; }
-        //public bool AutonomousSewerage { get; set; }
-        //public bool AutonomusHeating { get; set; }
-        //public bool AutonomousWater { get; set; }
+        //Additional Equipment 
+        public bool Boiler { get; set; }
+        public bool Intercom { get; set; }
+        public bool Internet { get; set; }
+        public bool CableTv { get; set; }
+        public bool FirePlace { get; set; }
+        public bool Air { get; set; }
+        public bool Furniture { get; set; }
+        public bool Signaling { get; set; }
+        public bool SatelliteTv { get; set; }
+        public bool MyWindows { get; set; }
+        public bool Telephone { get; set; }
+        public bool WashingMachine { get; set; }
 
-  //Describes object
+        //communications
+        public bool Gas { get; set; }
+        public bool RailWay { get; set; }
+        public bool CentralSewerage { get; set; }
+        public bool CentralWater { get; set; }
+        public bool CentralHeating { get; set; }
+        public bool Electricity { get; set; }
+        public bool AutonomousSewerage { get; set; }
+        public bool AutonomusHeating { get; set; }
+        public bool AutonomousWater { get; set; }
+
+        //Describes object
         public string CaptionLink { get; set; }
         public string NameInfo { get; set; }
         public string InfoDetails { get; set; }
