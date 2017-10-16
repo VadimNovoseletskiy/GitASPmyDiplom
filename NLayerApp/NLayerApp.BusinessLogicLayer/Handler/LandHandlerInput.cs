@@ -42,6 +42,16 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 DollarPrice = parameters.DollarPrice,
                 Land= new Land { SpecialLand = parameters.TypeLand,
                                     LandArea = parameters.LandArea},
+                Communication = new Communication
+                {
+                    GasCommunications = parameters.Gas,
+                    RailWay = parameters.RailWay,
+                    ElectricityCommunications = parameters.Electricity,
+                    CentralSewerageCommunications = parameters.CentralSewerage,
+                    CentralWaterCommunications = parameters.CentralWater,
+                    CentralHeatingCommunications = parameters.CentralHeating,
+                    AutonomusHeatingCommunications = parameters.CentralHeating
+                }
             };
 
             this.unitOfWork.GenericRepository<Info>().InsertPhoto(myInfo);

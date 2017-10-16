@@ -19,14 +19,14 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public TypeOfOperation OperationType { get; set; }
         public SpecialTypeLand TypeLand { get; set; }
         public float LandArea { get; set; }
-//communications
-        //public bool Gas { get; set; }
-        //public bool RailWay { get; set; }
-        //public bool CentralSewerage { get; set; }
-        //public bool CentralWater { get; set; }
-        //public bool CentralHeating { get; set; }
-        //public bool Electricity { get; set; }
-//Describes object
+        //communications
+        public bool Gas { get; set; }
+        public bool RailWay { get; set; }
+        public bool CentralSewerage { get; set; }
+        public bool CentralWater { get; set; }
+        public bool CentralHeating { get; set; }
+        public bool Electricity { get; set; }
+        //Describes object
         public string CaptionLink { get; set; }
         public string NameInfo { get; set; }
         public string InfoDetails { get; set; }

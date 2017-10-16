@@ -23,12 +23,12 @@
     <!--вулиця -->
     <p>
         <label>Вулиця:</label>
-        <input type="text" id="street" name="Street" />
+        @Html.DropDownList("Street", ViewBag.streetName as SelectList)
     </p>
     <!--Номер будинку-->
     <p>
         <label>Будинок № :</label>
-        @Html.DropDownList("Street", ViewBag.streetName as SelectList)
+        <input type="text" id="adress_number" name="NumberAdress" />
     </p>
 
     <label for="operation">Вид операції:</label>
@@ -63,30 +63,30 @@
 
     <fieldset>
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
-        <!--
+        
         <p>
             <p>
-                <input name="Gas" type="checkbox"/>Газ
+                <input value="true" name="Gas" type="checkbox"/>Газ
             </p>
             <p>
-                <input name="RailWay" type="checkbox"/>Залізнична дорога
+                <input value="true" name="RailWay" type="checkbox"/>Залізнична дорога
             </p>
             <p>
-                <input name="CentralSewerage" type="checkbox"/>Центральна каналізація
+                <input value="true" name="CentralSewerage" type="checkbox"/>Центральна каналізація
             </p>
             <p>
-                <input name="CentralWater" type="checkbox"/>Центральне водопостачання
+                <input value="true" name="CentralWater" type="checkbox"/>Центральне водопостачання
             </p>
             <p>
-                <input name="CentralHeating" type="checkbox"/>Центральне отоплення
+                <input value="true" name="CentralHeating" type="checkbox"/>Центральне отоплення
             </p>
             <p>
-                <input name="Electricity" type="checkbox"/>Електроенергія
+                <input value="true" name="Electricity" type="checkbox"/>Електроенергія
             </p>
             
 
         </p>
-            -->
+            
     </fieldset>
     
     <!--+++++++++++++++++++++++++++++ Опис обьєкту ++++++++++++++++++++++++++++++++++++ -->
