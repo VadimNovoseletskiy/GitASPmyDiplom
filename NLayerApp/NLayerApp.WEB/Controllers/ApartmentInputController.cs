@@ -45,6 +45,11 @@ namespace NLayerApp.WEB.Controllers
             var resultVillage = myVillageHandler.GetVillage();
             SelectList listVillage = new SelectList(resultVillage, "Id", "Value");
             ViewBag.villageName = listVillage;
+
+            StreetHandler myStreetHandler=new StreetHandler(unitOfWork);
+            var resultStreet = myStreetHandler.GetStreet();
+            SelectList listStreet=new SelectList(resultStreet, "Id","Value");
+            ViewBag.streetName = listStreet;
         }
     }
 }
