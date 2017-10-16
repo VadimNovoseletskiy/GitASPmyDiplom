@@ -49,8 +49,30 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                     RoomsHouse = parameters.RoomsHouse,
                                     LivingAreaHouse = parameters.LivingAreaHouse,
                                     KitchenAreaHouse = parameters.KitchenAreaHouse,
-                                    LandAreaHouse = parameters.LandAreaHouse
-                                }
+                                    LandAreaHouse = parameters.LandAreaHouse,
+               
+                                    BarnOutBuildings = parameters.Barn,
+                                    BahtHouseOutBuilding = parameters.BahtHouse,
+                                    SwimmingOutBuildings = parameters.Swimming,
+                                    GarageOutBuildings = parameters.Garage,
+                                    WellOutBuildings = parameters.Well,
+                                    Well1OutBuildings = parameters.Well1,
+                                    SummerKitchenOutBuildings = parameters.SummerKitchen,
+                                    WorkShopOutBuildings = parameters.WorkShop,
+                                    GreenHouseOutBuildings = parameters.GreenHouse
+                },
+                Communication = new Communication
+                {
+                    GasCommunications = parameters.Gas,
+                    RailWay = parameters.RailWay,
+                    ElectricityCommunications = parameters.Electricity,
+                    CentralSewerageCommunications = parameters.CentralSewerage,
+                    CentralWaterCommunications = parameters.CentralWater,
+                    CentralHeatingCommunications = parameters.CentralHeating,
+                    AutonomousSewerageCommunications = parameters.AutonomousSewerage,
+                    AutonomousWaterCommunications = parameters.AutonomousWater,
+                    AutonomusHeatingCommunications = parameters.CentralHeating
+                },
             };
 
             this.unitOfWork.GenericRepository<Info>().InsertPhoto(myInfo);
