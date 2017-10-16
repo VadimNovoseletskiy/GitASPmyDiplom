@@ -30,20 +30,20 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public float LandAreaHouse { get; set; }//
 
         //Additional Equipment 
-        //public bool Boiler { get; set; }
-        //public bool Intercom { get; set; }
-        //public bool Internet { get; set; }
-        //public bool CableTv { get; set; }
-        //public bool FirePlace { get; set; }
-        //public bool Air { get; set; }
-        //public bool Furniture { get; set; }
-        //public bool Signaling { get; set; }
-        //public bool SatelliteTv{ get; set; }
-        //public bool MyWindows { get; set; }
-        //public bool Telephone { get; set; }
-        //public bool WashingMachine { get; set; }
-        
-//OutBuildings
+        public bool Boiler { get; set; }
+        public bool Intercom { get; set; }
+        public bool Internet { get; set; }
+        public bool CableTv { get; set; }
+        public bool FirePlace { get; set; }
+        public bool Air { get; set; }
+        public bool Furniture { get; set; }
+        public bool Signaling { get; set; }
+        public bool SatelliteTv { get; set; }
+        public bool MyWindows { get; set; }
+        public bool Telephone { get; set; }
+        public bool WashingMachine { get; set; }
+
+        //OutBuildings
         public bool BahtHouse { get; set; }
         public bool Swimming { get; set; }
         public bool Garage { get; set; }
