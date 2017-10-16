@@ -10,16 +10,16 @@ using NLayerApp.DataAccessLayer.Repository;
 
 namespace NLayerApp.BusinessLogicLayer.Handler
 {
-    public class DictunaryHandler
+    public class DictionaryHandler
     {
         private readonly IUnitOfWork unitOfWork;
 
-        public DictunaryHandler(IUnitOfWork unitOfWork)
+        public DictionaryHandler(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
         }
 
-        public DictunaryHandler() : this(new UnitOfWork())
+        public DictionaryHandler() : this(new UnitOfWork())
         {
         }
 
