@@ -12,34 +12,27 @@ namespace NLayerApp.WEB.Controllers
 {
     public class HomeController : Controller
     {
-        //MyContext dbContext=new MyContext();
+        
         public ActionResult Index()
         {
-           // IQueryable<Village> villages = dbContext.Villages;
-            //ViewBag.vill = villages;
+          
             return View();
         }
 
 
-        public ActionResult InputApartmentForm()
+        public ActionResult Services()
         {
             return View();
         }
 
-        public ActionResult InputHouseForm()
+       
+
+        public ActionResult MyAbout()
         {
             return View();
         }
 
-        public ActionResult InputCommercialForm()
-        {
-            return View();
-        }
 
-        public ActionResult InputLandForm()
-        {
-            return View();
-        }
 
 
 
