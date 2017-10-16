@@ -107,10 +107,5 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
             Infos = new List<Info>();
         }
 
-       // public Info Info { get; set; }
-
-
-
-
     }
 }
