@@ -86,7 +86,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     SatelliteTVadditionalEquipment = parameters.SatelliteTv,
                     WashingMachineAdditionalEqipment = parameters.WashingMachine,
                     WindowsAdditionalEquipment = parameters.MyWindows,
-                    TelephoneAdditionalEqipment = parameters.Telephone,
+                    TelephoneAdditionalEqipment = parameters.Telephone
 
                 }
             };
