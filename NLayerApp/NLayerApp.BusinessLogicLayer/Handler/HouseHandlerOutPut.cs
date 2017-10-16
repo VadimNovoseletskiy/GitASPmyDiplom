@@ -54,7 +54,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         }
                 )
                 .ToList<HouseViewModel>();
-
+        
     }
 }
     

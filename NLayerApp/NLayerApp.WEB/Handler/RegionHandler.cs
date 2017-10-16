@@ -34,20 +34,6 @@ namespace NLayerApp.WEB.Handler
                    }
                )
                .ToList();
-        //public List<DropDownViewModel> GetRegion()
-        //{
-
-        //    List<DropDownViewModel> result= this.unitOfWork.GenericRepository<Region>()
-        //        .Get()
-        //        .Select(
-        //            p => new DropDownViewModel
-        //            {
-        //                Id = p.Id,
-        //                Value = p.RegionName
-        //            }
-        //        )
-        //        .ToList<DropDownViewModel>();
-        //    return result;
-        //}
+       
     }
 }

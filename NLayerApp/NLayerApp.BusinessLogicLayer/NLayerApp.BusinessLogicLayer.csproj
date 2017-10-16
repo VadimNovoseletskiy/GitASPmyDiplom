@@ -44,11 +44,12 @@
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
     <Compile Include="Handler\CommercialHandlerInput.cs" />
     <Compile Include="Handler\CommercialHandlerOutPut.cs" />
-    <Compile Include="Handler\DictunaryHandler.cs" />
+    <Compile Include="Handler\DictionaryHandler.cs" />
     <Compile Include="Handler\HouseHandlerInput.cs" />
     <Compile Include="Handler\HouseHandlerOutPut.cs" />
     <Compile Include="Handler\LandHandlerInput.cs" />
     <Compile Include="Handler\LandHandlerOutPut.cs" />
+    <Compile Include="Handler\LandHandlerOutPutDetails.cs" />
     <Compile Include="Models\ApartmentSearchParameters.cs" />
     <Compile Include="Models\ApartmentViewModel.cs" />
     <Compile Include="Models\ApartmentInputParameters.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Models\HouseInputParameters.cs" />
     <Compile Include="Models\HouseSearchParameters.cs" />
     <Compile Include="Models\HouseViewModel.cs" />
+    <Compile Include="Models\LandDetailsViewModel.cs" />
     <Compile Include="Models\LandInputParameters.cs" />
     <Compile Include="Models\LandSearchParameters.cs" />
     <Compile Include="Models\LandViewModel.cs" />

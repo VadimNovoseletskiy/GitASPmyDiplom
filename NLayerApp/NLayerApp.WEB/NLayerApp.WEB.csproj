@@ -207,6 +207,7 @@
     <Compile Include="Controllers\LandController.cs" />
     <Compile Include="Controllers\LandInputController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -312,6 +313,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\MyAbout.cshtml" />
     <Content Include="Views\Dictionary\Index.cshtml" />
+    <Content Include="Views\Regions\Create.cshtml" />
+    <Content Include="Views\Regions\Delete.cshtml" />
+    <Content Include="Views\Regions\Details.cshtml" />
+    <Content Include="Views\Regions\Edit.cshtml" />
+    <Content Include="Views\Regions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
