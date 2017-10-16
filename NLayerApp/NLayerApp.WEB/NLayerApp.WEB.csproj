@@ -210,6 +210,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Handler\RegionHandler.cs" />
+    <Compile Include="Handler\StreetHandler.cs" />
     <Compile Include="Handler\VillageHandler.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DropDownViewModel.cs" />
