@@ -201,6 +201,7 @@
     <Compile Include="Controllers\CommercialController.cs" />
     <Compile Include="Controllers\CommercialInputController.cs" />
     <Compile Include="Controllers\DictionaryController.cs" />
+    <Compile Include="Controllers\DictionaryStreetController.cs" />
     <Compile Include="Controllers\DictionaryVillageController.cs" />
     <Compile Include="Controllers\DictionatyRegionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -324,6 +325,8 @@
     <Content Include="Views\DictionatyRegion\Edit.cshtml" />
     <Content Include="Views\DictionaryVillage\Index.cshtml" />
     <Content Include="Views\DictionaryVillage\Edit.cshtml" />
+    <Content Include="Views\DictionaryStreet\Index.cshtml" />
+    <Content Include="Views\DictionaryStreet\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

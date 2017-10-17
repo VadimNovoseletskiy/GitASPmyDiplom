@@ -1,0 +1,44 @@
+﻿@model List<NLayerApp.BusinessLogicLayer.Models.StreetViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Словник назв вулиць</h2>
+<div>
+    @if ((Model?.Count ??0) > 0)
+    {
+        <table border="1" cols="4">
+            <tr>
+                <td>Id</td>
+                <td>Назва вулиці</td>
+                <td>Редагувати</td>
+                <td>Видалити</td>
+            </tr>
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td>@b.Id</td>
+                    <td>@b.Street</td>
+                    <td><a href="/DictionaryStreet/Edit/@b.Id" style="">Редагувати</a></td>
+                    <td><a href="" style="color:red">Видалити</a></td>
+                </tr>
+            }
+            <tr>
+                <td align="center" colspan="4" style="background-color: mediumpurple">Додати новий: </td>
+            </tr>
+
+            <tr>
+                <td  width=40> Новий:</td>
+                <td colspan="3">
+                    <form method="POST" action="/DictionaryStreet/Index">
+                        <input type="text" name="Street" />
+                        <input type="submit" />
+                    </form>
+                </td>
+            </tr>
+        </table>
+    }
+
+</div>
+
