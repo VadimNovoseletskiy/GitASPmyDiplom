@@ -46,6 +46,7 @@
     <Compile Include="Handler\CommercialHandlerOutPut.cs" />
     <Compile Include="Handler\DictionaryHandler.cs" />
     <Compile Include="Handler\DictionaryRegionHandler.cs" />
+    <Compile Include="Handler\DictionaryVillageHandler.cs" />
     <Compile Include="Handler\HouseHandlerInput.cs" />
     <Compile Include="Handler\HouseHandlerOutPut.cs" />
     <Compile Include="Handler\LandHandlerInput.cs" />
@@ -66,6 +67,8 @@
     <Compile Include="Models\LandViewModel.cs" />
     <Compile Include="Models\RegionInputParameters.cs" />
     <Compile Include="Models\RegionViewModel.cs" />
+    <Compile Include="Models\VillageInputParameters.cs" />
+    <Compile Include="Models\VillageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

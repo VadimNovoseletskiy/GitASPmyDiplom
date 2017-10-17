@@ -1,0 +1,18 @@
+﻿@model NLayerApp.DataAccessLayer.Domains.Models.Village
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Редагування</h2>
+<div>
+    <h3>Назва району:</h3>
+    <form method="POST"action="/DictionaryVillage/Edit">
+        <input type="hidden" value="@Model.Id" name="Id"/>
+        <input type="text" value="@Model.VillageName" name="VillageName"/>
+        <input type="submit" value="Зберегти"/>
+    </form>
+</div>
+<div style="margin-top: 50px; margin-bottom: 20px">
+    @Html.ActionLink("Повернутися до списку районів", "Index")
+</div>
