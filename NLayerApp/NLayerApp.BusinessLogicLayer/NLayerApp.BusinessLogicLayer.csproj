@@ -45,6 +45,7 @@
     <Compile Include="Handler\CommercialHandlerInput.cs" />
     <Compile Include="Handler\CommercialHandlerOutPut.cs" />
     <Compile Include="Handler\DictionaryHandler.cs" />
+    <Compile Include="Handler\DictionaryRegionHandler.cs" />
     <Compile Include="Handler\HouseHandlerInput.cs" />
     <Compile Include="Handler\HouseHandlerOutPut.cs" />
     <Compile Include="Handler\LandHandlerInput.cs" />

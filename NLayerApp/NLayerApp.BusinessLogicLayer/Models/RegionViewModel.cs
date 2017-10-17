@@ -8,6 +8,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
 {
     public class RegionViewModel
     {
+        public int Id { get; set; }
         public string Region { get; set; }
     }
 }

@@ -320,6 +320,9 @@
     <Content Include="Views\Regions\Edit.cshtml" />
     <Content Include="Views\Regions\Index.cshtml" />
     <Content Include="Views\DictionatyRegion\Index.cshtml" />
+    <Content Include="Views\DictionatyRegion\MyEdit.cshtml" />
+    <Content Include="Views\DictionatyRegion\EditRegion.cshtml" />
+    <Content Include="Views\DictionatyRegion\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

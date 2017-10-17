@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_InputObjectForm.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Корегування словника "Райони"</h2>
 
 @using (Html.BeginForm())
 {
@@ -24,12 +24,11 @@
                 @Html.ValidationMessageFor(model => model.RegionName, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        
+        <div >
+            <input type="submit" value="Save" />
         </div>
+        
     </div>
 }
 

@@ -1,8 +1,69 @@
-﻿
+﻿@model List<NLayerApp.BusinessLogicLayer.Models.RegionViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_InputObjectForm.cshtml";
 }
 
 <h2>Cловник районів</h2>
+<div>
+    @if ((Model?.Count ?? 0) > 0)
+    {
+        //когда просто открывается страница (метода ж два, а вьюха одна) то модель пустая а ты это не обработал
+        //это то же что если то что в скобках считать за метод то это тоже что и:
+        //if (Model != null)
+        //{
+        //    return Model.Count;
+        //}
+        //return 0;
+        //или Model != null ? Model.Count : 0;
+        <table border="1" cols="4" width="auto">
+
+            <tr>
+                <td width="30">
+                    <p>Id </p>
+                </td>
+
+                <td >
+                    <p style="text-align: center">Назва району</p>
+                </td>
+
+                <td>
+                    <p style="text-align: center">Редагування</p>
+                </td>
+                <td style="text-align: center">Видалення</td>
+
+            </tr>
+
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td >@b.Id</td>
+                    <td >@b.Region</td>
+                    <td >
+                        <a style="" href="../DictionatyRegion/Edit/@b.Id" >Редагувати</a>
+                    </td>
+                    <td>
+                        <a style="color: red" href="">Видалити</a>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="4" align="center" style="background-color:mediumpurple"> Додати новий: </td>
+            </tr>
+            <tr>
+                <td>Новий:</td>
+                <td colspan="3">
+                    <form method="POST" action="../DictionatyRegion">
+                        <input name="NameRegion" type="text"/>
+                        <button type="submit">Зберегти</button>
+                    </form>
+                </td>
+               
+            </tr>
+               
+        </table>
+    }
+
+</div>
+
 
