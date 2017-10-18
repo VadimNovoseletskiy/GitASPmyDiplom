@@ -1,0 +1,20 @@
+﻿@model NLayerApp.DataAccessLayer.Domains.Models.FloorMaterial
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Редагування</h2>
+<div>
+    <h3>Назва матеріалу для підлоги:</h3>
+    <form method="POST" action="/DictionaryFloorMaterial/Edit">
+        <input type="hidden" value="@Model.Id" name="Id"/>
+        <input type="text" value="@Model.NameFloorMaterils" name="NameFloorMaterils"/>
+        <input type="submit" value="Зберегти"/>
+    </form>
+</div>
+<div style="margin-top: 50px; margin-bottom: 20px">
+    @Html.ActionLink("Повернутися до списку назв","Index")
+</div>
+
+

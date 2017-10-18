@@ -201,6 +201,7 @@
     <Compile Include="Controllers\CommercialController.cs" />
     <Compile Include="Controllers\CommercialInputController.cs" />
     <Compile Include="Controllers\DictionaryController.cs" />
+    <Compile Include="Controllers\DictionaryFloorMaterialController.cs" />
     <Compile Include="Controllers\DictionaryStreetController.cs" />
     <Compile Include="Controllers\DictionaryVillageController.cs" />
     <Compile Include="Controllers\DictionaryWallMaterialController.cs" />
@@ -330,6 +331,8 @@
     <Content Include="Views\DictionaryStreet\Edit.cshtml" />
     <Content Include="Views\DictionaryWallMaterial\Index.cshtml" />
     <Content Include="Views\DictionaryWallMaterial\Edit.cshtml" />
+    <Content Include="Views\DictionaryFloorMaterial\Index.cshtml" />
+    <Content Include="Views\DictionaryFloorMaterial\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

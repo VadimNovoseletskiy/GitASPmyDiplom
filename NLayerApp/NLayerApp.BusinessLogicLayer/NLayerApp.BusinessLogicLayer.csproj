@@ -44,6 +44,7 @@
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
     <Compile Include="Handler\CommercialHandlerInput.cs" />
     <Compile Include="Handler\CommercialHandlerOutPut.cs" />
+    <Compile Include="Handler\DictionaryFloorMaterialHandler.cs" />
     <Compile Include="Handler\DictionaryHandler.cs" />
     <Compile Include="Handler\DictionaryRegionHandler.cs" />
     <Compile Include="Handler\DictionaryStreetHandler.cs" />
@@ -60,6 +61,8 @@
     <Compile Include="Models\CommercialInputParameters.cs" />
     <Compile Include="Models\CommercialSearchParameters.cs" />
     <Compile Include="Models\CommercialViewModel.cs" />
+    <Compile Include="Models\FloorMaterialInputParametrs.cs" />
+    <Compile Include="Models\FloorMaterialViewModel.cs" />
     <Compile Include="Models\HouseInputParameters.cs" />
     <Compile Include="Models\HouseSearchParameters.cs" />
     <Compile Include="Models\HouseViewModel.cs" />
