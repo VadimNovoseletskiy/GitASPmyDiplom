@@ -1,0 +1,19 @@
+﻿@model NLayerApp.DataAccessLayer.Domains.Models.WallMaterial
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Редагування </h2>
+<div>
+    <h3>Назва матеріалу для стіни</h3>
+    <form method="POST" action="/DictionaryWallMaterial/Edit">
+        <input type="hidden" value="@Model.Id" name="Id"/>
+        <input type="text" value="@Model.NameWallMaterils" name="NameWallMaterils"/>
+        <input type="submit" value="Зберегти"/>
+    </form>
+</div>
+<div style="margin-top: 50px; margin-bottom: 20px">
+    @Html.ActionLink("Повернутися до списку матеріалів для стін","Index")
+</div>
+
