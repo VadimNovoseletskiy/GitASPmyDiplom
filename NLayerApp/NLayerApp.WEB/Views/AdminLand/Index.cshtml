@@ -1,0 +1,48 @@
+﻿@model  List<NLayerApp.BusinessLogicLayer.Models.AdminLandViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Загальний список обєктів "Земля"</h2>
+
+<div>
+    @if ((Model?.Count ?? 0) > 0)
+    {
+        <table border="1" cols="6">
+            <tr>
+                <td width="40">Id</td>
+                <td>Короткий заголовок</td>
+                <td>Назва населеного пункту</td>
+                <td>Назва вулиці</td>
+                <td>Номер будинку</td>
+                <td type="hidden" style="color: red">Редагування </td>
+                @*<td >Видалення</td>*@
+            </tr>
+            @foreach (var b in Model)
+            {
+                <tr>
+                    <td>@b.Id</td>
+                    <td>@b.NameCaption</td>
+                    <td>@b.Village</td>
+                    <td>@b.Street</td>
+                    <td>@b.AddressNumber</td>
+                    <td><a href="/AdminLand/Edit/@b.Id" style="color: red">Редагування</a></td>
+                    @*<td><a href="#" style="color: red">Видалити</a></td>*@
+                </tr>
+            }
+            <tr>
+                <td colspan="6" align="center" style="background-color:mediumpurple"> Додати новий: </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="background-color:orange">
+                    <form method="Get" action="/AdminLand/MyInsert">
+                        <input type="submit" value="Додати новий обьєкт" />
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+    }
+</div>

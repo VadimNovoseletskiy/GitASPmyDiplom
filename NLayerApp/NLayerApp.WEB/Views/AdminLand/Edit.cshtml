@@ -1,0 +1,138 @@
+﻿@model NLayerApp.BusinessLogicLayer.Models.LandInsertUpdateViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Редагування обєктів"Земля" </h2>
+<form method="POST" action="/AdminLand/Edit/">
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
+        <input type="hidden" value="@Model.Id" name="Id"/>
+
+        <!--Населені пункти -->
+        <p>
+            <label>Населений пункт:</label>
+            @Html.DropDownList("Village", ViewBag.villageName as SelectList, @Model.Village)
+            
+
+        </p>
+        <!--район-->
+        <p>
+            <label>Район:</label>
+            @Html.DropDownList("Region", ViewBag.regionName as SelectList, @Model.Region)
+        </p>
+        <!--вулиця -->
+        <p>
+            <label>Вулиця:</label>
+            @Html.DropDownList("Street", ViewBag.streetName as SelectList, @Model.Street)
+        </p>
+        <!--Номер будинку-->
+        <p>
+            <label>Будинок № :</label>
+            <input type="text" id="adress_number" value="@Model.NumberAdress" name="NumberAdress" />
+        </p>
+
+        <label for="operation">Вид операції:</label>
+        @Html.EnumDropDownListFor(model => model.OperationType)
+        
+    </fieldset>
+
+    <!-- +++++++++++++++++++++++++++ Детальна інформація +++++++++++++++++++++++++++++++ -->
+
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
+
+        <!-- Призначення земельної ділянки -->
+        <p>
+            <label> Призначення земельної ділянки:</label>
+            @Html.EnumDropDownListFor(model => model.TypeLand)
+           
+           
+        </p>
+
+        <!-- Площа земельної ділянки -->
+        <p>
+            <label> Площа земельної ділянки:</label>
+            <input type="number" id="land_area" value="@Model.LandArea" name="LandArea" min="0.1" step="0.1" /> (Га)
+        </p>
+    </fieldset>
+    <!-- ++++++++++++++++++++++++++ Комунікаціїї ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
+
+        
+        <p>
+           @Html.CheckBoxFor(model => model.Gas)Газ
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.RailWay)Залізнична дорога
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.CentralSewerage)Центральна каналізація
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.CentralWater)Центральне водопостачання
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.CentralHeating)Центральне отоплення
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.Electricity)Електроенергія
+        </p>
+        
+
+    </fieldset>
+    
+    <!--+++++++++++++++++++++++++++++ Опис обьєкту ++++++++++++++++++++++++++++++++++++ -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
+        <!-- Заголовок -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Заголовок :</label><br/>
+            @Html.TextAreaFor(model=>model.CaptionLink,2, 120,  new { htmlAttributes = new { @class = "form-control" } })
+            @*<textarea id="" value="@Model.NameCaptionLink"  name="NameCaptionLink"  cols="120" rows="2"></textarea>*@
+        </p>
+        <!-- Коротка інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
+            @Html.TextAreaFor(model => model.NameInfo, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
+        </p>
+
+        <!-- Детальна інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
+            @Html.TextAreaFor(model => model.InfoDetails, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
+
+        </p>
+        <!-- Приватна інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
+            @Html.TextAreaFor(model => model.InfoPrivat, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
+
+        </p>
+        <!-- ціна в гривнях -->
+        <p>
+            <label>Ціна:</label>
+            <input type="number" id="" value="@Model.GrnPrice" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
+        </p>
+        <!-- ціна в доларах -->
+        <p>
+            <label>Ціна:</label>
+            <input type="number" id="" value="@Model.DollarPrice" name="DollarPrice" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
+        </p>
+    </fieldset>
+    <!-- +++++++++++++++++++++++++++++++++++++ Додавання фото +++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Додати фото</legend>
+        <!--<p>
+             <input type="file" name="foto" multiple />
+         </p>-->
+    </fieldset>
+    <p>
+        <input type="submit">Зберегти зміни</input>
+        <input type="reset">Очистити форму</input>
+    </p>
+</form>
+

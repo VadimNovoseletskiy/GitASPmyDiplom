@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -175,16 +176,22 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
 
     public enum PropertyType
     {
+        [Display(Name = "Будинок")]
         House,
+        [Display(Name="Квартира")]
         Apartment,
+        [Display (Name = "Комерційна нерухомість")]
         Commercial, 
+        [Display(Name = "Земля")]
         Land
     }
 
     public enum TypeOfOperation
     {
         //аренда, продажа
+        [Display(Name = "Оренда")]
         Lease,
+        [Display(Name = "Продаж")]
         Sale
     }
 }

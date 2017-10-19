@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handler\AdminLandHandler.cs" />
     <Compile Include="Handler\ApartmentHandlerInput.cs" />
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
     <Compile Include="Handler\CommercialHandlerInput.cs" />
@@ -55,6 +65,7 @@
     <Compile Include="Handler\LandHandlerInput.cs" />
     <Compile Include="Handler\LandHandlerOutPut.cs" />
     <Compile Include="Handler\LandHandlerOutPutDetails.cs" />
+    <Compile Include="Models\AdminLandViewModel.cs" />
     <Compile Include="Models\ApartmentSearchParameters.cs" />
     <Compile Include="Models\ApartmentViewModel.cs" />
     <Compile Include="Models\ApartmentInputParameters.cs" />
@@ -68,6 +79,7 @@
     <Compile Include="Models\HouseViewModel.cs" />
     <Compile Include="Models\LandDetailsViewModel.cs" />
     <Compile Include="Models\LandInputParameters.cs" />
+    <Compile Include="Models\LandInsertUpdateViewModel.cs" />
     <Compile Include="Models\LandSearchParameters.cs" />
     <Compile Include="Models\LandViewModel.cs" />
     <Compile Include="Models\RegionInputParameters.cs" />
@@ -85,6 +97,10 @@
       <Project>{edf7c1a6-8b8f-456b-bc8d-693100c937df}</Project>
       <Name>NLayerApp.DataAccessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -49,9 +49,11 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
     }
 
     public enum SpecialTypeLand
-    {
+    {   [Display(Name = "Індивідуальне")]
         Individual,
+        [Display(Name = "Комерційне")]
         Commercial,
+        [Display(Name = "Сільськогосподарське")]
         Agricultural
     }
 }
