@@ -18,6 +18,7 @@ namespace NLayerApp.WEB.Controllers
         IUnitOfWork unitOfWork = new UnitOfWork();
         
         // GET: AdminLand
+        [HttpGet]
         public ActionResult Index()
         {
             AdminLandHandler myAdminLandHandler=new AdminLandHandler(unitOfWork);
@@ -27,6 +28,7 @@ namespace NLayerApp.WEB.Controllers
         }
 
         //Get
+        [HttpGet]
         public ActionResult MyInsert()
         {
             MySelect();
@@ -40,8 +42,7 @@ namespace NLayerApp.WEB.Controllers
             MySelect();
             LandHandlerInput myHandlerInput = new LandHandlerInput(unitOfWork);
             myHandlerInput.InsertLand(parameters);
-            myHandlerInput.SaveObject();
-            return View();
+            return RedirectToAction("Index");
 
         }
 
