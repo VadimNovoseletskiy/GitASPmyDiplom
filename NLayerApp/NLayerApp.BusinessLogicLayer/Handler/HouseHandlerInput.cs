@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,7 +46,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 House = new House
                                 {
                                     TypeHouse = parameters.TypeHouse,
-                                    ConditionOfHouse = parameters.ConditionHouse,
+                                    ConditionHouse = parameters.ConditionHouse,
                                     PartHouse = parameters.PartHouse,
                                     FloorHouse = parameters.FloorHouse,
                                     RoomsHouse = parameters.RoomsHouse,
@@ -94,13 +95,10 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             };
 
             this.unitOfWork.GenericRepository<Info>().InsertPhoto(myInfo);
-
-        }
-
-        public void SaveObject()
-        {
             this.unitOfWork.SaveChanges();
         }
+
+       
 
     }
 }

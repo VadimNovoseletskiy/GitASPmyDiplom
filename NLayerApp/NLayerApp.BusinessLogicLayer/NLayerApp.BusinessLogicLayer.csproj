@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handler\AdminHouseHandler.cs" />
     <Compile Include="Handler\AdminLandHandler.cs" />
     <Compile Include="Handler\ApartmentHandlerInput.cs" />
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Handler\LandHandlerInput.cs" />
     <Compile Include="Handler\LandHandlerOutPut.cs" />
     <Compile Include="Handler\LandHandlerOutPutDetails.cs" />
+    <Compile Include="Models\AdminHouseViewModel.cs" />
     <Compile Include="Models\AdminLandViewModel.cs" />
     <Compile Include="Models\ApartmentSearchParameters.cs" />
     <Compile Include="Models\ApartmentViewModel.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Models\FloorMaterialInputParametrs.cs" />
     <Compile Include="Models\FloorMaterialViewModel.cs" />
     <Compile Include="Models\HouseInputParameters.cs" />
+    <Compile Include="Models\HouseInsertUpdateViewModel.cs" />
     <Compile Include="Models\HouseSearchParameters.cs" />
     <Compile Include="Models\HouseViewModel.cs" />
     <Compile Include="Models\LandDetailsViewModel.cs" />

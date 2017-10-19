@@ -27,7 +27,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         ///<value>
         /// Type of House   
         /// </value>
-        public string TypeHouse { get; set; }
+        public TypeOfHouse TypeHouse { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// The condition of the house
         /// </value>
-        public string ConditionOfHouse { get; set; }
+        public ConditionOfHouse ConditionHouse { get; set; }
 
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Part of House 
         ///  </value>
-        public string PartHouse { get; set; }
+        public PartOfHouse PartHouse { get; set; }
 
 
         /// <summary>
@@ -185,6 +185,47 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
 
     }
 
-   
+    public enum TypeOfHouse
+    {
+        [Display(Name = "Будинок")]
+        House,
+        [Display(Name = "Котедж")]
+        Cottage,
+        [Display(Name = "Літній будинок")]
+        SummmerHouse
+    }
+
+    public enum ConditionOfHouse
+    {
+        [Display(Name = "Відмінний")]
+        Great,
+        [Display(Name = "Хороший")]
+        Good,
+        [Display(Name = "Задовільній")]
+        Satisfactory,
+        [Display(Name = "Потрібний ремонт")]
+        Repairs,
+        [Display(Name = "Оздоблювальні роботи")]
+        FinishingWork
+
+    }
+
+    public enum PartOfHouse
+    {
+        [Display(Name = "1")]
+        WholePart,
+        [Display(Name = "1/2")]
+        Half,
+        [Display(Name = "1/3")]
+        OneThird,
+        [Display(Name = "1/4")]
+        OneQuarter,
+        [Display(Name = "1/5")]
+        OneFifth,
+        [Display(Name = "2/3")]
+        TwoThirds,
+        [Display(Name = "2/5")]
+        TwoFifths
+    }
 
 }

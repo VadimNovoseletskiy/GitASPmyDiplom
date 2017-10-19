@@ -1,0 +1,285 @@
+﻿@{
+    ViewBag.Title = "MyInsert";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+
+<h2>Будинки</h2>
+<form method="POST" action="/AdminHouse/MyInsert">
+
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
+
+        <!--Населені пункти -->
+        <p>
+            <label>Населений пункт:</label>
+            @Html.DropDownList("Village", ViewBag.villageName as SelectList)
+        </p>
+        <!--Райони-->
+        <p>
+            <label>Район:</label>
+            @Html.DropDownList("Region", ViewBag.regionName as SelectList)
+        </p>
+        <!--вулиця -->
+        <p>
+            <label>Вулиця:</label>
+            @Html.DropDownList("Street", ViewBag.streetName as SelectList)
+        </p>
+        <!--Номер будинку-->
+        <p>
+            <label>Будинок № :</label>
+            <input type="text" id="adress_number" name="NumberAdress" />
+        </p>
+
+        <label for="operation">Вид операції:</label>
+        <select id="operation" name="OperationType">
+            <option value="0">оренда</option>
+            <option value="1">продаж</option>
+        </select><br />
+        <!--прододжить разбоп с этого места -->
+    </fieldset>
+    <!-- +++++++++++++ Детальна інформація +++++++++++++++++ -->
+    <fieldset>
+
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
+        <!-- тип будинку -->
+        <p>
+            <label>Тип будинку:</label>
+            <select name="TypeHouse">
+                <option value="0">Будинок</option>
+                <option value="1">Котедж</option>
+                <option value="2">Літній будинок</option>
+            </select>
+        </p>
+        <!--Стан обьекту-->
+        <p>
+            <label>Стан:</label>
+            <select name="ConditionHouse">
+                <option value="0">відмінний</option>
+                <option value="1">хороший</option>
+                <option value="2">задовільний</option>
+                <option value="3">потрібний ремонт</option>
+                <option value="4">оздоблювальні роботи</option>
+            </select>
+        </p>
+        <!-- частина будинку -->
+        <p>
+            <label>Частина будинку:</label>
+            <select name="PartHouse">
+                <option value="0">1</option>
+                <option value="1">1/2</option>
+                <option value="2">1/3</option>
+                <option value="3">1/4</option>
+                <option value="4">1/5</option>
+                <option value="5">2/3</option>
+                <option value="6">2/5</option>
+            </select>
+        </p>
+        <!-- Кількість кімнат -->
+        <p>
+            <label>Кількість кімнат:</label>
+            <input type="number" id="float_number" name="RoomsHouse" min="1" max="5"/>
+           
+        </p>
+        <!-- зангальні кількість поверхів -->
+        <p>
+            <label>Кількість поверхів:</label>
+            <input type="number" id="float_number" name="FloorHouse" min="1" max="5" />
+        </p>
+        <!-- Матеріал підлоги -->
+        <p>
+            <label>Матеріал підлоги:</label>
+            @Html.DropDownList("FloorMaterial", ViewBag.floorMaterialName as SelectList)
+        </p>
+
+        <!-- Матеріал стін -->
+        <p>
+            <label>Матеріал стін:</label>
+            @Html.DropDownList("WallMaterial", ViewBag.wallMaterialName as SelectList)
+        </p>
+
+        <!-- Загальна площа -->
+        <p>
+            <label>Загальна площа:</label>
+            <input type="number" id="total_area" name="TotalAreaInfo" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
+        </p>
+        <!-- Житлова плоша -->
+        <p>
+            <label>Житлова площа </label>
+            <input type="number" id="living_area" name="LivingAreaHouse" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
+        </p>
+        <!-- Площа кухні -->
+        <p>
+            <label> Площа кухні:</label>
+            <input type="number" id="kitchen_area" name="KitchenAreaHouse" min="0.1" max="200.9" step="0.1" /> m <sup><small>2</small></sup>
+        </p>
+        <!-- Площа прилягаючої  земельної ділянки  -->
+        <p>
+            <label> Площа земельної ділянки:</label>
+            <input type="number" id="land_area_house" name="LandAreaHouse" min="0.1" step="0.1" /> (Га)
+        </p>
+    </fieldset>
+    <!-- +++++++++++++++++++   Додаткове обладнання ++++++++++++++++++++++++++++ -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Додаткове обладнання</legend>
+
+        <p>
+        <p>
+            <input value="true" name="Boiler" type="checkbox" />Бойлер
+        </p>
+        <p>
+            <input value="true" name="Intercom" type="checkbox" />Домофон
+        </p>
+        <p>
+            <input value="true" name="Internet" type="checkbox" />Інтернет
+        </p>
+        <p>
+            <input value="true" name="CableTv" type="checkbox" />Кабельне телебачення
+        </p>
+        <p>
+            <input value="true" name="FirePlace" type="checkbox" />Камін
+        </p>
+        <p>
+            <input value="true" name="Air" type="checkbox" />Кондіціонер
+        </p>
+        <p>
+            <input value="true" name="Furniture" type="checkbox" />Меблі
+        </p>
+        <p>
+            <input value="true" name="MyWindows" type="checkbox" /> Склопакети
+        </p>
+        <p>
+            <input value="true" name="Signaling" type="checkbox" />Сигналізація
+        </p>
+        <p>
+            <input value="true" name="SatelliteTv" type="checkbox" />Супутникове телебачення
+        </p>
+        <p>
+            <input value="true" name="WashingMachine" type="checkbox" />Пральна машинка
+        </p>
+        <p>
+            <input value="true" name="Telephone" type="checkbox" />Телефон
+        </p>
+        </p>
+
+    </fieldset>
+    <!-- ++++++++++++++++++++ Комунікацїї +++++++++++++++++++++++++ -->
+
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
+        <p>
+
+        <p>
+            <input value="true" name="Gas" type="checkbox" />Газ
+        </p>
+        <p>
+            <input value="true" name="RailWay" type="checkbox" />Залізнична дорога
+        </p>
+        <p>
+            <input value="true" name="CentralSewerage" type="checkbox" />Центральна каналізація
+        </p>
+        <p>
+            <input value="true" name="CentralWater" type="checkbox" />Центральне водопостачання
+        </p>
+        <p>
+            <input value="true" name="CentralHeating" type="checkbox" />Центральне отоплення
+        </p>
+        <p>
+            <input value="true" name="Electricity" type="checkbox" />Електроенергія
+        </p>
+        <p>
+            <input value="true" name="AutonomousSewerage" type="checkbox" />Автономна каналізація
+        </p>
+        <p>
+            <input value="true" name="AutonomusHeating" type="checkbox" />Автономне опалення
+        </p>
+        <p>
+            <input value="true" name="AutonomousWater" type="checkbox" />Автономне водопостачання
+        </p>
+
+        </p>
+    </fieldset>
+    <!-- +++++++++++++++++++++ Надвірні побудови ++++++++++++++++++++++++++++++ -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Надвірні побудови</legend>
+
+        <p>
+            <input value="true" name="BahtHouse" type="checkbox" /> Баня
+        </p>
+        <p>
+            <input value="true" name="Swimming" type="checkbox" />Басейн
+        </p>
+        <p>
+            <input value="true" name="Garage" type="checkbox" />Гараж
+        </p>
+        <p>
+            <input value="true" name="Well" type="checkbox" />Колодязь
+        </p>
+        <p>
+            <input value="true" name="SummerKitchen" type="checkbox" />Літня кухня
+        </p>
+        <p>
+            <input value="true" name="WorkShop" type="checkbox" />Майстерня
+        </p>
+        <p>
+            <input value="true" name="Barn" type="checkbox" />Сарай
+        </p>
+        <p>
+            <input value="true" name="Well1" type="checkbox" /> Скважина
+        </p>
+        <p>
+            <input value="true" name="GreenHouse" type="checkbox" />Теплиця
+        </p>
+
+    </fieldset>
+    <!-- +++++++++++++++++++++++++   Опис обєкту  ++++++++++++++++++++++++ -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
+        <!-- Заголовок -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Заголовок :</label><br />
+            <textarea id="" name="CaptionLink" cols="120" rows="2"></textarea>
+        </p>
+        <!-- Коротка інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
+            <textarea id="" name="NameInfo" cols="120" rows="5"></textarea>
+        </p>
+
+        <!-- Детальна інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
+            <textarea id="" name="InfoDetails" cols="120" rows="5"></textarea>
+        </p>
+        <!-- Приватна інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
+            <textarea id="" name="InfoPrivat" cols="120" rows="5"></textarea>
+        </p>
+        <!-- ціна в гривнях -->
+        <p>
+            <label>Ціна:</label>
+            <input type="number" id="" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
+        </p>
+        <!-- ціна в доларах -->
+        <p>
+            <label>Ціна:</label>
+            <input type="number" id="" name="DollarPrice" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
+        </p>
+    </fieldset>
+    <!-- +++++++++++++++++++   Додавання фото  ++++++++++++++++++++++++++++++  -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Додати фото</legend>
+        <!--
+            <p>
+                <input type="file" name="foto" multiple/>
+            </p>
+        -->
+    </fieldset>
+    <!-- кнопочки -->
+    <p>
+        <button type="submit">Зберегти обьєкт</button>
+        <button type="reset">Очистити форму</button>
+    </p>
+</form>
+

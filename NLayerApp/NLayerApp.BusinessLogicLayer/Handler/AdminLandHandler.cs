@@ -129,18 +129,23 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             info.StreetId = viewModel.Street;
             info.AddressNumber = viewModel.NumberAdress;
             info.OperationType = viewModel.OperationType;
+            info.TotalAreaInfo = viewModel.TotalArea;
+
             info.Land.LandArea = viewModel.LandArea;
             info.Land.SpecialLand = viewModel.TypeLand;
+
             info.Communication.GasCommunications = viewModel.Gas;
             info.Communication.CentralHeatingCommunications = viewModel.CentralHeating;
             info.Communication.CentralSewerageCommunications = viewModel.CentralSewerage;
             info.Communication.CentralWaterCommunications = viewModel.CentralWater;
             info.Communication.ElectricityCommunications = viewModel.Electricity;
             info.Communication.RailWay = viewModel.RailWay;
+
             info.NameCaptionLink = viewModel.CaptionLink;
             info.NameInfo = viewModel.NameInfo;
             info.DetailsInfo = viewModel.InfoDetails;
             info.PrivateInfo = viewModel.InfoPrivat;
+
             info.GrnPrice = viewModel.GrnPrice;
             info.DollarPrice = viewModel.DollarPrice;
 
