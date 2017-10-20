@@ -13,7 +13,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int Village { get; set; }
         public SpecialTypeRoom TypeRoom { get; set; }
         public TypeOfOperation OperationType { get; set; }
-        public int NumberOfRooms { get; set; }
+        public SpecialRoomsApartment NumberOfRooms { get; set; }
         public int DollarCostFrom { get; set; }
         public int DollarCostTo { get; set; }
         public int GrnCostFrom { get; set; }

@@ -4,19 +4,20 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity.EntityFramework;
 using NLayerApp.DataAccessLayer.Domains.Models;
 using NLayerApp.DataAccessLayer.Interface;
 
 namespace NLayerApp.DataAccessLayer.Domains
 {
-    public class MyContext:DbContext,IDbContext
+    public class MyContext: IdentityDbContext<ApplicationUser>, IDbContext
     {
         /// <summary>
         /// Add Initializer in the static constructor
         /// </summary>
         static MyContext()
         {
-              //Database.SetInitializer<MyContext>(new MyContextInitializer());
+              // Database.SetInitializer<MyContext>(new MyContextInitializer());
         }
 
 
@@ -31,6 +32,11 @@ namespace NLayerApp.DataAccessLayer.Domains
             /*To improve performance,
             turn off detection of changes*/
             this.Configuration.AutoDetectChangesEnabled = false;
+        }
+
+        public static MyContext Create()
+        {
+            return new MyContext();
         }
 
         /// <summary>

@@ -13,6 +13,7 @@ using NLayerApp.WEB.Handler;
 
 namespace NLayerApp.WEB.Controllers
 {
+    [Authorize]
     public class AdminLandController : Controller
     {
         IUnitOfWork unitOfWork = new UnitOfWork();

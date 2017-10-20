@@ -13,22 +13,22 @@ using NLayerApp.WEB.Handler;
 namespace NLayerApp.WEB.Controllers
 {
     [Authorize]
-    public class AdminHouseController : Controller
+    public class AdminApartmentController : Controller
     {
         IUnitOfWork unitOfWork = new UnitOfWork();
 
-        // GET: AdminHouse
+        // GET: AdminApartment
         [HttpGet]
         public ActionResult Index()
         {
-            AdminHouseHandler myHandler = new AdminHouseHandler(unitOfWork);
-            var admResult = myHandler.GetAllHouse();
-
+            AdminApartmentHandler myHandler=new AdminApartmentHandler(unitOfWork);
+            var admResult = myHandler.GetAllApartment();
             return View(admResult);
         }
 
-
+       
         //Get
+        [HttpGet]
         public ActionResult MyInsert()
         {
             MySelect();
@@ -37,11 +37,11 @@ namespace NLayerApp.WEB.Controllers
 
         //POST
         [HttpPost]
-        public ActionResult MyInsert(HouseInputParameters parameters)
+        public ActionResult MyInsert(ApartmentInputParameters parameters)
         {
             MySelect();
-            AdminHouseHandler myHandler = new AdminHouseHandler(unitOfWork);
-            myHandler.InsertHouse(parameters);
+            AdminApartmentHandler myHandler = new AdminApartmentHandler(unitOfWork);
+            myHandler.InsertApartment(parameters);
 
             return RedirectToAction("Index");
 
@@ -56,8 +56,8 @@ namespace NLayerApp.WEB.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
             }
-            AdminHouseHandler myHandler = new AdminHouseHandler(unitOfWork); 
-            var result = myHandler.FindInfoHouse(id);
+            AdminApartmentHandler myHandler = new AdminApartmentHandler(unitOfWork);
+            var result = myHandler.FindInfoApartment(id);
             if (result == null)
             {
                 return HttpNotFound();
@@ -67,12 +67,12 @@ namespace NLayerApp.WEB.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(HouseInsertUpdateViewModel viewModel)
+        public ActionResult Edit(ApartmentInsertUpdateViewModel viewModel)
         {
-            AdminHouseHandler myHandler = new AdminHouseHandler(unitOfWork);
+            AdminApartmentHandler myHandler = new AdminApartmentHandler(unitOfWork);
             if (ModelState.IsValid)
             {
-                myHandler.UpdateInfoHouse(viewModel);
+                myHandler.UpdateInfoApartment(viewModel);
                 return RedirectToAction("Index");
             }
             return View();
@@ -106,5 +106,4 @@ namespace NLayerApp.WEB.Controllers
             ViewBag.wallMaterialName = listWallMaterial;
         }
     }
-
 }

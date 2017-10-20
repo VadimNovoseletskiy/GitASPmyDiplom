@@ -1,0 +1,228 @@
+﻿@model NLayerApp.BusinessLogicLayer.Models.ApartmentInsertUpdateViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+
+<h2>Редагування обєктів"Квартири" </h2>
+<form method="POST" action="/AdminApartment/Edit">
+
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
+        <input type="hidden" value="@Model.Id" name="Id" />
+        <!--Населені пункти -->
+        <p>
+            <label>Населений пункт:</label>
+            @Html.DropDownList("Village", ViewBag.villageName as SelectList, @Model.Village)
+        </p>
+        <!--Райони-->
+        <p>
+            <label>Район:</label>
+            @Html.DropDownList("Region", ViewBag.regionName as SelectList, @Model.Region)
+        </p>
+        <!--вулиця -->
+        <p>
+            <label>Вулиця:</label>
+            @Html.DropDownList("Street", ViewBag.streetName as SelectList, @Model.Street)
+        </p>
+        <!--Номер будинку-->
+        <p>
+            <label>Будинок № :</label>
+            <input type="text" id="adress_number" value="@Model.NumberAdress" name="NumberAdress" />
+        </p>
+
+        <label for="operation">Вид операції:</label>
+        @Html.EnumDropDownListFor(model => model.OperationType)
+        <!--прододжить разбоп с этого места -->
+    </fieldset>
+    <!-- +++++++++++++ Детальна інформація +++++++++++++++++ -->
+    <fieldset>
+
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
+        <p>
+            <label>Стан:</label>
+            @Html.EnumDropDownListFor(model => model.ConditionOfApartment)
+        </p>
+        <!-- Кількість кімнат -->
+        <p>
+            <label>Кількість кімнат </label>
+            @Html.EnumDropDownListFor(model => model.RoomsApartment)
+        </p>
+        <!-- тип кімнат -->
+        <p>
+            <label>Тип кімнат:</label>
+            @Html.EnumDropDownListFor(model => model.RoomType)
+        </p>
+        <!-- Готовність до заселення -->
+        <p>
+            <label>Готовність до заселення:</label>
+            @Html.EnumDropDownListFor(model => model.ReadinessApartment)
+            
+        </p>
+        <!-- Санвузол -->
+        <p>
+            <label>Санвузол</label>
+            @Html.EnumDropDownListFor(model => model.BathRoomApartment)
+            
+        <!-- Кільксть балконів -->
+        <p>
+            <label>Кількість балконів</label>
+            @Html.EnumDropDownListFor(model => model.BalconyApartment)
+        </p>
+        <!-- Поверх -->
+        <p>
+            <label>Поверх:</label>
+            @Html.EnumDropDownListFor(model => model.FloorApartment)
+           
+        </p>
+        <!-- зангальні кількість поверхів -->
+        <p>
+            <label>Загальна кількість поверхів:</label>
+            <input type="number" id="" value="@Model.TotalFloor" name="TotalFloor" min="1" max="15" />
+        </p>
+       
+        <!-- Загальна площа -->
+        <p>
+            <label>Загальна площа:</label>
+            <input type="number" id="" value="@Model.TotalAreaInfo" name="TotalAreaInfo"   /> m<sup><small>2</small></sup>
+        </p>
+        <!-- Житлова плоша -->
+        <p>
+            <label>Житлова площа </label>
+            <input type="number" id="living_area" value="@Model.LivingAreaApartment" name="LivingAreaApartment"  /> m<sup><small>2</small></sup>
+        </p>
+        <!-- Площа кухні -->
+        <p>
+            <label> Площа кухні:</label>
+            <input type="number" id="kitchen_area" value="@Model.KitchenAreaApartment" name="KitchenAreaApartment"  /> m <sup><small>2</small></sup>
+        </p>
+
+
+        <!-- Матеріал підлоги -->
+        <p>
+            <label>Матеріал підлоги:</label>
+            @Html.DropDownList("FloorMaterial", ViewBag.floorMaterialName as SelectList, @Model.FloorMaterial)
+        </p>
+
+        <!-- Матеріал стін -->
+        <p>
+            <label>Матеріал стін:</label>
+            @Html.DropDownList("WallMaterial", ViewBag.wallMaterialName as SelectList, @Model.WallMaterial)
+        </p>
+        
+    </fieldset>
+    <!-- +++++++++++++++++++   Додаткове обладнання ++++++++++++++++++++++++++++ -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Додаткове обладнання</legend>
+
+        <p>
+        <p>
+            @Html.CheckBoxFor(model => model.Boiler)Бойлер
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.Intercom)Домофон
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.Internet)Інтернет
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.CableTv)Кабельне телебачення
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.FirePlace)Камін
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.Air)Кондіціонер
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.Furniture)Меблі
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.MyWindows) Склопакети
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.Signaling)Сигналізація
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.SatelliteTv)Супутникове телебачення
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка
+        </p>
+        <p>
+            @Html.CheckBoxFor(model => model.Telephone)Телефон
+        </p>
+        </p>
+
+    </fieldset>
+    
+
+   
+   
+    <!-- +++++++++++++++++++++++++   Опис обєкту  ++++++++++++++++++++++++ -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
+
+        <!-- Заголовок -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Заголовок :</label><br />
+            @Html.TextAreaFor(model => model.CaptionLink, 2, 120, new { htmlAttributes = new { @class = "form-control" } })
+            @*<textarea id="" value="@Model.NameCaptionLink"  name="NameCaptionLink"  cols="120" rows="2"></textarea>*@
+        </p>
+        <!-- Коротка інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
+            @Html.TextAreaFor(model => model.NameInfo, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
+        </p>
+
+        <!-- Детальна інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
+            @Html.TextAreaFor(model => model.InfoDetails, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
+
+        </p>
+        <!-- Приватна інформація -->
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
+            @Html.TextAreaFor(model => model.InfoPrivat, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
+
+        </p>
+        <!-- ціна в гривнях -->
+        <p>
+            <label>Ціна:</label>
+            <input type="number" id="" value="@Model.GrnPrice" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
+        </p>
+        <!-- ціна в доларах -->
+        <p>
+            <label>Ціна:</label>
+            <input type="number" id="" value="@Model.DollarPrice" name="DollarPrice" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
+        </p>
+    </fieldset>
+    <!-- +++++++++++++++++++   Додавання фото  ++++++++++++++++++++++++++++++  -->
+    <fieldset>
+        <legend style="color: blue; font-size: 25px; font-style: oblique;">Додати фото</legend>
+        <!--
+            <p>
+                <input type="file" name="foto" multiple/>
+            </p>
+        -->
+    </fieldset>
+    <!-- кнопочки -->
+    <p>
+        <input type="submit" value="Зберегти обьєкт" />
+        <input type="reset" value="Очистити форму" />
+    </p>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.BusinessLogicLayer.Models
 {
@@ -12,8 +13,8 @@ namespace NLayerApp.BusinessLogicLayer.Models
          public string CaptionLink { get; set; }
          public string Village{ get; set; }
          public string Region { get; set; }
-         public int Floor { get; set; }
-         public int NumberOfRooms { get; set; }
+         public SpecialFloorApartment Floor { get; set; }
+         public SpecialRoomsApartment NumberOfRooms { get; set; }
          public float TotalAreaInfo { get; set; }
          public int DollarPrice { get; set; }
          public int GrnPrice { get; set; }

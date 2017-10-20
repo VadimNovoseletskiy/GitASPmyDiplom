@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Режим редагування</h2>
+
+<fieldset>
+    <legend style="color: blue; font-size: 25px; font-style: oblique;">Словники </legend>
+    <form action="/DictionatyRegion">
+        <button type="submit">Редагувати</button>
+        <label>Редагування словника"Райони" </label>
+    </form>
+    <form action="/DictionaryVillage">
+        <button type="submit">Редагувати</button>
+        <label>Редагування словника"Населені пункти" </label>
+    </form>
+    <form action="/DictionaryStreet">
+        <button type="submit">Редагувати</button>
+        <label>Редагування словника"Назви вулиць" </label>
+    </form>
+    <form action="/DictionaryWallMaterial">
+        <button type="submit">Редагувати</button>
+        <label>Редагування словника"Матеріли для стін" </label>
+    </form>
+    <form action="/DictionaryFloorMaterial">
+
+        <button type="submit">Редагувати</button>
+        <label>Редагування словника"Матеріли для підлоги" </label>
+    </form>
+</fieldset>
+
+<fieldset>
+    <legend style="color: blue; font-size: 25px; font-style: oblique;">Редагування обєктів </legend>
+
+    <form action="/AdminLand/Index">
+        <button type="submit">Показати</button>
+        <label>Список обє'ктів"Земля"</label>
+    </form>
+    
+    <form action="/AdminHouse/Index">
+        <button type="submit">Показати</button>
+        <label>Список обєктів"Будинки"</label>
+    </form>
+
+    <form action="/AdminApartment/Index">
+        <button type="submit">Показати</button>
+        <label>Список обєктів"Квартири"</label>
+    </form>
+</fieldset>
+
+<fieldset>
+    <legend style="color: red; font-size: 25px; font-style: oblique;">Додати перший обєкт </legend>
+   
+     <form action="/AdminApartment/MyInsert">
+        <button type="submit">Додати</button>
+        <label>Додати новий обє'кт "Квартири"</label>
+    </form>
+
+    <form action="/AdminHouse/MyInsert">
+        <button type="submit">Додати</button>
+        <label>Додати новий обє'кт"Будинки"</label>
+    </form>
+
+    <form action="/AdminLand/MyInsert">
+        <button type="submit">Додати</button>
+        <label>Додати новий обє'кт"Земля"</label>
+    </form>
+</fieldset>

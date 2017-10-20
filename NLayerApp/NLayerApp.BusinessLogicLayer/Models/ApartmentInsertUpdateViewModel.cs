@@ -7,9 +7,10 @@ using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.BusinessLogicLayer.Models
 {
-    public class ApartmentInputParameters
+     public class ApartmentInsertUpdateViewModel
     {
-        public PropertyType Type = PropertyType.Apartment;
+        public int Id { get; set; }
+
         //Address
         public int Village { get; set; }
         public int Region { get; set; }
@@ -18,7 +19,13 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public TypeOfOperation OperationType { get; set; }
 
         //Details Info  
-        public ConditionOfApartment ConditionOfApartment { get; set;}
+       
+        public int FloorMaterial { get; set; }
+        public int WallMaterial { get; set; }
+        public float TotalAreaInfo { get; set; }
+
+
+        public ConditionOfApartment ConditionOfApartment { get; set; }
         public SpecialRoomsApartment RoomsApartment { get; set; }
         public SpecialTypeRoom RoomType { get; set; }
         public SpecialReadiness ReadinessApartment { get; set; }
@@ -26,11 +33,9 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public SpecialBalconyApartment BalconyApartment { get; set; }
         public SpecialFloorApartment FloorApartment { get; set; }
         public int TotalFloor { get; set; }
-        public int FloorMaterial { get; set; }
-        public int WallMaterial { get; set; }
-        public float TotalArea { get; set; }
         public float LivingAreaApartment { get; set; }
         public float KitchenAreaApartment { get; set; }
+
 
         //Additional Equipment 
         public bool Boiler { get; set; }
@@ -45,16 +50,14 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public bool MyWindows { get; set; }
         public bool Telephone { get; set; }
         public bool WashingMachine { get; set; }
-
+       
         //Describes object
         public string CaptionLink { get; set; }
         public string NameInfo { get; set; }
         public string InfoDetails { get; set; }
         public string InfoPrivat { get; set; }
-
         //Money
         public int GrnPrice { get; set; }
         public int DollarPrice { get; set; }
-
     }
 }

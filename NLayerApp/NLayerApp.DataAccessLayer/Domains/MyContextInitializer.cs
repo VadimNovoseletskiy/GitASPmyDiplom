@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,16 @@ namespace NLayerApp.DataAccessLayer.Domains
 
         protected override void Seed(MyContext dbContext)
         {
+            var user = new ApplicationUser
+            {
+                Email = "ttm121212@gmail.com",
+                UserName = "ttm121212@gmail.com",
+                PasswordHash = "AId51TOFWpFgQaT08+CPmA0AH7eovLC0/TZxXxGASue7o3rZOM8AO0Z6JFGi10eTEQ==",
+                SecurityStamp = "c9f1027a-e734-4129-9998-f7fca0e499be"
+            };
+
+            dbContext.Users.AddOrUpdate(u => u.UserName, user);
+
             //add village
             Village v0 = new Village { VillageName = "г.Черкассы" };
             Village v1 = new Village { VillageName = "с.Вергуны" };
