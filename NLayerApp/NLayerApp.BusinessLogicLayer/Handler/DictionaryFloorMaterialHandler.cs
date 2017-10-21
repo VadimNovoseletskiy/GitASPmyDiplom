@@ -39,7 +39,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         public void InsertFloorMaterial(FloorMaterialInputParametrs parametrs)
         {
             FloorMaterial myFloorMaterial = new FloorMaterial {NameFloorMaterils = parametrs.FloorMaterial};
-            this.unitOfWork.GenericRepository<FloorMaterial>().InsertPhoto(myFloorMaterial);
+            this.unitOfWork.GenericRepository<FloorMaterial>().InsertGraph(myFloorMaterial);
             this.unitOfWork.SaveChanges();
         }
 

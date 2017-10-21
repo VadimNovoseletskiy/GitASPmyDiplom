@@ -7,10 +7,11 @@ using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.BusinessLogicLayer.Models
 {
-    public class CommercialInputParameters
+     public class CommercialInsertUpdateViewModel
     {
-        public PropertyType Type = PropertyType.Commercial;
-//Address
+        public int Id { get; set; }
+
+        //Address
         public int Village { get; set; }
         public int Region { get; set; }
         public int Street { get; set; }
@@ -29,6 +30,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
 
         public int FloorMaterial { get; set; }
         public int WallMaterial { get; set; }
+        
 
         //Additional Equipment 
         public bool Boiler { get; set; }
@@ -54,14 +56,14 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public bool AutonomousSewerage { get; set; }
         public bool AutonomusHeating { get; set; }
         public bool AutonomousWater { get; set; }
-
         //Describes object
         public string CaptionLink { get; set; }
         public string NameInfo { get; set; }
         public string InfoDetails { get; set; }
         public string InfoPrivat { get; set; }
-  //Money
+        //Money
         public int GrnPrice { get; set; }
         public int DollarPrice { get; set; }
     }
 }
+

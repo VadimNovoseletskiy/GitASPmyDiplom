@@ -40,7 +40,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         public void InsertStreet(StreetInputParameters parameters)
         {
             Street myStreet=new Street {StreetName = parameters.Street};
-            this.unitOfWork.GenericRepository<Street>().InsertPhoto(myStreet);
+            this.unitOfWork.GenericRepository<Street>().InsertGraph(myStreet);
             this.unitOfWork.SaveChanges();
         }
 

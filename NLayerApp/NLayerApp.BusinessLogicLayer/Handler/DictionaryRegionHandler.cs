@@ -39,7 +39,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         public void InsertRegion(RegionInputParameters parameters)
         {
             Region myRegion = new Region { RegionName = parameters.NameRegion };
-            this.unitOfWork.GenericRepository<Region>().InsertPhoto(myRegion);
+            this.unitOfWork.GenericRepository<Region>().InsertGraph(myRegion);
             this.unitOfWork.SaveChanges();
         }
 

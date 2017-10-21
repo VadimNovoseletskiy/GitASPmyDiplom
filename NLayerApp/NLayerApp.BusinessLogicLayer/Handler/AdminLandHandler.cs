@@ -75,7 +75,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 }
             };
 
-            this.unitOfWork.GenericRepository<Info>().InsertPhoto(myInfo);
+            this.unitOfWork.GenericRepository<Info>().InsertGraph(myInfo);
             this.unitOfWork.SaveChanges();
         }
 

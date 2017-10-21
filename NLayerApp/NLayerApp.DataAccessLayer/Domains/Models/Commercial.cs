@@ -27,7 +27,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Commercial type 
         /// </value>
-        public string TypeCommercial { get; set; }
+        public SpecialTypeCommercial TypeCommercial { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// State  
         /// </value>
-        public string StateCommercial { get; set; }
+        public ConditionOfCommercial StateCommercial { get; set; }
 
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Floor where is the commercial real estate
         /// </value>
-        public int FloorCommercial { get; set; }
+        public SpecialFloorCommercial FloorCommercial { get; set; }
 
 
         /// <summary>
@@ -81,5 +81,77 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// The  a link to the Parent class "Info"(one to one communication) 
         /// </summary>
         public Info Info { get; set; }
+    }
+
+    public enum SpecialTypeCommercial
+    {
+        [Display(Name = "Офісно-Адміністративне")]
+        OfficeAdministrative,
+        [Display(Name = "Виробниче")]
+        Production,
+        [Display(Name = "Складське")]
+        WareHouse,
+        [Display(Name = "Торгове")]
+        Pomegranate,
+        [Display(Name = "Розважальне")]
+        Entertaining,
+        [Display(Name = "Гараж")]
+        Garage,
+        [Display(Name = "Вільне призначення")]
+        FreeAssignment
+
+    }
+
+    public enum ConditionOfCommercial
+    {
+        [Display(Name = "Відмінний")]
+        Great,
+        [Display(Name = "Хороший")]
+        Good,
+        [Display(Name = "Задовільній")]
+        Satisfactory,
+        [Display(Name = "Потрібний ремонт")]
+        Repairs,
+        [Display(Name = "Оздоблювальні роботи")]
+        FinishingWork
+
+    }
+
+    public enum SpecialFloorCommercial
+    {
+        [Display(Name = "Підвал")]
+        Basement,
+        [Display(Name = "Цокольний поверх")]
+        GroundFloor,
+        [Display(Name = "1")]
+        One,
+        [Display(Name = "2")]
+        Two,
+        [Display(Name = "3")]
+        Three,
+        [Display(Name = "4")]
+        Four,
+        [Display(Name = "5")]
+        Five,
+        [Display(Name = "6")]
+        Six,
+        [Display(Name = "7")]
+        Seven,
+        [Display(Name = "8")]
+        Eight,
+        [Display(Name = "9")]
+        Nine,
+        [Display(Name = "10")]
+        Ten,
+        [Display(Name = "11")]
+        Eleven,
+        [Display(Name = "12")]
+        Twelve,
+        [Display(Name = "13")]
+        Thirteen,
+        [Display(Name = "14")]
+        Fourteeen,
+        [Display(Name = "15")]
+        Fifteen
     }
 }

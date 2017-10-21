@@ -32,6 +32,15 @@ namespace NLayerApp.WEB.Controllers
             return View();
         }
 
+        public ActionResult MyContact()
+        {
+            return View();
+        }
+
+        public ActionResult Kredit()
+        {
+            return View();
+        }
 
 
 

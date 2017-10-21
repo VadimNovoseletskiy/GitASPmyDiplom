@@ -39,7 +39,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
          public void InsertVillage(VillageInputParameters parameters)
          {
             Village myVillage=new Village {VillageName = parameters.Village};
-            this.unitOfWork.GenericRepository<Village>().InsertPhoto(myVillage);
+            this.unitOfWork.GenericRepository<Village>().InsertGraph(myVillage);
             this.unitOfWork.SaveChanges();
          }
 

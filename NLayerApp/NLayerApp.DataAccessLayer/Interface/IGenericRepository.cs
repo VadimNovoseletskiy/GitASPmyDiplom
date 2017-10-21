@@ -41,7 +41,7 @@ namespace NLayerApp.DataAccessLayer.Interface
         /// The insert Photo 
         /// </summary>
         /// <param name="entity"></param>
-        void InsertPhoto(T entity);
+        void InsertGraph(T entity);
         /// <summary>
         /// The update 
         /// </summary>

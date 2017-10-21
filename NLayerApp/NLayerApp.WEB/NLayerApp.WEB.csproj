@@ -197,6 +197,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminApartmentController.cs" />
+    <Compile Include="Controllers\AdminCommercialController.cs" />
     <Compile Include="Controllers\AdminHouseController.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\AdminLandController.cs" />
@@ -346,6 +347,11 @@
     <Content Include="Views\AdminApartment\MyInsert.cshtml" />
     <Content Include="Views\AdminApartment\Edit.cshtml" />
     <Content Include="Views\Administrator\Index.cshtml" />
+    <Content Include="Views\AdminCommercial\Index.cshtml" />
+    <Content Include="Views\AdminCommercial\Edit.cshtml" />
+    <Content Include="Views\AdminCommercial\MyInsert.cshtml" />
+    <Content Include="Views\Home\Kredit.cshtml" />
+    <Content Include="Views\Home\MyContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

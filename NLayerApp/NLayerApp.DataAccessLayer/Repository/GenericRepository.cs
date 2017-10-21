@@ -58,7 +58,7 @@ namespace NLayerApp.DataAccessLayer.Repository
         }
 
         ///<inheritdoc/>
-        public void InsertPhoto(T entity)
+        public void InsertGraph(T entity)
         {
             this.DbSet.Add(entity);
         }

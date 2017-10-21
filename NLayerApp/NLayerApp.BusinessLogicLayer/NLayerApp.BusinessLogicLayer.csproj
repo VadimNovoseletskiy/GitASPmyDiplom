@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Handler\AdminApartmentHandler.cs" />
+    <Compile Include="Handler\AdminCommercialHandler.cs" />
     <Compile Include="Handler\AdminHouseHandler.cs" />
     <Compile Include="Handler\AdminLandHandler.cs" />
     <Compile Include="Handler\ApartmentHandlerInput.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Handler\LandHandlerOutPut.cs" />
     <Compile Include="Handler\LandHandlerOutPutDetails.cs" />
     <Compile Include="Models\AdminApartmentViewModel.cs" />
+    <Compile Include="Models\AdminCommercialViewModel.cs" />
     <Compile Include="Models\AdminHouseViewModel.cs" />
     <Compile Include="Models\AdminLandViewModel.cs" />
     <Compile Include="Models\ApartmentInsertUpdateViewModel.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Models\ApartmentViewModel.cs" />
     <Compile Include="Models\ApartmentInputParameters.cs" />
     <Compile Include="Models\CommercialInputParameters.cs" />
+    <Compile Include="Models\CommercialInsertUpdateViewModel.cs" />
     <Compile Include="Models\CommercialSearchParameters.cs" />
     <Compile Include="Models\CommercialViewModel.cs" />
     <Compile Include="Models\FloorMaterialInputParametrs.cs" />

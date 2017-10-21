@@ -38,7 +38,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         public void InsertWallMaterial(WallMaterialInputParemeters paremeters)
         {
             WallMaterial myMaterial=new WallMaterial {NameWallMaterils = paremeters.WallMaterial};
-            this.unitOfWork.GenericRepository<WallMaterial>().InsertPhoto(myMaterial);
+            this.unitOfWork.GenericRepository<WallMaterial>().InsertGraph(myMaterial);
             this.unitOfWork.SaveChanges();
         }
 
