@@ -55,13 +55,11 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             };
 
             this.unitOfWork.GenericRepository<Info>().InsertGraph(myInfo);
-            
+            this.unitOfWork.SaveChanges();
+
         }
 
-        public void SaveObject()
-        {
-            this.unitOfWork.SaveChanges();
-        }
+       
 
     }
 }

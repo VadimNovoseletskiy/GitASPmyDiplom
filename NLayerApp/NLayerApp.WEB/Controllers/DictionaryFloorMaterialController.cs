@@ -23,7 +23,7 @@ namespace NLayerApp.WEB.Controllers
             var materials = myHandler.GetFloorMaterial();
             return View(materials);
         }
-
+        //POST
         [HttpPost]
         public ActionResult Index(FloorMaterialInputParametrs parametrs)
         {
@@ -31,7 +31,7 @@ namespace NLayerApp.WEB.Controllers
             myHandler.InsertFloorMaterial(parametrs);
             return RedirectToAction("Index");
         }
-
+        //Get Edit
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -49,6 +49,7 @@ namespace NLayerApp.WEB.Controllers
 
         }
 
+        //Post Edit
         [HttpPost]
         public ActionResult Edit(FloorMaterial floorMaterial)
         {
@@ -57,6 +58,37 @@ namespace NLayerApp.WEB.Controllers
             if (ModelState.IsValid)
             {
                 myHandler.UpddateFloorMaterial(floorMaterial);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+        //Get Delete 
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DeleteFloorMaterialDictionatyHandler myHandler = new DeleteFloorMaterialDictionatyHandler(unitOfWork);
+            var fMaterial = myHandler.DeleteFloorMaterialDictionaryFind(id);
+
+            if (fMaterial == null)
+            {
+                return HttpNotFound();
+            }
+            return View(fMaterial);
+        }
+
+        //Post Delete 
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            DeleteFloorMaterialDictionatyHandler myHandler = new DeleteFloorMaterialDictionatyHandler(unitOfWork);
+
+            if (ModelState.IsValid)
+            {
+                myHandler.DeleteFindFloorMaterialDictionary(id);
                 return RedirectToAction("Index");
             }
             return View();

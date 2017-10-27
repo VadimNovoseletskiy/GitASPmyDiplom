@@ -57,6 +57,16 @@
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
     <Compile Include="Handler\CommercialHandlerInput.cs" />
     <Compile Include="Handler\CommercialHandlerOutPut.cs" />
+    <Compile Include="Handler\DeleteApartmentHandler.cs" />
+    <Compile Include="Handler\DeleteCommercialHandler.cs" />
+    <Compile Include="Handler\DeleteFloorMaterialDictionatyHandler.cs" />
+    <Compile Include="Handler\DeleteRegionDictionaryHandler.cs" />
+    <Compile Include="Handler\DeleteHouseHandler.cs" />
+    <Compile Include="Handler\DeleteLandHandler.cs" />
+    <Compile Include="Handler\DeleteStreetDictionaryHandler.cs" />
+    <Compile Include="Handler\DeleteVillageDictionatyHandler.cs" />
+    <Compile Include="Handler\DeleteWallmaterialDictionaryHandler.cs" />
+    <Compile Include="Handler\DetailsInfoOutPutHandler.cs" />
     <Compile Include="Handler\DictionaryFloorMaterialHandler.cs" />
     <Compile Include="Handler\DictionaryHandler.cs" />
     <Compile Include="Handler\DictionaryRegionHandler.cs" />
@@ -72,6 +82,7 @@
     <Compile Include="Models\AdminCommercialViewModel.cs" />
     <Compile Include="Models\AdminHouseViewModel.cs" />
     <Compile Include="Models\AdminLandViewModel.cs" />
+    <Compile Include="Models\ApartmentDetailsInfoViewModel.cs" />
     <Compile Include="Models\ApartmentInsertUpdateViewModel.cs" />
     <Compile Include="Models\ApartmentSearchParameters.cs" />
     <Compile Include="Models\ApartmentViewModel.cs" />
@@ -80,6 +91,10 @@
     <Compile Include="Models\CommercialInsertUpdateViewModel.cs" />
     <Compile Include="Models\CommercialSearchParameters.cs" />
     <Compile Include="Models\CommercialViewModel.cs" />
+    <Compile Include="Models\DeleteApartmentViewModel.cs" />
+    <Compile Include="Models\DeleteCommercialViewModel.cs" />
+    <Compile Include="Models\DeleteHouseViewModel.cs" />
+    <Compile Include="Models\DeleteLandViewModel.cs" />
     <Compile Include="Models\FloorMaterialInputParametrs.cs" />
     <Compile Include="Models\FloorMaterialViewModel.cs" />
     <Compile Include="Models\HouseInputParameters.cs" />
@@ -95,7 +110,7 @@
     <Compile Include="Models\RegionViewModel.cs" />
     <Compile Include="Models\StreetInputParameters.cs" />
     <Compile Include="Models\StreetViewModel.cs" />
-    <Compile Include="Models\VillageInputParameters.cs" />
+    <Compile Include="VillageInputParameters.cs" />
     <Compile Include="Models\VillageViewModels.cs" />
     <Compile Include="Models\WallMaterialInputParemeters.cs" />
     <Compile Include="Models\WallMaterialViewModel.cs" />

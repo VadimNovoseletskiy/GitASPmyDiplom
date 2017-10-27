@@ -67,5 +67,37 @@ namespace NLayerApp.WEB.Controllers
             return View();
         }
 
+        //Get Delete 
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DeleteVillageDictionatyHandler myHandler = new DeleteVillageDictionatyHandler(unitOfWork);
+            var village = myHandler.DeleteVillageDictionaryFind(id);
+
+            if (village == null)
+            {
+                return HttpNotFound();
+            }
+            return View(village);
+        }
+
+        //Post Delete 
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            DeleteVillageDictionatyHandler myHandler = new DeleteVillageDictionatyHandler(unitOfWork);
+
+            if (ModelState.IsValid)
+            {
+                myHandler.DeleteFindVillageDictionary(id);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
     }
 }

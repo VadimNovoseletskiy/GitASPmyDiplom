@@ -4,14 +4,13 @@
     Layout = "~/Views/Shared/_InputObjectForm.cshtml";
 }
 
-<h2>Index</h2>
 
 <h2>Загальний список обєктів "Будинки"</h2>
 
 <div>
     @if ((Model?.Count ?? 0) > 0)
     {
-        <table border="1" cols="6">
+        <table border="1" cols="7">
             <tr>
                 <td width="40">Id</td>
                 <td>Короткий заголовок</td>
@@ -19,7 +18,7 @@
                 <td>Назва вулиці</td>
                 <td>Номер будинку</td>
                 <td style="color: red">Редагування </td>
-                @*<td >Видалення</td>*@
+                <td style="color: red">Видалення</td>
             </tr>
             @foreach (var b in Model)
             {
@@ -30,14 +29,14 @@
                     <td>@b.Street</td>
                     <td>@b.AddressNumber</td>
                     <td><a href="/AdminHouse/Edit/@b.Id" style="color: red">Редагування</a></td>
-                    @*<td><a href="#" style="color: red">Видалити</a></td>*@
+                    <td><a href="/AdminHouse/Delete/@b.Id" style="color: red">Видалити</a></td>
                 </tr>
             }
             <tr>
-                <td colspan="6" align="center" style="background-color:mediumpurple"> Додати новий: </td>
+                <td colspan="7" align="center" style="background-color:mediumpurple"> Додати новий: </td>
             </tr>
             <tr>
-                <td colspan="6" style="background-color:orange">
+                <td colspan="7" style="background-color:orange">
                     <form method="Get" action="/AdminHouse/MyInsert">
                         <input type="submit" value="Додати новий обьєкт" />
                     </form>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NLayerApp.BusinessLogicLayer.Handler;
@@ -33,6 +34,24 @@ namespace NLayerApp.WEB.Controllers
             var resultApartment = myApartmentHandlerOutPut.GetApartment(parameters);
 
             return View(resultApartment);
+        }
+
+        [HttpGet]
+        public ActionResult DetailsInfo(int? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return  new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DetailsInfoOutPutHandler myHandler=new DetailsInfoOutPutHandler(unitOfWork);
+            var result = myHandler.DetailsInfoObjectFind(id);
+            if (result == null)
+            {
+                return HttpNotFound();
+            }
+            return View(result);
+
         }
 
         void MySelect()

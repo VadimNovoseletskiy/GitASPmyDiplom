@@ -24,7 +24,7 @@ namespace NLayerApp.WEB.Controllers
             var result = myStreetHandler.GetStreet();
             return View(result);
         }
-
+        //POST 
         [HttpPost]
         public ActionResult Index(StreetInputParameters parameters)
         {
@@ -32,7 +32,7 @@ namespace NLayerApp.WEB.Controllers
             myStreetHandler.InsertStreet(parameters);
             return RedirectToAction("Index");
         }
-
+        //Get Edit
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -48,7 +48,7 @@ namespace NLayerApp.WEB.Controllers
             }
             return View(result);
         }
-
+        //Post Edit 
         [HttpPost]
         public ActionResult Edit(Street street)
         {
@@ -56,6 +56,38 @@ namespace NLayerApp.WEB.Controllers
             if (ModelState.IsValid)
             {
                 myStreetHandler.StreetUpdate(street);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        //Get Delete 
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DeleteStreetDictionaryHandler myHandler = new DeleteStreetDictionaryHandler(unitOfWork);
+            var street = myHandler.DeleteStreetDictionaryFind(id);
+
+            if (street == null)
+            {
+                return HttpNotFound();
+            }
+            return View(street);
+        }
+
+        //Post Delete 
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            DeleteStreetDictionaryHandler myHandler = new DeleteStreetDictionaryHandler(unitOfWork);
+
+            if (ModelState.IsValid)
+            {
+                myHandler.DeleteFindStreetDictionary(id);
                 return RedirectToAction("Index");
             }
             return View();

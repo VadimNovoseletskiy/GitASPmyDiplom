@@ -29,7 +29,7 @@ namespace NLayerApp.WEB.Controllers
             MySelect();
             LandHandlerInput myHandlerInput=new LandHandlerInput(unitOfWork);
             myHandlerInput.InsertLand(parameters);
-            myHandlerInput.SaveObject();
+           
             return View();
 
         }

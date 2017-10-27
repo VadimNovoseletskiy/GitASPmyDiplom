@@ -34,6 +34,7 @@ namespace NLayerApp.WEB.Controllers
             return RedirectToAction("Index");
         }
 
+        //Get Edit
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -52,6 +53,7 @@ namespace NLayerApp.WEB.Controllers
            
         }
 
+        //Post Edit
         [HttpPost]
         public ActionResult Edit(Region region)
         {
@@ -65,5 +67,38 @@ namespace NLayerApp.WEB.Controllers
             }
             return View();
         }
+
+        //Get Delete 
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DeleteRegionDictionaryHandler myHandler = new DeleteRegionDictionaryHandler(unitOfWork);
+            var region = myHandler.DeleteRegionDictionaryFind(id);
+
+            if (region == null)
+            {
+                return HttpNotFound();
+            }
+            return View(region);
+        }
+
+        //Post Delete 
+        [HttpPost]
+        public ActionResult Delete(int  id)
+        {
+            DeleteRegionDictionaryHandler myHandler = new DeleteRegionDictionaryHandler(unitOfWork);
+
+            if (ModelState.IsValid)
+            {
+                myHandler.DeleteFindRegionDictionary(id);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
     }
 }

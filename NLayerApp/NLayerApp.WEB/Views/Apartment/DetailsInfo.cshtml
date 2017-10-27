@@ -1,0 +1,113 @@
+﻿@model NLayerApp.BusinessLogicLayer.Models.ApartmentDetailsInfoViewModel
+@{
+    ViewBag.Title = "DetailsInfo";
+    Layout = "~/Views/Shared/_SearchApartmentForm.cshtml";
+}
+
+<h2>Детальна інформація по квартирі </h2>
+<div>
+    @if ((Model?.Id ?? 0) > 0)
+    {
+        <table border="1" cols="4" style=" width: 720px; float: right;">
+                <tr>
+                    <td rowspan="5">
+                        <table width="100">
+                            <tr>
+                                <td>
+                                    <img src="../../Image/apartment.jpg" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="2">
+                        <a href="Index.cshtml" style="font-size: 17px; text-align: center">@Model.CaptionLink</a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b>Тип операції:</b>@Html.EnumDropDownListFor(model => model.OperationType)</td>
+                    <td style="text-align: right"><b>Ціна:@Model.GrnPrice грн. (@Model.DollarPrice у.о.)</b></td>
+                </tr>
+
+                <tr><td colspan="2"><b>Населений пункт:</b> @Model.Village</td></tr>
+                <tr><td colspan="2"><b>Район:</b> @Model.Region |<b> вулиця:</b>@Model.Street|<b> Загальна площа:</b> @Model.TotalAreaInfo m<sup>2</sup> </td></tr>
+            <tr >
+                <td style="font-size: 14px; " colspan="3" >
+                    @Model.InfoDetails
+                </td>
+            </tr>
+           
+            <tr> <td colspan="4" style="text-align: center; background-color:cadetblue">Детальна інформація по квартирі</td></tr>
+            <tr>
+                <td>Готовність до заселення: </td>
+                <td colspan="3">@Html.EnumDropDownListFor(model => model.ReadinessApartment)</td>
+            </tr>
+            <tr>
+                <td>Загальна кількість поверхів:</td>
+                <td colspan="3">@Model.TotalFloor</td>
+            </tr>
+            <tr>
+                <td>Поверх квартири</td>
+                <td colspan="3">@Html.EnumDropDownListFor(model => model.FloorApartment)</td>
+            </tr>
+            <tr>
+                <td>Тип кімнат:</td>
+                <td colspan="3">@Html.EnumDropDownListFor(model => model.RoomType)</td>
+            </tr>
+            <tr>
+                <td>Кількість кімнат:</td>
+                <td colspan="3">@Html.EnumDropDownListFor(model => model.RoomsApartment)</td>
+            </tr>
+            <tr>
+                <td>Тип ванної кімнати:</td>
+                <td colspan="3">@Html.EnumDropDownListFor(model => model.BathRoomApartment)</td>
+            </tr>
+            <tr>
+                <td>Наявність балкону</td>
+                <td colspan="3">@Html.EnumDropDownListFor(model => model.BalconyApartment)</td>
+            </tr>
+            <tr>
+                <td>Матеріал стін:</td>
+                <td colspan="3">@Model.WallMaterial</td>
+            </tr>
+            <tr>
+                <td>Матеріал підлоги:</td>
+                <td colspan="3">@Model.FloorMaterial</td>
+            </tr>
+            <tr>
+                <td>Площа кухні:</td>
+                <td colspan="3">@Model.KitchenAreaApartment  m<sup>2</sup></td>
+            </tr>
+            <tr>
+                <td>Житлова площа</td>
+                <td colspan="3">@Model.LivingAreaApartment  m<sup>2</sup></td>
+            </tr>
+
+            <tr> <td colspan="4" style="background-color: cornflowerblue; text-align: center">Додаткове обладнання</td></tr>
+            <tr>
+                <td colspan="2">@Html.CheckBoxFor(model => model.Boiler)Бойлер</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.Intercom)Домофон</td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.CheckBoxFor(model => model.CableTv)Кабельне телебачення</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.FirePlace)Камін</td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.CheckBoxFor(model => model.Air)Кондіціонер</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.Furniture)Меблі</td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.CheckBoxFor(model => model.Signaling)Сигналізація</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.SatelliteTv)Супутникове телебачення</td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
+            </tr>
+            
+        </table>
+    }
+
+</div>
+
+

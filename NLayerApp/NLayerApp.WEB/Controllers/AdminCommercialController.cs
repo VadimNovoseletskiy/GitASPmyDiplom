@@ -45,6 +45,7 @@ namespace NLayerApp.WEB.Controllers
 
         }
 
+        //Get Edit
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -64,6 +65,7 @@ namespace NLayerApp.WEB.Controllers
 
         }
 
+        //Post Edit
         [HttpPost]
         public ActionResult Edit(CommercialInsertUpdateViewModel viewModel)
         {
@@ -74,6 +76,40 @@ namespace NLayerApp.WEB.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        //Get Delete
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DeleteCommercialHandler myHandler = new DeleteCommercialHandler(unitOfWork);
+            var land = myHandler.DeleteFindCommercial(id);
+
+            if (land == null)
+            {
+                return HttpNotFound();
+            }
+            return View(land);
+        }
+
+
+        //Post Delete
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            DeleteCommercialHandler myHandler = new DeleteCommercialHandler(unitOfWork);
+
+            if (ModelState.IsValid)
+            {
+                myHandler.DeleteCommercial(id);
+                return RedirectToAction("Index");
+            }
+            return View("Index");
         }
 
         void MySelect()

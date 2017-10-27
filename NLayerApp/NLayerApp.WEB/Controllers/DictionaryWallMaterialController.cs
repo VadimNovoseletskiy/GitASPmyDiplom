@@ -24,7 +24,7 @@ namespace NLayerApp.WEB.Controllers
             var resultWallMaterial = myHandler.GetWallMaterial();
             return View(resultWallMaterial);
         }
-
+        //POST 
         [HttpPost]
         public ActionResult Index(WallMaterialInputParemeters paremeters)
         {
@@ -32,7 +32,7 @@ namespace NLayerApp.WEB.Controllers
             myHandler.InsertWallMaterial(paremeters);
             return RedirectToAction("Index");
         }
-
+        //Get Edit
         [HttpGet]
         public ActionResult Edit(int? Id)
         {
@@ -48,7 +48,7 @@ namespace NLayerApp.WEB.Controllers
             }
             return View(result);
         }
-
+        //Post Edit
         [HttpPost]
         public ActionResult Edit(WallMaterial wallMaterial)
         {
@@ -61,6 +61,38 @@ namespace NLayerApp.WEB.Controllers
             return View();
         }
 
-    
+        //Get Delete 
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DeleteWallmaterialDictionaryHandler myHandler = new DeleteWallmaterialDictionaryHandler(unitOfWork);
+            var wmaterial = myHandler.DeleteWallrMaterialDictionaryFind(id);
+
+            if (wmaterial == null)
+            {
+                return HttpNotFound();
+            }
+            return View(wmaterial);
+        }
+
+        //Post Delete 
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            DeleteWallmaterialDictionaryHandler myHandler = new DeleteWallmaterialDictionaryHandler(unitOfWork);
+
+            if (ModelState.IsValid)
+            {
+                myHandler.DeleteFindWallMaterialDictionary(id);
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+
     }
 }

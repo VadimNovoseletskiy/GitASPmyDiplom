@@ -42,10 +42,7 @@ namespace NLayerApp.WEB.Controllers
           
         }
 
-        public ActionResult DetailsInfo(int Id)
-        {
-            return View();
-        }
+       
 
         void MySelect()
         {

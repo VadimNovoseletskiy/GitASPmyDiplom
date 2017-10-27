@@ -47,6 +47,7 @@ namespace NLayerApp.WEB.Controllers
 
         }
 
+        //Get Edit
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -65,7 +66,7 @@ namespace NLayerApp.WEB.Controllers
             return View(result);
 
         }
-
+        //Post Edit
         [HttpPost]
         public ActionResult Edit(HouseInsertUpdateViewModel viewModel)
         {
@@ -76,6 +77,40 @@ namespace NLayerApp.WEB.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        //Get Delete
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DeleteHouseHandler myHandler = new DeleteHouseHandler(unitOfWork);
+            var land = myHandler.DeleteFindHouse(id);
+
+            if (land == null)
+            {
+                return HttpNotFound();
+            }
+            return View(land);
+        }
+
+
+        //Post Delete
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            DeleteHouseHandler myHandler = new DeleteHouseHandler(unitOfWork);
+
+            if (ModelState.IsValid)
+            {
+                myHandler.DeleteHouse(id);
+                return RedirectToAction("Index");
+            }
+            return View("Index");
         }
 
         void MySelect()

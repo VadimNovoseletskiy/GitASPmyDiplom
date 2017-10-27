@@ -17,7 +17,7 @@
                 <td>Назва вулиці</td>
                 <td>Номер будинку</td>
                 <td style="color: red">Редагування </td>
-                @*<td >Видалення</td>*@
+                <td style="color: red" >Видалення</td>
             </tr>
             @foreach (var b in Model)
             {
@@ -28,7 +28,7 @@
                     <td>@b.Street</td>
                     <td>@b.AddressNumber</td>
                     <td><a href="/AdminCommercial/Edit/@b.Id" style="color: red">Редагування</a></td>
-                    @*<td><a href="#" style="color: red">Видалити</a></td>*@
+                    <td><a href="/AdminCommercial/Delete/@b.Id" style="color: red">Видалити</a></td>
                 </tr>
             }
             <tr>

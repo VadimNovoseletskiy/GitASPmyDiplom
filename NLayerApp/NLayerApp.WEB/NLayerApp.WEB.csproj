@@ -352,9 +352,20 @@
     <Content Include="Views\AdminCommercial\MyInsert.cshtml" />
     <Content Include="Views\Home\Kredit.cshtml" />
     <Content Include="Views\Home\MyContact.cshtml" />
+    <Content Include="Views\AdminLand\Delete.cshtml" />
+    <Content Include="Views\DictionatyRegion\Delete.cshtml" />
+    <Content Include="Views\AdminHouse\Delete.cshtml" />
+    <Content Include="Views\AdminCommercial\Delete.cshtml" />
+    <Content Include="Views\AdminApartment\Delete.cshtml" />
+    <Content Include="Views\DictionaryVillage\Delete.cshtml" />
+    <Content Include="Views\DictionaryStreet\Delete.cshtml" />
+    <Content Include="Views\DictionaryFloorMaterial\Delete.cshtml" />
+    <Content Include="Views\DictionaryWallMaterial\Delete.cshtml" />
+    <Content Include="Views\Apartment\DetailsInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DeleteDictionary\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

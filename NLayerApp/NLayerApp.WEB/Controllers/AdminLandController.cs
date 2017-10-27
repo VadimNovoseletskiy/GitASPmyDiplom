@@ -77,6 +77,39 @@ namespace NLayerApp.WEB.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DeleteLandHandler myHandler = new DeleteLandHandler(unitOfWork);
+            var land = myHandler.DeleteFindLand(id);
+
+            if (land == null)
+            {
+                return HttpNotFound();
+            }
+            return View(land);
+        }
+
+
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            DeleteLandHandler myHandler = new DeleteLandHandler(unitOfWork);
+
+            if (ModelState.IsValid)
+            {
+                myHandler.DeleteLand(id);
+                return RedirectToAction("Index");
+            }
+            return View("Index");
+        }
+
         void MySelect()
         {
             RegionHandler myRegionHandler = new RegionHandler(unitOfWork);

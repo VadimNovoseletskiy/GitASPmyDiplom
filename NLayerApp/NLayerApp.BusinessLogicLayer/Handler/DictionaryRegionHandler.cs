@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,5 +53,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             this.unitOfWork.GenericRepository<Region>().Update(region);
             this.unitOfWork.SaveChanges();
         }
-    }
+     
+     }
 }

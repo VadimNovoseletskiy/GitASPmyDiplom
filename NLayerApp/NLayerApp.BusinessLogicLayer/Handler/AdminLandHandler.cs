@@ -101,17 +101,14 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                            CentralHeating = x.Communication.CentralHeatingCommunications,
                            CentralWater = x.Communication.CentralWaterCommunications,
                            Electricity = x.Communication.ElectricityCommunications,
-
                            CaptionLink = x.NameCaptionLink,
                            NameInfo = x.NameInfo,
                            InfoDetails = x.DetailsInfo,
                            InfoPrivat = x.PrivateInfo,
-
                            GrnPrice = x.GrnPrice,
                            DollarPrice = x.DollarPrice
                         }
-                )
-                .FirstOrDefault();
+                ) .FirstOrDefault();
 
         public void UpdateInfoLand(LandInsertUpdateViewModel viewModel)
         {
