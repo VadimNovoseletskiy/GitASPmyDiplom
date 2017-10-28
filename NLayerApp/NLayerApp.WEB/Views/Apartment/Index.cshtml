@@ -42,7 +42,7 @@
                         </table>
                     </td>
                     <td colspan="2">
-                        <a href="/Apartment/DetailsInfo/@b.Id" style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
+                        <a href="/Apartment/OutDetailsInfo/@b.Id" style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
                     </td>
                 </tr>
 
@@ -52,7 +52,7 @@
                 </tr>
 
                 <tr><td colspan="2">Населений пункт: @b.Village</td></tr>
-                <tr><td colspan="2">Район: @b.Region | Поверх: @b.Floor | Кімнат: @b.NumberOfRooms | Загальна площа: @b.TotalAreaInfo m2 </td></tr>
+                <tr><td colspan="2">Район: @b.Region | Поверх: @b.Floor @Html.EnumDropDownListFor(model => model.Count) | Кімнат: @b.NumberOfRooms | Загальна площа: @b.TotalAreaInfo m2 </td></tr>
                 <tr>
                     <td style="font-size: 14px" colspan="3">
                         @b.NameInfo

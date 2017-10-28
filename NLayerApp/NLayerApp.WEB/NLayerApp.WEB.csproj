@@ -264,6 +264,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Shared\Image\image_fb.jpg" />
+    <Content Include="Views\Shared\Image\logo_z.jpg" />
+    <Content Include="Views\Shared\Image\small_logo.JPG" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -361,7 +364,9 @@
     <Content Include="Views\DictionaryStreet\Delete.cshtml" />
     <Content Include="Views\DictionaryFloorMaterial\Delete.cshtml" />
     <Content Include="Views\DictionaryWallMaterial\Delete.cshtml" />
+    <Content Include="DetailsInfo.cshtml" />
     <Content Include="Views\Apartment\DetailsInfo.cshtml" />
+    <Content Include="Views\Apartment\OutDetailsInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

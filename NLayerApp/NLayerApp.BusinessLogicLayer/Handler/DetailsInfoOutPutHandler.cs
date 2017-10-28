@@ -74,8 +74,5 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 )
                 .FirstOrDefault();
 
-    
-
-
     }
 }

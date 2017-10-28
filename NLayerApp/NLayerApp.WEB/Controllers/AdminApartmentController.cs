@@ -27,7 +27,7 @@ namespace NLayerApp.WEB.Controllers
         }
 
        
-        //Get
+        //Get Insert
         [HttpGet]
         public ActionResult MyInsert()
         {
@@ -35,7 +35,7 @@ namespace NLayerApp.WEB.Controllers
             return View();
         }
 
-        //POST
+        //POST Insert
         [HttpPost]
         public ActionResult MyInsert(ApartmentInputParameters parameters)
         {
@@ -46,7 +46,7 @@ namespace NLayerApp.WEB.Controllers
             return RedirectToAction("Index");
 
         }
-
+        //Get Edit
         [HttpGet]
         public ActionResult Edit(int? id)
         {
@@ -66,6 +66,7 @@ namespace NLayerApp.WEB.Controllers
 
         }
 
+        //Post Edit
         [HttpPost]
         public ActionResult Edit(ApartmentInsertUpdateViewModel viewModel)
         {

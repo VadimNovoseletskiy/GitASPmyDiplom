@@ -35,24 +35,28 @@ namespace NLayerApp.WEB.Controllers
 
             return View(resultApartment);
         }
-
+        
+        //Get Details Info
         [HttpGet]
-        public ActionResult DetailsInfo(int? id)
+        public ActionResult OutDetailsInfo(int? id)
         {
             MySelect();
             if (id == null)
             {
-                return  new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DetailsInfoOutPutHandler myHandler=new DetailsInfoOutPutHandler(unitOfWork);
-            var result = myHandler.DetailsInfoObjectFind(id);
-            if (result == null)
+            DetailsInfoOutPutHandler myHandler = new DetailsInfoOutPutHandler(unitOfWork);
+            var detailsInfo = myHandler.DetailsInfoObjectFind(id);
+
+            if (detailsInfo==null)
             {
                 return HttpNotFound();
             }
-            return View(result);
+            return View(detailsInfo);
 
         }
+
+
 
         void MySelect()
         {

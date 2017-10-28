@@ -110,7 +110,7 @@
     <Compile Include="Models\RegionViewModel.cs" />
     <Compile Include="Models\StreetInputParameters.cs" />
     <Compile Include="Models\StreetViewModel.cs" />
-    <Compile Include="VillageInputParameters.cs" />
+    <Compile Include="Models\VillageInputParameters.cs" />
     <Compile Include="Models\VillageViewModels.cs" />
     <Compile Include="Models\WallMaterialInputParemeters.cs" />
     <Compile Include="Models\WallMaterialViewModel.cs" />
