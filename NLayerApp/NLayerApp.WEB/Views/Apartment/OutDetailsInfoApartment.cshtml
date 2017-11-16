@@ -8,50 +8,56 @@
 <div>
     @if ((Model?.Id ?? 0) > 0)
     {
-        <table border="1" cols="4" style="width:720px;float: right;">
+        <table cols="4" style="width: 720px; float: right;">
+            <tr>
+                <td colspan="4" style="text-align: center">
+                    <b>@Model.CaptionLink</b>
+                </td>
+            </tr>
             <tr>
                 <td rowspan="5">
                     <table width="100">
                         <tr>
                             <td>
-                                <img src="../../Image/apartment.jpg" />
+                                <img src="../../Image/apartment.jpg"/>
                             </td>
                         </tr>
                     </table>
                 </td>
-                <td colspan="2">
-                   <b>@Model.CaptionLink</b>
-                </td>
+               
             </tr>
 
             <tr>
-                <td><b>Тип операції:</b>@Html.EnumDropDownListFor(model => model.OperationType)</td>
+                <td>Тип операції:<b>@Model.OperationType</b></td>
                 <td style="text-align: right"><b>Ціна:@Model.GrnPrice грн. (@Model.DollarPrice у.о.)</b></td>
             </tr>
 
-            <tr><td colspan="2"><b>Населений пункт:</b> @Model.Village</td></tr>
-            <tr><td colspan="2"><b>Район:</b> @Model.Region |<b> вулиця:</b>@Model.Street|</tr>
+            <tr><td colspan="2"> Населений пункт: @Model.Village</td></tr>
+            <tr><td colspan="2">Район: @Model.Region </tr>
             <tr>
-                <td style="font-size: 18px; " colspan="3">
-                    <b> Загальна площа:</b> @Model.TotalAreaInfo m<sup>2</sup>
+                <td style="font-size: 18px;" colspan="3">
+                    Загальна площа:<b>@Model.TotalAreaInfo m<sup>2</sup></b> 
                 </td>
-              
-            </tr>
-            <tr>
-                <td><p><b>Інформація: </b></p> </td>
-                <td colspan="3">
-                    @Html.TextAreaFor(model => model.InfoDetails, 5, 40, new {htmlAttributes = new {@class = "form-control"}})
-                </td>
-            </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
 
-            <tr> <td colspan="4" style="text-align: center; background-color:cadetblue"><b>Детальна інформація по квартирі</b></td></tr>
+            </tr>
+            
+
+
+        </table>
+        <p>
+            <label style="color: crimson; font-size: 15px; font-style:inherit;"><b>Детальний опис:</b></label><br>
+            @Html.TextAreaFor(model => model.InfoDetails, 5, 40, new {htmlAttributes = new {@class = "form-control"}})
+        </p>
+        <table>
+
+            <tr> <td colspan="4" style="text-align: center; background-color:#C9D8EA"><b>Детальна інформація по квартирі</b></td></tr>
             <tr>
                 <td>Готовність до заселення: </td>
-                <td colspan="3">@Html.EnumDropDownListFor(model => model.ReadinessApartment)</td>
+                <td colspan="3">@Model.ReadinessApartment</td>
+            </tr>
+            <tr>
+                <td> Стан квартири: </td>
+                <td colspan="3">@Model.ConditionOfApartment</td>
             </tr>
             <tr>
                 <td>Загальна кількість поверхів:</td>
@@ -59,23 +65,23 @@
             </tr>
             <tr>
                 <td>Поверх квартири</td>
-                <td colspan="3">@Html.EnumDropDownListFor(model => model.FloorApartment)</td>
+                <td colspan="3">@Model.FloorApartment</td>
             </tr>
             <tr>
                 <td>Тип кімнат:</td>
-                <td colspan="3">@Html.EnumDropDownListFor(model => model.RoomType)</td>
+                <td colspan="3">@Model.RoomType</td>
             </tr>
             <tr>
                 <td>Кількість кімнат:</td>
-                <td colspan="3">@Html.EnumDropDownListFor(model => model.RoomsApartment)</td>
+                <td colspan="3">@Model.RoomsApartment</td>
             </tr>
             <tr>
                 <td>Тип ванної кімнати:</td>
-                <td colspan="3">@Html.EnumDropDownListFor(model => model.BathRoomApartment)</td>
+                <td colspan="3">@Model.BathRoomApartment</td>
             </tr>
             <tr>
                 <td>Наявність балкону</td>
-                <td colspan="3">@Html.EnumDropDownListFor(model => model.BalconyApartment)</td>
+                <td colspan="3">@Model.BalconyApartment</td>
             </tr>
             <tr>
                 <td>Матеріал стін:</td>
@@ -91,10 +97,12 @@
             </tr>
             <tr>
                 <td>Житлова площа</td>
-                <td colspan="3">@Model.LivingAreaApartment  m<sup>2</sup></td>
+                <td colspan="3">@Model.LivingAreaApartment m<sup>2</sup></td>
             </tr>
 
-            <tr> <td colspan="4" style="background-color: cornflowerblue; text-align: center"><b>Додаткове обладнання</b></td></tr>
+
+            <!--додаткове обладнання -->
+            <tr> <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Додаткове обладнання</b></td></tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Boiler)Бойлер</td>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Intercom)Домофон</td>

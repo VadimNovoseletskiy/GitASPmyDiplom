@@ -40,22 +40,33 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             OperationType = x.Info.OperationType,
                             TypeLand = x.SpecialLand,
                             InfoDetails = x.Info.DetailsInfo,
-                            LandArea = x.LandArea
+                            LandArea = x.Info.TotalAreaInfo
                            
                         }
                     )
             .FirstOrDefault();
 
+
+        public int DeleteFindCommunication(int? id)
+        {
+            var firstOrDefault = this.unitOfWork.GenericRepository<Info>()
+                .Get()
+                .Where(x => x.Id == id)
+                .Select(x => x.CommunicationId)
+                .FirstOrDefault();
+            return (int) firstOrDefault;
+        }
+
+
+
+
         public void DeleteLand(int id)
         {
-            //var myLand = unitOfWork.GenericRepository<Land>()
-            //   .Get()
-            //   .Include(x => x.Info)
-            //   .FirstOrDefault();
+            int idCommercial = DeleteFindCommunication(id);
 
             this.unitOfWork.GenericRepository<Land>().Delete(id);
             this.unitOfWork.GenericRepository<Info>().Delete(id);
-            this.unitOfWork.GenericRepository<Communication>().Delete(id);
+            this.unitOfWork.GenericRepository<Communication>().Delete(idCommercial);
             this.unitOfWork.SaveChanges();
         }
 
@@ -63,21 +74,3 @@ namespace NLayerApp.BusinessLogicLayer.Handler
 }
 
 
-
-
-
-//var myLand = unitOfWork.GenericRepository<Land>()
-//   .Get()
-//   .Include(x => x.Info)
-//   .FirstOrDefault();
-
-//land.Info.RegionId= viewModel.Region;
-//land.Info.Id= viewModel.Village;
-//land.Info.StreetId= viewModel.Street;
-//land.Info.AddressNumber = viewModel.NumberAdress;
-//land.Info.OperationType = viewModel.OperationType;
-
-//land.LandArea = viewModel.LandArea;
-//land.SpecialLand = viewModel.TypeLand;
-
-//land.Info.DetailsInfo = viewModel.InfoDetails;

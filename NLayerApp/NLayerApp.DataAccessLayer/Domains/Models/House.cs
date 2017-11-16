@@ -27,7 +27,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         ///<value>
         /// Type of House   
         /// </value>
-        public TypeOfHouse TypeHouse { get; set; }
+        public string TypeHouse { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// The condition of the house
         /// </value>
-        public ConditionOfHouse ConditionHouse { get; set; }
+        public string ConditionHouse { get; set; }
 
 
         /// <summary>
@@ -45,7 +45,15 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Part of House 
         ///  </value>
-        public PartOfHouse PartHouse { get; set; }
+        public string PartHouse { get; set; }
+
+        /// <summary>
+        /// Property ReadinessHouse
+        /// </summary>
+        /// <value>
+        /// Readiness for setting 
+        ///  </value>
+        public string ReadinessHouse { get; set; }
 
 
         /// <summary>

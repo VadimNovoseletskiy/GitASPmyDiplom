@@ -10,17 +10,18 @@
     @if ((Model?.Id ?? 0) > 0)
     {
         <p style="font-size: 30px; color: red; text-align: center">Увага!!!!</p>
-        <p style="font-size: 20px;"> ви збираєтесь виладити з бази данних без змоги відновити обєкт з такими параметрами:</p>
+        <p style="font-size: 20px;"> ви збираєтесь виладити з бази данних без змоги відновити об'єкт з такими параметрами:</p>
         <form method="POST" action="/AdminCommercial/Delete">
             <table>
-                <tr><td>Id :</td><td><input value="@Model.Id" name="Id" /></td></tr>
-                <tr><td>Населений пункт :</td><td>@Html.DropDownList("Village", ViewBag.villageName as SelectList, @Model.Village)</td></tr>
-                <tr><td>Район:</td><td>@Html.DropDownList("Region", ViewBag.regionName as SelectList, @Model.Region)</td></tr>
-                <tr><td>Вулиця:</td><td>@Html.DropDownList("Street", ViewBag.streetName as SelectList, @Model.Street)</td></tr>
-                <tr><td>Нрмер будинку:</td><td><input value="@Model.NumberAdress" name="NumberAdress" /></td></tr>
-                <tr><td>тип операції:</td><td>@Html.EnumDropDownListFor(model => model.OperationType)</td></tr>
-                <tr><td>Тип нерухомості:</td><td>@Html.EnumDropDownListFor(model => model.TypeCommercial)</td></tr>
-                <tr><td>Детальна Інфо :</td><td><input value="@Model.InfoDetails" name="InfoDetails" /></td></tr>
+                <tr><td>іd :</td><td><input value="@Model.Id" name="Id" /></td></tr>
+                <tr><td>населений пункт :</td><td>@Html.DropDownList("Village", ViewBag.villageName as SelectList, @Model.Village)</td></tr>
+                <tr><td>район:</td><td>@Html.DropDownList("Region", ViewBag.regionName as SelectList, @Model.Region)</td></tr>
+                <tr><td>вулиця:</td><td>@Html.DropDownList("Street", ViewBag.streetName as SelectList, @Model.Street)</td></tr>
+            <tr><td>номер будинку:</td> <td>@Model.NumberAdress</td></tr>
+                <tr><td> номер офісу:</td> <td>@Model.NumberOficce </td></tr>
+                <tr><td>тип операції:</td><td>@Model.OperationType</td></tr>
+                <tr><td>тип нерухомості:</td><td>@Model.TypeCommercial</td></tr>
+                <tr><td>детальна Інфо :</td><td>@Model.InfoDetails</td></tr>
 
 
             </table>
@@ -31,7 +32,7 @@
 
 
 <div style="margin-top: 50px; margin-bottom: 20px">
-    @Html.ActionLink("Повернутися до списку обєктів Комерційної нерухомості", "Index")
+    @Html.ActionLink("Повернутися до списку об'єктів Комерційної нерухомості", "Index")
 </div>
 
 

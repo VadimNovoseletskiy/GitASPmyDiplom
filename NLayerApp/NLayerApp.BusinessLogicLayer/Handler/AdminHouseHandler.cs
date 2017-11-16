@@ -32,7 +32,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     p => new AdminHouseViewModel
                     {
                         Id = p.Id,
-                        NameCaption = p.NameCaptionLink,
+                        OperationType = p.OperationType,
                         Village = p.Village.VillageName,
                         Street = p.Street.StreetName,
                         AddressNumber = p.AddressNumber
@@ -64,6 +64,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     TypeHouse = parameters.TypeHouse,
                     ConditionHouse = parameters.ConditionHouse,
                     PartHouse = parameters.PartHouse,
+                    ReadinessHouse=parameters.ReadinessHouse,
                     FloorHouse = parameters.FloorHouse,
                     RoomsHouse = parameters.RoomsHouse,
                     LivingAreaHouse = parameters.LivingAreaHouse,
@@ -129,6 +130,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             OperationType = x.OperationType,
                             TypeHouse = x.House.TypeHouse,
                             PartHouse= x.House.PartHouse,
+                            ReadinessHouse = x.House.ReadinessHouse,
                             ConditionHouse = x.House.ConditionHouse,
                             RoomsHouse = x.House.RoomsHouse,
                             FloorHouse = x.House.FloorHouse,
@@ -212,6 +214,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             info.House.LivingAreaHouse = viewModel.LivingAreaHouse;
             info.House.KitchenAreaHouse = viewModel.KitchenAreaHouse;
             info.House.LandAreaHouse = viewModel.LandAreaHouse;
+            info.House.ReadinessHouse = viewModel.ReadinessHouse;
 
             info.WallMaterialId = viewModel.WallMaterial;
             info.FloorMaterialId = viewModel.FloorMaterial;

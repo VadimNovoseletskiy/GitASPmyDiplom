@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NLayerApp.BusinessLogicLayer.Handler;
@@ -32,6 +33,25 @@ namespace NLayerApp.WEB.Controllers
             return View(resultCommercial);
         }
 
+        [HttpGet]
+        public ActionResult OutPutDetailsInfoCommercial(int? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DetailsInfoOutPutCommercialHandler myHandler=new DetailsInfoOutPutCommercialHandler(unitOfWork);
+            var detailsOutInfoCommercial = myHandler.DetailsInfoCommercialFind(id);
+            if (detailsOutInfoCommercial == null)
+            {
+                return HttpNotFound();
+            }
+            return View(detailsOutInfoCommercial);
+        }
+
+
+
         void MySelect()
         {
             RegionHandler myRegionHandler=new RegionHandler(unitOfWork);
@@ -43,6 +63,8 @@ namespace NLayerApp.WEB.Controllers
             var resultVillage = myVillageHandler.GetVillage();
             SelectList listVillage=new SelectList(resultVillage,"Id", "Value");
             ViewBag.villageName = listVillage;
+
+           
         }
     }
 }

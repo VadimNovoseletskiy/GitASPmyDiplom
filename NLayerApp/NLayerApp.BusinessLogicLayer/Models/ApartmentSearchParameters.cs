@@ -11,9 +11,9 @@ namespace NLayerApp.BusinessLogicLayer.Models
     {
         public int Region { get; set; }
         public int Village { get; set; }
-        public SpecialTypeRoom TypeRoom { get; set; }
-        public TypeOfOperation OperationType { get; set; }
-        public SpecialRoomsApartment NumberOfRooms { get; set; }
+        public string TypeRoom { get; set; }
+        public string OperationType { get; set; }
+        public string RoomsApartment { get; set; }
         public int DollarCostFrom { get; set; }
         public int DollarCostTo { get; set; }
         public int GrnCostFrom { get; set; }

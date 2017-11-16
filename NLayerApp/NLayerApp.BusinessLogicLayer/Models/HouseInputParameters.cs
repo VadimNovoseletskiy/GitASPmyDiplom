@@ -15,13 +15,14 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int Region { get; set; }
         public int Street { get; set; }
         public string NumberAdress { get; set; }
-        public TypeOfOperation OperationType { get; set; }
+        public string OperationType { get; set; }
 
   //Details Info  
-        public TypeOfHouse TypeHouse { get; set; }//
-        public PartOfHouse PartHouse { get; set; }//
-        public ConditionOfHouse ConditionHouse { get; set; }
+        public string TypeHouse { get; set; }//
+        public string PartHouse { get; set; }//
+        public string ConditionHouse { get; set; }
         public int RoomsHouse { get; set; }//
+        public string ReadinessHouse { get; set; }
         public int FloorHouse { get; set; }//
         public int FloorMaterial { get; set; }
         public int WallMaterial { get; set; }

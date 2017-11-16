@@ -44,12 +44,14 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             CaptionLink = p.NameCaptionLink,
                             Village = p.Village.VillageName,
                             Region = p.Region.RegionName,
+                            OperationType = p.OperationType,
                             TypeHouse = p.House.TypeHouse,
                             Floor = p.House.FloorHouse,
                             TotalArea = p.TotalAreaInfo,
                             DollarPrice = p.DollarPrice,
                             GrnPrice = p.GrnPrice,
-                            NameInfo = p.NameInfo
+                            NameInfo = p.NameInfo,
+                            ReadinessHouse = p.House.ReadinessHouse
 
                         }
                 )

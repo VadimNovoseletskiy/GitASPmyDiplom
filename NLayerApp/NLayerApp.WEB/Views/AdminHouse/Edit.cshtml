@@ -13,27 +13,34 @@
         <input type="hidden" value="@Model.Id" name="Id" />
         <!--Населені пункти -->
         <p>
-            <label>Населений пункт:</label>
+            <label>населений пункт:</label>
            @Html.DropDownList("Village", ViewBag.villageName as SelectList, @Model.Village)
         </p>
         <!--Райони-->
         <p>
-            <label>Район:</label>
+            <label>район:</label>
             @Html.DropDownList("Region", ViewBag.regionName as SelectList, @Model.Region)
         </p>
         <!--вулиця -->
         <p>
-            <label>Вулиця:</label>
+            <label>вулиця:</label>
             @Html.DropDownList("Street", ViewBag.streetName as SelectList, @Model.Street)
         </p>
         <!--Номер будинку-->
         <p>
-            <label>Будинок № :</label>
+            <label>будинок № :</label>
             <input type="text" id="adress_number" value="@Model.NumberAdress" name="NumberAdress" />
         </p>
 
-        <label for="operation">Вид операції:</label>
-       @Html.EnumDropDownListFor(model => model.OperationType)
+        <p>вид операції :<b>@Model.OperationType </b> </p>
+
+        <fieldset style="border: 2px solid red; width: 200px;">
+            <legend style="color: red;" >змінити (залишити) вид операції на :</legend>
+            <select id="operation" name="OperationType">
+                <option value="оренда">оренда</option>
+                <option value="продаж">продаж</option>
+            </select><br />
+        </fieldset>
         <!--прододжить разбоп с этого места -->
     </fieldset>
     <!-- +++++++++++++ Детальна інформація +++++++++++++++++ -->
@@ -41,63 +48,93 @@
 
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
         <!-- тип будинку -->
-        <p>
-            <label>Тип будинку:</label>
-            @Html.EnumDropDownListFor(model => model.TypeHouse)
-            
-        </p>
+        <p>тип будинку:<b>@Model.TypeHouse </b></p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red;">змінити(залишити)тип будинку на :</legend>
+            <select name="TypeHouse">
+                <option value="будинок">будинок</option>
+                <option value="котедж">котедж</option>
+                <option value="літній будинок">Літній будинок</option>
+            </select>
+        </fieldset>
+
+        <!-- Готовність до заселення -->
+        <p>готовність до заселення:<b>@Model.ReadinessHouse </b> </p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red;" >змінити(залишити)готовність до заселення:</legend>
+            <select name="ReadinessHouse">
+                <option value="в єксплуатації">в єксплуатації</option>
+                <option value="новобудова">новобудова</option>
+                <option value="будується">будується </option>
+                <option value="вільний">вільна</option>
+            </select>
+        </fieldset>
         <!--Стан обьекту-->
-        <p>
-            <label>Стан:</label>
-            @Html.EnumDropDownListFor(model => model.ConditionHouse)
-           
-        </p>
+        <p> стан будинку:<b>@Model.ConditionHouse</b> </p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red">змінити(залишити) стан будику на :</legend>
+            <select name="ConditionHouse">
+                <option value="відмінний">відмінний</option>
+                <option value="хороший">хороший</option>
+                <option value="задовільний">задовільний</option>
+                <option value="потрібний ремонт">потрібний ремонт</option>
+                <option value="оздоблювальні роботи">оздоблювальні роботи</option>
+            </select>
+        </fieldset>
         <!-- частина будинку -->
-        <p>
-            <label>Частина будинку:</label>
-            @Html.EnumDropDownListFor(model => model.PartHouse)
-           
-        </p>
+        <p>частина будинку :<b>@Model.PartHouse </b> </p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend>змінити(залишити) значення  частини будинку на:</legend>
+            <select name="PartHouse">
+                <option value="ціла">ціла</option>
+                <option value="1/2">1/2</option>
+                <option value="1/3">1/3</option>
+                <option value="1/4">1/4</option>
+                <option value="1/5">1/5</option>
+                <option value="2/3">2/3</option>
+                <option value="2/5">2/5</option>
+            </select>
+        </fieldset>
         <!-- Кількість кімнат -->
         <p>
-            <label>Кількість кімнат:</label>
+            <label>кількість кімнат:</label>
             <input type="number" id="" value="@Model.RoomsHouse" name="RoomsHouse" min="1" max="5" />
         </p>
         <!-- зангальні кількість поверхів -->
         <p>
-            <label>Кількість поверхів:</label>
+            <label>кількість поверхів:</label>
             <input type="number" id="" value="@Model.FloorHouse" name="FloorHouse" min="1" max="5" />
         </p>
         <!-- Матеріал підлоги -->
         <p>
-            <label>Матеріал підлоги:</label>
+            <label>матеріал підлоги:</label>
             @Html.DropDownList("FloorMaterial", ViewBag.floorMaterialName as SelectList, @Model.FloorMaterial)
         </p>
 
         <!-- Матеріал стін -->
         <p>
-            <label>Матеріал стін:</label>
+            <label>матеріал стін:</label>
             @Html.DropDownList("WallMaterial", ViewBag.wallMaterialName as SelectList,@Model.WallMaterial)
         </p>
 
         <!-- Загальна площа -->
         <p>
-            <label>Загальна площа:</label>
+            <label>загальна площа:</label>
             <input type="number" id="total_area" value="@Model.TotalAreaInfo" name="TotalAreaInfo" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
         </p>
         <!-- Житлова плоша -->
         <p>
-            <label>Житлова площа </label>
+            <label>житлова площа </label>
             <input type="number" id="living_area" value="@Model.LivingAreaHouse" name="LivingAreaHouse" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
         </p>
         <!-- Площа кухні -->
         <p>
-            <label> Площа кухні:</label>
+            <label> площа кухні:</label>
             <input type="number" id="kitchen_area" value="@Model.KitchenAreaHouse" name="KitchenAreaHouse" min="0.1" max="200.9" step="0.1" /> m <sup><small>2</small></sup>
         </p>
         <!-- Площа прилягаючої  земельної ділянки  -->
         <p>
-            <label> Площа земельної ділянки:</label>
+            <label> площа земельної ділянки:</label>
             <input type="number" value="@Model.LandAreaHouse" id="land_area_house" name="LandAreaHouse" min="0.1" step="0.1" /> (Га)
         </p>
     </fieldset>
@@ -107,40 +144,40 @@
 
         <p>
         <p>
-            @Html.CheckBoxFor(model => model.Boiler)Бойлер
+            @Html.CheckBoxFor(model => model.Boiler)бойлер
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Intercom)Домофон
+            @Html.CheckBoxFor(model => model.Intercom)домофон
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Internet)Інтернет
+            @Html.CheckBoxFor(model => model.Internet)інтернет
         </p>
         <p>
-           @Html.CheckBoxFor(model => model.CableTv)Кабельне телебачення
+           @Html.CheckBoxFor(model => model.CableTv)кабельне телебачення
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.FirePlace)Камін
+            @Html.CheckBoxFor(model => model.FirePlace)камін
         </p>
         <p>
-           @Html.CheckBoxFor(model => model.Air)Кондіціонер
+           @Html.CheckBoxFor(model => model.Air)кондіціонер
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Furniture)Меблі
+            @Html.CheckBoxFor(model => model.Furniture)меблі
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.MyWindows) Склопакети
+            @Html.CheckBoxFor(model => model.MyWindows) склопакети
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Signaling)Сигналізація
+            @Html.CheckBoxFor(model => model.Signaling)сигналізація
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.SatelliteTv)Супутникове телебачення
+            @Html.CheckBoxFor(model => model.SatelliteTv)супутникове телебачення
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка
+            @Html.CheckBoxFor(model => model.WashingMachine)пральна машинка
         </p>
         <p>
-           @Html.CheckBoxFor(model => model.Telephone)Телефон
+           @Html.CheckBoxFor(model => model.Telephone)телефон
         </p>
         </p>
 
@@ -151,31 +188,31 @@
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
         
         <p>
-           @Html.CheckBoxFor(model => model.Gas)Газ
+           @Html.CheckBoxFor(model => model.Gas)газ
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.RailWay)Залізнична дорога
+            @Html.CheckBoxFor(model => model.RailWay)залізнична дорога
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.CentralSewerage)Центральна каналізація
+            @Html.CheckBoxFor(model => model.CentralSewerage)центральна каналізація
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.CentralWater)Центральне водопостачання
+            @Html.CheckBoxFor(model => model.CentralWater)центральне водопостачання
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.CentralHeating)Центральне отоплення
+            @Html.CheckBoxFor(model => model.CentralHeating)центральне отоплення
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Electricity)Електроенергія
+            @Html.CheckBoxFor(model => model.Electricity)електроенергія
         </p>
         <p>    
-             @Html.CheckBoxFor(model => model.AutonomousSewerage)Автономна каналізація
+             @Html.CheckBoxFor(model => model.AutonomousSewerage)автономна каналізація
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.AutonomusHeating)Автономне опалення
+            @Html.CheckBoxFor(model => model.AutonomusHeating)автономне опалення
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.AutonomousWater)Автономне водопостачання
+            @Html.CheckBoxFor(model => model.AutonomousWater)автономне водопостачання
         </p>
        
     </fieldset>
@@ -184,31 +221,31 @@
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Надвірні побудови</legend>
 
         <p>
-            @Html.CheckBoxFor(model => model.BahtHouse) Баня
+            @Html.CheckBoxFor(model => model.BahtHouse) баня
         </p>
         <p>
-           @Html.CheckBoxFor(model => model.Swimming)Басейн
+           @Html.CheckBoxFor(model => model.Swimming)басейн
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Garage)Гараж
+            @Html.CheckBoxFor(model => model.Garage)гараж
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Well)Колодязь
+            @Html.CheckBoxFor(model => model.Well)колодязь
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.SummerKitchen)Літня кухня
+            @Html.CheckBoxFor(model => model.SummerKitchen)літня кухня
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.WorkShop)Майстерня
+            @Html.CheckBoxFor(model => model.WorkShop)майстерня
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Barn)Сарай
+            @Html.CheckBoxFor(model => model.Barn)сарай
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Well1) Скважина
+            @Html.CheckBoxFor(model => model.Well1) скважина
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.GreenHouse)Теплиця
+            @Html.CheckBoxFor(model => model.GreenHouse)теплиця
         </p>
 
     </fieldset>
@@ -218,36 +255,36 @@
        
         <!-- Заголовок -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Заголовок :</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">заголовок :</label><br />
             @Html.TextAreaFor(model => model.CaptionLink, 2, 120, new { htmlAttributes = new { @class = "form-control" } })
             @*<textarea id="" value="@Model.NameCaptionLink"  name="NameCaptionLink"  cols="120" rows="2"></textarea>*@
         </p>
         <!-- Коротка інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">коротка інформація:</label><br />
             @Html.TextAreaFor(model => model.NameInfo, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
         </p>
 
         <!-- Детальна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">детальна інформація</label><br>
             @Html.TextAreaFor(model => model.InfoDetails, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
         <!-- Приватна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">приватна інформація</label><br />
             @Html.TextAreaFor(model => model.InfoPrivat, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
         <!-- ціна в гривнях -->
         <p>
-            <label>Ціна:</label>
+            <label>ціна:</label>
             <input type="number" id="" value="@Model.GrnPrice" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
         </p>
         <!-- ціна в доларах -->
         <p>
-            <label>Ціна:</label>
+            <label>ціна:</label>
             <input type="number" id="" value="@Model.DollarPrice" name="DollarPrice" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
         </p>
     </fieldset>

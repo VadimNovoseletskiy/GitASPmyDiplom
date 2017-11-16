@@ -62,7 +62,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Enum type of operation(sale, lease)
         /// </value>
-        public TypeOfOperation OperationType { get; set; }
+        public string OperationType { get; set; }
 
         /// <summary>
         /// The property "Address Number" 

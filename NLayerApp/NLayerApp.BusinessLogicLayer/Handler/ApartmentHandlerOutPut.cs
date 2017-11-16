@@ -32,11 +32,12 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             && p.VillageId == parameters.Village
                             && p.OperationType == parameters.OperationType
                             && p.Apartment.TypeRoom == parameters.TypeRoom
-                            && p.Apartment.RoomsApartment == parameters.NumberOfRooms
-                            && p.DollarPrice >parameters.DollarCostFrom
-                            && p.DollarPrice<parameters.DollarCostTo
-                            && p.GrnPrice > parameters.GrnCostFrom
-                            && p.GrnPrice<parameters.GrnCostTo)
+                            && p.Apartment.RoomsApartment == parameters.RoomsApartment
+                            && p.DollarPrice >=parameters.DollarCostFrom
+                            && p.DollarPrice<=parameters.DollarCostTo
+                            && p.GrnPrice >= parameters.GrnCostFrom
+                            && p.GrnPrice<=parameters.GrnCostTo
+                            )
 
                 .Select(p => new ApartmentViewModel
                 {
@@ -44,6 +45,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     CaptionLink = p.NameCaptionLink,
                     Region = p.Region.RegionName,
                     Village = p.Village.VillageName,
+                    OperationType = p.OperationType,
                     Floor = p.Apartment.FloorApartment,
                     NumberOfRooms = p.Apartment.RoomsApartment,
                     TotalAreaInfo = p.TotalAreaInfo,

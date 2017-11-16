@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NLayerApp.BusinessLogicLayer.Handler;
@@ -42,7 +43,24 @@ namespace NLayerApp.WEB.Controllers
           
         }
 
-       
+        //Get details info about Land
+        [HttpGet]
+        public ActionResult OutPutDetailsInfoLand(int? id)
+        {
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DetailsOutPutLandHandler myHandler=new DetailsOutPutLandHandler(unitOfWork);
+            var detailsLandInfo = myHandler.DetailsInfoLandFind(id);
+            if (detailsLandInfo == null)
+            {
+                return HttpNotFound();
+            }
+            return View(detailsLandInfo);
+        }
+
+
 
         void MySelect()
         {

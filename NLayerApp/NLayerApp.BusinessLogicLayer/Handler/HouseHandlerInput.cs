@@ -53,6 +53,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                     LivingAreaHouse = parameters.LivingAreaHouse,
                                     KitchenAreaHouse = parameters.KitchenAreaHouse,
                                     LandAreaHouse = parameters.LandAreaHouse,
+                                    ReadinessHouse = parameters.ReadinessHouse,
                
                                     BarnOutBuildings = parameters.Barn,
                                     BahtHouseOutBuilding = parameters.BahtHouse,

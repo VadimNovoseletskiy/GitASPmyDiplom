@@ -18,8 +18,9 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string NumberAdress { get; set; }
 
         //commercial information
-        public TypeOfOperation OperationType { get; set; }
-        public SpecialTypeCommercial TypeCommercial { get; set; }
+        public string OperationType { get; set; }
+        public string TypeCommercial { get; set; }
+        public int NumberOficce { get; set; }
 
         //Details Info
         public string InfoDetails { get; set; }

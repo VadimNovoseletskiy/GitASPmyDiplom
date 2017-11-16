@@ -18,8 +18,8 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string NumberAdress { get; set; }
         
         //land information
-        public TypeOfOperation OperationType { get; set; }
-        public SpecialTypeLand TypeLand { get; set; }
+        public string OperationType { get; set; }
+        public string TypeLand { get; set; }
         public float LandArea { get; set; }
        //Details Info
         public string InfoDetails { get; set; }

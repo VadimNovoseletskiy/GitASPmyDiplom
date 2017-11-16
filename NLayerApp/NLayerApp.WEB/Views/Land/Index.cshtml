@@ -16,7 +16,7 @@
         //}
         //return 0;
         //или Model != null ? Model.Count : 0;
-        <table border="1" cols="4" width="auto">
+        <table border="1" cols="4" >
 
             <tr>
                 <td width="30">
@@ -42,20 +42,20 @@
                         </table>
                     </td>
                     <td colspan="2">
-                        <a href="Land/  " style="font-size: 17px; text-align: center">@b.CaptionLink</a>
+                        <a href="/Land/OutPutDetailsInfoLand/@b.Id " style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
                     </td>
                 </tr>
 
                 <tr>
-                    <td >Загальна площа: @b.TotalAreaInfo Га</td>
-                    <td style="text-align: right">Ціна: @b.DollarPrice у.о.</td>
+                    <td >тип операції:<b>@b.OperationType</b></td>
+                    <td style="text-align: right">ціна:<b>@b.DollarPrice ( у.о.)</b></td>
                 </tr>
 
-                <tr><td colspan="2">Населений пункт: @b.Village</td></tr>
-                <tr><td colspan="2">Район: @b.Region</td></tr>
+                <tr><td colspan="2">@b.Village</td></tr>
+                <tr><td colspan="2"> @b.Region</td></tr>
                 <tr >
-                    <td style="font-size: 14px" colspan="3">
-                       @b.NameInfo
+                    <td  colspan="3">
+                        загальна площа:<b>@b.TotalAreaInfo Га</b> 
                     </td>
 
                 </tr>

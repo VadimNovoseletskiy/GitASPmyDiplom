@@ -18,7 +18,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string NumberAdress { get; set; }
 
         // information
-        public TypeOfOperation OperationType { get; set; }
+        public string OperationType { get; set; }
         public float LivingAreaHouse { get; set; }
 
         //Details Info

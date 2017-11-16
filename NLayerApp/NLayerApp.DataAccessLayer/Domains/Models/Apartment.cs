@@ -26,7 +26,16 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Describes the condition of the apartment
         /// </value>
-        public ConditionOfApartment ConditionOfApartment { get; set; }
+        public string ConditionOfApartment { get; set; }
+
+
+        /// <summary>
+        /// Property  ApartmentNumber
+        /// </summary>
+        /// <value>
+        ///  Describes the Apartment number.
+        /// </value>
+        public int ApartmentNumber { get; set; }
 
 
         /// <summary>
@@ -44,7 +53,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Describes floor, where is the  apartment  
         /// </value>
-        public SpecialFloorApartment FloorApartment { get; set; }
+        public string FloorApartment { get; set; }
 
 
         /// <summary>
@@ -71,7 +80,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Describes the number of rooms in the apartment 
         /// </value>
-        public SpecialRoomsApartment RoomsApartment { get; set; }
+        public string RoomsApartment { get; set; }
 
         /// <summary>
         /// Property type room apartment
@@ -79,7 +88,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Describes the type of room in the Apartment.
         /// </value>
-        public SpecialTypeRoom TypeRoom { get; set; }
+        public string TypeRoom { get; set; }
 
         /// <summary>
         /// Property BathRoomApartment
@@ -87,7 +96,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Describes the bathroom
         /// </value>
-        public SpecialBathRoomApartment BathRoomApartment { get; set; }
+        public string BathRoomApartment { get; set; }
 
 
         /// <summary>
@@ -96,7 +105,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         ///The presence of a balcony  
         /// </value>
-        public SpecialBalconyApartment BalconyApartment { get; set; }
+        public string BalconyApartment { get; set; }
 
 
         /// <summary>
@@ -105,7 +114,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Readiness for setting 
         ///  </value>
-        public SpecialReadiness ReadinessApartment { get; set; }
+        public string ReadinessApartment { get; set; }
 
 
         //Links: 

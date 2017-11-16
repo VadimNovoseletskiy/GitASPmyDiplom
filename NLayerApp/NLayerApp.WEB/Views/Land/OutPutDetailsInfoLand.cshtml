@@ -1,0 +1,57 @@
+﻿@model NLayerApp.BusinessLogicLayer.Models.LandDetailsInfoViewModel
+@{
+    ViewBag.Title = "OutPutDetailsInfoLand";
+    Layout = "~/Views/Shared/_SearchHouseForm.cshtml";
+}
+
+<h2>OutPutDetailsInfoLand</h2>
+
+
+
+<h2>Детальна інформація по земельній ділянці</h2>
+<div>
+    @if ((Model?.Id ?? 0) > 0)
+    {
+        //когда просто открывается страница (метода ж два, а вьюха одна) то модель пустая а ты это не обработал
+        //это то же что если то что в скобках считать за метод то это тоже что и:
+        //if (Model != null)
+        //{
+        //    return Model.Count;
+        //}
+        //return 0;
+        //или Model != null ? Model.Count : 0;
+        <table  cols="4">
+                <tr>
+                    <td rowspan="5">@Model.Id</td>
+                    <td rowspan="5">
+                        <table width="100">
+                            <tr>
+                                <td>
+                                    <img src="../../Image/land.jpg" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="2">
+                        <b> @Model.CaptionLink</b>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>тип операції:<b>@Model.OperationType</b></td>
+                    <td style="text-align: right">ціна:<b>@Model.DollarPrice у.о.</b></td>
+                </tr>
+
+                <tr><td colspan="2">@Model.Village</td></tr>
+                <tr><td colspan="2"> @Model.Region</td></tr>
+                <tr>
+                    <td colspan="3">
+                        загальна площа:<b>@Model.LandArea Га</b>
+                    </td>
+                </tr>
+            
+        </table>
+    }
+</div>
+
+

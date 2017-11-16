@@ -27,7 +27,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Commercial type 
         /// </value>
-        public SpecialTypeCommercial TypeCommercial { get; set; }
+        public string TypeCommercial { get; set; }
 
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// State  
         /// </value>
-        public ConditionOfCommercial StateCommercial { get; set; }
+        public string StateCommercial { get; set; }
 
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Floor where is the commercial real estate
         /// </value>
-        public SpecialFloorCommercial FloorCommercial { get; set; }
+        public string FloorCommercial { get; set; }
 
 
         /// <summary>
@@ -73,6 +73,15 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// Area of adjacent land 
         ///  </value>
         public float LandAreaCommercial { get; set; }
+
+
+        /// <summary>
+        /// Property OficeNumber
+        /// </summary>
+        /// <value>
+        /// The Number of office
+        /// </value>
+        public int OficeNumber { get; set; }
 
 
         //Links:

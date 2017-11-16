@@ -7,19 +7,18 @@ using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.BusinessLogicLayer.Models
 {
-    public class LandInsertUpdateViewModel
+    public class LandDetailsInfoViewModel
     {
         public int Id { get; set; }
-        
         //Address
-        public int Village { get; set; }
-        public int Region { get; set; }
-        public int Street { get; set; }
+        public string Village { get; set; }
+        public string Region { get; set; }
+        public string Street { get; set; }
         public string NumberAdress { get; set; }
-        public float TotalArea { get; set; }
         //land information
         public string OperationType { get; set; }
         public string TypeLand { get; set; }
+        public float LandArea { get; set; }
         //communications
         public bool Gas { get; set; }
         public bool RailWay { get; set; }
@@ -31,7 +30,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string CaptionLink { get; set; }
         public string NameInfo { get; set; }
         public string InfoDetails { get; set; }
-        public string InfoPrivat { get; set; }
+        
         //Money
         public int GrnPrice { get; set; }
         public int DollarPrice { get; set; }

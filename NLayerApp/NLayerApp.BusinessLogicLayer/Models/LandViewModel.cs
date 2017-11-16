@@ -9,5 +9,6 @@
         public string Village{ get; set; }
         public float TotalAreaInfo { get; set; }
         public int DollarPrice { get; set; }
+        public string OperationType { get; set; }
     }
 }

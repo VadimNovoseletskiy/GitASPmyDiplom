@@ -32,10 +32,12 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     p => new AdminApartmentViewModel
                     {
                         Id = p.Id,
-                        NameCaption = p.NameCaptionLink,
+                        OperationType = p.OperationType,
                         Village = p.Village.VillageName,
                         Street = p.Street.StreetName,
-                        AddressNumber = p.AddressNumber
+                        AddressNumber = p.AddressNumber,
+                        ApartmentNumber = p.Apartment.ApartmentNumber
+                        
                     }
                 )
                 .ToList<AdminApartmentViewModel>();
@@ -61,6 +63,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 WallMaterialId = parameters.WallMaterial,
                 Apartment = new Apartment
                 {
+                    ApartmentNumber = parameters.ApartmentNumber,
                     ConditionOfApartment = parameters.ConditionOfApartment,
                     TotalFloorApartment = parameters.TotalFloor,
                     FloorApartment = parameters.FloorApartment,
@@ -113,6 +116,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             WallMaterial = x.WallMaterialId.Value,
                             TotalAreaInfo = x.TotalAreaInfo,
 
+                            ApartmentNumber = x.Apartment.ApartmentNumber,
                             ConditionOfApartment = x.Apartment.ConditionOfApartment,
                             RoomsApartment = x.Apartment.RoomsApartment,
                             RoomType = x.Apartment.TypeRoom,
@@ -171,6 +175,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             info.WallMaterialId = viewModel.WallMaterial;
             info.FloorMaterialId = viewModel.FloorMaterial;
 
+            info.Apartment.ApartmentNumber = viewModel.ApartmentNumber;
             info.Apartment.ConditionOfApartment = viewModel.ConditionOfApartment;
             info.Apartment.RoomsApartment = viewModel.RoomsApartment;
             info.Apartment.TypeRoom = viewModel.RoomType;

@@ -33,10 +33,11 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         p => new AdminCommercialViewModel
                         {
                             Id = p.Id,
-                            NameCaption = p.NameCaptionLink,
+                            OperationType = p.OperationType,
                             Village = p.Village.VillageName,
                             Street = p.Street.StreetName,
-                            AddressNumber = p.AddressNumber
+                            AddressNumber = p.AddressNumber,
+                            OficeNumber = p.Commercial.OficeNumber
                         }
                     )
                     .ToList<AdminCommercialViewModel>();
@@ -67,7 +68,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         FloorCommercial = parameters.FloorCommercial,
                         TotalFloorCommercial = parameters.TotalFloorCommercial,
                         EffectiveAreaCommercial = parameters.EffectiveAreaCommercial,
-                        LandAreaCommercial = parameters.LandAreaCommercial
+                        LandAreaCommercial = parameters.LandAreaCommercial,
+                        OficeNumber = parameters.OficeNumber
 
                     },
 
@@ -127,6 +129,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                 TotalFloorCommercial = x.Commercial.TotalFloorCommercial,
                                 EffectiveAreaCommercial = x.Commercial.EffectiveAreaCommercial,
                                 LandAreaCommercial = x.Commercial.LandAreaCommercial,
+                                OficeNumber = x.Commercial.OficeNumber,
 
                                 FloorMaterial = x.FloorMaterialId.Value,
                                 WallMaterial = x.WallMaterialId.Value,
@@ -195,6 +198,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 info.Commercial.TotalFloorCommercial=viewModel.TotalFloorCommercial;
                 info.Commercial.EffectiveAreaCommercial=viewModel.EffectiveAreaCommercial;
                 info.Commercial.LandAreaCommercial=viewModel.LandAreaCommercial;
+                info.Commercial.OficeNumber = viewModel.OficeNumber;
                 
                 info.WallMaterialId = viewModel.WallMaterial;
                 info.FloorMaterialId = viewModel.FloorMaterial;

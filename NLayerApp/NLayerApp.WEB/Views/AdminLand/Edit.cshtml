@@ -12,49 +12,55 @@
 
         <!--Населені пункти -->
         <p>
-            <label>Населений пункт:</label>
+            <label>населений пункт:</label>
             @Html.DropDownList("Village", ViewBag.villageName as SelectList, @Model.Village)
-            
-
         </p>
         <!--район-->
         <p>
-            <label>Район:</label>
+            <label>район:</label>
             @Html.DropDownList("Region", ViewBag.regionName as SelectList, @Model.Region)
         </p>
         <!--вулиця -->
         <p>
-            <label>Вулиця:</label>
+            <label>вулиця:</label>
             @Html.DropDownList("Street", ViewBag.streetName as SelectList, @Model.Street)
         </p>
         <!--Номер будинку-->
         <p>
-            <label>Будинок № :</label>
+            <label>будинок № :</label>
             <input type="text" id="adress_number" value="@Model.NumberAdress" name="NumberAdress" />
         </p>
+        <p>вид операції :<b> @Model.OperationType </b></p>
+        <fieldset style="width: 200px; color: red; border: 2px solid red"  >
+            <legend style="color: red; font-size: 18px; font-style: oblique; ">змінити (залишити) вид операції на:</legend>
+                <select id="operation" name="OperationType">
+                    <option value="оренда">оренда</option>
+                    <option value="продаж">продаж</option>
+                </select><br />
+        </fieldset>
 
-        <label for="operation">Вид операції:</label>
-        @Html.EnumDropDownListFor(model => model.OperationType)
-        
     </fieldset>
 
     <!-- +++++++++++++++++++++++++++ Детальна інформація +++++++++++++++++++++++++++++++ -->
 
     <fieldset>
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
-
         <!-- Призначення земельної ділянки -->
-        <p>
-            <label> Призначення земельної ділянки:</label>
-            @Html.EnumDropDownListFor(model => model.TypeLand)
-           
-           
+        <p>призначення земельної ділянки:<b> @Model.TypeLand </b>
         </p>
+        <fieldset style="width:500px; border: 2px solid red;">
+            <legend style="color: red; font-size: 18px; font-style: oblique; ">змінити (залишити) призначення земельної ділянки на: </legend>
+            <select name="TypeLand">
+                <option value="індивідуальне">індивідуальне</option>
+                <option value="комерційне">комерційне</option>
+                <option value="сільськогосподарське">сільськогосподарське</option>
+            </select>
+        </fieldset>
 
         <!-- Площа земельної ділянки -->
         <p>
-            <label> Площа земельної ділянки:</label>
-            <input type="number" id="land_area" value="@Model.LandArea" name="LandArea" min="0.1" step="0.1" /> (Га)
+            <label> площа земельної ділянки:</label>
+            <input type="number" value="@Model.TotalArea" name="TotalArea" min="0.1" step="0.1" /> (Га)
         </p>
     </fieldset>
     <!-- ++++++++++++++++++++++++++ Комунікаціїї ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
@@ -64,22 +70,22 @@
 
         
         <p>
-           @Html.CheckBoxFor(model => model.Gas)Газ
+           @Html.CheckBoxFor(model => model.Gas)газ
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.RailWay)Залізнична дорога
+            @Html.CheckBoxFor(model => model.RailWay)залізнична дорога
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.CentralSewerage)Центральна каналізація
+            @Html.CheckBoxFor(model => model.CentralSewerage)центральна каналізація
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.CentralWater)Центральне водопостачання
+            @Html.CheckBoxFor(model => model.CentralWater)центральне водопостачання
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.CentralHeating)Центральне отоплення
+            @Html.CheckBoxFor(model => model.CentralHeating)центральне отоплення
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Electricity)Електроенергія
+            @Html.CheckBoxFor(model => model.Electricity)електроенергія
         </p>
         
 
@@ -90,36 +96,36 @@
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
         <!-- Заголовок -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Заголовок :</label><br/>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">заголовок :</label><br/>
             @Html.TextAreaFor(model=>model.CaptionLink,2, 120,  new { htmlAttributes = new { @class = "form-control" } })
             @*<textarea id="" value="@Model.NameCaptionLink"  name="NameCaptionLink"  cols="120" rows="2"></textarea>*@
         </p>
         <!-- Коротка інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">коротка інформація:</label><br />
             @Html.TextAreaFor(model => model.NameInfo, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
         </p>
 
         <!-- Детальна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">детальна інформація</label><br>
             @Html.TextAreaFor(model => model.InfoDetails, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
         <!-- Приватна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">приватна інформація</label><br />
             @Html.TextAreaFor(model => model.InfoPrivat, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
         <!-- ціна в гривнях -->
         <p>
-            <label>Ціна:</label>
+            <label>ціна:</label>
             <input type="number" id="" value="@Model.GrnPrice" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
         </p>
         <!-- ціна в доларах -->
         <p>
-            <label>Ціна:</label>
+            <label>ціна:</label>
             <input type="number" id="" value="@Model.DollarPrice" name="DollarPrice" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
         </p>
     </fieldset>

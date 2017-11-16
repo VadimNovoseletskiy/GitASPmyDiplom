@@ -27,16 +27,10 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         ///<value>
         /// Describe special Land
         /// </value>
-        public SpecialTypeLand SpecialLand { get; set; }
+        public string SpecialLand { get; set; }
 
 
-        /// <summary>
-        /// The property LandArea
-        /// </summary>
-        /// <value>
-        /// Land plot area
-        /// </value>
-        public float LandArea { get; set; }
+        
 
         //Links
 

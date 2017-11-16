@@ -28,7 +28,7 @@ namespace NLayerApp.WEB.Controllers
             return View(admResult);
         }
 
-        //Get
+        //Get Insert
         [HttpGet]
         public ActionResult MyInsert()
         {
@@ -36,7 +36,7 @@ namespace NLayerApp.WEB.Controllers
             return View();
         }
 
-        //POST
+        //POST Insert
         [HttpPost]
         public ActionResult MyInsert(LandInputParameters parameters)
         {
@@ -47,6 +47,7 @@ namespace NLayerApp.WEB.Controllers
 
         }
 
+        //Get Edit
         [HttpGet]
         public ActionResult Edit(int? id)
         {    MySelect();
@@ -65,6 +66,7 @@ namespace NLayerApp.WEB.Controllers
 
         }
 
+        //Post Edit
         [HttpPost]
         public ActionResult Edit(LandInsertUpdateViewModel viewModel)
         {
@@ -77,6 +79,7 @@ namespace NLayerApp.WEB.Controllers
             return View();
         }
 
+        //Get Delete 
         [HttpGet]
         public ActionResult Delete(int? id)
         {
@@ -96,7 +99,7 @@ namespace NLayerApp.WEB.Controllers
         }
 
 
-
+        //Post Delete 
         [HttpPost]
         public ActionResult Delete(int id)
         {

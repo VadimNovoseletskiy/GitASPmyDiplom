@@ -13,104 +13,187 @@
         <input type="hidden" value="@Model.Id" name="Id" />
         <!--Населені пункти -->
         <p>
-            <label>Населений пункт:</label>
+            <label>населений пункт:</label>
             @Html.DropDownList("Village", ViewBag.villageName as SelectList, @Model.Village)
         </p>
         <!--Райони-->
         <p>
-            <label>Район:</label>
+            <label>район:</label>
             @Html.DropDownList("Region", ViewBag.regionName as SelectList, @Model.Region)
         </p>
         <!--вулиця -->
         <p>
-            <label>Вулиця:</label>
+            <label>вулиця:</label>
             @Html.DropDownList("Street", ViewBag.streetName as SelectList, @Model.Street)
         </p>
         <!--Номер будинку-->
         <p>
-            <label>Будинок № :</label>
-            <input type="text" id="adress_number" value="@Model.NumberAdress" name="NumberAdress" />
+            <label>будинок № :</label>
+            <input type="text" id="adress_number" value="@Model.NumberAdress" name="NumberAdress"/>
+        </p>
+        <p>
+            <label> квартира № :</label>
+            <input type="number" name="ApartmentNumber" value="@Model.ApartmentNumber"/>
         </p>
 
-        <label for="operation">Вид операції:</label>
-        @Html.EnumDropDownListFor(model => model.OperationType)
+        <p> вид операції :<b> @Model.OperationType </b> </p>
+        <fieldset style="border: 2px solid red; width: 200px;">
+            <legend> змінити(залишити)тип операції на :</legend>
+                <label for="operation">змінити на :</label>
+                <select id="operation" name="OperationType">
+                    <option value="оренда">оренда</option>
+                    <option value="продаж">продаж</option>
+                </select><br />
+        </fieldset>
         <!--прододжить разбоп с этого места -->
     </fieldset>
     <!-- +++++++++++++ Детальна інформація +++++++++++++++++ -->
     <fieldset>
 
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
-        <p>
-            <label>Стан:</label>
-            @Html.EnumDropDownListFor(model => model.ConditionOfApartment)
-        </p>
+        <p>стан квартири :<b>@Model.ConditionOfApartment</b>  </p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red">змінити(залишити) стан на :</legend>
+            <select name="ConditionOfApartment">
+                <option value="відмінний">відмінний</option>
+                <option value="хороший">хороший</option>
+                <option value="задовільний">задовільний</option>
+                <option value="потрібний ремонт">потрібний ремонт</option>
+                <option value="оздоблювальні роботи">оздоблювальні роботи</option>
+            </select>
+        </fieldset>
+
         <!-- Кількість кімнат -->
         <p>
-            <label>Кількість кімнат </label>
-            @Html.EnumDropDownListFor(model => model.RoomsApartment)
+            кількість кімнат :<b> @Model.RoomsApartment</b>
+        </p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red">змінити(залишити) кількість кімнат на :</legend>
+            <select name="RoomsApartment">
+                <option value="1-но кімнатна">1 кімната</option>
+                <option value="2-во кімнатна">2 кімнати</option>
+                <option value="3-ри кімнатна">3 кімнати</option>
+                <option value="4-х кімнатна">4 кімнати</option>
+                <option value="5 кімат і більше">5 кімат і більше</option>
+            </select>
+        </fieldset>
+        <p>
+            <label> </label>
+
         </p>
         <!-- тип кімнат -->
-        <p>
-            <label>Тип кімнат:</label>
-            @Html.EnumDropDownListFor(model => model.RoomType)
-        </p>
+        <p>тип кімнат : <b>@Model.RoomType</b> </p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red">змінити(залишити) тип кімнат на :</legend>
+            <select name="RoomType">
+                <option value="роздільні">роздільні</option>
+                <option value="суміжні">суміжні</option>
+                <option value="комбіновані">комбіновані</option>
+            </select>
+        </fieldset>
+
         <!-- Готовність до заселення -->
-        <p>
-            <label>Готовність до заселення:</label>
-            @Html.EnumDropDownListFor(model => model.ReadinessApartment)
-            
-        </p>
+        <p>готовність до заселення :<b> @Model.ReadinessApartment </b> </p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red">змінити(залишити) готовність до заселення на :</legend>
+            <select name="ReadinessApartment">
+                <option value="в єксплуатації">в єксплуатації</option>
+                <option value="новобудова">новобудова</option>
+                <option value="будується">будується </option>
+                <option value="вільна">вільна</option>
+            </select>
+        </fieldset>
+
         <!-- Санвузол -->
-        <p>
-            <label>Санвузол</label>
-            @Html.EnumDropDownListFor(model => model.BathRoomApartment)
-            
+        <p>cанвузол :<b>@Model.BathRoomApartment</b> </p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red">змінити(залишити) тип санвузола на : </legend>
+            <select name="BathRoomApartment">
+                <option value="роздільний">роздільний</option>
+                <option value="спільний">спільний</option>
+                <option value="2 і більше">2 і більше</option>
+                <option value="відсутній">відсутній</option>
+            </select>
+        </fieldset>
         <!-- Кільксть балконів -->
-        <p>
-            <label>Кількість балконів</label>
-            @Html.EnumDropDownListFor(model => model.BalconyApartment)
-        </p>
+        <p>кількість балконів <b> @Model.BalconyApartment </b></p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red">змінити(залишити) кількість балконів </legend>
+            <select name="BalconyApartment">
+                <option value="відсутні">відсутні</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </fieldset>
+
         <!-- Поверх -->
-        <p>
-            <label>Поверх:</label>
-            @Html.EnumDropDownListFor(model => model.FloorApartment)
-           
-        </p>
+        <p> поверх :<b> @Model.FloorApartment</b></p>
+        <fieldset style="border: 2px solid red; width: 500px;">
+            <legend style="color: red">змінити(залишити) поверх:</legend>
+                <select name="FloorApartment">
+                    <option value="1-й поверх">1-й поверх</option>
+                    <option value="2-й поверх">2-й поверх</option>
+                    <option value="3-й поверх">3-й поверх</option>
+                    <option value="4-й поверх">4-й поверх</option>
+                    <option value="5-й поверх">5-й поверх</option>
+                    <option value="6-й поверх">6-й поверх</option>
+                    <option value="7-й поверх">7-й поверх</option>
+                    <option value="8-й поверх">8-й поверх</option>
+                    <option value="9-й поверх">9-й поверх</option>
+                    <option value="10-й поверх">10-й поверх</option>
+                    <option value="11-й поверх">11-й поверх</option>
+                    <option value="12-й поверх">12-й поверх</option>
+                    <option value="13-й поверх">13-й поверх</option>
+                    <option value="14-й поверх">14-й поверх</option>
+                    <option value="15-й поверх">15-й поверх</option>
+                    <option value="16-й поверх">16-й поверх</option>
+                    <option value="17-й поверх">17-й поверх</option>
+                    <option value="18-й поверх">18-й поверх</option>
+                    <option value="19-й поверх">19-й поверх</option>
+                    <option value="20-й поверх">20-й поверх</option>
+                    <option value="21-й поверх">21-й поверх</option>
+                    <option value="22-й поверх">22-й поверх</option>
+                    <option value="23-й поверх">23-й поверх</option>
+                    <option value="24-й поверх">24-й поверх</option>
+                </select>
+        </fieldset>
+       
         <!-- зангальні кількість поверхів -->
         <p>
-            <label>Загальна кількість поверхів:</label>
-            <input type="number" id="" value="@Model.TotalFloor" name="TotalFloor" min="1" max="15" />
+            <label>загальна кількість поверхів:</label>
+            <input type="number" id="" value="@Model.TotalFloor" name="TotalFloor" min="1" max="24" />
         </p>
-       
+
         <!-- Загальна площа -->
         <p>
-            <label>Загальна площа:</label>
-            <input type="number" id="" value="@Model.TotalAreaInfo" name="TotalAreaInfo"   /> m<sup><small>2</small></sup>
+            <label>загальна площа:</label>
+            <input type="number" id="" value="@Model.TotalAreaInfo" name="TotalAreaInfo" /> m<sup><small>2</small></sup>
         </p>
         <!-- Житлова плоша -->
         <p>
-            <label>Житлова площа </label>
-            <input type="number" id="living_area" value="@Model.LivingAreaApartment" name="LivingAreaApartment"  /> m<sup><small>2</small></sup>
+            <label>житлова площа </label>
+            <input type="number" id="living_area" value="@Model.LivingAreaApartment" name="LivingAreaApartment" /> m<sup><small>2</small></sup>
         </p>
         <!-- Площа кухні -->
         <p>
-            <label> Площа кухні:</label>
-            <input type="number" id="kitchen_area" value="@Model.KitchenAreaApartment" name="KitchenAreaApartment"  /> m <sup><small>2</small></sup>
+            <label> площа кухні:</label>
+            <input type="number" id="kitchen_area" value="@Model.KitchenAreaApartment" name="KitchenAreaApartment" /> m <sup><small>2</small></sup>
         </p>
 
 
         <!-- Матеріал підлоги -->
         <p>
-            <label>Матеріал підлоги:</label>
+            <label>матеріал підлоги:</label>
             @Html.DropDownList("FloorMaterial", ViewBag.floorMaterialName as SelectList, @Model.FloorMaterial)
         </p>
 
         <!-- Матеріал стін -->
         <p>
-            <label>Матеріал стін:</label>
+            <label>матеріал стін:</label>
             @Html.DropDownList("WallMaterial", ViewBag.wallMaterialName as SelectList, @Model.WallMaterial)
         </p>
-        
+
     </fieldset>
     <!-- +++++++++++++++++++   Додаткове обладнання ++++++++++++++++++++++++++++ -->
     <fieldset>
@@ -118,40 +201,40 @@
 
         <p>
         <p>
-            @Html.CheckBoxFor(model => model.Boiler)Бойлер
+            @Html.CheckBoxFor(model => model.Boiler)бойлер
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Intercom)Домофон
+            @Html.CheckBoxFor(model => model.Intercom)домофон
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Internet)Інтернет
+            @Html.CheckBoxFor(model => model.Internet)інтернет
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.CableTv)Кабельне телебачення
+            @Html.CheckBoxFor(model => model.CableTv)кабельне телебачення
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.FirePlace)Камін
+            @Html.CheckBoxFor(model => model.FirePlace)камін
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Air)Кондіціонер
+            @Html.CheckBoxFor(model => model.Air)кондіціонер
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Furniture)Меблі
+            @Html.CheckBoxFor(model => model.Furniture)меблі
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.MyWindows) Склопакети
+            @Html.CheckBoxFor(model => model.MyWindows) склопакети
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Signaling)Сигналізація
+            @Html.CheckBoxFor(model => model.Signaling)сигналізація
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.SatelliteTv)Супутникове телебачення
+            @Html.CheckBoxFor(model => model.SatelliteTv)супутникове телебачення
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка
+            @Html.CheckBoxFor(model => model.WashingMachine)пральна машинка
         </p>
         <p>
-            @Html.CheckBoxFor(model => model.Telephone)Телефон
+            @Html.CheckBoxFor(model => model.Telephone)телефон
         </p>
         </p>
 
@@ -166,36 +249,36 @@
 
         <!-- Заголовок -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Заголовок :</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">заголовок :</label><br />
             @Html.TextAreaFor(model => model.CaptionLink, 2, 69, new { htmlAttributes = new { @class = "form-control" } })
             @*<textarea id="" value="@Model.NameCaptionLink"  name="NameCaptionLink"  cols="120" rows="2"></textarea>*@
         </p>
         <!-- Коротка інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">коротка інформація:</label><br />
             @Html.TextAreaFor(model => model.NameInfo, 5, 69, new { htmlAttributes = new { @class = "form-control" } })
         </p>
 
         <!-- Детальна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">детальна інформація</label><br>
             @Html.TextAreaFor(model => model.InfoDetails, 5, 69, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
         <!-- Приватна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">приватна інформація</label><br />
             @Html.TextAreaFor(model => model.InfoPrivat, 5, 69, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
         <!-- ціна в гривнях -->
         <p>
-            <label>Ціна:</label>
+            <label>ціна:</label>
             <input type="number" id="" value="@Model.GrnPrice" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
         </p>
         <!-- ціна в доларах -->
         <p>
-            <label>Ціна:</label>
+            <label>ціна:</label>
             <input type="number" id="" value="@Model.DollarPrice" name="DollarPrice" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
         </p>
     </fieldset>

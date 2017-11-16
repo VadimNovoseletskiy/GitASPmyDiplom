@@ -7,31 +7,30 @@ using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.BusinessLogicLayer.Models
 {
-     public class CommercialInsertUpdateViewModel
+    public class HouseDetailsInfoViewModel
     {
         public int Id { get; set; }
 
         //Address
-        public int Village { get; set; }
-        public int Region { get; set; }
-        public int Street { get; set; }
+        public string Village { get; set; }
+        public string Region { get; set; }
+        public string Street { get; set; }
         public string NumberAdress { get; set; }
         public string OperationType { get; set; }
-        public float TotalArea { get; set; }
-
 
         //Details Info  
-        public string TypeCommercial { get; set; }
-        public string StateCommercial { get; set; }
-        public string FloorCommercial { get; set; }
-        public int TotalFloorCommercial { get; set; }
-        public float EffectiveAreaCommercial { get; set; }
-        public float LandAreaCommercial { get; set; }
-         public int OficeNumber { get; set; }
-
-         public int FloorMaterial { get; set; }
-        public int WallMaterial { get; set; }
-        
+        public string TypeHouse { get; set; } //
+        public string ReadinessHouse { get; set; }
+        public string PartHouse { get; set; } //
+        public string ConditionHouse { get; set; }
+        public int RoomsHouse { get; set; } //
+        public int FloorHouse { get; set; } //
+        public string FloorMaterial { get; set; }
+        public string WallMaterial { get; set; }
+        public float TotalAreaInfo { get; set; }
+        public float LivingAreaHouse { get; set; } //
+        public float KitchenAreaHouse { get; set; } //
+        public float LandAreaHouse { get; set; } //
 
         //Additional Equipment 
         public bool Boiler { get; set; }
@@ -47,6 +46,18 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public bool Telephone { get; set; }
         public bool WashingMachine { get; set; }
 
+        //OutBuildings
+        public bool BahtHouse { get; set; }
+        public bool Swimming { get; set; }
+        public bool Garage { get; set; }
+        public bool Well { get; set; }
+        public bool SummerKitchen { get; set; }
+        public bool WorkShop { get; set; }
+        public bool Barn { get; set; }
+        public bool Well1 { get; set; }
+        public bool GreenHouse { get; set; }
+
+
         //communications
         public bool Gas { get; set; }
         public bool RailWay { get; set; }
@@ -61,10 +72,9 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string CaptionLink { get; set; }
         public string NameInfo { get; set; }
         public string InfoDetails { get; set; }
-        public string InfoPrivat { get; set; }
+       
         //Money
         public int GrnPrice { get; set; }
         public int DollarPrice { get; set; }
     }
 }
-

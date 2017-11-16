@@ -17,7 +17,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string Region { get; set; }
         public string Street { get; set; }
         public string NumberAdress { get; set; }
-        public TypeOfOperation OperationType { get; set; }
+        public string OperationType { get; set; }
 
         //Details Info  
 
@@ -26,13 +26,13 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public float TotalAreaInfo { get; set; }
 
 
-        public ConditionOfApartment ConditionOfApartment { get; set; }
-        public SpecialRoomsApartment RoomsApartment { get; set; }
-        public SpecialTypeRoom RoomType { get; set; }
-        public SpecialReadiness ReadinessApartment { get; set; }
-        public SpecialBathRoomApartment BathRoomApartment { get; set; }
-        public SpecialBalconyApartment BalconyApartment { get; set; }
-        public SpecialFloorApartment FloorApartment { get; set; }
+        public string ConditionOfApartment { get; set; }
+        public string RoomsApartment { get; set; }
+        public string RoomType { get; set; }
+        public string ReadinessApartment { get; set; }
+        public string BathRoomApartment { get; set; }
+        public string BalconyApartment { get; set; }
+        public string FloorApartment { get; set; }
         public int TotalFloor { get; set; }
         public float LivingAreaApartment { get; set; }
         public float KitchenAreaApartment { get; set; }

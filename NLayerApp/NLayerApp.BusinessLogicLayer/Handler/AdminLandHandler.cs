@@ -55,14 +55,10 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 Type = parameters.Type,
                 OperationType = parameters.OperationType,
                 AddressNumber = parameters.NumberAdress,
-                TotalAreaInfo = parameters.LandArea,
+                TotalAreaInfo = parameters.TotalArea,
                 GrnPrice = parameters.GrnPrice,
                 DollarPrice = parameters.DollarPrice,
-                Land = new Land
-                {
-                    SpecialLand = parameters.TypeLand,
-                    LandArea = parameters.LandArea
-                },
+                Land = new Land {SpecialLand = parameters.TypeLand},
                 Communication = new Communication
                 {
                     GasCommunications = parameters.Gas,
@@ -94,7 +90,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                            NumberAdress = x.AddressNumber,
                            OperationType = x.OperationType,
                            TypeLand = x.Land.SpecialLand,
-                           LandArea = x.Land.LandArea,
+                           TotalArea= x.TotalAreaInfo,
                            Gas = x.Communication.GasCommunications,
                            RailWay = x.Communication.RailWay,
                            CentralSewerage = x.Communication.CentralSewerageCommunications,
@@ -128,7 +124,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             info.OperationType = viewModel.OperationType;
             info.TotalAreaInfo = viewModel.TotalArea;
 
-            info.Land.LandArea = viewModel.LandArea;
+            info.TotalAreaInfo = viewModel.TotalArea;
             info.Land.SpecialLand = viewModel.TypeLand;
 
             info.Communication.GasCommunications = viewModel.Gas;

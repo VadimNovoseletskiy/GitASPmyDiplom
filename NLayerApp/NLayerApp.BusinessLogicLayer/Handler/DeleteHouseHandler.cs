@@ -43,12 +43,37 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     )
             .FirstOrDefault();
 
+        public int DeleteFindCommunication(int? id)
+        {
+            var firstOrDefault = this.unitOfWork.GenericRepository<Info>()
+                .Get()
+                .Where(x => x.Id == id)
+                .Select(x => x.CommunicationId)
+                .FirstOrDefault();
+            return (int)firstOrDefault;
+        }
+
+        public int DeleteFindAdditionalEquipment(int? id)
+        {
+            var firstOrDefault = this.unitOfWork.GenericRepository<Info>()
+                .Get()
+                .Where(x => x.Id == id)
+                .Select(x => x.AdditionalEquipmentId)
+                .FirstOrDefault();
+
+            return (int)firstOrDefault;
+
+        }
+
+
         public void DeleteHouse(int id)
         {
+            int idCommunication = DeleteFindCommunication(id);
+            int idAdditionalEquipment = DeleteFindAdditionalEquipment(id);
             this.unitOfWork.GenericRepository<House>().Delete(id);
             this.unitOfWork.GenericRepository<Info>().Delete(id);
-            this.unitOfWork.GenericRepository<Communication>().Delete(id);
-            this.unitOfWork.GenericRepository<AdditionalEquipment>().Delete(id);
+            this.unitOfWork.GenericRepository<Communication>().Delete(idCommunication);
+            this.unitOfWork.GenericRepository<AdditionalEquipment>().Delete(idAdditionalEquipment);
             this.unitOfWork.SaveChanges();
         }
     }

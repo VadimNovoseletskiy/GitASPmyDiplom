@@ -66,7 +66,10 @@
     <Compile Include="Handler\DeleteStreetDictionaryHandler.cs" />
     <Compile Include="Handler\DeleteVillageDictionatyHandler.cs" />
     <Compile Include="Handler\DeleteWallmaterialDictionaryHandler.cs" />
-    <Compile Include="Handler\DetailsInfoOutPutHandler.cs" />
+    <Compile Include="Handler\DetailsInfoOutPutApartmentHandler.cs" />
+    <Compile Include="Handler\DetailsInfoOutPutCommercialHandler.cs" />
+    <Compile Include="Handler\DetailsInfoOutPutHouseHandler.cs" />
+    <Compile Include="Handler\DetailsOutPutLandHandler.cs" />
     <Compile Include="Handler\DictionaryFloorMaterialHandler.cs" />
     <Compile Include="Handler\DictionaryHandler.cs" />
     <Compile Include="Handler\DictionaryRegionHandler.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Models\ApartmentSearchParameters.cs" />
     <Compile Include="Models\ApartmentViewModel.cs" />
     <Compile Include="Models\ApartmentInputParameters.cs" />
+    <Compile Include="Models\CommercialDetailsViewModel.cs" />
     <Compile Include="Models\CommercialInputParameters.cs" />
     <Compile Include="Models\CommercialInsertUpdateViewModel.cs" />
     <Compile Include="Models\CommercialSearchParameters.cs" />
@@ -97,10 +101,12 @@
     <Compile Include="Models\DeleteLandViewModel.cs" />
     <Compile Include="Models\FloorMaterialInputParametrs.cs" />
     <Compile Include="Models\FloorMaterialViewModel.cs" />
+    <Compile Include="Models\HouseDetailsInfoViewModel.cs" />
     <Compile Include="Models\HouseInputParameters.cs" />
     <Compile Include="Models\HouseInsertUpdateViewModel.cs" />
     <Compile Include="Models\HouseSearchParameters.cs" />
     <Compile Include="Models\HouseViewModel.cs" />
+    <Compile Include="Models\LandDetailsInfoViewModel.cs" />
     <Compile Include="Models\LandDetailsViewModel.cs" />
     <Compile Include="Models\LandInputParameters.cs" />
     <Compile Include="Models\LandInsertUpdateViewModel.cs" />

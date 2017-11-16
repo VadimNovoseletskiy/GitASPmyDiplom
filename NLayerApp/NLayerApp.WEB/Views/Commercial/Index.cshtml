@@ -42,20 +42,20 @@
                         </table>
                     </td>
                     <td colspan="2">
-                        <a href="Index.cshtml" style="font-size: 17px; text-align: center">@b.CaptionLink</a>
+                        <a href="/Commercial/OutPutDetailsInfoCommercial/@b.Id" style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
                     </td>
                 </tr>
 
                 <tr>
-                    <td></td>
-                    <td style="text-align: right">Ціна:@b.GrnPrice грн. (@b.DollarPrice у.о.)</td>
+                    <td>тип операції :<b> @b.OperationType </b> </td>
+                    <td style="text-align: right">ціна:<b>@b.GrnPrice грн. (@b.DollarPrice у.о.)</b></td>
                 </tr>
 
-                <tr><td colspan="2">Населений пункт: @b.Village</td></tr>
-                <tr><td colspan="2">Район: @b.Region | Стан: @b.StateCommercial |  Загальна площа: @b.TotalArea m2 </td></tr>
+                <tr><td colspan="2">@b.Village</td></tr>
+                <tr><td colspan="2">@b.Region | стан:<b> @b.StateCommercial  </b> </td></tr>
                 <tr>
-                    <td style="font-size: 14px" colspan="3">
-                        @b.NameInfo
+                    <td  colspan="3">
+                        загальна площа:<b>  @b.TotalArea m<sup>2</sup>  </b>
                     </td>
 
                 </tr>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NLayerApp.BusinessLogicLayer.Handler;
@@ -24,7 +25,7 @@ namespace NLayerApp.WEB.Controllers
         }
 
 
-        //POST:House(form) 
+        //POST:House(form for search) 
         [HttpPost]
         public ActionResult Index(HouseSearchParameters parameters)
         {
@@ -33,6 +34,25 @@ namespace NLayerApp.WEB.Controllers
             var resultHouse = myHouseHandlerOutPut.GetHouse(parameters);
 
             return View(resultHouse);
+        }
+
+        //Get:House details Info
+        [HttpGet]
+        public ActionResult OutPutDetailsInfoHouse(int? id)
+        {
+            MySelect();
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DetailsInfoOutPutHouseHandler myHandler=new DetailsInfoOutPutHouseHandler(unitOfWork);
+            var detailsInfoHouse = myHandler.DetailsInfoHouseFind(id);
+            if (detailsInfoHouse==null)
+            {
+                return HttpNotFound();
+            }
+            return View(detailsInfoHouse);
+
         }
 
         void MySelect()

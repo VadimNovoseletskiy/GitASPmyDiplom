@@ -12,7 +12,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
 
         public int Village{ get; set; }
 
-        public SpecialTypeLand SpecialLand { get; set; }
+        public string SpecialLand { get; set; }
 
         //public float LandArea { get; set; }
 

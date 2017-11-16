@@ -7,34 +7,29 @@ using NLayerApp.DataAccessLayer.Domains.Models;
 
 namespace NLayerApp.BusinessLogicLayer.Models
 {
-     public class ApartmentInsertUpdateViewModel
+    public class CommercialDetailsViewModel
     {
         public int Id { get; set; }
 
         //Address
-        public int Village { get; set; }
-        public int Region { get; set; }
-        public int Street { get; set; }
+        public string Village { get; set; }
+        public string Region { get; set; }
+        public string Street { get; set; }
         public string NumberAdress { get; set; }
         public string OperationType { get; set; }
+        public float TotalArea { get; set; }
+
 
         //Details Info  
-       
-        public int FloorMaterial { get; set; }
-        public int WallMaterial { get; set; }
-        public float TotalAreaInfo { get; set; }
+        public string TypeCommercial { get; set; }
+        public string StateCommercial { get; set; }
+        public string FloorCommercial { get; set; }
+        public int TotalFloorCommercial { get; set; }
+        public float EffectiveAreaCommercial { get; set; }
+        public float LandAreaCommercial { get; set; }
 
-         public int ApartmentNumber { get; set; }
-         public string ConditionOfApartment { get; set; }
-        public string RoomsApartment { get; set; }
-        public string RoomType { get; set; }
-        public string ReadinessApartment { get; set; }
-        public string BathRoomApartment { get; set; }
-        public string BalconyApartment { get; set; }
-        public string FloorApartment { get; set; }
-        public int TotalFloor { get; set; }
-        public float LivingAreaApartment { get; set; }
-        public float KitchenAreaApartment { get; set; }
+        public string FloorMaterial { get; set; }
+        public string WallMaterial { get; set; }
 
 
         //Additional Equipment 
@@ -50,7 +45,17 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public bool MyWindows { get; set; }
         public bool Telephone { get; set; }
         public bool WashingMachine { get; set; }
-       
+
+        //communications
+        public bool Gas { get; set; }
+        public bool RailWay { get; set; }
+        public bool CentralSewerage { get; set; }
+        public bool CentralWater { get; set; }
+        public bool CentralHeating { get; set; }
+        public bool Electricity { get; set; }
+        public bool AutonomousSewerage { get; set; }
+        public bool AutonomusHeating { get; set; }
+        public bool AutonomousWater { get; set; }
         //Describes object
         public string CaptionLink { get; set; }
         public string NameInfo { get; set; }

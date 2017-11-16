@@ -37,11 +37,10 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 Type = parameters.Type,
                 OperationType = parameters.OperationType,
                 AddressNumber = parameters.NumberAdress,
-                TotalAreaInfo = parameters.LandArea,
+                TotalAreaInfo = parameters.TotalArea,
                 GrnPrice = parameters.GrnPrice,
                 DollarPrice = parameters.DollarPrice,
-                Land= new Land { SpecialLand = parameters.TypeLand,
-                                    LandArea = parameters.LandArea},
+                Land= new Land { SpecialLand = parameters.TypeLand},
                 Communication = new Communication
                 {
                     GasCommunications = parameters.Gas,

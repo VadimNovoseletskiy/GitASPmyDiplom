@@ -12,29 +12,29 @@
 
         <!--Населені пункти -->
         <p>
-            <label>Населений пункт:</label>
+            <label>населений пункт:</label>
             @Html.DropDownList("Village", ViewBag.villageName as SelectList)
         </p>
         <!--Райони-->
         <p>
-            <label>Район:</label>
+            <label>район:</label>
             @Html.DropDownList("Region", ViewBag.regionName as SelectList)
         </p>
         <!--вулиця -->
         <p>
-            <label>Вулиця:</label>
+            <label>вулиця:</label>
             @Html.DropDownList("Street", ViewBag.streetName as SelectList)
         </p>
         <!--Номер будинку-->
         <p>
-            <label>Будинок № :</label>
+            <label>будинок № :</label>
             <input type="text" id="adress_number" name="NumberAdress" />
         </p>
 
         <label for="operation">Вид операції:</label>
         <select id="operation" name="OperationType">
-            <option value="0">оренда</option>
-            <option value="1">продаж</option>
+            <option value="оренда">оренда</option>
+            <option value="продаж">продаж</option>
         </select><br />
         <!--прододжить разбоп с этого места -->
     </fieldset>
@@ -44,78 +44,89 @@
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
         <!-- тип будинку -->
         <p>
-            <label>Тип будинку:</label>
+            <label>тип будинку:</label>
             <select name="TypeHouse">
-                <option value="0">Будинок</option>
-                <option value="1">Котедж</option>
-                <option value="2">Літній будинок</option>
+                <option value="будинок">будинок</option>
+                <option value="котедж">котедж</option>
+                <option value="літній будинок">Літній будинок</option>
             </select>
         </p>
+        <!-- Готовність до заселення -->
+        <p>
+            <label>готовність до заселення:</label>
+            <select name="ReadinessHouse">
+                <option value="в єксплуатації">в єксплуатації</option>
+                <option value="новобудова">новобудова</option>
+                <option value="будується">будується </option>
+                <option value="вільний">вільна</option>
+            </select>
+        </p>
+
         <!--Стан обьекту-->
         <p>
-            <label>Стан:</label>
+            <label>стан:</label>
             <select name="ConditionHouse">
-                <option value="0">відмінний</option>
-                <option value="1">хороший</option>
-                <option value="2">задовільний</option>
-                <option value="3">потрібний ремонт</option>
-                <option value="4">оздоблювальні роботи</option>
+                <option value="відмінний">відмінний</option>
+                <option value="хороший">хороший</option>
+                <option value="задовільний">задовільний</option>
+                <option value="потрібний ремонт">потрібний ремонт</option>
+                <option value="оздоблювальні роботи">оздоблювальні роботи</option>
             </select>
         </p>
         <!-- частина будинку -->
         <p>
-            <label>Частина будинку:</label>
+            <label>частина будинку:</label>
             <select name="PartHouse">
-                <option value="0">1</option>
-                <option value="1">1/2</option>
-                <option value="2">1/3</option>
-                <option value="3">1/4</option>
-                <option value="4">1/5</option>
-                <option value="5">2/3</option>
-                <option value="6">2/5</option>
+                <option value="ціла">ціла</option>
+                <option value="1/2">1/2</option>
+                <option value="1/3">1/3</option>
+                <option value="1/4">1/4</option>
+                <option value="1/5">1/5</option>
+                <option value="2/3">2/3</option>
+                <option value="2/5">2/5</option>
             </select>
         </p>
         <!-- Кількість кімнат -->
         <p>
-            <label>Кількість кімнат:</label>
+            <label>кількість кімнат:</label>
             <input type="number" id="float_number" name="RoomsHouse" min="1" max="5"/>
            
         </p>
         <!-- зангальні кількість поверхів -->
         <p>
-            <label>Кількість поверхів:</label>
+            <label>кількість поверхів:</label>
             <input type="number" id="float_number" name="FloorHouse" min="1" max="5" />
         </p>
         <!-- Матеріал підлоги -->
         <p>
-            <label>Матеріал підлоги:</label>
+            <label>матеріал підлоги:</label>
             @Html.DropDownList("FloorMaterial", ViewBag.floorMaterialName as SelectList)
         </p>
 
         <!-- Матеріал стін -->
         <p>
-            <label>Матеріал стін:</label>
+            <label>матеріал стін:</label>
             @Html.DropDownList("WallMaterial", ViewBag.wallMaterialName as SelectList)
         </p>
 
         <!-- Загальна площа -->
         <p>
-            <label>Загальна площа:</label>
+            <label>загальна площа:</label>
             <input type="number" id="total_area" name="TotalAreaInfo" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
         </p>
         <!-- Житлова плоша -->
         <p>
-            <label>Житлова площа </label>
+            <label>житлова площа </label>
             <input type="number" id="living_area" name="LivingAreaHouse" min="0.1" max="200.9" step="0.1" /> m<sup><small>2</small></sup>
         </p>
         <!-- Площа кухні -->
         <p>
-            <label> Площа кухні:</label>
+            <label> площа кухні:</label>
             <input type="number" id="kitchen_area" name="KitchenAreaHouse" min="0.1" max="200.9" step="0.1" /> m <sup><small>2</small></sup>
         </p>
         <!-- Площа прилягаючої  земельної ділянки  -->
         <p>
-            <label> Площа земельної ділянки:</label>
+            <label> площа земельної ділянки:</label>
             <input type="number" id="land_area_house" name="LandAreaHouse" min="0.1" step="0.1" /> (Га)
         </p>
     </fieldset>
@@ -125,40 +136,40 @@
 
         <p>
         <p>
-            <input value="true" name="Boiler" type="checkbox" />Бойлер
+            <input value="true" name="Boiler" type="checkbox" />бойлер
         </p>
         <p>
-            <input value="true" name="Intercom" type="checkbox" />Домофон
+            <input value="true" name="Intercom" type="checkbox" />домофон
         </p>
         <p>
-            <input value="true" name="Internet" type="checkbox" />Інтернет
+            <input value="true" name="Internet" type="checkbox" />інтернет
         </p>
         <p>
-            <input value="true" name="CableTv" type="checkbox" />Кабельне телебачення
+            <input value="true" name="CableTv" type="checkbox" />кабельне телебачення
         </p>
         <p>
-            <input value="true" name="FirePlace" type="checkbox" />Камін
+            <input value="true" name="FirePlace" type="checkbox" />камін
         </p>
         <p>
-            <input value="true" name="Air" type="checkbox" />Кондіціонер
+            <input value="true" name="Air" type="checkbox" />кондіціонер
         </p>
         <p>
-            <input value="true" name="Furniture" type="checkbox" />Меблі
+            <input value="true" name="Furniture" type="checkbox" />меблі
         </p>
         <p>
-            <input value="true" name="MyWindows" type="checkbox" /> Склопакети
+            <input value="true" name="MyWindows" type="checkbox" /> склопакети
         </p>
         <p>
-            <input value="true" name="Signaling" type="checkbox" />Сигналізація
+            <input value="true" name="Signaling" type="checkbox" />сигналізація
         </p>
         <p>
-            <input value="true" name="SatelliteTv" type="checkbox" />Супутникове телебачення
+            <input value="true" name="SatelliteTv" type="checkbox" />супутникове телебачення
         </p>
         <p>
-            <input value="true" name="WashingMachine" type="checkbox" />Пральна машинка
+            <input value="true" name="WashingMachine" type="checkbox" />пральна машинка
         </p>
         <p>
-            <input value="true" name="Telephone" type="checkbox" />Телефон
+            <input value="true" name="Telephone" type="checkbox" />телефон
         </p>
         </p>
 
@@ -170,31 +181,31 @@
         <p>
 
         <p>
-            <input value="true" name="Gas" type="checkbox" />Газ
+            <input value="true" name="Gas" type="checkbox"/>газ
         </p>
         <p>
-            <input value="true" name="RailWay" type="checkbox" />Залізнична дорога
+            <input value="true" name="RailWay" type="checkbox" />залізнична дорога
         </p>
         <p>
-            <input value="true" name="CentralSewerage" type="checkbox" />Центральна каналізація
+            <input value="true" name="CentralSewerage" type="checkbox" />центральна каналізація
         </p>
         <p>
-            <input value="true" name="CentralWater" type="checkbox" />Центральне водопостачання
+            <input value="true" name="CentralWater" type="checkbox" />центральне водопостачання
         </p>
         <p>
-            <input value="true" name="CentralHeating" type="checkbox" />Центральне отоплення
+            <input value="true" name="CentralHeating" type="checkbox" />центральне отоплення
         </p>
         <p>
-            <input value="true" name="Electricity" type="checkbox" />Електроенергія
+            <input value="true" name="Electricity" type="checkbox" />електроенергія
         </p>
         <p>
-            <input value="true" name="AutonomousSewerage" type="checkbox" />Автономна каналізація
+            <input value="true" name="AutonomousSewerage" type="checkbox" />автономна каналізація
         </p>
         <p>
-            <input value="true" name="AutonomusHeating" type="checkbox" />Автономне опалення
+            <input value="true" name="AutonomusHeating" type="checkbox" />автономне опалення
         </p>
         <p>
-            <input value="true" name="AutonomousWater" type="checkbox" />Автономне водопостачання
+            <input value="true" name="AutonomousWater" type="checkbox" />автономне водопостачання
         </p>
 
         </p>
@@ -204,31 +215,31 @@
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Надвірні побудови</legend>
 
         <p>
-            <input value="true" name="BahtHouse" type="checkbox" /> Баня
+            <input value="true" name="BahtHouse" type="checkbox" /> баня
         </p>
         <p>
-            <input value="true" name="Swimming" type="checkbox" />Басейн
+            <input value="true" name="Swimming" type="checkbox" />басейн
         </p>
         <p>
-            <input value="true" name="Garage" type="checkbox" />Гараж
+            <input value="true" name="Garage" type="checkbox" />гараж
         </p>
         <p>
-            <input value="true" name="Well" type="checkbox" />Колодязь
+            <input value="true" name="Well" type="checkbox" />колодязь
         </p>
         <p>
-            <input value="true" name="SummerKitchen" type="checkbox" />Літня кухня
+            <input value="true" name="SummerKitchen" type="checkbox" />літня кухня
         </p>
         <p>
-            <input value="true" name="WorkShop" type="checkbox" />Майстерня
+            <input value="true" name="WorkShop" type="checkbox" />майстерня
         </p>
         <p>
-            <input value="true" name="Barn" type="checkbox" />Сарай
+            <input value="true" name="Barn" type="checkbox" />сарай
         </p>
         <p>
-            <input value="true" name="Well1" type="checkbox" /> Скважина
+            <input value="true" name="Well1" type="checkbox" /> скважина
         </p>
         <p>
-            <input value="true" name="GreenHouse" type="checkbox" />Теплиця
+            <input value="true" name="GreenHouse" type="checkbox" />теплиця
         </p>
 
     </fieldset>
@@ -237,33 +248,33 @@
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
         <!-- Заголовок -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Заголовок :</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">заголовок :</label><br />
             <textarea id="" name="CaptionLink" cols="120" rows="2"></textarea>
         </p>
         <!-- Коротка інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Коротка інформація:</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">коротка інформація:</label><br />
             <textarea id="" name="NameInfo" cols="120" rows="5"></textarea>
         </p>
 
         <!-- Детальна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Детальна інформація</label><br>
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">детальна інформація</label><br>
             <textarea id="" name="InfoDetails" cols="120" rows="5"></textarea>
         </p>
         <!-- Приватна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">Приватна інформація</label><br />
+            <label style="color: crimson; font-size: 15px; font-style: oblique;">приватна інформація</label><br />
             <textarea id="" name="InfoPrivat" cols="120" rows="5"></textarea>
         </p>
         <!-- ціна в гривнях -->
         <p>
-            <label>Ціна:</label>
+            <label>ціна:</label>
             <input type="number" id="" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
         </p>
         <!-- ціна в доларах -->
         <p>
-            <label>Ціна:</label>
+            <label>ціна:</label>
             <input type="number" id="" name="DollarPrice" min="0" step="0" /> <span style="color: red; font-weight: bold;">$</span>
         </p>
     </fieldset>

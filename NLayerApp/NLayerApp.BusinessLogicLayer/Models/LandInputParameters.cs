@@ -16,9 +16,9 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int Street { get; set; }
         public string NumberAdress { get; set; }
 //land information
-        public TypeOfOperation OperationType { get; set; }
-        public SpecialTypeLand TypeLand { get; set; }
-        public float LandArea { get; set; }
+        public string OperationType { get; set; }
+        public string TypeLand { get; set; }
+        public float TotalArea { get; set; }
         //communications
         public bool Gas { get; set; }
         public bool RailWay { get; set; }

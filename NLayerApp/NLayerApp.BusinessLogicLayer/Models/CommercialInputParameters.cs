@@ -15,17 +15,18 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int Region { get; set; }
         public int Street { get; set; }
         public string NumberAdress { get; set; }
-        public TypeOfOperation OperationType { get; set; }
+        public string OperationType { get; set; }
         public float TotalArea { get; set; }
 
 
         //Details Info  
-        public SpecialTypeCommercial TypeCommercial { get; set; }
-        public ConditionOfCommercial StateCommercial { get; set; }
-        public SpecialFloorCommercial FloorCommercial { get; set; }
+        public string TypeCommercial { get; set; }
+        public string StateCommercial { get; set; }
+        public string FloorCommercial { get; set; }
         public int TotalFloorCommercial { get; set; }
         public float EffectiveAreaCommercial { get; set; }
         public float LandAreaCommercial { get; set; }
+        public int OficeNumber { get; set; }
 
         public int FloorMaterial { get; set; }
         public int WallMaterial { get; set; }

@@ -27,7 +27,6 @@
                     <p style="text-align: center">Інформація</p>
                 </td>
             </tr>
-
             @foreach (var b in Model)
             {
                 <tr>
@@ -42,23 +41,22 @@
                         </table>
                     </td>
                     <td colspan="2">
-                        <a href="/Apartment/OutDetailsInfo/@b.Id" style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
+                        <a href="/Apartment/OutDetailsInfoApartment/@b.Id" style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b> @b.OperationType </b> </td>
+                    <td style="text-align: right"><b>ціна:@b.GrnPrice грн. (@b.DollarPrice у.о.)</b></td>
+                </tr>
+
+                <tr><td colspan="2"> @b.Village  |  @b.Region </td></tr>
+                <tr><td colspan="2"> @b.Floor  |  @b.NumberOfRooms | </td></tr>
+                <tr>
+                    <td style="font-size: 18px" colspan="3">
+                        <b> Загальна площа: @b.TotalAreaInfo m<sup>2</sup></b>
                     </td>
                 </tr>
 
-                <tr>
-                    <td></td>
-                    <td style="text-align: right">Ціна:@b.GrnPrice грн. (@b.DollarPrice у.о.)</td>
-                </tr>
-
-                <tr><td colspan="2">Населений пункт: @b.Village</td></tr>
-                <tr><td colspan="2">Район: @b.Region | Поверх: @b.Floor @Html.EnumDropDownListFor(model => model.Count) | Кімнат: @b.NumberOfRooms | Загальна площа: @b.TotalAreaInfo m2 </td></tr>
-                <tr>
-                    <td style="font-size: 14px" colspan="3">
-                        @b.NameInfo
-                    </td>
-
-                </tr>
             }
         </table>
     }

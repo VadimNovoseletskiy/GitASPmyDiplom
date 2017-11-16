@@ -9,33 +9,35 @@
 <div>
     @if ((Model?.Count ?? 0) > 0)
     {
-        <table border="1" cols="7">
+        <table border="1" cols="8">
             <tr>
-                <td width="40">Id</td>
-                <td>Короткий заголовок</td>
-                <td>Назва населеного пункту</td>
-                <td>Назва вулиці</td>
-                <td>Номер будинку</td>
-                <td style="color: red">Редагування </td>
-                <td style="color: red" >Видалення</td>
+                <td width="40"><b>Id</b></td>
+                <td><b>тип операції </b></td>
+                <td><b>населений пункт </b></td>
+                <td><b>вулиця </b></td>
+                <td><b>будинок №</b></td>
+                <td><b>квартира №</b></td>
+                <td style="color: red"><b>редагування</b> </td>
+                <td style="color: red" ><b>видалення</b></td>
             </tr>
             @foreach (var b in Model)
             {
                 <tr>
                     <td>@b.Id</td>
-                    <td>@b.NameCaption</td>
+                    <td>@b.OperationType</td>
                     <td>@b.Village</td>
                     <td>@b.Street</td>
                     <td>@b.AddressNumber</td>
-                    <td><a href="/AdminApartment/Edit/@b.Id" style="color: red">Редагування</a></td>
-                    <td><a href="/AdminApartment/Delete/@b.Id" style="color: red">Видалити</a></td>
+                    <td>@b.ApartmentNumber</td>
+                    <td><a href="/AdminApartment/Edit/@b.Id" style="color: red">[редагувати]</a></td>
+                    <td><a href="/AdminApartment/Delete/@b.Id" style="color: red">[видалити]</a></td>
                 </tr>
             }
             <tr>
-                <td colspan="7" align="center" style="background-color:mediumpurple"> Додати новий: </td>
+                <td colspan="8" align="center" style="background-color:mediumpurple"> Додати новий: </td>
             </tr>
             <tr>
-                <td colspan="7" style="background-color:orange">
+                <td colspan="8" style="background-color:orange">
                     <form method="Get" action="/AdminApartment/MyInsert">
                         <input type="submit" value="Додати новий обьєкт" />
                     </form>

@@ -66,8 +66,8 @@
                 <p>Тип операції:</p>
                 <p>
                     <select name="OperationType" class="room_type" required>
-                        <option value="0">Оренда</option>
-                        <option value="1">Продаж</option>
+                        <option value="оренда">оренда</option>
+                        <option value="продаж">продаж</option>
                     </select>
                 </p>
                 <div>
@@ -75,20 +75,21 @@
                         <legend class="roomApartment">Кімнати</legend>
                         <p>
                             <label>Тип:</label>
-                            <select class="room_type" name="TypeRoom" id="" required>
-                                <option value="0">роздільні</option>
-                                <option value="1">суміжні</option>
-                                <option value="2">комбіновані</option>
+                            <select class="room_type" name="TypeRoom" >
+                                <option value="роздільні">роздільні</option>
+                                <option value="суміжні">суміжні</option>
+                                <option value="комбіновані">комбіновані</option>
                             </select>
+
                         </p>
                         <p>
                             <label>Кількість:</label>
-                            <select class="room_quantity" name="NumberOfRooms" id="" required>
-                                <option value="1">1 кімната</option>
-                                <option value="2">2 кімнати</option>
-                                <option value="3">3 кімнати</option>
-                                <option value="4">4 кімнати</option>
-                                <option value="5">5 кім.і більше</option>
+                            <select class="room_quantity" name="RoomsApartment">
+                                <option value="1-но кімнатна">1 кімната</option>
+                                <option value="2-во кімнатна">2 кімнати</option>
+                                <option value="3-ри кімнатна">3 кімнати</option>
+                                <option value="4-х кімнатна">4 кімнати</option>
+                                <option value="5 кімат і більше">5 кімат і більше</option>
                             </select>
                         </p>
                     </fieldset>

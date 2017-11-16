@@ -38,14 +38,14 @@ namespace NLayerApp.WEB.Controllers
         
         //Get Details Info
         [HttpGet]
-        public ActionResult OutDetailsInfo(int? id)
+        public ActionResult OutDetailsInfoApartment(int? id)
         {
             MySelect();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DetailsInfoOutPutHandler myHandler = new DetailsInfoOutPutHandler(unitOfWork);
+            DetailsInfoOutPutApartmentHandler myHandler = new DetailsInfoOutPutApartmentHandler(unitOfWork);
             var detailsInfo = myHandler.DetailsInfoObjectFind(id);
 
             if (detailsInfo==null)
@@ -55,8 +55,6 @@ namespace NLayerApp.WEB.Controllers
             return View(detailsInfo);
 
         }
-
-
 
         void MySelect()
         {

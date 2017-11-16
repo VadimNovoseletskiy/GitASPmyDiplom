@@ -69,6 +69,7 @@ namespace NLayerApp.WEB.Controllers
         [HttpPost]
         public ActionResult Edit(CommercialInsertUpdateViewModel viewModel)
         {
+            MySelect();
             AdminCommercialHandler myHandler = new AdminCommercialHandler(unitOfWork);
             if (ModelState.IsValid)
             {
