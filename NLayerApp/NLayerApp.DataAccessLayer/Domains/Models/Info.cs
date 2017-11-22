@@ -76,7 +76,7 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// <value>
         /// Common object
         /// </value>
-        public float TotalAreaInfo { get; set; }
+        public double TotalAreaInfo { get; set; }
 
 
         /// <summary>

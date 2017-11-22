@@ -111,6 +111,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 //получил по айдешке запись из бд,
             var info = unitOfWork.GenericRepository<Info>()
                 .Get()
+                .Where(x => x.Id == viewModel.Id)
                 .Include(x => x.Land)
                 .Include(x => x.Communication)
                 .FirstOrDefault();

@@ -7,7 +7,7 @@
         public string NameInfo { get; set; }
         public string Region { get; set; }
         public string Village{ get; set; }
-        public float TotalAreaInfo { get; set; }
+        public double TotalAreaInfo { get; set; }
         public int DollarPrice { get; set; }
         public string OperationType { get; set; }
     }

@@ -17,7 +17,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string Street { get; set; }
         public string NumberAdress { get; set; }
         public string OperationType { get; set; }
-        public float TotalArea { get; set; }
+        public double TotalArea { get; set; }
 
 
         //Details Info  

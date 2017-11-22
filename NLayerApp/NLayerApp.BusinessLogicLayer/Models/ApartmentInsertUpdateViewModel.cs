@@ -22,7 +22,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
        
         public int FloorMaterial { get; set; }
         public int WallMaterial { get; set; }
-        public float TotalAreaInfo { get; set; }
+        public double TotalAreaInfo { get; set; }
 
          public int ApartmentNumber { get; set; }
          public string ConditionOfApartment { get; set; }

@@ -157,6 +157,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             //получил по айдешке запись из бд,
             var info = unitOfWork.GenericRepository<Info>()
                 .Get()
+                .Where(x => x.Id == viewModel.Id)
                 .Include(x => x.Apartment)
                 .Include(x => x.WallMaterial)
                 .Include(x => x.FloorMaterial)
@@ -164,7 +165,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .FirstOrDefault();
 
             //проставил ей все значения из этого вьюмодела,
-
+            
             info.RegionId = viewModel.Region;
             info.VillageId = viewModel.Village;
             info.StreetId = viewModel.Street;
