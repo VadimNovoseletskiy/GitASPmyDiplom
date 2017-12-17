@@ -33,7 +33,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     p => new AdminLandViewModel
                     {
                         Id = p.Id,
-                        NameCaption = p.NameCaptionLink,
+                        OperationType = p.OperationType,
                         Village = p.Village.VillageName,
                         Street = p.Street.StreetName,
                         AddressNumber = p.AddressNumber

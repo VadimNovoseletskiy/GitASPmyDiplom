@@ -59,6 +59,7 @@
                     @Html.DropDownList("Region", ViewBag.regionName as SelectList)
                 </p>
                 <p>Населені пункти: </p>
+               
                 <p>
                     @Html.DropDownList("Village", ViewBag.villageName as SelectList)
                 </p>
@@ -78,13 +79,13 @@
                         <select class="house_type" type="text" name="TypeHouse" id="house_type" required>
                             <option value="будинок">будинок</option>
                             <option value="котедж">котедж</option>
-                            <option value="літній будинок">Літній будинок</option>
+                            <option value="літній будинок">літній будинок</option>
                         </select>
                     </p>
                     <p>
                         <label>Частина:</label>
                         <select class="house_part" type="text"  name="PartHouse" id="house_part" required>
-                            <option value="ціла">ціла</option>
+                            <option value="1">1</option>
                             <option value="1/2">1/2</option>
                             <option value="1/3">1/3</option>
                             <option value="1/4">1/4</option>
