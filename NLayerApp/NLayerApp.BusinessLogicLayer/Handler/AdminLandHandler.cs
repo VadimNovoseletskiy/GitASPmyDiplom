@@ -36,7 +36,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         OperationType = p.OperationType,
                         Village = p.Village.VillageName,
                         Street = p.Street.StreetName,
-                        AddressNumber = p.AddressNumber
+                        AddressNumber = p.AddressNumber,
+                        CadastraNumber = p.Land.CadastralNumber
                     }
                 )
                 .ToList<AdminLandViewModel>();
@@ -58,7 +59,11 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 TotalAreaInfo = parameters.TotalArea,
                 GrnPrice = parameters.GrnPrice,
                 DollarPrice = parameters.DollarPrice,
-                Land = new Land {SpecialLand = parameters.TypeLand},
+                Land = new Land
+                {
+                    SpecialLand = parameters.TypeLand,
+                    CadastralNumber = parameters.CadastraNumber
+                },
                 Communication = new Communication
                 {
                     GasCommunications = parameters.Gas,
@@ -91,6 +96,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                            OperationType = x.OperationType,
                            TypeLand = x.Land.SpecialLand,
                            TotalArea= x.TotalAreaInfo,
+                           CadastraNummber = x.Land.CadastralNumber,
                            Gas = x.Communication.GasCommunications,
                            RailWay = x.Communication.RailWay,
                            CentralSewerage = x.Communication.CentralSewerageCommunications,
@@ -122,6 +128,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             info.VillageId = viewModel.Village;
             info.StreetId = viewModel.Street;
             info.AddressNumber = viewModel.NumberAdress;
+            info.Land.CadastralNumber = viewModel.CadastraNummber;
             info.OperationType = viewModel.OperationType;
             info.TotalAreaInfo = viewModel.TotalArea;
 
