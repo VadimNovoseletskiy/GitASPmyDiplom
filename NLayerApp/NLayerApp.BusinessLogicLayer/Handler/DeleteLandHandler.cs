@@ -37,7 +37,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             Village = x.Info.VillageId.Value,
                             Street = x.Info.StreetId.Value,
                             NumberAdress = x.Info.AddressNumber,
-                            CadastraNummber = x.CadastralNumber,
+                            CadastraNumber = x.CadastralNumber,
                             OperationType = x.Info.OperationType,
                             TypeLand = x.SpecialLand,
                             InfoDetails = x.Info.DetailsInfo,
