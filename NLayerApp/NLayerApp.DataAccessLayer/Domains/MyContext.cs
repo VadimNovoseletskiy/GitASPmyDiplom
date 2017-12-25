@@ -56,7 +56,7 @@ namespace NLayerApp.DataAccessLayer.Domains
         public DbSet<AdditionalEquipment> AdditionalEquipments { get; set; }
         public DbSet<WallMaterial> WallMaterials { get; set; }
         public DbSet<FloorMaterial> FloorMaterials { get; set; }
-        public DbSet<Pictupe> Pictupes { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
 
 
 
