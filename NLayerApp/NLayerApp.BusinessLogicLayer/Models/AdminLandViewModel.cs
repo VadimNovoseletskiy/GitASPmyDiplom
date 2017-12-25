@@ -13,5 +13,6 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string Village { get; set; }
         public string Street { get; set; }
         public string AddressNumber { get; set; }
+        public string CadastraNumber { get; set; }
     }
 }
