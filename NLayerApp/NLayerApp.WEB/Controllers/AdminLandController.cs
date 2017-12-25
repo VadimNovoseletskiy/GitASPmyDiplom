@@ -41,7 +41,7 @@ namespace NLayerApp.WEB.Controllers
         public ActionResult MyInsert(LandInputParameters parameters)
         {
             MySelect();
-            LandHandlerInput myHandlerInput = new LandHandlerInput(unitOfWork);
+            AdminLandHandler myHandlerInput = new AdminLandHandler(unitOfWork);
             myHandlerInput.InsertLand(parameters);
             return RedirectToAction("Index");
 
