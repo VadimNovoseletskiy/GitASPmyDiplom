@@ -199,6 +199,7 @@
     <Compile Include="Controllers\AdminApartmentController.cs" />
     <Compile Include="Controllers\AdminCommercialController.cs" />
     <Compile Include="Controllers\AdminHouseController.cs" />
+    <Compile Include="Controllers\AdminImageController.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\AdminLandController.cs" />
     <Compile Include="Controllers\ApartmentController.cs" />
@@ -369,6 +370,8 @@
     <Content Include="Views\House\OutPutDetailsInfoHouse.cshtml" />
     <Content Include="Views\Commercial\OutPutDetailsInfoCommercial.cshtml" />
     <Content Include="Views\Land\OutPutDetailsInfoLand.cshtml" />
+    <Content Include="Views\AdminImage\InsertImages.cshtml" />
+    <Content Include="Views\AdminImage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
