@@ -171,6 +171,17 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public Land Land { get; set; }
 
 
+        /// <summary>
+        /// The navigation property
+        /// The link to the class "Picture"(one to many communication)
+        /// </summary>
+        public ICollection<Picture> Pictures { get; set; }
+
+        public Info()
+        {
+            Pictures = new List<Picture>();
+        }
+
 
     }
 
