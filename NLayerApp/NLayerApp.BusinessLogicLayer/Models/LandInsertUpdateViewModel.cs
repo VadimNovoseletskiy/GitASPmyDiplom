@@ -17,6 +17,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int Street { get; set; }
         public string NumberAdress { get; set; }
         public double TotalArea { get; set; }
+        public string CadastraNummber { get; set; }
         //land information
         public string OperationType { get; set; }
         public string TypeLand { get; set; }
