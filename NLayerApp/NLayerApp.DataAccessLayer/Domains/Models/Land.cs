@@ -29,8 +29,17 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </value>
         public string SpecialLand { get; set; }
 
+        /// <summary>
+        /// The property Cadastral Number  
+        /// </summary>
+        /// <value>
+        /// Describe Cadastral Number
+        /// </value>
+        public string CadastralNumber { get; set; }
 
-        
+
+
+
 
         //Links
 
