@@ -27,11 +27,33 @@ namespace NLayerApp.WEB.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             AdminImageHandler myObjectInfo=new AdminImageHandler(unitOfWork);
-           
+
+            ViewBag.IdObject = id;
+
             var admResult=myObjectInfo.GetAllImages(id);
 
             return View(admResult);
         }
+
+
+        [HttpGet]
+        public ActionResult EditImage(int? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            AdminImageHandler myHandler=new AdminImageHandler(unitOfWork);
+            var result = myHandler.FindInfoObject(id);
+            if (result==null)
+            {
+                return HttpNotFound();
+            }
+            return View(result);
+
+        }
+
 
 
 
@@ -64,14 +86,33 @@ namespace NLayerApp.WEB.Controllers
                 {
                     imageData = binaryReader.ReadBytes(uploadImage.ContentLength);
                 }
+                ViewBag.IdObject = parameters.InfoId;
                 parameters.Image = imageData;
                 myHandler.InsertImage(parameters);
-                //return RedirectToAction("InsertImages");
+                return RedirectToAction("Index", new {id= ViewBag.IdObject });
 
             }
            
-            return View();
+            return View(parameters);
 
+        }
+
+        //Get
+        [HttpGet]
+        public ActionResult DeleteImage(int? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DeleteImageHandler myHandler=new DeleteImageHandler(unitOfWork);
+            var imageResult = myHandler.DeleteFindImage(id);
+            if (imageResult==null)
+            {
+                  return HttpNotFound();
+            }
+            return View(imageResult);
         }
 
 
