@@ -170,6 +170,8 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         /// </summary>
         public Land Land { get; set; }
 
+        //public Picture Picture { get; set; }
+
 
         /// <summary>
         /// The navigation property
