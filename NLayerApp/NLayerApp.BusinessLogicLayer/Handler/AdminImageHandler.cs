@@ -29,25 +29,27 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .Where(p => p.InfoId == id)
                 .Select(p => new ImageInsertUpdateViewModel
                 {
+                    InfoId = p.InfoId.Value,
                     fotoName = p.Name,
-                    Image = p.Image
+                    Image = p.Image,
+                    IdObject = p.Info.Id
                 })
                 .ToList<ImageInsertUpdateViewModel>(); 
 
-
-        public ImageInsertUpdateViewModel FindInfoObject(int? id) =>
-            this.unitOfWork.GenericRepository<Info>()
+       //?? 
+        public List<ImageInsertUpdateViewModel> FindInfoObject(int? id) =>
+            this.unitOfWork.GenericRepository<Picture>()
                 .Get()
-                .Where(p => p.Id == id)
+                .Where(p => p.InfoId == id)
                 .Select(p => new ImageInsertUpdateViewModel
                 {
-                    Id = p.Id,
-                    Village = p.Village.VillageName,
-                    Region = p.Region.RegionName,
-                    Street = p.Street.StreetName,
-                    NumberAdress = p.AddressNumber
+                    InfoId = p.InfoId.Value,
+                    fotoName = p.Name,
+                    Image = p.Image
+                    
+                   
                 })
-                .FirstOrDefault();
+                .ToList<ImageInsertUpdateViewModel>();
 
 
        
@@ -55,6 +57,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         {
             Picture myImage=new Picture
             { 
+                InfoId = parameters.InfoId,
                 Name = parameters.fotoName,
                 Image = parameters.Image
 
