@@ -60,6 +60,8 @@
     <Compile Include="Handler\DeleteApartmentHandler.cs" />
     <Compile Include="Handler\DeleteCommercialHandler.cs" />
     <Compile Include="Handler\DeleteFloorMaterialDictionatyHandler.cs" />
+    <Compile Include="Handler\DeleteImageHandler.cs" />
+    <Compile Include="Models\DeleteImageViewModel.cs" />
     <Compile Include="Handler\DeleteRegionDictionaryHandler.cs" />
     <Compile Include="Handler\DeleteHouseHandler.cs" />
     <Compile Include="Handler\DeleteLandHandler.cs" />
