@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_InputObjectForm.cshtml";
 }
 
+
 <h2>Земля</h2>
 <form method="POST" action="/AdminLand/MyInsert">
     <fieldset>
@@ -28,7 +29,13 @@
         <!--Номер будинку-->
         <p>
             <label>будинок № :</label>
-            <input type="text" id="adress_number" name="NumberAdress" />
+            <input type="text" id="adress_number" name="NumberAdress"/>
+        </p>
+
+        <!--Кадастровий номер-->
+        <p>
+            <label>кадастровий № :</label>
+            <input type="text" name="CadastraNumber"/>
         </p>
 
         <label for="operation">вид операції:</label>
@@ -127,6 +134,25 @@
     <!-- +++++++++++++++++++++++++++++++++++++ Додавання фото +++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Додати фото</legend>
+        <h2>Изображенияе обьектов</h2>
+
+        <table>
+            <tr>
+                <th>название</th>
+                <th>фото</th>
+            </tr>
+            @*@foreach (var item in Model)
+            {
+                <tr>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.Name);
+                    </th>
+                    <th>
+                        
+                    </th>
+                </tr>
+            }*@
+        </table>
         <!--<p>
              <input type="file" name="foto" multiple />
          </p>-->
