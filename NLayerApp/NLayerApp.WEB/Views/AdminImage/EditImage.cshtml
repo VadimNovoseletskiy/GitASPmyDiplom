@@ -1,0 +1,49 @@
+﻿@model List<NLayerApp.BusinessLogicLayer.Models.ImageInsertUpdateViewModel>
+@{
+    ViewBag.Title = "EditImage";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2 style="color: red">Збережені фото </h2>
+
+@if ((Model?.Count ?? 0) > 0)
+{
+
+    <table border="1">
+
+        <tr>
+            <td></td>
+        </tr>
+
+        @foreach (var d in Model)
+        {
+
+            <tr>
+                <td>@d.</td>
+            </tr>
+
+            foreach (var a in Model)
+            {
+                <tr>
+                    <td>@d.fotoName</td>
+                    <td>@d.Image</td>
+                </tr>
+            }
+
+            <tr>
+                <td>
+                    <form method="GET" action="/Controllers/AdminImage/InsertImages/@d.InfoId">
+                        <p>
+                            <button type="submit">додати нову фото </button>
+                            <button type="reset">відмінити</button>
+                        </p>
+
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </table>
+
+}
+
