@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "InsertImages";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Додавання, або редагування зображень об'єктів</h2>
+
+<p>
+    додавання зображеннь що відносяться об'єкту з ID №<b>@ViewBag.InfoId</b>
+</p>
+
+
+<form method="POST" action="/AdminImage/InsertImages/" enctype = "multipart/form-data">
+
+    <fieldset>
+        <legend>додати нові зображення</legend>
+        <table >
+
+            <tr>
+                <td><input type="hidden" value="@ViewBag.InfoId" name="InfoId"/></td>
+            </tr>
+            <tr>
+                <td>назва зображення:</td>
+                <td><input type="text" name="fotoName"/></td>
+                <td><input type="file" name="uploadImage"/></td>
+                <td><input type="image" src="/Image/add.jpg" name="submit"/></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
