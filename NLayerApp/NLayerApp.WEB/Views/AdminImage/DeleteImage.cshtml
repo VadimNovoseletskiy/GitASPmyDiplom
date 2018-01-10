@@ -1,0 +1,33 @@
+﻿@model NLayerApp.BusinessLogicLayer.Models.DeleteImageViewModel
+@{
+    ViewBag.Title = "DeleteImage";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Видалення з бази фото об'єкту  Id № @Model.InfoId</h2>
+
+<div>
+    @if ((Model?.Id ?? 0) > 0)
+    {
+        <p style="font-size: 30px; color: red; text-align: center">Увага!!!!</p>
+        <p style="font-size: 20px;"> ви збираєтесь виладити з бази данних без змоги відновити фото :</p>
+        
+        <form method="POST" action="/AdminImage/DeleteImage/@Model.Id">
+            <table>
+                <tr>
+                   
+                    <td> @Model.fotoName : </td>
+                    <td>@Html.Raw("<img style = 'width:80px; height:60px;' " + " src =\"data:image/jpeg;base64," + Convert.ToBase64String(Model.Image) + "\" />")</td>
+                    <td ><input type="submit" value="Видалити" /></td>
+                </tr>
+            </table>
+          
+        </form>
+    }
+</div>
+
+<div style="margin-top: 50px; margin-bottom: 20px">
+    @Html.ActionLink("Повернутися до списку без видалення", "Index", new { id = Model.InfoId})
+</div>
+
+
