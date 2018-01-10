@@ -104,22 +104,13 @@
             <label style="color: crimson; font-size: 15px; font-style: oblique;">заголовок :</label><br />
             <textarea id="" name="CaptionLink" cols="120" rows="2"></textarea>
         </p>
-        <!-- Коротка інформація -->
-        <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">коротка інформація:</label><br />
-            <textarea id="" name="NameInfo" cols="120" rows="5"></textarea>
-        </p>
-
+       
         <!-- Детальна інформація -->
         <p>
             <label style="color: crimson; font-size: 15px; font-style: oblique;">детальна інформація</label><br>
             <textarea id="" name="InfoDetails" cols="120" rows="5"></textarea>
         </p>
-        <!-- Приватна інформація -->
-        <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">приватна інформація</label><br />
-            <textarea id="" name="InfoPrivat" cols="120" rows="5"></textarea>
-        </p>
+       
         <!-- ціна в гривнях -->
         <p>
             <label>ціна:</label>
@@ -134,28 +125,7 @@
     <!-- +++++++++++++++++++++++++++++++++++++ Додавання фото +++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Додати фото</legend>
-        <h2>Изображенияе обьектов</h2>
-
-        <table>
-            <tr>
-                <th>название</th>
-                <th>фото</th>
-            </tr>
-            @*@foreach (var item in Model)
-            {
-                <tr>
-                    <th>
-                        @Html.DisplayFor(modelItem => item.Name);
-                    </th>
-                    <th>
-                        
-                    </th>
-                </tr>
-            }*@
-        </table>
-        <!--<p>
-             <input type="file" name="foto" multiple />
-         </p>-->
+       
     </fieldset>
     <p>
         <button type="submit">Зберегти новий обьєкт</button>
