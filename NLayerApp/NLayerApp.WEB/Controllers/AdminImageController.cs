@@ -97,7 +97,7 @@ namespace NLayerApp.WEB.Controllers
 
         }
 
-        //Get
+        //Get Delete
         [HttpGet]
         public ActionResult DeleteImage(int? id)
         {
@@ -115,7 +115,23 @@ namespace NLayerApp.WEB.Controllers
             return View(imageResult);
         }
 
+        //Post Delete 
+        [HttpPost]
+        public ActionResult DeleteImage(int id)
+        {
+           
+            DeleteImageHandler myHandler=new DeleteImageHandler(unitOfWork);
+            var objectResult = myHandler.DeleteFindImage(id);
+            ViewBag.IdObject = objectResult.InfoId;
 
+            if (ModelState.IsValid)
+            {
+                myHandler.DeleteImage(id);
+               
+                return RedirectToAction("Index", new { id = ViewBag.IdObject });
+            }
+            return View("Index");
+        }
 
         void MySelect()
         {
