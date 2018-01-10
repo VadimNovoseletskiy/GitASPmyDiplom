@@ -23,30 +23,12 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public string NameCaptionLink { get; set; }
 
         /// <summary>
-        /// The property NameInfo 
-        /// </summary>
-        /// <value>
-        /// Short title 
-        /// </value>
-        public string NameInfo { get; set; }
-
-
-        /// <summary>
         /// The property DetailsInfo
         /// </summary>
         /// <value>
         /// Detailed description of the property  
         /// </value>
         public string DetailsInfo { get; set; }
-
-        /// <summary>
-        /// The property Private info
-        /// </summary>
-        /// <value>
-        /// Description secret info
-        /// </value>
-        public string PrivateInfo { get; set; }
-
 
         /// <summary>
         /// The property Type 
