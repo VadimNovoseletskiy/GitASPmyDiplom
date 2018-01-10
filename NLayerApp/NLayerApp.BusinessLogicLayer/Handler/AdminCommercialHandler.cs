@@ -50,9 +50,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     VillageId = parameters.Village,
                     StreetId = parameters.Street,
                     NameCaptionLink = parameters.CaptionLink,
-                    NameInfo = parameters.NameInfo,
                     DetailsInfo = parameters.InfoDetails,
-                    PrivateInfo = parameters.InfoPrivat,
                     Type = parameters.Type,
                     OperationType = parameters.OperationType,
                     AddressNumber = parameters.NumberAdress,
@@ -158,9 +156,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                 Electricity = x.Communication.ElectricityCommunications,
 
                                 CaptionLink = x.NameCaptionLink,
-                                NameInfo = x.NameInfo,
                                 InfoDetails = x.DetailsInfo,
-                                InfoPrivat = x.PrivateInfo,
 
                                 GrnPrice = x.GrnPrice,
                                 DollarPrice = x.DollarPrice
@@ -228,9 +224,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 info.Communication.AutonomusHeatingCommunications = viewModel.AutonomusHeating;
 
                 info.NameCaptionLink = viewModel.CaptionLink;
-                info.NameInfo = viewModel.NameInfo;
                 info.DetailsInfo = viewModel.InfoDetails;
-                info.PrivateInfo = viewModel.InfoPrivat;
 
                 info.GrnPrice = viewModel.GrnPrice;
                 info.DollarPrice = viewModel.DollarPrice;
