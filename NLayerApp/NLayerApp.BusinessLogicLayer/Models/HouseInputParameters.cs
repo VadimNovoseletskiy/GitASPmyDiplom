@@ -69,9 +69,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public bool AutonomousWater { get; set; }
         //Describes object
         public string CaptionLink { get; set; }
-        public string NameInfo { get; set; }
         public string InfoDetails { get; set; }
-        public string InfoPrivat { get; set; }
    //Money
         public int GrnPrice { get; set; }
         public int DollarPrice { get; set; }

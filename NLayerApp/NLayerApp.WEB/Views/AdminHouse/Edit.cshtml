@@ -259,11 +259,7 @@
             @Html.TextAreaFor(model => model.CaptionLink, 2, 120, new { htmlAttributes = new { @class = "form-control" } })
             @*<textarea id="" value="@Model.NameCaptionLink"  name="NameCaptionLink"  cols="120" rows="2"></textarea>*@
         </p>
-        <!-- Коротка інформація -->
-        <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">коротка інформація:</label><br />
-            @Html.TextAreaFor(model => model.NameInfo, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
-        </p>
+       
 
         <!-- Детальна інформація -->
         <p>
@@ -271,12 +267,7 @@
             @Html.TextAreaFor(model => model.InfoDetails, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
-        <!-- Приватна інформація -->
-        <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">приватна інформація</label><br />
-            @Html.TextAreaFor(model => model.InfoPrivat, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
-
-        </p>
+       
         <!-- ціна в гривнях -->
         <p>
             <label>ціна:</label>
@@ -291,11 +282,7 @@
     <!-- +++++++++++++++++++   Додавання фото  ++++++++++++++++++++++++++++++  -->
     <fieldset>
         <legend style="color: blue; font-size: 25px; font-style: oblique;">Додати фото</legend>
-        <!--
-            <p>
-                <input type="file" name="foto" multiple/>
-            </p>
-        -->
+       
     </fieldset>
     <!-- кнопочки -->
     <p>
