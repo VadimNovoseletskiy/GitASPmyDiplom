@@ -29,10 +29,11 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .Where(p => p.InfoId == id)
                 .Select(p => new ImageInsertUpdateViewModel
                 {
+                    IdPicture = p.Id,
                     InfoId = p.InfoId.Value,
                     fotoName = p.Name,
                     Image = p.Image,
-                    IdObject = p.Info.Id
+                  
                 })
                 .ToList<ImageInsertUpdateViewModel>(); 
 
@@ -43,6 +44,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .Where(p => p.InfoId == id)
                 .Select(p => new ImageInsertUpdateViewModel
                 {
+                    IdPicture = p.Id,
                     InfoId = p.InfoId.Value,
                     fotoName = p.Name,
                     Image = p.Image
