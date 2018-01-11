@@ -71,7 +71,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         AutonomousWater = p.Communication.AutonomousWaterCommunications,
 
                         CaptionLink = p.NameCaptionLink,
-                        NameInfo = p.NameInfo,
                         InfoDetails = p.DetailsInfo,
                         TotalArea = p.TotalAreaInfo,
                         GrnPrice = p.GrnPrice,

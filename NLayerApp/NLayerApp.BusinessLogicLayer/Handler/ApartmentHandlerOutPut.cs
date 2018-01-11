@@ -51,7 +51,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     TotalAreaInfo = p.TotalAreaInfo,
                     DollarPrice = p.DollarPrice,
                     GrnPrice = p.GrnPrice,
-                    NameInfo = p.NameInfo
                 }
     )
             .ToList<ApartmentViewModel>();

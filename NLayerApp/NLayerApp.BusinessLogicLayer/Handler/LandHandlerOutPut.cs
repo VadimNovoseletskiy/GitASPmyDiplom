@@ -40,7 +40,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                                 {
                                                     Id    = p.Id,
                                                     CaptionLink = p.NameCaptionLink,
-                                                    NameInfo = p.NameInfo,
                                                     Region = p.Region.RegionName,
                                                     Village = p.Village.VillageName,
                                                     DollarPrice = p.DollarPrice,

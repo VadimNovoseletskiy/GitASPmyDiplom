@@ -50,7 +50,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             TotalArea = p.TotalAreaInfo,
                             DollarPrice = p.DollarPrice,
                             GrnPrice = p.GrnPrice,
-                            NameInfo = p.NameInfo,
                             ReadinessHouse = p.House.ReadinessHouse
 
                         }

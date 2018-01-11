@@ -47,7 +47,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                     TotalArea = p.TotalAreaInfo,
                                     DollarPrice = p.DollarPrice,
                                     GrnPrice = p.GrnPrice,
-                                    NameInfo = p.NameInfo,
                                     CaptionLink = p.NameCaptionLink,
                                     OperationType = p.OperationType
                                 }

@@ -45,7 +45,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         Electricity = p.Communication.ElectricityCommunications,
                        
                         CaptionLink = p.NameCaptionLink,
-                        NameInfo = p.NameInfo,
                         InfoDetails = p.DetailsInfo,
                         LandArea = p.TotalAreaInfo,
                         GrnPrice = p.GrnPrice,

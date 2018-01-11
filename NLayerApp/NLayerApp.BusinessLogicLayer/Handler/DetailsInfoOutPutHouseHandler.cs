@@ -66,7 +66,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         WashingMachine = p.AdditionalEquipment.WashingMachineAdditionalEqipment,
 
                         CaptionLink = p.NameCaptionLink,
-                        NameInfo = p.NameInfo,
                         InfoDetails = p.DetailsInfo,
                         GrnPrice = p.GrnPrice,
                         DollarPrice = p.DollarPrice
