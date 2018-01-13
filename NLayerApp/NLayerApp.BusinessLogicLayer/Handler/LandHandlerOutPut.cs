@@ -32,8 +32,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .Where(p => p.Type == PropertyType.Land
                         && p.Region.Id == parameters.Region
                         && p.Village.Id == parameters.Village
-                        && p.DollarPrice > parameters.CostFrom
-                        && p.DollarPrice < parameters.CostTo
+                        && p.DollarPrice >= parameters.CostFrom
+                        && p.DollarPrice <= parameters.CostTo
                         && p.Land.SpecialLand == parameters.SpecialLand)
                         
                 .Select( p=>new LandViewModel
