@@ -25,7 +25,7 @@
                 </tr>
             }
             <tr>
-                <td colspan="4" style="background-color:mediumslateblue" align="center"> Додати назву:</td>
+                <td colspan="4" style="background-color:mediumslateblue" align="center"> Додати нову назву:</td>
             </tr>
             <tr>
                 <td>Назва:</td>
@@ -37,6 +37,22 @@
                 </td>
             </tr>
 
+        </table>
+    }
+    else
+    {
+        <table>
+            <tr>
+                <form method="POST" action="/DictionaryWallMaterial/">
+                    <table>
+                        <tr>
+                            <td style="color: blue">[додати першу назву]</td>
+                            <td><input name="WallMaterial" type="text" /></td>
+                            <td><button type="submit"><img src="/Image/add.jpg" /></button></td>
+                        </tr>
+                    </table>
+                </form>
+            </tr>
         </table>
     }
 </div>

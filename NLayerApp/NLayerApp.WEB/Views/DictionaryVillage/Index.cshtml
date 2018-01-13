@@ -26,7 +26,7 @@
                 </tr>
             }
             <tr>
-                <td colspan="4" align="center" style="background-color:mediumpurple"> Додати новий: </td>
+                <td colspan="4" align="center" style="background-color:mediumpurple"> Додати нову назву: </td>
             </tr>
             <tr>
                 <td  width="40">Новий:</td>
@@ -38,6 +38,21 @@
                 </td>
             </tr>
         </table>
-
+    }
+    else
+    {
+        <table>
+            <tr>
+                <form method="POST" action="/DictionaryVillage/Index">
+                    <table>
+                        <tr>
+                            <td style="color: blue">[додати першу назву]</td>
+                            <td><input type="text" name="Village" /></td>
+                            <td><button type="submit"><img src="/Image/add.jpg" /></button></td>
+                        </tr>
+                    </table>
+                </form>
+            </tr>
+        </table>
     }
 </div>
