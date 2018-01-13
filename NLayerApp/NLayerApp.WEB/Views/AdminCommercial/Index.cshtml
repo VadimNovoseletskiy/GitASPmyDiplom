@@ -9,7 +9,7 @@
 <div>
     @if ((Model?.Count ?? 0) > 0)
     {
-        <table border="1" cols="8">
+        <table border="1" cols="9">
             <tr>
                 <td width="40"><b>Id </b></td>
                 <td><b>тип операції </b> </td>
@@ -17,6 +17,7 @@
                 <td><b>вулиця</b></td>
                 <td><b>будинок №</b></td>
                 <td><b>офіс №</b></td>
+                <td><b>зображення</b></td>
                 <td style="color: red"><b>редагування</b> </td>
                 <td style="color: red" ><b>видалення </b></td>
             </tr>
@@ -29,15 +30,16 @@
                     <td>@b.Street</td>
                     <td>@b.AddressNumber</td>
                     <td>@b.OficeNumber</td>
+                    <td><a href="/AdminImage/Index/@b.Id" style="color: blue">[додати]</a></td>
                     <td><a href="/AdminCommercial/Edit/@b.Id" style="color: red">[редагувати]</a></td>
                     <td><a href="/AdminCommercial/Delete/@b.Id" style="color: red">[видалити]</a></td>
                 </tr>
             }
             <tr>
-                <td colspan="8" align="center" style="background-color:mediumpurple"> Додати новий: </td>
+                <td colspan="9" align="center" style="background-color:mediumpurple"> Додати новий: </td>
             </tr>
             <tr>
-                <td colspan="8" style="background-color:orange">
+                <td colspan="9" style="background-color:orange">
                     <form method="Get" action="/AdminCommercial/MyInsert">
                         <input type="submit" value="Додати новий обьєкт" />
                     </form>
