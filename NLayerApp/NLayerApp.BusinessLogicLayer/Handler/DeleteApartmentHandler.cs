@@ -58,9 +58,26 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             
         }
 
+        public List<DeleteAllimageViewModel> GetAllDeleteImages(int? id) =>
+            this.unitOfWork.GenericRepository<Picture>()
+                .Get()
+                .Where(p => p.InfoId == id)
+                .Select(p => new DeleteAllimageViewModel
+                {
+                    IdPicture = p.Id,
+                    InfoId = p.InfoId.Value
+                })
+                .ToList<DeleteAllimageViewModel>();
+
 
         public void DeleteApartment(int id)
         {
+            var resultDelImg = GetAllDeleteImages(id);
+            foreach (var b in resultDelImg)
+            {
+                this.unitOfWork.GenericRepository<Picture>().Delete(b.IdPicture);
+            }
+
             int idAdditionalEquipment = DeleteFindAdditionalEquipment(id);
 
 
