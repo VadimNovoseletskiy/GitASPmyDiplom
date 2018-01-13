@@ -14,7 +14,6 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string Village { get; set; }
         public string CaptionLink { get; set; }
         public string OperationType { get; set; }
-        public string NameInfo { get; set; }
         public string StateCommercial { get; set; }
         public double TotalArea { get; set; }
         public int DollarPrice{ get; set; }
