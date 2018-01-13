@@ -33,9 +33,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             && p.OperationType == parameters.OperationType
                             && p.Apartment.TypeRoom == parameters.TypeRoom
                             && p.Apartment.RoomsApartment == parameters.RoomsApartment
-                            && p.DollarPrice >=parameters.DollarCostFrom
                             && p.DollarPrice<=parameters.DollarCostTo
-                            && p.GrnPrice >= parameters.GrnCostFrom
                             && p.GrnPrice<=parameters.GrnCostTo
                             )
 
