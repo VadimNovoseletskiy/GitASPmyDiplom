@@ -14,10 +14,6 @@ namespace NLayerApp.BusinessLogicLayer.Models
 
         public string SpecialLand { get; set; }
 
-        //public float LandArea { get; set; }
-
-        public int CostFrom { get; set; }
-
         public int CostTo { get; set; }
     }
 }

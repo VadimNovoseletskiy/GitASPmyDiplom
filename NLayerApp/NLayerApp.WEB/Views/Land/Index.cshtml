@@ -47,17 +47,19 @@
                 </tr>
 
                 <tr>
-                    <td >тип операції:<b>@b.OperationType</b></td>
-                    <td style="text-align: right">ціна:<b>@b.DollarPrice ( у.о.)</b></td>
+                    <td ><b>@b.OperationType</b></td>
+                    <td style="text-align: right" colspan="3">ціна:<b>@b.DollarPrice ( у.о.)</b></td>
                 </tr>
 
-                <tr><td colspan="2">@b.Village,    @b.Region</td></tr>
-            
-                <tr >
-                    <td  colspan="3">
-                        загальна площа:<b>@b.TotalAreaInfo Га</b> 
-                    </td>
+                <tr><td colspan="4">@b.Village,    @b.Region</td></tr>
 
+                <tr >
+                    <td colspan="2">
+                        кадастровий № <b> @b.CadastraNumber</b>
+                    </td>
+                    <td colspan="2">
+                        загальна площа:<b>@b.TotalAreaInfo Га</b>
+                    </td>
                 </tr>
             }
         </table>

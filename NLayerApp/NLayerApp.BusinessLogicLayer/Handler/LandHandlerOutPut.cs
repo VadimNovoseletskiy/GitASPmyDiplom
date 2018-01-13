@@ -32,7 +32,6 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .Where(p => p.Type == PropertyType.Land
                         && p.Region.Id == parameters.Region
                         && p.Village.Id == parameters.Village
-                        && p.DollarPrice >= parameters.CostFrom
                         && p.DollarPrice <= parameters.CostTo
                         && p.Land.SpecialLand == parameters.SpecialLand)
                         
@@ -40,9 +39,11 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                                 {
                                                     Id    = p.Id,
                                                     CaptionLink = p.NameCaptionLink,
+                                                    OperationType = p.OperationType,
                                                     Region = p.Region.RegionName,
                                                     Village = p.Village.VillageName,
                                                     DollarPrice = p.DollarPrice,
+                                                    CadastraNumber= p.Land.CadastralNumber,
                                                     TotalAreaInfo = p.TotalAreaInfo
                                                 } 
                         )
