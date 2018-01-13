@@ -14,7 +14,7 @@
 <form method="POST" action="/AdminImage/InsertImages/" enctype = "multipart/form-data">
 
     <fieldset>
-        <legend>додати нові зображення</legend>
+        <legend>додати нове зображення</legend>
         <table >
 
             <tr>
@@ -22,8 +22,8 @@
             </tr>
             <tr>
                 <td>назва зображення:</td>
-                <td><input type="text" name="fotoName"/></td>
-                <td><input type="file" name="uploadImage"/></td>
+                <td><input type="text" name="fotoName" required/></td>
+                <td><input type="file" name="uploadImage" required/></td>
                 <td><input type="image" src="/Image/add.jpg" name="submit"/></td>
             </tr>
         </table>
