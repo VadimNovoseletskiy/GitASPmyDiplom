@@ -14,9 +14,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string OperationType { get; set;}
         public string TypeHouse { get; set; }
         public string PartHouse { get; set; }
-        public int DollarPriceFrom { get; set; }
         public int DollarPriceTo { get; set; }
-        public int GrnPriceFrom { get; set; }
         public int GrnPriceTo { get; set; }
 
     }

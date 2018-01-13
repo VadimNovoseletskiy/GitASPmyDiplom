@@ -33,9 +33,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             && p.OperationType == parameters.OperationType
                             && p.House.TypeHouse == parameters.TypeHouse
                             && p.House.PartHouse == parameters.PartHouse
-                            && p.DollarPrice >= parameters.DollarPriceFrom
                             && p.DollarPrice <= parameters.DollarPriceTo
-                            && p.GrnPrice >= parameters.GrnPriceFrom
                             && p.GrnPrice <= parameters.GrnPriceTo
                 )
                 .Select(p => new HouseViewModel

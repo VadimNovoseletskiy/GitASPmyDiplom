@@ -21,7 +21,6 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public double TotalArea { get; set; }
         public int DollarPrice { get; set; }
         public int GrnPrice { get; set; }
-        public string NameInfo { get; set; }
 
     }
 }
