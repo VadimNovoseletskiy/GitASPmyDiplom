@@ -53,6 +53,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             return (int)firstOrDefault;
         }
 
+
+
         public int DeleteFindAdditionalEquipment(int? id)
         {
             var firstOrDefault = this.unitOfWork.GenericRepository<Info>()
@@ -65,9 +67,26 @@ namespace NLayerApp.BusinessLogicLayer.Handler
 
         }
 
+        public List<DeleteAllimageViewModel> GetAllDeleteImages(int? id) =>
+             this.unitOfWork.GenericRepository<Picture>()
+                 .Get()
+                 .Where(p => p.InfoId == id)
+                 .Select(p => new DeleteAllimageViewModel
+                 {
+                     IdPicture = p.Id,
+                     InfoId = p.InfoId.Value
+                 })
+                 .ToList<DeleteAllimageViewModel>();
+
 
         public void DeleteHouse(int id)
         {
+            var resultDelImg = GetAllDeleteImages(id);
+            foreach (var b in resultDelImg)
+            {
+                this.unitOfWork.GenericRepository<Picture>().Delete(b.IdPicture);
+            }
+
             int idCommunication = DeleteFindCommunication(id);
             int idAdditionalEquipment = DeleteFindAdditionalEquipment(id);
             this.unitOfWork.GenericRepository<House>().Delete(id);
