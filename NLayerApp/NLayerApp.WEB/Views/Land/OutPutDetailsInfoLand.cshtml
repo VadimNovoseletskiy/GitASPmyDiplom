@@ -1,12 +1,8 @@
 ﻿@model NLayerApp.BusinessLogicLayer.Models.LandDetailsInfoViewModel
 @{
     ViewBag.Title = "OutPutDetailsInfoLand";
-    Layout = "~/Views/Shared/_SearchHouseForm.cshtml";
+    Layout = "~/Views/Shared/_SearchLandForm.cshtml";
 }
-
-<h2>OutPutDetailsInfoLand</h2>
-
-
 
 <h2>Детальна інформація по земельній ділянці</h2>
 <div>
@@ -20,36 +16,69 @@
         //}
         //return 0;
         //или Model != null ? Model.Count : 0;
-        <table  cols="4">
-                <tr>
-                    <td rowspan="5">@Model.Id</td>
-                    <td rowspan="5">
-                        <table width="100">
-                            <tr>
-                                <td>
-                                    <img src="../../Image/land.jpg" />
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td colspan="2">
-                        <b> @Model.CaptionLink</b>
-                    </td>
-                </tr>
+        <table  style="width: 720px" cols="4">
+            <tr>
+                <td rowspan="5">@Model.Id</td>
+                <td rowspan="5">
+                    <table width="100">
+                        <tr>
+                            <td>
+                                <img src="../../Image/land.jpg"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="2">
+                    <b> @Model.CaptionLink</b>
+                </td>
+            </tr>
 
-                <tr>
-                    <td>тип операції:<b>@Model.OperationType</b></td>
-                    <td style="text-align: right">ціна:<b>@Model.DollarPrice у.о.</b></td>
-                </tr>
+            <tr>
+                <td>Тип операції:<b>@Model.OperationType</b></td>
+                <td style="text-align: right">ціна:<b>@Model.DollarPrice у.о.</b></td>
+            </tr>
 
-                <tr><td colspan="2">@Model.Village</td></tr>
-                <tr><td colspan="2"> @Model.Region</td></tr>
-                <tr>
-                    <td colspan="3">
-                        загальна площа:<b>@Model.LandArea Га</b>
-                    </td>
-                </tr>
-            
+            <tr><td colspan="2">Населений пункт: @Model.Village</td></tr>
+            <tr><td colspan="2">Район : @Model.Region</td></tr>
+            <tr>
+                <td colspan="3">
+                    загальна площа:<b>@Model.LandArea Га</b>
+                </td>
+            </tr>
+        </table>
+
+          <table>
+                <p>
+                    <label style="color: crimson; font-size: 15px; font-style: inherit;"><b>Детальний опис:</b></label><br>
+                    @Html.TextAreaFor(model => model.InfoDetails, 5, 40, new {htmlAttributes = new {@class = "form-control"}})
+                </p>
+         </table>
+        <table>
+
+            <tr> <td colspan="4" style="text-align: center; background-color:#C9D8EA"><b>Детальна інформація по земельній ділянці</b></td></tr>
+            <tr>
+                <td>Призначення земельної ділянки: </td>
+                <td colspan="3">@Model.TypeLand</td>
+            </tr>
+           
+
+
+            <!--додаткове обладнання -->
+            <tr> <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Комунікації</b></td></tr>
+            <tr>
+                <td colspan="2">@Html.CheckBoxFor(model => model.Gas)Газ</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.RailWay)Залізнична колія</td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.CheckBoxFor(model => model.CentralSewerage)Центральна каналізація</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.CentralHeating)Центральне опалення</td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.CheckBoxFor(model => model.CentralWater)Центральне водопостачання</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.Electricity)Електронергія</td>
+            </tr>
+           
+
         </table>
     }
 </div>
