@@ -34,5 +34,6 @@ namespace NLayerApp.BusinessLogicLayer.Models
         //Money
         public int GrnPrice { get; set; }
         public int DollarPrice { get; set; }
+
     }
 }
