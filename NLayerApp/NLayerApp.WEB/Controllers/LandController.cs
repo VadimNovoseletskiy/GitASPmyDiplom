@@ -47,6 +47,7 @@ namespace NLayerApp.WEB.Controllers
         [HttpGet]
         public ActionResult OutPutDetailsInfoLand(int? id)
         {
+            MySelect();
             if (id==null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -60,7 +61,20 @@ namespace NLayerApp.WEB.Controllers
             return View(detailsLandInfo);
         }
 
-
+        //Get details info about Land about Id 
+        [HttpGet]
+        public ActionResult IdOutPutDetaialsInfoLand(int ? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DetailsOutPutLandHandler myHandler = new DetailsOutPutLandHandler(unitOfWork);
+            var detailsLandInfo = myHandler.IdDetailsInfo(id);
+           
+            return View(detailsLandInfo);
+        }
 
         void MySelect()
         {
