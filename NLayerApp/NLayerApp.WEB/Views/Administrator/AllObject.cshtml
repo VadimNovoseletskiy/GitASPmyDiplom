@@ -1,0 +1,39 @@
+﻿@model List<NLayerApp.BusinessLogicLayer.Models.AdminAllObjectViewModel>
+@{
+    ViewBag.Title = "AllObject";
+    Layout = "~/Views/Shared/_InputObjectForm.cshtml";
+}
+
+<h2>Загальний список усих обєктів нерухомості</h2>
+<div>
+    @if ((Model?.Count ?? 0) > 0)
+    {
+        <table border="1">
+            <tr>
+                <td width="40"><b>Id</b></td>
+                <td><b>тип операції</b></td>
+                <td><b>населений пункт</b></td>
+                <td><b>вулиця</b></td>
+                <td><b>будинок №</b></td>
+            </tr>
+            
+                @foreach (var b in Model)
+                {
+                    <tr>
+                        <td>@b.Id</td>
+                        <td>@b.OperationType</td>
+                        <td>@b.Village</td>
+                        <td>@b.Street</td>
+                        <td>@b.AdressNumber</td>
+                    </tr>
+                }
+                    
+        </table>
+    }
+    else
+    {
+        <p> ку  ку</p>
+    }
+
+</div>
+
