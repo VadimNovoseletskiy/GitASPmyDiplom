@@ -36,6 +36,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         Region = p.Region.RegionName,
                         Street = p.Street.StreetName,
                         OperationType = p.OperationType,
+                        TypeLand = p.Land.SpecialLand,
 
                         Gas = p.Communication.GasCommunications,
                         RailWay = p.Communication.RailWay,
@@ -52,5 +53,38 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     }
                 )
                 .FirstOrDefault();
+
+        public LandDetailsInfoViewModel IdDetailsInfo(int ?id )=>
+            this.unitOfWork.GenericRepository<Info>()
+                .Get()
+                .Where(x => x.Id == id
+                        && x.Type == PropertyType.Land)
+                .Select(
+                    p => new LandDetailsInfoViewModel
+                    {
+                        Id = p.Id,
+                        Village = p.Village.VillageName,
+                        Region = p.Region.RegionName,
+                        Street = p.Street.StreetName,
+                        OperationType = p.OperationType,
+                        TypeLand = p.Land.SpecialLand,
+
+                        Gas = p.Communication.GasCommunications,
+                        RailWay = p.Communication.RailWay,
+                        CentralSewerage = p.Communication.CentralSewerageCommunications,
+                        CentralWater = p.Communication.CentralWaterCommunications,
+                        CentralHeating = p.Communication.CentralHeatingCommunications,
+                        Electricity = p.Communication.ElectricityCommunications,
+
+                        CaptionLink = p.NameCaptionLink,
+                        InfoDetails = p.DetailsInfo,
+                        LandArea = p.TotalAreaInfo,
+                        GrnPrice = p.GrnPrice,
+                        DollarPrice = p.DollarPrice
+                    }
+                )
+                .FirstOrDefault();
     }
+
+   
 }
