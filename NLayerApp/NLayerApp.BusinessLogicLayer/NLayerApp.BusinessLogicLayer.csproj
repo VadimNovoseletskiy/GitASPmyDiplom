@@ -52,6 +52,7 @@
     <Compile Include="Handler\AdminApartmentHandler.cs" />
     <Compile Include="Handler\AdminCommercialHandler.cs" />
     <Compile Include="Handler\AdminHouseHandler.cs" />
+    <Compile Include="Handler\AdministratorHandler.cs" />
     <Compile Include="Handler\AdminLandHandler.cs" />
     <Compile Include="Handler\ApartmentHandlerInput.cs" />
     <Compile Include="Handler\ApartmentHandlerOutPut.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Handler\DeleteCommercialHandler.cs" />
     <Compile Include="Handler\DeleteFloorMaterialDictionatyHandler.cs" />
     <Compile Include="Handler\DeleteImageHandler.cs" />
+    <Compile Include="Models\AdminAllObjectViewModel.cs" />
     <Compile Include="Models\DeleteAllimageViewModel.cs" />
     <Compile Include="Models\DeleteImageViewModel.cs" />
     <Compile Include="Handler\DeleteRegionDictionaryHandler.cs" />
