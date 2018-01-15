@@ -65,6 +65,29 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         Telephone = p.AdditionalEquipment.TelephoneAdditionalEqipment,
                         WashingMachine = p.AdditionalEquipment.WashingMachineAdditionalEqipment,
 
+                        BahtHouse = p.House.BahtHouseOutBuilding,
+                        Swimming = p.House.SwimmingOutBuildings,
+                        Garage = p.House.GarageOutBuildings,
+                        Well = p.House.WellOutBuildings,
+                        Well1 = p.House.Well1OutBuildings,
+                        SummerKitchen = p.House.SummerKitchenOutBuildings,
+                        WorkShop = p.House.WorkShopOutBuildings,
+                        Barn = p.House.BarnOutBuildings,
+                        GreenHouse = p.House.GreenHouseOutBuildings,
+
+                        Gas = p.Communication.GasCommunications,
+                        RailWay = p.Communication.RailWay,
+                        CentralSewerage = p.Communication.CentralSewerageCommunications,
+                        CentralWater = p.Communication.CentralWaterCommunications,
+                        CentralHeating = p.Communication.CentralHeatingCommunications,
+                        Electricity = p.Communication.ElectricityCommunications,
+                        AutonomousSewerage = p.Communication.AutonomousSewerageCommunications,
+                        AutonomusHeating = p.Communication.AutonomusHeatingCommunications,
+                        AutonomousWater = p.Communication.AutonomousWaterCommunications,
+
+
+
+
                         CaptionLink = p.NameCaptionLink,
                         InfoDetails = p.DetailsInfo,
                         GrnPrice = p.GrnPrice,
