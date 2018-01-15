@@ -39,7 +39,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         AddressNumber = p.AddressNumber,
                         CadastraNumber = p.Land.CadastralNumber
                     }
-                )
+                ) 
                 .ToList<AdminLandViewModel>();
 
         public void InsertLand(LandInputParameters parameters)
@@ -104,7 +104,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                            CaptionLink = x.NameCaptionLink,
                            InfoDetails = x.DetailsInfo,
                            GrnPrice = x.GrnPrice,
-                           DollarPrice = x.DollarPrice
+                           DollarPrice = x.DollarPrice,
+                           
                         }
                 ) .FirstOrDefault();
 
