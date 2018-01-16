@@ -379,6 +379,7 @@
     <Content Include="Views\Administrator\AllObject.cshtml" />
     <Content Include="Views\Land\IdOutPutDetaialsInfoLand.cshtml" />
     <Content Include="Views\House\IdOutPutDetaialsInfoHouse.cshtml" />
+    <Content Include="Views\Apartment\IdOutPutDetailsInfoApartment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

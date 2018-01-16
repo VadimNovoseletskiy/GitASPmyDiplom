@@ -56,6 +56,22 @@ namespace NLayerApp.WEB.Controllers
 
         }
 
+        //Get Details Info by Id
+        [HttpGet]
+        public ActionResult IdOutPutDetailsInfoApartment(int? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DetailsInfoOutPutApartmentHandler myHandler = new DetailsInfoOutPutApartmentHandler(unitOfWork);
+            var idDetailsInfo = myHandler.IdInfoDetails(id);
+
+            return View(idDetailsInfo);
+
+        }
+
         void MySelect()
         {
             RegionHandler myRegionHandler=new RegionHandler(unitOfWork);

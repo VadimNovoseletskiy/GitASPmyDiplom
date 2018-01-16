@@ -52,7 +52,7 @@
         <section id="form">
             <h2 class="select">Квартири</h2>
 
-            <form method="POST" action="">
+            <form method="POST" action="/Apartment/Index">
                 <p>Райони:</p>
                 <p>
                    @Html.DropDownList("Region", ViewBag.regionName as SelectList)
@@ -135,15 +135,23 @@
         @RenderBody()
 
     </main>
-    <footer id="footer">
-        <!-- иконки социальные сети  -->
-        <article class="icons">
-            <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
-                <img src="/Image/image_fb.jpg" alt="Ми на Facebook"/>
-            </a>
-        </article>
-        <!-- end социальные сети-->
-    </footer>
+<footer id="footer">
+    <article class="searchId">
+        <form method="GET" action="/Apartment/IdOutPutDetailsInfoApartment">
+            пошук по Id
+            <input type="number" name="id" />
+            <input type="submit" value="пошук" />
+        </form>
+
+    </article>
+    <!-- иконки социальные сети -->
+    <article class="icons">
+        <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
+            <img src="/Image/image_fb.jpg" alt="Ми на Facebook"/>
+        </a>
+    </article>
+    <!-- end социальные сети-->
+</footer>
 
 </body>
 </html>
