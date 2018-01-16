@@ -47,54 +47,28 @@
     <!--end новигация -->
     <main id="main" role="main">
 
-        <!-- форма выборки   -->
-        <section id="form">
-            <h2 class="select">Земельні ділянки</h2>
+        <!-- форма выборки -->
 
-            <form method="POST" action="">
-                <p>Райони: </p>
+
+        <section >
+            <h3 class="select">пошук земельної ділянки за параметрами </h3>
+
+            <form method="POST" action="" style="background-color: #017ABC">
                 <p>
-                    @Html.DropDownList("Region",ViewBag.regionName as SelectList )
-                </p>
-                <p>Населені пункти:</p>
-                <p>
-                   @Html.DropDownList("Village",ViewBag.villageName as SelectList)
-                </p>
-                <p>Призначення</p>
-                <p>
+                    місце знаходження:
+                    @Html.DropDownList("Region", ViewBag.regionName as SelectList) 
+                    @Html.DropDownList("Village", ViewBag.villageName as SelectList)
+                    призначення
                     <select name="SpecialLand" class="kategory" required>
                         <option value="індивідуальне">індивідуальне</option>
                         <option value="комерційне">комерційне</option>
                         <option value="сільськогосподарське">сільськогосподарське</option>і
                     </select>
-                </p>
-                <fieldset>
-                    <legend>Вартість</legend>
-                    <p>
-                        <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="CostTo" size="3">
-                        <label>$</label>
-                    </p>
-                </fieldset>
-
-                <p>
-                    <!-- <input class="button" type="reset" name="" value="Очистити"> -->
+                    ціна:
+                    <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="CostTo" size="3">
                     <input class="button" type="submit" name="search" value="Пошук">
                 </p>
             </form>
-            <h2>Курси валют</h2>
-            <p>
-
-                <label class="valuta">$</label>
-                <input class="valuta" type="radio" value="dollar" checked="" name="valuta">
-                <a class="nevedimka" id="dollar" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp11_b15_c0_l1.png" border="0" alt="Курс долара"></a>
-
-                <label class="valuta">€</label>
-                <input class="valuta" type="radio" value="evro" name="valuta">
-                <a class="nevedimka" id="evro" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp13_b15_c2_l1.png" border="0" alt="Курс євро"></a>
-
-            </p>
-
         </section>
         <!--end форма выборки   -->
 
@@ -102,15 +76,23 @@
         @RenderBody()
 
     </main>
-    <footer id="footer">
-        <!-- иконки социальные сети  -->
-        <article class="icons">
-            <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
-                <img src="Image/image_fb.jpg" alt="Ми на Facebook">
-            </a>
-        </article>
-        <!-- end социальные сети-->
-    </footer>
+<footer id="footer">
+    <article class="searchId" >
+        <form method="GET" action="/Land/IdOutPutDetaialsInfoLand">
+            пошук по Id
+            <input type="number" name="id"/>
+            <input type="submit" value="пошук"/>
+        </form>
+       
+    </article>
+    <!-- иконки социальные сети -->
+    <article class="icons">
+        <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
+            <img src="/Image/image_fb.jpg" alt="Ми на Facebook">
+        </a>
+    </article>
+    <!-- end социальные сети-->
+</footer>
 
 </body>
 </html>
