@@ -376,6 +376,8 @@
     <Content Include="Views\AdminImage\Index.cshtml" />
     <Content Include="Views\AdminImage\EditImage.cshtml" />
     <Content Include="Views\AdminImage\DeleteImage.cshtml" />
+    <Content Include="Views\Administrator\AllObject.cshtml" />
+    <Content Include="Views\Land\IdOutPutDetaialsInfoLand.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
