@@ -50,85 +50,47 @@
     <main id="main" role="main">
 
         <!-- форма выборки   -->
-        <section id="form">
-            <h2 class="select">Будинки</h2>
+        <section >
 
             <form method="POST" action="/House/Index">
-                <p>Райони: </p>
-                <p>
-                    @Html.DropDownList("Region", ViewBag.regionName as SelectList)
-                </p>
-                <p>Населені пункти: </p>
-               
-                <p>
+                <p style="float: left;">
+                   місце : @Html.DropDownList("Region", ViewBag.regionName as SelectList)
                     @Html.DropDownList("Village", ViewBag.villageName as SelectList)
                 </p>
 
-                <p>Тип операції:</p>
-                <p>
-                    <select name="OperationType" class="room_type" required>
-                        <option value="оренда">оренда</option>
-                        <option value="продаж">продаж</option>
+                <p style="float: left;">
+                    <label>тип:</label>
+                    <select class="house_type" type="text" name="TypeHouse" id="house_type" required>
+                        <option value="будинок">будинок</option>
+                        <option value="котедж">котедж</option>
+                        <option value="літній будинок">літній будинок</option>
                     </select>
                 </p>
 
-                <fieldset>
-                    <legend>Будинок</legend>
-                    <p>
-                        <label>Тип:</label>
-                        <select class="house_type" type="text" name="TypeHouse" id="house_type" required>
-                            <option value="будинок">будинок</option>
-                            <option value="котедж">котедж</option>
-                            <option value="літній будинок">літній будинок</option>
-                        </select>
-                    </p>
-                    <p>
-                        <label>Частина:</label>
-                        <select class="house_part" type="text"  name="PartHouse" id="house_part" required>
-                            <option value="1">1</option>
-                            <option value="1/2">1/2</option>
-                            <option value="1/3">1/3</option>
-                            <option value="1/4">1/4</option>
-                            <option value="1/5">1/5</option>
-                            <option value="2/3">2/3</option>
-                            <option value="2/5">2/5</option>
-                        </select>
-                    </p>
-                </fieldset>
+                <p style="float: left;">
+                    <label>частина:</label>
+                    <select class="house_part" type="text" name="PartHouse" id="house_part" required>
+                        <option value="1">1</option>
+                        <option value="1/2">1/2</option>
+                        <option value="1/3">1/3</option>
+                        <option value="1/4">1/4</option>
+                        <option value="1/5">1/5</option>
+                        <option value="2/3">2/3</option>
+                        <option value="2/5">2/5</option>
+                    </select>
+                </p>
+                <p style="float: left;">
+                    <input type="radio" name="OperationType" checked value="продаж" /><span>продаж</span>
+                    <input class="nevedimkaRent" type="number" id="dol" min="1000" max="250000" placeholder="ціна в доларах" name="DollarPriceTo" size="3">
+                    <input type="radio" value="оренда" name="OperationType" /><span>оренда</span>
+                    <input class="nevedimkaRent" type="number" id="grn" min="1000" max="500000" placeholder="ціна в гривні " name="GrnPriceTo" size="3">
+                </p>
 
-                <fieldset>
-                    <legend>Вартість</legend>
-
-                    <p>
-                        <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="500000" placeholder="500000" name="GrnPriceTo" style="width: 80px" >
-                        <label>GRN</label>
-                    </p>
-                    <p>
-                        <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="DollarPriceTo" style="width: 80px">
-                        <label>$</label>
-                    </p>
-
-                </fieldset>
                 <p>
                     <!-- <input class="button" type="reset" name="" value="Очистити"> -->
-                    <input class="button" type="submit" name="search" value="Пошук">
+                    <input style="float: right; width:50px; height: 50px;" class="button"   src="../../Image/search.png" type="image" name="submit" value="Пошук">
                 </p>
             </form>
-            <h2>Курси валют</h2>
-            <p>
-
-                <label class="valuta">$</label>
-                <input class="valuta" type="radio" value="dollar" checked="" name="valuta">
-                <a class="nevedimka" id="dollar" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp11_b15_c0_l1.png" border="0" alt="Курс долара"></a>
-
-                <label class="valuta">€</label>
-                <input class="valuta" type="radio" value="evro" name="valuta">
-                <a class="nevedimka" id="evro" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp13_b15_c2_l1.png" border="0" alt="Курс євро"></a>
-
-            </p>
-
         </section>
         <!--end форма выборки   -->
 

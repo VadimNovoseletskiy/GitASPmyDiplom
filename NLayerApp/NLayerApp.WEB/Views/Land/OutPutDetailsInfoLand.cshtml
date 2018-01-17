@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_SearchLandForm.cshtml";
 }
 
-<h2>Детальна інформація по земельній ділянці</h2>
+
 <div>
     @if ((Model?.Id ?? 0) > 0)
     {
@@ -16,6 +16,7 @@
         //}
         //return 0;
         //или Model != null ? Model.Count : 0;
+        <h2>Детальна інформація по земельній ділянці</h2>
         <table  style="width: 720px" cols="4">
             <tr>
                 <td rowspan="5">@Model.Id</td>
