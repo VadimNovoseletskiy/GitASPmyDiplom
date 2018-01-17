@@ -241,26 +241,30 @@ a.nevedimka {
 	padding-left: 20px;
 }
 
-
+:checked+span {
+    color: red;
+   
+}
 
 .nevedimkaRent{
     display: none;
 
 }
-:checked~div{
-	display: block;
 
 
+
+
+:checked+span+input {
+    display: block;
+    width: 110px;
+    float: right;
+    
 }
 
-.nevedimkaBuy {
-    display: none;
+.buttonSearch {
+    float: right;
 }
 
-:checked+p{
-	display: block;
-
-}
 /*
 пример когда ссылка является картинкой
 a.evro:hover ~ a.nevedimka_1{
@@ -281,6 +285,10 @@ main {
 	border-top: 2px solid #FFF;
 	width: 100%;
 	height: auto;
+}
+
+div.idDetailsInfo {
+    clear: both;
 }
 
 section.main_information{

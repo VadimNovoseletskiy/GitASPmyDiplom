@@ -248,6 +248,7 @@
     <Content Include="Image\image_myHome.jpg" />
     <Content Include="Image\land.jpg" />
     <Content Include="Image\logo_z.jpg" />
+    <Content Include="Image\search.png" />
     <Content Include="Image\small_logo.JPG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

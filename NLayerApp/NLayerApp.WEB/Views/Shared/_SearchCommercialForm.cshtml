@@ -48,31 +48,17 @@
     <main id="main" role="main">
 
         <!-- форма выборки   -->
-        <section  id="form">
-            <h2 class="select">Комерційна нерухомість</h2>
+        <section  >
+            
 
             <form method="POST" action="/Commercial/Index">
 
-                <p>Райони:</p>
-                <p>
-                    @Html.DropDownList("Region",ViewBag.regionName as SelectList)
-                </p>
-                <p>Населені пункти:</p>
-                <p>
+                <p style="float: left; ">
+                    місце:<span style="color: red;">@Html.DropDownList("Region", ViewBag.regionName as SelectList)</span> 
                     @Html.DropDownList("Village", ViewBag.villageName as SelectList)
                 </p>
-
-                <p>Тип операції:</p>
-                <p>
-                    <select name="TypeOperation" class="room_type" required>
-                        <option value="оренда">оренда</option>
-                        <option value="продаж">продаж</option>
-                    </select>
-                </p>
-
-                <p>Призначення</p>
-                <p>
-                    <select class="commercial_type"  name="TypeCommercial" required>
+                <p style="float: left;"> призначення
+                    <select class="commercial_type" name="TypeCommercial" required>
                         <option value="офісно-адміністративне">офісно-адміністративне</option>
                         <option value="виробниче">виробниче</option>
                         <option value="складське">складське</option>
@@ -82,36 +68,18 @@
                         <option value="вільне призначення">вільне призначення</option>
                     </select>
                 </p>
-                <fieldset>
-                    <legend>Вартість</legend>
-                    <p>
-                        <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="500000" placeholder="500000" name="GrnPriceTo" size="3">
-                        <label>GRN</label>
-                    </p>
-                    <p>
-                        <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="DollarPriceTo" size="3">
-                        <label>$</label>
-                    </p>
-                </fieldset>
-                <p>
+                <p style="float: left;">
+                    <input type="radio" name="operation" checked value="продаж"/><span>продаж</span>
+                    <input class="nevedimkaRent"  type="number" id="dol" min="1000" max="250000" placeholder="ціна в доларах" name="DollarPriceTo" size="3">
+                    <input type="radio" value="оренда" name="operation" /><span>оренда</span>
+                    <input class="nevedimkaRent"   type="number" id="grn" min="1000" max="500000" placeholder="ціна в гривні " name="GrnPriceTo" size="3">
+               </p>
+                <p >
                     <!-- <input class="button" type="reset" name="" value="Очистити"> -->
-                    <input class="button" type="submit" name="search" value="Пошук">
+                    <input class="buttonSearch  " style="float: right; width:50px; height: 50px; " type="image" name="submit" src="../../Image/search.png" value="Пошук">
                 </p>
             </form>
-            <h2>Курси валют</h2>
-            <p>
-
-                <label class="valuta">$</label>
-                <input class="valuta" type="radio" value="dollar" checked="" name="valuta">
-                <a class="nevedimka" id="dollar" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp11_b15_c0_l1.png" border="0" alt="Курс долара"></a>
-
-                <label class="valuta">€</label>
-                <input class="valuta" type="radio" value="evro" name="valuta">
-                <a class="nevedimka" id="evro" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp13_b15_c2_l1.png" border="0" alt="Курс євро"></a>
-
-            </p>
+           
 
         </section>
         <!--end форма выборки   -->
