@@ -120,15 +120,23 @@
         @RenderBody()
 
     </main>
-    <footer id="footer">
-        <!-- иконки социальные сети  -->
-        <article class="icons">
-            <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
-                <img src="/Image/image_fb.jpg" alt="Ми на Facebook">
-            </a>
-        </article>
-        <!-- end социальные сети-->
-    </footer>
+<footer id="footer">
+    <article class="searchId">
+        <form method="GET" action="/Commercial/IdOutPutDetailsInfo">
+            пошук по Id
+            <input type="number" name="id" />
+            <input type="submit" value="пошук" />
+        </form>
+
+    </article>
+    <!-- иконки социальные сети -->
+    <article class="icons">
+        <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
+            <img src="/Image/image_fb.jpg" alt="Ми на Facebook">
+        </a>
+    </article>
+    <!-- end социальные сети-->
+</footer>
 
 </body>
 </html>

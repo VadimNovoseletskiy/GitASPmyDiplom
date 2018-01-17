@@ -50,7 +50,20 @@ namespace NLayerApp.WEB.Controllers
             return View(detailsOutInfoCommercial);
         }
 
-
+        //Get Details info about object by Id
+        [HttpGet]
+        public ActionResult IdOutPutDetailsInfo(int? id)
+        {
+            MySelect();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DetailsInfoOutPutCommercialHandler myHandler = new DetailsInfoOutPutCommercialHandler(unitOfWork);
+            var idDetailsOutInfoCommercial = myHandler.IdOutPutDetailsInfo(id);
+           
+            return View(idDetailsOutInfoCommercial);
+        }
 
         void MySelect()
         {
