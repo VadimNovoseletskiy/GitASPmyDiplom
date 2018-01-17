@@ -49,85 +49,43 @@
     <main id="main" role="main">
 
         <!-- форма выборки   -->
-        <section id="form">
-            <h2 class="select">Квартири</h2>
-
+        <section >
             <form method="POST" action="/Apartment/Index">
-                <p>Райони:</p>
-                <p>
-                   @Html.DropDownList("Region", ViewBag.regionName as SelectList)
-                </p>
-                <p>Населений пункт:</p>
-                <p>
+                <p >
+                    місце знаходження: @Html.DropDownList("Region", ViewBag.regionName as SelectList)
                     @Html.DropDownList("Village", ViewBag.villageName as SelectList)
                 </p>
-                <p>Тип операції:</p>
-                <p>
-                    <select name="OperationType" class="room_type" required>
-                        <option value="оренда">оренда</option>
-                        <option value="продаж">продаж</option>
+                <p style="float: left;">
+                    <label>тип кімнат:</label>
+                    <select class="room_type" name="TypeRoom">
+                        <option value="окремі">окремі</option>
+                        <option value="суміжні">суміжні</option>
+                        <option value="комбіновані">комбіновані</option>
                     </select>
                 </p>
-                <div>
-                    <fieldset>
-                        <legend class="roomApartment">Кімнати</legend>
-                        <p>
-                            <label>Тип:</label>
-                            <select class="room_type" name="TypeRoom" >
-                                <option value="окремі">окремі</option>
-                                <option value="суміжні">суміжні</option>
-                                <option value="комбіновані">комбіновані</option>
-                            </select>
-
-                        </p>
-                        <p>
-                            <label>Кількість:</label>
-                            <select class="room_quantity" name="RoomsApartment">
-                                <option value="1-но кімнатна">1 кімната</option>
-                                <option value="2-во кімнатна">2 кімнати</option>
-                                <option value="3-ри кімнатна">3 кімнати</option>
-                                <option value="4-х кімнатна">4 кімнати</option>
-                                <option value="5 кімат і більше">5 кімат і більше</option>
-                            </select>
-                        </p>
-                    </fieldset>
-                </div>
-             
-                <fieldset>
-                    <legend>Вартість</legend>
-                    <p>
-                        <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="500000" placeholder="500000" name="GrnCostTo" style="width: 80px" >
-                        <label>GRN</label>
-                    </p>
-                    <p>
-                        <label>до</label>
-                        <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="DollarCostTo" style="width: 80px" >
-                        <label>$</label>
-                    </p>
-                </fieldset>
-               
-                <p>
-                    <!-- <input class="button" type="reset" name="" value="Очистити"> -->
-                    <input class="button" type="submit" name="search" value="Пошук">
+                <p style="float: left;">
+                    <label>кількість</label>
+                    <select class="room_quantity" name="RoomsApartment">
+                        <option value="1-но кімнатна">1 кімната</option>
+                        <option value="2-во кімнатна">2 кімнати</option>
+                        <option value="3-ри кімнатна">3 кімнати</option>
+                        <option value="4-х кімнатна">4 кімнати</option>
+                        <option value="5 кімат і більше">5 кімат і більше</option>
+                    </select>
+                </p>
+                <p style="float: left;">
+                    <input type="radio" name="OperationType" checked value="продаж" /><span>продаж</span>
+                    <input class="nevedimkaRent" type="number" id="dol" min="1000" max="250000" placeholder="ціна в доларах" name="DollarPriceTo" size="3">
+                    <input type="radio" value="оренда" name="OperationType" /><span>оренда</span>
+                    <input class="nevedimkaRent" type="number" id="grn" min="1000" max="500000" placeholder="ціна в гривні " name="GrnPriceTo" size="3">
                 </p>
                
-
+                <p style="float: left">
+                    <!-- <input class="button" type="reset" name="" value="Очистити"> -->
+                    <input class="buttonSearch  " style="float: right; width:50px; height: 50px; " type="image" name="submit" src="../../Image/search.png" value="Пошук">
+                </p>
             </form>
            
-            <h2>Курси валют</h2>
-            <p>
-
-                <label class="valuta">$</label>
-                <input class="valuta" type="radio" value="dollar" checked="" name="valuta">
-                <a class="nevedimka" id="dollar" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp11_b15_c0_l1.png" border="0" alt="Курс долара"></a>
-
-                <label class="valuta">€</label>
-                <input class="valuta" type="radio" value="evro" name="valuta">
-                <a class="nevedimka" id="evro" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp13_b15_c2_l1.png" border="0" alt="Курс євро"></a>
-
-            </p>
-
         </section>
         <!--end форма выборки   -->
 
