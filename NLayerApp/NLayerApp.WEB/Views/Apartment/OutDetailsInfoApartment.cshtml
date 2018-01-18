@@ -4,10 +4,11 @@
     Layout = "~/Views/Shared/_SearchApartmentForm.cshtml";
 }
 
-<h2>Детальна інформація по квартирі </h2>
-<div>
+<div class="idDetailsInfo">
     @if ((Model?.Id ?? 0) > 0)
     {
+        <h2>Детальна інформація по квартирі </h2>
+
         <table cols="4" style="width: 720px; float: right;">
             <tr>
                 <td colspan="4" style="text-align: center">

@@ -242,6 +242,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Image\add.jpg" />
     <Content Include="Image\apartment.jpg" />
+    <Content Include="Image\apartmentImg.jpg" />
     <Content Include="Image\commercial.jpg" />
     <Content Include="Image\house.jpg" />
     <Content Include="Image\image_fb.jpg" />

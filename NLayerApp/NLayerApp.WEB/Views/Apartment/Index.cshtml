@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_SearchApartmentForm.cshtml";
 }
 
-<div>
+<div class="idDetailsInfo">
     @if ((Model?.Count ?? 0) > 0)
     {
         //когда просто открывается страница (метода ж два, а вьюха одна) то модель пустая а ты это не обработал
@@ -17,7 +17,7 @@
         //или Model != null ? Model.Count : 0;
         <h2>Знайдені квартири</h2>
 
-        <table border="1" cols="4"  style="float: right; width: 720px" >
+        <table border="1" cols="4" style="width: auto;">
 
             <tr>
                 <td width="30">
@@ -36,7 +36,7 @@
                         <table width="100">
                             <tr>
                                 <td>
-                                    <img src="../../Image/apartment.jpg" />
+                                    <img src="../../Image/apartment.jpg"/>
                                 </td>
                             </tr>
                         </table>
@@ -50,16 +50,17 @@
                     <td style="text-align: right"><b>ціна:@b.GrnPrice грн. (@b.DollarPrice у.о.)</b></td>
                 </tr>
 
-                <tr><td colspan="2"> @b.Village  |  @b.Region </td></tr>
-                <tr><td colspan="2"> @b.Floor  |  @b.NumberOfRooms | </td></tr>
-                <tr>
-                    <td style="font-size: 18px" colspan="3">
-                        <b> Загальна площа: @b.TotalAreaInfo m<sup>2</sup></b>
-                    </td>
-                </tr>
+                <tr><td colspan="2"> @b.Village | @b.Region | @b.Floor | @b.NumberOfRooms | загальна площа: @b.TotalAreaInfo m<sup>2</sup> </td></tr>
+
 
             }
         </table>
+    }
+    else
+    {
+        <div>
+            <img  src="../../Image/apartmentImg.jpg" />
+        </div>
     }
 
 </div>
