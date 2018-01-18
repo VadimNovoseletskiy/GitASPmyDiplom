@@ -256,7 +256,8 @@ a.nevedimka {
 
 :checked+span+input {
     display: block;
-    width: 110px;
+    margin-left: 10px;
+    width: 120px;
     float: right;
     
 }
