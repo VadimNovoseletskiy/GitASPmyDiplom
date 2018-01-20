@@ -13,9 +13,7 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int Village { get; set; }
         public string TypeOperation { get; set; }
         public string TypeCommercial { get; set; }
-        public int DollarPriceFrom { get; set; }
         public int DollarPriceTo { get; set; }
-        public int GrnPriceFrom { get; set; }
         public int GrnPriceTo { get; set; }
     }
 }

@@ -4,11 +4,11 @@
     Layout = "~/Views/Shared/_SearchCommercialForm.cshtml";
 }
 
-<h2>Детальна інформація по об'єкту комерційної нерухомості</h2>
-<div>
+
+<div class="idDetailsInfo">
     @if ((Model?.Id ?? 0) > 0)
     {
-
+        <h2>Детальна інформація по об'єкту комерційної нерухомості</h2>
         <table cols="4" width="auto">
             <tr>
                 <td colspan="4" style="text-align: center; color: #037ABD;">
@@ -16,7 +16,7 @@
                 </td>
             </tr>
             <tr>
-                <td rowspan="5">
+                <td rowspan="4">
                     <table width="100">
                         <tr>
                             <td>
@@ -30,11 +30,21 @@
 
             <tr>
                 <td> тип операції:<b> @Model.OperationType  |</b></td>
-                <td style="text-align: right">ціна:<b>@Model.GrnPrice грн. (@Model.DollarPrice у.о.)</b></td>
+                <td style="text-align: right">ціна:
+                    <b>
+                        @if (Model.OperationType == "оренда")
+                        {
+                            @Model.GrnPrice <span>грн.</span>
+                        }
+                        else
+                        {
+                            @Model.DollarPrice <span>у.о.</span>
+                        }
+                         
+                    </b></td>
             </tr>
 
-            <tr><td colspan="2"> @Model.Village</td></tr>
-            <tr><td colspan="2"> @Model.Region  </td></tr>
+            <tr><td colspan="2"> @Model.Village  |  @Model.Region  </td></tr>
             <tr>
                 <td style="font-size: 18px" colspan="3">
                     Загальна площа:  <b>@Model.TotalArea m <sup>2</sup></b>

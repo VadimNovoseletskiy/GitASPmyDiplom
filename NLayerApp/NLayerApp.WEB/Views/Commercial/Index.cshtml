@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_SearchCommercialForm.cshtml";
 }
 
-<div>
+<div class="idDetailsInfo">
     @if ((Model?.Count ?? 0) > 0)
     {
         //когда просто открывается страница (метода ж два, а вьюха одна) то модель пустая а ты это не обработал
@@ -17,7 +17,7 @@
         //или Model != null ? Model.Count : 0;
         <h2>Знайдені обєкти комерційної нерухомості</h2>
 
-        <table border="1" cols="4" width="auto">
+        <table border="1" cols="4" >
 
             <tr>
                 <td width="30">
@@ -32,8 +32,8 @@
             @foreach (var b in Model)
             {
                 <tr>
-                    <td rowspan="5">@b.Id</td>
-                    <td rowspan="5">
+                    <td rowspan="3">@b.Id</td>
+                    <td rowspan="3">
                         <table width="100">
                             <tr>
                                 <td>
@@ -48,15 +48,24 @@
                 </tr>
 
                 <tr>
-                    <td>тип операції :<b> @b.OperationType </b> </td>
-                    <td style="text-align: right">ціна:<b>@b.GrnPrice грн. (@b.DollarPrice у.о.)</b></td>
+                    <td >тип операції :<b> @b.OperationType </b> </td>
+                    <td style="text-align: right">ціна:<b>
+                        @if (b.OperationType == "оренда")
+                        {
+                            @b.GrnPrice<span>грн.</span>
+                        }
+                        else
+                        {
+                            @b.DollarPrice <span>у.о.</span>
+                        }
+                    </b></td>
                 </tr>
 
-                <tr><td colspan="2">@b.Village</td></tr>
-                <tr><td colspan="2">@b.Region | стан:<b> @b.StateCommercial  </b> </td></tr>
+                <tr><td colspan="2">@b.Village | @b.Region | стан:<b> @b.StateCommercial  </b> |     загальна площа:<b>  @b.TotalArea m<sup>2</sup>  </b> </td></tr>
+                
                 <tr>
                     <td  colspan="3">
-                        загальна площа:<b>  @b.TotalArea m<sup>2</sup>  </b>
+                        
                     </td>
 
                 </tr>
