@@ -30,11 +30,11 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .Where(p => p.Type == PropertyType.House
                             && p.RegionId == parameters.Region
                             && p.VillageId == parameters.Village
-                            && p.OperationType == parameters.OperationType
                             && p.House.TypeHouse == parameters.TypeHouse
                             && p.House.PartHouse == parameters.PartHouse
-                            || p.DollarPrice <= parameters.DollarPriceTo
-                            || p.GrnPrice <= parameters.GrnPriceTo
+                            && p.OperationType == parameters.OperationType
+                            && p.DollarPrice <= parameters.DollarPriceTo
+                            && p.GrnPrice <= parameters.GrnPriceTo
                 )
                 .Select(p => new HouseViewModel
                         {

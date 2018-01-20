@@ -261,7 +261,7 @@
         </p>
        
         <p style="float: left;">
-            @Html.RadioButton("OperationType", "продаж")<span>продаж</span>
+            @Html.RadioButton("OperationType", "продаж","true")<span>продаж</span>
             <input class="nevedimkaRent" type="number" value="@Model.DollarPrice" id="dol" max="250000" placeholder="ціна в доларах" name="DollarPrice" size="3">
             @Html.RadioButton("OperationType", "оренда")<span>оренда</span>
             <input class="nevedimkaRent" type="number" value="@Model.GrnPrice" id="grn" max="500000" placeholder="ціна в гривні " name="GrnPrice" size="3">
