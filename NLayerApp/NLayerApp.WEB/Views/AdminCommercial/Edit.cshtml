@@ -37,14 +37,7 @@
             <label> офіс № :</label>
             <input type="number" value="@Model.OficeNumber" name="OficeNumber" />
         </p>
-        <p> вид операції:<b> @Model.OperationType </b> </p>
-        <fieldset style="border: 2px solid red; width: 200px;">
-            <legend style="color: red" >змінити(залишити)вид операції на :</legend>
-            <select id="operation" name="OperationType">
-                <option value="оренда">оренда</option>
-                <option value="продаж">продаж</option>
-            </select><br />
-        </fieldset>
+        
 
     </fieldset>
     <!-- +++++++++++++++++++++++++++ Детальна інформація +++++++++++++++++++++++++++++++ -->
@@ -240,15 +233,11 @@
 
         </p>
        
-        <!-- ціна в гривнях -->
-        <p>
-            <label>ціна:</label>
-            <input type="number" id="" value="@Model.GrnPrice" name="GrnPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">грн.</span>
-        </p>
-        <!-- ціна в доларах -->
-        <p>
-            <label>ціна:</label>
-            <input type="number" id="" value="@Model.DollarPrice" name="DollarPrice" min="0" step="1" /> <span style="color: red; font-weight: bold;">$</span>
+        <p style="float: left;">
+            @Html.RadioButton("OperationType", "продаж")<span>продаж</span>
+            <input class="nevedimkaRent" type="number" value="@Model.DollarPrice" id="dol" max="250000" placeholder="ціна в доларах" name="DollarPrice" size="3">
+            @Html.RadioButton("OperationType", "оренда")<span>оренда</span>
+            <input class="nevedimkaRent" type="number" value="@Model.GrnPrice" id="grn" max="500000" placeholder="ціна в гривні " name="GrnPrice" size="3">
         </p>
     </fieldset>
     <p>
