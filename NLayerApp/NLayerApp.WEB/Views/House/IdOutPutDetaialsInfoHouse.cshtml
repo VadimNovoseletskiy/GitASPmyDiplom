@@ -31,7 +31,17 @@
 
             <tr>
                 <td> Тип операції: @Model.OperationType</td>
-                <td style="text-align: right"><b>Ціна:@Model.GrnPrice грн. (@Model.DollarPrice у.о.)</b></td>
+
+                <td style="text-align: right"><b>Ціна:
+                    @if (Model.OperationType == "оренда")
+                    {
+                        @Model.GrnPrice <span>грн.</span> 
+                    }
+                    else
+                    {
+                        @Model.DollarPrice <span>у.о</span> 
+                    }
+                     </b></td>
             </tr>
 
             <tr><td colspan="2">Населений пункт: @Model.Village</td></tr>

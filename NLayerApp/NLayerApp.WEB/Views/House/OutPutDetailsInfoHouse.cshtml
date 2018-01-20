@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_SearchHouseForm.cshtml";
 }
 
-<h2>Детальна інформація по будинку</h2>
-<div>
+<div class="idDetailsInfo">
     @if ((Model?.Id ?? 0) > 0)
     {
+        <h2>Детальна інформація по будинку</h2>
 
         <table  cols="4" width="auto">
             <tr>
@@ -26,12 +26,20 @@
                         </tr>
                     </table>
                 </td>
-               
             </tr>
-
             <tr>
-                <td> Тип операції: @Model.OperationType</td>
-                <td  style="text-align: right"><b>Ціна:@Model.GrnPrice грн. (@Model.DollarPrice у.о.)</b></td>
+                <td> Тип операції: @Model.OperationType,</td>
+                <td style="text-align: right"><b>ціна:
+                    @if (Model.OperationType == "оренда")
+                    {
+                        @Model.GrnPrice <span>грн.</span> 
+                    }
+                    else
+                    {
+                        @Model.DollarPrice<span>у.о.</span> 
+                    }
+                    </b>
+                    </td>
             </tr>
 
             <tr><td colspan="2">Населений пункт: @Model.Village</td></tr>
@@ -174,14 +182,8 @@
             <tr>
                 <td><p></p></td>
             </tr>
-
         </table>
-      
-
-
-
     }
-
 </div>
 
 
