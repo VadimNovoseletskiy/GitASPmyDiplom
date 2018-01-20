@@ -31,11 +31,7 @@
             <input type="text" id="adress_number" name="NumberAdress" />
         </p>
 
-        <label for="operation">Вид операції:</label>
-        <select id="operation" name="OperationType">
-            <option value="оренда">оренда</option>
-            <option value="продаж">продаж</option>
-        </select><br />
+       
         <!--прододжить разбоп с этого места -->
     </fieldset>
     <!-- +++++++++++++ Детальна інформація +++++++++++++++++ -->
@@ -261,12 +257,12 @@
 
         <p style="float: left;">
             <input type="radio" name="OperationType" checked value="продаж" /><span>продаж</span>
-            <input class="nevedimkaRent" type="number" id="dol" min="1000" max="250000" placeholder="ціна в доларах" name="DollarPriceTo" size="3">
+            <input class="nevedimkaRent" type="number" id="dol"  max="250000" placeholder="ціна в доларах" name="DollarPrice" size="3">
             <input type="radio" value="оренда" name="OperationType" /><span>оренда</span>
-            <input class="nevedimkaRent" type="number" id="grn" min="1000" max="500000" placeholder="ціна в гривні " name="GrnPrice" size="3">
+            <input class="nevedimkaRent" type="number" id="grn" max="500000" placeholder="ціна в гривні " name="GrnPrice" size="3">
         </p>
 
-       '
+       
     </fieldset>
    
     <!-- кнопочки -->
