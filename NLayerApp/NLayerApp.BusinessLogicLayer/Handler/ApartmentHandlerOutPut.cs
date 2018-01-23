@@ -33,8 +33,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             && p.OperationType == parameters.OperationType
                             && p.Apartment.TypeRoom == parameters.TypeRoom
                             && p.Apartment.RoomsApartment == parameters.RoomsApartment
-                            || p.DollarPrice<=parameters.DollarCostTo
-                            || p.GrnPrice<=parameters.GrnCostTo
+                            && p.DollarPrice<=parameters.DollarCostTo
+                            && p.GrnPrice<=parameters.GrnCostTo
                             )
 
                 .Select(p => new ApartmentViewModel
