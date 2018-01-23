@@ -38,7 +38,7 @@
     <nav id="nav">
         <ul>
             <li>@Html.ActionLink("Головна", "Index", "Home")</li>
-            <li>@Html.ActionLink("Послуги", "Index", "Home")</li>
+            <li>@Html.ActionLink("Послуги", "Services", "Home")</li>
             <li>@Html.ActionLink("Кредитування", "Kredit", "Home")</li>
             <li>@Html.ActionLink("Контактна інформація", "MyContact", "Home")</li>
             <li>@Html.ActionLink("Про Нас", "MyAbout", "Home")</li>
@@ -46,46 +46,46 @@
         </ul>
     </nav>
     <!--end новигация -->
-    <main id="main" role="main">
+    <main id="main" role="main" class="searchColorForm">
 
         <!-- форма выборки   -->
         <section >
-            <form method="POST" action="/Apartment/Index">
-                <p >
-                    місце знаходження: @Html.DropDownList("Region", ViewBag.regionName as SelectList)
-                    @Html.DropDownList("Village", ViewBag.villageName as SelectList)
-                </p>
-                <p style="float: left;">
-                    <label>тип кімнат:</label>
-                    <select class="room_type" name="TypeRoom">
-                        <option value="окремі">окремі</option>
-                        <option value="суміжні">суміжні</option>
-                        <option value="комбіновані">комбіновані</option>
-                    </select>
-                </p>
-                <p style="float: left;">
-                    <label>кількість</label>
-                    <select class="room_quantity" name="RoomsApartment">
-                        <option value="1-но кімнатна">1 кімната</option>
-                        <option value="2-во кімнатна">2 кімнати</option>
-                        <option value="3-ри кімнатна">3 кімнати</option>
-                        <option value="4-х кімнатна">4 кімнати</option>
-                        <option value="5 кімат і більше">5 кімат і більше</option>
-                    </select>
-                </p>
-                <p style="float: left;">
-                    <input type="radio" name="OperationType" checked value="продаж" /><span>продаж</span>
-                    <input class="nevedimkaRent" type="number" id="dol" min="1000" max="250000" placeholder="ціна в доларах" name="DollarPriceTo" size="3">
-                    <input type="radio" value="оренда" name="OperationType" /><span>оренда</span>
-                    <input class="nevedimkaRent" type="number" id="grn" min="1000" max="500000" placeholder="ціна в гривні " name="GrnPriceTo" size="3">
-                </p>
-               
-                <p style="float: left">
-                    <!-- <input class="button" type="reset" name="" value="Очистити"> -->
-                    <input class="buttonSearch  " style="float: right; width:50px; height: 50px; " type="image" name="submit" src="../../Image/search.png" value="Пошук">
-                </p>
-            </form>
            
+                <form method="POST" action="/Apartment/Index">
+                    <p>
+                        місце знаходження: @Html.DropDownList("Region", ViewBag.regionName as SelectList)
+                        @Html.DropDownList("Village", ViewBag.villageName as SelectList)
+                    </p>
+                    <p style="float: left;">
+                        <label>тип кімнат:</label>
+                        <select class="room_type" name="TypeRoom">
+                            <option value="окремі">окремі</option>
+                            <option value="суміжні">суміжні</option>
+                            <option value="комбіновані">комбіновані</option>
+                        </select>
+                    </p>
+                    <p style="float: left;">
+                        <label>кількість</label>
+                        <select class="room_quantity" name="RoomsApartment">
+                            <option value="1-но кімнатна">1 кімната</option>
+                            <option value="2-во кімнатна">2 кімнати</option>
+                            <option value="3-ри кімнатна">3 кімнати</option>
+                            <option value="4-х кімнатна">4 кімнати</option>
+                            <option value="5 кімат і більше">5 кімат і більше</option>
+                        </select>
+                    </p>
+                    <p style="float: left; background-color: paleturquoise">
+                        <input type="radio" name="OperationType" checked value="продаж" /><span>продаж</span>
+                        <input class="nevedimkaRent" type="number" id="dol" min="1000" max="250000" placeholder="ціна в доларах" name="DollarCostTo" size="3">
+                        <input type="radio" value="оренда" name="OperationType" /><span>оренда</span>
+                        <input class="nevedimkaRent" type="number" id="grn" min="1000" max="500000" placeholder="ціна в гривні " name="GrnCostTo" size="3">
+                    </p>
+
+                    <p style="float: left">
+                        <!-- <input class="button" type="reset" name="" value="Очистити"> -->
+                        <input class="buttonSearch  " style="float: right; width: 50px; height: 50px;" type="image" name="submit" src="../../Image/search.png" value="Пошук">
+                    </p>
+                </form>
         </section>
         <!--end форма выборки   -->
 
