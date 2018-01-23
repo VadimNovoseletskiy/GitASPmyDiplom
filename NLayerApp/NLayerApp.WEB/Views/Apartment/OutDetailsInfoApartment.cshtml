@@ -9,7 +9,7 @@
     {
         <h2>Детальна інформація по квартирі </h2>
 
-        <table cols="4" style="width: 720px; float: right;">
+        <table cols="4" style="width: 780px; ">
             <tr>
                 <td colspan="4" style="text-align: center">
                     <b>@Model.CaptionLink</b>
@@ -30,7 +30,16 @@
 
             <tr>
                 <td>Тип операції:<b>@Model.OperationType</b></td>
-                <td style="text-align: right"><b>Ціна:@Model.GrnPrice грн. (@Model.DollarPrice у.о.)</b></td>
+                <td style="text-align: right"><b>ціна:
+                    @if (Model.OperationType == "оренда")
+                    {
+                        @Model.GrnPrice <span>грн.</span> 
+                    }
+                    else
+                    {
+                        @Model.DollarPrice<span>у.о.</span> 
+                    }
+                     </b></td>
             </tr>
 
             <tr><td colspan="2"> Населений пункт: @Model.Village</td></tr>
