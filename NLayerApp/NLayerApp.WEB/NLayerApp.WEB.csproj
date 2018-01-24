@@ -250,6 +250,7 @@
     <Content Include="Image\image_myHome.jpg" />
     <Content Include="Image\land.jpg" />
     <Content Include="Image\logo_z.jpg" />
+    <Content Include="Image\photoZatishok.jpg" />
     <Content Include="Image\search.png" />
     <Content Include="Image\small_logo.JPG" />
     <Content Include="Scripts\bootstrap.js" />
