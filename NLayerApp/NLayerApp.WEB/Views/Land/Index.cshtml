@@ -19,20 +19,10 @@
         <h2>Знайдені земельні ділянки </h2>
         <table border="1" cols="4" >
 
-            <tr>
-                <td width="30">
-                    <p>код</p>
-                </td>
-
-                <td colspan="4">
-                    <p style="text-align: center">Інформація</p>
-                </td>
-            </tr>
-
             @foreach (var b in Model)
             {
                 <tr>
-                    <td rowspan="5">№@b.Id</td>
+                    <td rowspan="5">код № @b.Id</td>
                     <td rowspan="5">
                         <table width="100">
                             <tr>
