@@ -30,6 +30,10 @@ header#header{
 	margin-right:10px;
 }
 
+.logo_2 {
+    float: left;
+}
+
 .telephone{
 	font-size: 20px;
 	float: right;
@@ -48,7 +52,7 @@ header#header{
 												        /*nav*/
 
 nav#nav{
-
+    clear: both;
 	/*border-top: 2px solid #000;*/
 	background-color: #449E18;
     /*outline: 2px dashed #808080;*/
@@ -85,7 +89,20 @@ nav#nav:after{
 	clear: both;
 }
 													/*end nav*/
-												
+							                        
+                                                    
+                                                    /*partCredit*/
+p.alighnCenter {
+    text-align: center;
+    
+}
+p.textBold {
+    font-weight: bold;
+}
+
+                                                    /* end partCredit*/
+                                                    
+                                                    					
 													/*sidebar*/
 aside#sidebar{
 	float: left;
@@ -149,6 +166,10 @@ section#form{
 	border-right: 2px solid #449E18;
 	border-top: 2px solid #449E18;
 	background-color: #C9D8EA;
+}
+
+.searchColorForm  {
+    background-color: paleturquoise;
 }
 
 legend {
@@ -260,6 +281,8 @@ a.nevedimka {
     float: right;
     
 }
+
+
 
 .buttonSearch {
     float: right;
