@@ -10,51 +10,42 @@
     {
         <h2>Детальна інформація по будинку</h2>
 
-        <table  cols="4" width="auto">
+        <table cols="4" width="490px">
             <tr>
                 <td colspan="4" style="text-align: center; color: #037ABD;">
                     <p><b>@Model.CaptionLink</b></p>
                 </td>
             </tr>
+           
             <tr>
-                <td rowspan="5">
-                    <table width="100">
-                        <tr>
-                            <td>
-                                <img src="../../Image/house.jpg"/>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
-                <td> Тип операції: @Model.OperationType,</td>
-                <td style="text-align: right"><b>ціна:
-                    @if (Model.OperationType == "оренда")
-                    {
-                        @Model.GrnPrice <span>грн.</span> 
-                    }
-                    else
-                    {
-                        @Model.DollarPrice<span>у.о.</span> 
-                    }
+                <td> @Model.OperationType,
+                    <b>ціна:
+                        @if (Model.OperationType == "оренда")
+                        {
+                            @Model.GrnPrice
+                            <span>грн.</span>
+                        }
+                        else
+                        {
+                            @Model.DollarPrice<span>у.о.</span>
+                        }
                     </b>
-                    </td>
+                </td>
+                <td style="float: right;">
+                    код об'яви <b> № @Model.Id </b>
+                </td>
+               
             </tr>
 
-            <tr><td colspan="2">Населений пункт: @Model.Village</td></tr>
-            <tr><td colspan="2">Район: @Model.Region  </td></tr>
-            <tr>
-                <td style="font-size: 18px" colspan="3">
-                    Загальна площа:  <b>@Model.TotalAreaInfo m <sup>2</sup></b> 
-                </td>
-            </tr>
+            <tr><td colspan="2">@Model.Village, @Model.Region </td></tr>
+            <tr><td colspan="2"> загальна площа: <b>@Model.TotalAreaInfo m <sup>2</sup></b></td></tr>
+            
         </table>
         <p>
             <label style="color: crimson; font-size: 18px; font-style:inherit"><b> Опис об'єкту:</b></label><br>
             @Html.TextAreaFor(model => model.InfoDetails, 8, 54, new { htmlAttributes = new { @class = "form-control" } })
         </p>
-        <table>
+        <table width="490px">
             <!--детальна інформація -->
             <tr>
                 <td colspan="4" style="text-align: center; background-color: #C9D8EA">
@@ -118,7 +109,7 @@
             </tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Signaling)Сигналізація</td>
-                <td colspan="2">@Html.CheckBoxFor(model => model.SatelliteTv)Супутникове телебачення</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.SatelliteTv)Супут.телеб.</td>
             </tr>
             <tr>
                 <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
@@ -165,16 +156,16 @@
                 <td colspan="2">@Html.CheckBoxFor(model => model.Electricity)Електроенергія</td>
             </tr>
             <tr>
-                <td colspan="2">@Html.CheckBoxFor(model => model.CentralSewerage)Центральна каналізація</td>
-                <td colspan="2">@Html.CheckBoxFor(model => model.AutonomousSewerage)Автономна каналізація</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.CentralSewerage)Центр.каналізація</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.AutonomousSewerage)Авт.каналізація</td>
             </tr>
             <tr>
-                <td colspan="2">@Html.CheckBoxFor(model => model.CentralWater)Центральне водопостачання</td>
-                <td colspan="2">@Html.CheckBoxFor(model => model.AutonomousWater)Автономне водопостачання</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.CentralWater)Цент.водопостачання</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.AutonomousWater)Авт.водопост.</td>
             </tr>
             <tr>
-                <td colspan="2">@Html.CheckBoxFor(model => model.CentralHeating)Центральне отоплення</td>
-                <td colspan="2">@Html.CheckBoxFor(model => model.AutonomusHeating)Автономне опалення </td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.CentralHeating)Центр.отоплення</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.AutonomusHeating)Авт.опалення </td>
             </tr>
             <tr>
                 <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.RailWay)Залізнична дорога</td>
