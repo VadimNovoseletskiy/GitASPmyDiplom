@@ -11,21 +11,11 @@
         <h2>Знайдені будинки</h2>
         <table border="1" cols="4" width="auto">
 
-            <tr>
-                <td width="30">
-                    <p>Id </p>
-                </td>
-
-                <td colspan="3">
-                    <p style="text-align: center">Інформація</p>
-                </td>
-            </tr>
-
             @foreach (var b in Model)
             {
                 <tr>
-                    <td rowspan="5">@b.Id</td>
-                    <td rowspan="5">
+                    <td rowspan="4">код № @b.Id</td>
+                    <td rowspan="4">
                         <table width="100">
                             <tr>
                                 <td>
@@ -55,11 +45,9 @@
                     </td>
                 </tr>
 
-                <tr><td colspan="2"> @b.Village</td></tr>
-                <tr><td colspan="2"> @b.Region | @b.TypeHouse| кількість поверхів : @b.Floor  </td></tr>
-                <tr>
-                    <td colspan="2"><b> загальна площа: @b.TotalArea m<sup>2</sup></b></td>
-                </tr>
+                <tr><td colspan="2"> @b.Village,@b.Region, <b>тип</b> : "@b.TypeHouse"  </td></tr>
+                <tr><td colspan="2"> кількість поверхів : @b.Floor, <b> загальна площа: @b.TotalArea m<sup>2</sup></b>  </td></tr>
+               
             }
         </table>
     }
