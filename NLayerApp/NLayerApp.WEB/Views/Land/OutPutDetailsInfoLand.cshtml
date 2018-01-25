@@ -17,35 +17,22 @@
         //return 0;
         //или Model != null ? Model.Count : 0;
         <h2>Детальна інформація по земельній ділянці</h2>
-        <table  style="width: 720px" cols="4">
+        <table   style="width: 400px; " cols="4" >
             <tr>
-                <td rowspan="5">@Model.Id</td>
-                <td rowspan="5">
-                    <table width="100">
-                        <tr>
-                            <td>
-                                <img src="../../Image/land.jpg"/>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-                <td colspan="2">
+               
+                <td colspan="2" style="text-align: center">
                     <b> @Model.CaptionLink</b>
                 </td>
             </tr>
 
             <tr>
-                <td>Тип операції:<b>@Model.OperationType</b></td>
-                <td style="text-align: right">ціна:<b>@Model.DollarPrice у.о.</b></td>
+                <td>@Model.OperationType <b>( ціна:@Model.DollarPrice у.о.)</b></td>
+                <td style="text-align: right">код об'яви <b> № @Model.Id </b> </td>
             </tr>
 
-            <tr><td colspan="2">Населений пункт: @Model.Village</td></tr>
-            <tr><td colspan="2">Район : @Model.Region</td></tr>
-            <tr>
-                <td colspan="3">
-                    загальна площа:<b>@Model.LandArea Га</b>
-                </td>
-            </tr>
+            <tr><td colspan="2"> @Model.Village  ,@Model.Region</td></tr>
+            <tr><td colspan="2"> загальна площа:<b>@Model.LandArea Га</b> </td></tr>
+           
         </table>
 
           <table>
