@@ -24,10 +24,8 @@
                 <div class="logo_1">
                     <img src="/Image/logo_z.jpg">
                 </div>
-                <div class="telephone">
-                    <p>+38(067)984-80-96</p>
-                    <p class="schedule"> Пн- Пт с 09:00 до 18:00 </p>
-                    <p class="schedule"> (Сб-Нд по домовленності)</p>
+                <div class="logo_2">
+                    <img src="/Image/photoLogo3.jpg" />
                 </div>
             </article>
         </header>
@@ -54,11 +52,12 @@
             <form method="POST" action="/Commercial/Index">
 
                 <p style="float: left; ">
-                    місце:<span style="color: red;">@Html.DropDownList("Region", ViewBag.regionName as SelectList)</span> 
+                   <b style="color: red">пошук :</b> <span style="color: red;">@Html.DropDownList("Region", ViewBag.regionName as SelectList)</span> 
                     @Html.DropDownList("Village", ViewBag.villageName as SelectList)
                 </p>
-                <p style="float: left;"> призначення
-                    <select class="commercial_type" name="TypeCommercial" required>
+                <p style="float: left; margin-left: 5px; "> 
+                    <select class="commercial_type" name="TypeCommercial" style="width: 180px;" required>
+                        <option value="">призначення</option>
                         <option value="офісно-адміністративне">офісно-адміністративне</option>
                         <option value="виробниче">виробниче</option>
                         <option value="складське">складське</option>
@@ -70,9 +69,9 @@
                 </p>
                 <p style="float: left;">
                     <input type="radio" name="TypeOperation" checked value="продаж"/><span>продаж</span>
-                    <input class="nevedimkaRent"  type="number" id="dol" min="1000" max="250000" placeholder="ціна в доларах" name="DollarPriceTo" size="3">
+                    <input class="nevedimkaRent"  type="number" id="dol" min="500" max="1000000" placeholder="ціна в доларах" name="DollarPriceTo" size="3">
                     <input type="radio" value="оренда" name="TypeOperation" /><span>оренда</span>
-                    <input class="nevedimkaRent"   type="number" id="grn" min="1000" max="500000" placeholder="ціна в гривні " name="GrnPriceTo" size="3">
+                    <input class="nevedimkaRent"   type="number" id="grn" min="500" max="70000" placeholder="ціна в гривні " name="GrnPriceTo" size="3">
                </p>
                 <p >
                     <!-- <input class="button" type="reset" name="" value="Очистити"> -->
@@ -91,7 +90,7 @@
 <footer id="footer">
     <article class="searchId">
         <form method="GET" action="/Commercial/IdOutPutDetailsInfo">
-            пошук по Id
+            код №
             <input type="number" name="id" />
             <input type="submit" value="пошук" />
         </form>
