@@ -19,19 +19,11 @@
 
         <table border="1" cols="4" >
 
-            <tr>
-                <td width="30">
-                    <p>Id </p>
-                </td>
-
-                <td colspan="3">
-                    <p style="text-align: center">Інформація</p>
-                </td>
-            </tr>
+            
             @foreach (var b in Model)
             {
                 <tr>
-                    <td rowspan="3">@b.Id</td>
+                    <td rowspan="3">код № @b.Id</td>
                     <td rowspan="3">
                         <table width="100">
                             <tr>
@@ -59,14 +51,14 @@
                         </b></td>
                 </tr>
 
-                <tr><td colspan="2"> @b.Village | @b.Region | @b.Floor | @b.NumberOfRooms | загальна площа: @b.TotalAreaInfo m<sup>2</sup> </td></tr>
+                <tr><td colspan="2"> @b.Village , @b.Region , @b.Floor , загальна площа: @b.TotalAreaInfo m<sup>2</sup> </td></tr>
             }
         </table>
     }
     else
     {
         <div>
-            <img  src="../../Image/apartmenrFormSearch.jpg" />
+            <img  src="../../Image/apartmFormSearch.jpg" />
         </div>
     }
 
