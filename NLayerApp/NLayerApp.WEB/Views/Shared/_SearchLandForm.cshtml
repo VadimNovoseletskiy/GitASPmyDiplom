@@ -24,10 +24,8 @@
                 <div class="logo_1">
                     <img src="/Image/logo_z.jpg">
                 </div>
-                <div class="telephone">
-                    <p>+38(067)984-80-96</p>
-                    <p class="schedule"> Пн- Пт с 09:00 до 18:00 </p>
-                    <p class="schedule"> (Сб-Нд по домовленності)</p>
+                <div class="logo_2">
+                    <img src="/Image/photoLogo3.jpg" />
                 </div>
             </article>
         </header>
@@ -55,17 +53,18 @@
 
             <form method="POST" action="/Land/Index" >
                 <p>
-                    місце знаходження:
+                    <b style="color: red">пошук:</b>
                     @Html.DropDownList("Region", ViewBag.regionName as SelectList) 
                     @Html.DropDownList("Village", ViewBag.villageName as SelectList)
-                    призначення
+                    
                     <select name="SpecialLand" class="kategory" required>
+                        <option value="">призначення</option>
                         <option value="індивідуальне">індивідуальне</option>
                         <option value="комерційне">комерційне</option>
                         <option value="сільськогосподарське">сільськогосподарське</option>і
                     </select>
                     ціна:
-                    <input class="number_price" type="number" min="1000" max="250000" placeholder="250000" name="CostTo" size="3">
+                    <input class="number_price" type="number" min="500" max="1000000" placeholder="ціна в доларах" name="CostTo" size="3">
                     <input class="button" type="submit" name="search" value="Пошук">
                 </p>
             </form>
