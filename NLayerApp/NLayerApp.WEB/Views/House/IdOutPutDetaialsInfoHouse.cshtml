@@ -10,10 +10,11 @@
     @if ((Model?.Id ?? 0) > 0)
     {
         <h2>Детальна інформація по будинку</h2>
-        <table cols="4" width="490px">
+        <table cols="4" width="490px" style="float: left;">
             <tr>
                 <td colspan="4" style="text-align: center; color: #037ABD;">
-                    <p><b>@Model.CaptionLink</b></p>
+                    <p><b>@Model.CaptionLink</b>
+                    </p>
                 </td>
             </tr>
 
@@ -42,12 +43,80 @@
             <tr><td colspan="2">@Model.Village, @Model.Region </td></tr>
             <tr><td colspan="2"> загальна площа: <b>@Model.TotalAreaInfo m <sup>2</sup></b></td></tr>
 
+            <tr>
+                <td colspan="4">
+                    <label style="color: crimson; font-size: 18px; font-style: inherit"><b> Опис об'єкту:</b></label><br>
+                    @Html.TextAreaFor(model => model.InfoDetails, 8, 54, new {htmlAttributes = new {@class = "form-control"}})
+                </td>
+            </tr>
+
         </table>
-        <p>
-            <label style="color: crimson; font-size: 18px; font-style:inherit"><b> Опис об'єкту:</b></label><br>
-            @Html.TextAreaFor(model => model.InfoDetails, 8, 54, new { htmlAttributes = new { @class = "form-control" } })
-        </p>
-        <table width="490px">
+
+        //slaider 
+        <table style="float: right; margin-top: 50px; margin-left: 40px;">
+            <tr>
+                <td style="background-color: #008000; width: 400px; height: 450px;">
+                    <div class="all">
+                        <input checked type="radio" name="respond" id="desktop">
+                        <article id="slider">
+                            <input checked type="radio" name="slider" id="switch1">
+                            <input type="radio" name="slider" id="switch2">
+                            <input type="radio" name="slider" id="switch3">
+                            <input type="radio" name="slider" id="switch4">
+                            <input type="radio" name="slider" id="switch5">
+                            <input type="radio" name="slider" id="switch6">
+                            <input type="radio" name="slider" id="switch7">
+                            <input type="radio" name="slider" id="switch8">
+                            <input type="radio" name="slider" id="switch9">
+                            <input type="radio" name="slider" id="switch10">
+                            <div id="slides">
+                                <div id="overflow">
+                                    <div class="image">
+                                        <article><img src="1.jpg"></article>
+                                        <article><img src="2.jpg"></article>
+                                        <article><img src="3.jpg"></article>
+                                        <article><img src="4.jpg"></article>
+                                        <article><img src="5.jpg"></article>
+                                        <article><img src="1.jpg"></article>
+                                        <article><img src="2.jpg"></article>
+                                        <article><img src="3.jpg"></article>
+                                        <article><img src="4.jpg"></article>
+                                        <article><img src="5.jpg"></article>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="controls">
+                                <label for="switch1"></label>
+                                <label for="switch2"></label>
+                                <label for="switch3"></label>
+                                <label for="switch4"></label>
+                                <label for="switch5"></label>
+                                <label for="switch6"></label>
+                                <label for="switch7"></label>
+                                <label for="switch8"></label>
+                                <label for="switch9"></label>
+                                <label for="switch10"></label>
+                            </div>
+                            <div id="active">
+                                <label for="switch1"></label>
+                                <label for="switch2"></label>
+                                <label for="switch3"></label>
+                                <label for="switch4"></label>
+                                <label for="switch5"></label>
+                                <label for="switch6"></label>
+                                <label for="switch7"></label>
+                                <label for="switch8"></label>
+                                <label for="switch9"></label>
+                                <label for="switch10"></label>
+                            </div>
+                        </article>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+
+        <table width="490px" style="float: left;">
             <!--детальна інформація -->
             <tr>
                 <td colspan="4" style="text-align: center; background-color: #C9D8EA">
