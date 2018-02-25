@@ -18,7 +18,7 @@
             <!--Apartment-->
             if (Model.MyType == PropertyType.Apartment)
             {
-                <div class="searchIdDetailsInfoApartment">
+                <div class="main_information">
                     <table cols="4" style="width: 720px; float: right;">
                         <tr>
                             <td colspan="4" style="text-align: center">
@@ -31,7 +31,7 @@
                                 <table width="100">
                                     <tr>
                                         <td>
-                                            <img src="../../Image/apartment.jpg" />
+                                            <img src="../../Image/apartment.jpg"/>
                                         </td>
                                     </tr>
                                 </table>
@@ -49,7 +49,8 @@
                                     }
                                     else
                                     {
-                                        @Model.DollarPrice <span>у.о.</span>
+                                        @Model.DollarPrice
+                                        <span>у.о.</span>
                                     }
                                 </b>
                             </td>
@@ -62,7 +63,90 @@
                                 Загальна площа:<b>@Model.TotalAreaInfo m<sup>2</sup></b>
                             </td>
                         </tr>
-                   </table>
+                    </table>
+
+                    <p>
+                        <label style="color: crimson; font-size: 15px; font-style: inherit;"><b>Детальний опис:</b></label><br>
+                        @Html.TextAreaFor(model => model.InfoDetails, 5, 40, new {htmlAttributes = new {@class = "form-control"}})
+                    </p>
+
+                    <table>
+
+                        <tr> <td colspan="4" style="text-align: center; background-color:#C9D8EA"><b>Детальна інформація по квартирі</b></td></tr>
+                        <tr>
+                            <td>Готовність до заселення: </td>
+                            <td colspan="3">@Model.ReadinessApartment</td>
+                        </tr>
+                        <tr>
+                            <td> Стан квартири: </td>
+                            <td colspan="3">@Model.ConditionOfApartment</td>
+                        </tr>
+                        <tr>
+                            <td>Загальна кількість поверхів:</td>
+                            <td colspan="3">@Model.TotalFloor</td>
+                        </tr>
+                        <tr>
+                            <td>Поверх квартири</td>
+                            <td colspan="3">@Model.FloorApartment</td>
+                        </tr>
+                        <tr>
+                            <td>Тип кімнат:</td>
+                            <td colspan="3">@Model.RoomType</td>
+                        </tr>
+                        <tr>
+                            <td>Кількість кімнат:</td>
+                            <td colspan="3">@Model.RoomsApartment</td>
+                        </tr>
+                        <tr>
+                            <td>Тип ванної кімнати:</td>
+                            <td colspan="3">@Model.BathRoomApartment</td>
+                        </tr>
+                        <tr>
+                            <td>Наявність балкону</td>
+                            <td colspan="3">@Model.BalconyApartment</td>
+                        </tr>
+                        <tr>
+                            <td>Матеріал стін:</td>
+                            <td colspan="3">@Model.WallMaterial</td>
+                        </tr>
+                        <tr>
+                            <td>Матеріал підлоги:</td>
+                            <td colspan="3">@Model.FloorMaterial</td>
+                        </tr>
+                        <tr>
+                            <td>Площа кухні:</td>
+                            <td colspan="3">@Model.KitchenAreaApartment  m<sup>2</sup></td>
+                        </tr>
+                        <tr>
+                            <td>Житлова площа</td>
+                            <td colspan="3">@Model.LivingAreaApartment m<sup>2</sup></td>
+                        </tr>
+
+
+                        <!--додаткове обладнання -->
+                        <tr> <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Додаткове обладнання</b></td></tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Boiler)Бойлер</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Intercom)Домофон</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.CableTv)Кабельне телебачення</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.FirePlace)Камін</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Air)Кондіціонер</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Furniture)Меблі</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Signaling)Сигналізація</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.SatelliteTv)Супутникове телебачення</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
+                        </tr>
+
+                    </table>
                 </div>
 
             }
@@ -71,8 +155,10 @@
 
             if (Model.MyType == PropertyType.House)
             {
-
-                <p> детальная информация по дому </p>
+                <div class="main_information">
+                    
+                </div>
+                
             }
 
             <!--Commercial -->
