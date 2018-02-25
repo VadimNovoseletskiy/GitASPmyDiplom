@@ -24,11 +24,11 @@ namespace NLayerApp.BusinessLogicLayer.Handler
 
         }
 
-        public List<LandDetailsViewModel> GetInformation(int Id)
+        public List<LandDetailsViewModel> GetInformation(int id)
         {
             List<LandDetailsViewModel> resulst = this.unitOfWork.GenericRepository<Info>().Get()
                 .Where(p => p.Type == PropertyType.Land
-                        && p.Id == Id
+                        && p.Id == id
                        )
 
                 .Select(p => new LandDetailsViewModel
