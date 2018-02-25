@@ -48,8 +48,16 @@
         <!--сайд бар рубрики -->
         <aside id="sidebar">
             <h2>Розділи:</h2>
+            <form method="GET" action="/SearchId/Index">
+               
+                    <input  style="float: left; width: 120px; margin-left: 27px;" type="number"  placeholder="код об'яви" name="id" />
+              
+                    <input style="float: right; height: 50px;" type="image" name="submit" src="../../Image/search.png" value="Пошук">
+             
+
+            </form>
             <ul>
-                <li class="stolb">@Html.ActionLink("Квартири", "Index", "Apartment")</li>
+                <li class="stolb" style="clear: both;">@Html.ActionLink("Квартири", "Index", "Apartment")</li>
                 <li class="stolb"> @Html.ActionLink("Будинки", "Index", "House") </li>
                 <li class="stolb">@Html.ActionLink("Комерційна нерухомість", "Index", "Commercial") </li>
                 <li class="stolb"> @Html.ActionLink("Земельні ділянки", "Index", "Land")</li>

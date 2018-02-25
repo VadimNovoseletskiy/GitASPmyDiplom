@@ -1,0 +1,102 @@
+﻿ @model NLayerApp.BusinessLogicLayer.Models.TotalObjectViewModel
+@using NLayerApp.DataAccessLayer.Domains.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div>
+    <section class="main_information">
+        <h2>Детальна інформація по номеру об'яви</h2>
+
+        @if ((Model?.Id ?? 0) > 0)
+        {
+
+            <!--Apartment-->
+            if (Model.MyType == PropertyType.Apartment)
+            {
+                <div class="searchIdDetailsInfoApartment">
+                    <table cols="4" style="width: 720px; float: right;">
+                        <tr>
+                            <td colspan="4" style="text-align: center">
+                                <b>@Model.CaptionLink</b>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td rowspan="5">
+                                <table width="100">
+                                    <tr>
+                                        <td>
+                                            <img src="../../Image/apartment.jpg" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Тип операції:<b>@Model.OperationType</b></td>
+                            <td style="text-align: right">
+                                <b>
+                                    Ціна:
+                                    @if (Model.OperationType == "оренда")
+                                    {
+                                        @Model.GrnPrice<span>грн.</span>
+                                    }
+                                    else
+                                    {
+                                        @Model.DollarPrice <span>у.о.</span>
+                                    }
+                                </b>
+                            </td>
+                        </tr>
+
+                        <tr><td colspan="2"> Населений пункт: @Model.Village</td></tr>
+                        <tr><td colspan="2">Район: @Model.Region </tr>
+                        <tr>
+                            <td style="font-size: 18px;" colspan="3">
+                                Загальна площа:<b>@Model.TotalAreaInfo m<sup>2</sup></b>
+                            </td>
+                        </tr>
+                   </table>
+                </div>
+
+            }
+
+            <!--House-->
+
+            if (Model.MyType == PropertyType.House)
+            {
+
+                <p> детальная информация по дому </p>
+            }
+
+            <!--Commercial -->
+            if (Model.MyType == PropertyType.Commercial)
+            {
+                <p> детальная информация по ком недвижимости </p>
+            }
+
+            <!--Land -->
+            if (Model.MyType == PropertyType.Land)
+            {
+                <p> детальная информация по ком недвижимости </p>
+            }
+
+
+        }
+
+        else
+        {
+            <div class="resultSearchId">
+                <p>Об'єкт з таким Id за результатами пошуку відсутній </p>
+            </div>
+        }
+    </section>
+</div>
+
+

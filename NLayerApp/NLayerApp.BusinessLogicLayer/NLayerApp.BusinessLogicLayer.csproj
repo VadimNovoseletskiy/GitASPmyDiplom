@@ -62,6 +62,7 @@
     <Compile Include="Handler\DeleteCommercialHandler.cs" />
     <Compile Include="Handler\DeleteFloorMaterialDictionatyHandler.cs" />
     <Compile Include="Handler\DeleteImageHandler.cs" />
+    <Compile Include="Handler\SearchIdHandler.cs" />
     <Compile Include="Models\AdminAllObjectViewModel.cs" />
     <Compile Include="Models\DeleteAllimageViewModel.cs" />
     <Compile Include="Models\DeleteImageViewModel.cs" />
@@ -123,8 +124,10 @@
     <Compile Include="Models\LandViewModel.cs" />
     <Compile Include="Models\RegionInputParameters.cs" />
     <Compile Include="Models\RegionViewModel.cs" />
+    <Compile Include="Models\SearchIdViewModel.cs" />
     <Compile Include="Models\StreetInputParameters.cs" />
     <Compile Include="Models\StreetViewModel.cs" />
+    <Compile Include="Models\TotalObjectViewModel.cs" />
     <Compile Include="Models\VillageInputParameters.cs" />
     <Compile Include="Models\VillageViewModels.cs" />
     <Compile Include="Models\WallMaterialInputParemeters.cs" />
