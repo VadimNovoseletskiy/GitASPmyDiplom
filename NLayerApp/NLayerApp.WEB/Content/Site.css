@@ -11,7 +11,7 @@ body {
 
 }
 /*outline: 0px dashed #808080;*/
-												/*header*/
+												                 /*header*/
 header#header{
 
 	width: 960px;
@@ -26,11 +26,9 @@ header#header{
 	float:left;
 	margin-right:10px;
 }
-
 .logo_2 {
     float: left;
 }
-
 .telephone{
 	font-size: 20px;
 	float: right;
@@ -38,22 +36,19 @@ header#header{
 	padding-top: 10px;
 	padding-right: 12px;
 }
+/*end header*/
 
-            											/*end header*/
-
-												        /*nav*/
+                                                                 /*nav*/
 
 nav#nav{
     clear: both;
 	background-color: #449E18;
 }
-
 nav#nav li{
 	float: left;
 	list-style: none;
 
 }
-
 nav#nav a{
 	display: block;
 	text-decoration: none;
@@ -65,7 +60,6 @@ nav#nav a{
 nav#nav li:last-child a{
 	border-right: none;
 }
-
 nav#nav a:hover{
 	font-weight: bold;
 	color: white;
@@ -77,10 +71,11 @@ nav#nav:after{
 	display: table;
 	clear: both;
 }
-													/*end nav*/
+
+/*end nav*/
 							                        
                                                     
-                                                    /*partCredit*/
+                                                              /*partCredit*/
 p.alighnCenter {
     text-align: center;
     
@@ -88,11 +83,10 @@ p.alighnCenter {
 p.textBold {
     font-weight: bold;
 }
-
-                                                    /* end partCredit*/
+/* end partCredit*/
                                                     
                                                     					
-													/*sidebar*/
+													            /*sidebar*/
 aside#sidebar{
 	float: left;
 	width: 23%;
@@ -112,7 +106,7 @@ h3 {
     text-align: center;
 }
 
-/*рубрики*/
+                                                                /*рубрики*/
 
 li.stolb a{
 	display: block;
@@ -127,11 +121,22 @@ li.stolb a{
 	align-content: center;
 
 }
+li.stolb {
+	
+	width: 112px;
+	height: auto;
+	text-decoration: none;
+	padding: 5px;
+	color: #007BC0;
+	border-bottom: 1px solid #E8E8E8;
+	text-align: center;
+	font-size: 16px;
+	align-content: center;
 
+}
 li.stolb:first-child{
 	border-top: 0px solid #E8E8E8;
 }
-
 li.stolb:hover{
 	color: #000;
 	background-color: #F8C301;
@@ -145,10 +150,7 @@ aside#sidebar p{
 
 /*end рубрика*/
 
-/*форма выборки*/
-section#form{
-	
-}
+
 
 
 
@@ -159,7 +161,6 @@ section#form{
 a.nevedimka {
 	display: none;
 }
-
 :checked+a {
 	display: block;
 	float: right;
@@ -168,17 +169,15 @@ a.nevedimka {
 }
 
 /*end поле валют*/
+/*end sidebar*/
 
                                                             /*переключатель валют  на форме поиска */
 :checked+span {
     color: red;
 }
-
 .nevedimkaRent{
     display: none;
 }
-
-
 :checked+span+input {
     display: block;
     margin-left: 10px;
@@ -189,20 +188,19 @@ a.nevedimka {
 
 /*переключатель валют  на форме поиска */
 
-/*кнопка поиска */
+                                                                    /*кнопка поиска */
 .buttonSearch {
     float: right;
 }
 
 
-/*end форма выборки*/
-
-/*end sidebar*/
 
 
 
 
-												/*main*/
+
+
+											                        	/*main*/
 main {
 	border-top: 2px solid #FFF;
 	width: 100%;
@@ -427,6 +425,101 @@ footer#footer article.icons a:hover{
 
 /*end footer*/
 
+/* Админ панель общая */
+
+/*index*/
+.colorRed {
+    color: red;
+}
+.colorBlue {
+    color: blue;
+}
+.bgMediumpurple {
+    background-color: mediumpurple;
+    text-align: center;
+}
+.bgOrange {
+    background-color: orange;
+}
+
+/*delete*/
+.axtyng {
+    font-size: 30px;
+    color: red;
+    text-align: center
+}
+.fz20 {
+    font-size: 20px;
+}
+.returnToList {
+    margin-top: 50px;
+    margin-bottom: 20px
+}
+
+/*insert*/
+.adminPart {
+    color: blue;
+    font-size: 25px; 
+    font-style: oblique;
+}
+.admDetailsInfo {
+    color: crimson; 
+    font-size: 15px; 
+    font-style: oblique;
+}
+.fl {
+    float: left
+}
+.fp {
+    float: right;
+}
+
+/*edit*/
+.changeInfo {
+    border: 2px solid red; 
+    width: 500px;
+}
+/*administrator*/
+.adminPartRed {
+    color: red; 
+    font-size: 25px; 
+    font-style: oblique;
+}
+
+/* end  Админ панель общая */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*slaider*/
 
@@ -460,7 +553,8 @@ article img{ /*размер изображений слайдера*/
 }
 
 #desktop:checked ~ #slider{ /*размер всего слайдера*/
-	max-width: 260px; /*максимальнная длинна*/
+	max-width: 400px; /*максимальнная длинна*/
+    /*height: 350px;*/
 }
 
 /*настройка переключения и положения для левой стрелки*/
@@ -475,9 +569,9 @@ article img{ /*размер изображений слайдера*/
 #switch8:checked ~ #controls label:nth-child(7),
 #switch9:checked ~ #controls label:nth-child(8),
 #switch10:checked ~ #controls label:nth-child(9){
-	background: url('prev.png') no-repeat; /*заливка фона картинкой без повторений*/
+	background: url('/Image/prev.png') no-repeat; /*заливка фона картинкой без повторений*/
 	float: left;
-	margin: 0 0 0 -84px; /*сдвиг влево*/
+	margin: 120px 0 0 0; /*сдвиг влево*/
 	display: block;
 	height: 68px;
 	width: 68px;
@@ -494,9 +588,9 @@ article img{ /*размер изображений слайдера*/
 #switch8:checked ~ #controls label:nth-child(9),
 #switch9:checked ~ #controls label:nth-child(10),
 #switch10:checked ~ #controls label:nth-child(1){
-	background: url('next.png') no-repeat; /*заливка фона картинкой без повторений*/
+	background: url('/Image/next.png') no-repeat; /*заливка фона картинкой без повторений*/
 	float: right;
-	margin: 0 -84px 0 0; /*сдвиг вправо*/
+	margin: 120px 0 0 0; /*сдвиг вправо*/
 	display: block;
 	height: 68px;
 	width: 68px;
@@ -566,7 +660,7 @@ label, a{ /*при наведении на стрелки или переклю�
 }
 
 #active{ /*расположение блока с переключателями*/
-	margin: 23% 0 0;
+	margin: 17% 0 0;
 	text-align: center;
 }
 

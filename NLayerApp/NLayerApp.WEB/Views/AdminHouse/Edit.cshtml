@@ -9,7 +9,7 @@
 <form method="POST" action="/AdminHouse/Edit">
 
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
+        <legend class="adminPart">Адресні дані </legend>
         <input type="hidden" value="@Model.Id" name="Id" />
         <!--Населені пункти -->
         <p>
@@ -38,11 +38,11 @@
     <!-- +++++++++++++ Детальна інформація +++++++++++++++++ -->
     <fieldset>
 
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
+        <legend class="adminPart">Детальна інформація</legend>
         <!-- тип будинку -->
         <p>тип будинку:<b>@Model.TypeHouse </b></p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red;">змінити(залишити)тип будинку на :</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити(залишити)тип будинку на :</legend>
             <select name="TypeHouse">
                 <option value="будинок">будинок</option>
                 <option value="котедж">котедж</option>
@@ -52,8 +52,8 @@
 
         <!-- Готовність до заселення -->
         <p>готовність до заселення:<b>@Model.ReadinessHouse </b> </p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red;" >змінити(залишити)готовність до заселення:</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed" >змінити(залишити)готовність до заселення:</legend>
             <select name="ReadinessHouse">
                 <option value="в єксплуатації">в єксплуатації</option>
                 <option value="новобудова">новобудова</option>
@@ -63,8 +63,8 @@
         </fieldset>
         <!--Стан обьекту-->
         <p> стан будинку:<b>@Model.ConditionHouse</b> </p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red">змінити(залишити) стан будику на :</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити(залишити) стан будику на :</legend>
             <select name="ConditionHouse">
                 <option value="відмінний">відмінний</option>
                 <option value="хороший">хороший</option>
@@ -75,7 +75,7 @@
         </fieldset>
         <!-- частина будинку -->
         <p>частина будинку :<b>@Model.PartHouse </b> </p>
-        <fieldset style="border: 2px solid red; width: 500px;">
+        <fieldset class="changeInfo">
             <legend>змінити(залишити) значення  частини будинку на:</legend>
             <select name="PartHouse">
                 <option value="1">1</option>
@@ -132,7 +132,7 @@
     </fieldset>
     <!-- +++++++++++++++++++   Додаткове обладнання ++++++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Додаткове обладнання</legend>
+        <legend class="adminPart">Додаткове обладнання</legend>
 
         <p>
         <p>
@@ -177,7 +177,7 @@
     <!-- ++++++++++++++++++++ Комунікацїї +++++++++++++++++++++++++ -->
 
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
+        <legend class="adminPart">Комунікації</legend>
         
         <p>
            @Html.CheckBoxFor(model => model.Gas)газ
@@ -210,7 +210,7 @@
     </fieldset>
     <!-- +++++++++++++++++++++ Надвірні побудови ++++++++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Надвірні побудови</legend>
+        <legend class="adminPart">Надвірні побудови</legend>
 
         <p>
             @Html.CheckBoxFor(model => model.BahtHouse) баня
@@ -243,11 +243,11 @@
     </fieldset>
     <!-- +++++++++++++++++++++++++   Опис обєкту  ++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
+        <legend class="adminPart">Опис обєкту</legend>
        
         <!-- Заголовок -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">заголовок :</label><br />
+            <label class="admDetailsInfo">заголовок :</label><br />
             @Html.TextAreaFor(model => model.CaptionLink, 2, 120, new { htmlAttributes = new { @class = "form-control" } })
             @*<textarea id="" value="@Model.NameCaptionLink"  name="NameCaptionLink"  cols="120" rows="2"></textarea>*@
         </p>
@@ -255,12 +255,12 @@
 
         <!-- Детальна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">детальна інформація</label><br>
+            <label class="admDetailsInfo">детальна інформація</label><br>
             @Html.TextAreaFor(model => model.InfoDetails, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
        
-        <p style="float: left;">
+        <p class="fl">
             @Html.RadioButton("OperationType", "продаж","true")<span>продаж</span>
             <input class="nevedimkaRent" type="number" value="@Model.DollarPrice" id="dol" max="250000" placeholder="ціна в доларах" name="DollarPrice" size="3">
             @Html.RadioButton("OperationType", "оренда")<span>оренда</span>

@@ -9,8 +9,8 @@
 <div>
     @if ((Model?.Id ?? 0) > 0)
     {
-        <p style="font-size: 30px; color: red; text-align: center">Увага!!!!</p>
-        <p style="font-size: 20px;"> ви збираєтесь виладити з бази данних без змоги відновити обєкт з такими параметрами:</p>
+        <p class="axtyng">Увага!!!!</p>
+        <p class="fz20"> Ви збираєтесь виладити з бази данних без змоги відновити об'єкт з такими параметрами:</p>
         <form method="POST" action="/AdminApartment/Delete">
             <table>
                 <tr><td>іd :</td><td><input value="@Model.Id" name="Id" /></td></tr>
@@ -32,8 +32,8 @@
 </div>
 
 
-<div style="margin-top: 50px; margin-bottom: 20px">
-    @Html.ActionLink("Повернутися до списку обєктів Квартири ", "Index")
+<div class="returnToList">
+    @Html.ActionLink("Повернутися до списку об'єктів 'Квартири' ", "Index")
 </div>
 
 

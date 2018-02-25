@@ -9,7 +9,7 @@
 <form method="POST" action="/AdminCommercial/Edit">
     <!-- ++++++++++++++++++++++++++   Адреса  ++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
+        <legend class="adminPart">Адресні дані </legend>
         <input type="hidden" value="@Model.Id" name="Id" />
 
         <!--Населені пункти -->
@@ -42,12 +42,12 @@
     </fieldset>
     <!-- +++++++++++++++++++++++++++ Детальна інформація +++++++++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
+        <legend class="adminPart">Детальна інформація</legend>
         <!--Призначення обьекту-->
         <p>Призначення об'єкту:<b>@Model.TypeCommercial </b>  </p>
 
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red;">змінити (залишити) призначення об'єкту на  :</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити (залишити) призначення об'єкту на  :</legend>
             <select name="TypeCommercial">
                 <option value="офісно-адміністративне">офісно-адміністративне</option>
                 <option value="виробниче">виробниче</option>
@@ -62,8 +62,8 @@
 
         <!--Стан обьекту-->
         <p>Стан об'єкту:<b>@Model.StateCommercial </b> </p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red;">змінити (залишити) стан  об'єкту на :</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити (залишити) стан  об'єкту на :</legend>
             <select name="StateCommercial">
                 <option value="відмінний">відмінний</option>
                 <option value="хороший">хороший</option>
@@ -75,8 +75,8 @@
         <!-- Поверх -->
         <p>Поверх об'єкту:<b> @Model.FloorCommercial </b><p>
 
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red;">змінити (залишити) поверх на :</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити (залишити) поверх на :</legend>
             <select name="FloorCommercial">
                 <option value="підвал">підвал</option>
                 <option value="цоколь">цоколь</option>
@@ -139,7 +139,7 @@
     </fieldset>
     <!-- ++++++++++++++++++++++++++ Комунікаціїї ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
+        <legend class="adminPart">Комунікації</legend>
 
         <p>
             @Html.CheckBoxFor(model => model.Gas)газ
@@ -172,7 +172,7 @@
     </fieldset>
     <!-- +++++++++++++++++++   Додаткове обладнання ++++++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Додаткове обладнання</legend>
+        <legend class="adminPart">Додаткове обладнання</legend>
 
         <p>
         <p>
@@ -216,11 +216,11 @@
     </fieldset>
     <!-- ++++++++++++++++++++++++++++++++++++++ Опис обєкту ++++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
+        <legend class="adminPart">Опис обєкту</legend>
 
         <!-- Заголовок -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">заголовок :</label><br />
+            <label class="admDetailsInfo">заголовок :</label><br />
             @Html.TextAreaFor(model => model.CaptionLink, 2, 120, new { htmlAttributes = new { @class = "form-control" } })
             @*<textarea id="" value="@Model.NameCaptionLink"  name="NameCaptionLink"  cols="120" rows="2"></textarea>*@
         </p>
@@ -228,12 +228,12 @@
 
         <!-- Детальна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">детальна інформація</label><br>
+            <label class="admDetailsInfo">детальна інформація</label><br>
             @Html.TextAreaFor(model => model.InfoDetails, 5, 120, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
        
-        <p style="float: left;">
+        <p class="fl">
             @Html.RadioButton("OperationType", "продаж")<span>продаж</span>
             <input class="nevedimkaRent" type="number" value="@Model.DollarPrice" id="dol" max="250000" placeholder="ціна в доларах" name="DollarPrice" size="3">
             @Html.RadioButton("OperationType", "оренда")<span>оренда</span>

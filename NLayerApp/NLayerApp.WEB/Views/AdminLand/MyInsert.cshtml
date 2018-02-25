@@ -7,7 +7,7 @@
 <h2>Земля</h2>
 <form method="POST" action="/AdminLand/MyInsert">
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
+        <legend class="adminPart">Адресні дані </legend>
 
 
         <!--Населені пункти -->
@@ -43,7 +43,7 @@
     <!-- +++++++++++++++++++++++++++ Детальна інформація +++++++++++++++++++++++++++++++ -->
 
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
+        <legend class="adminPart">Детальна інформація</legend>
 
         <!-- Призначення земельної ділянки -->
         <p>
@@ -64,7 +64,7 @@
     <!-- ++++++++++++++++++++++++++ Комунікаціїї ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Комунікації</legend>
+        <legend class="adminPart">Комунікації</legend>
 
         
         <p>
@@ -93,21 +93,21 @@
 
     <!--+++++++++++++++++++++++++++++ Опис обьєкту ++++++++++++++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
+        <legend class="adminPart">Опис обєкту</legend>
         <!-- Заголовок -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">заголовок :</label><br />
+            <label class="admDetailsInfo">заголовок :</label><br />
             <textarea id="" name="CaptionLink" cols="120" rows="2"></textarea>
         </p>
        
         <!-- Детальна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">детальна інформація</label><br>
+            <label class="admDetailsInfo">детальна інформація</label><br>
             <textarea id="" name="InfoDetails" cols="120" rows="5"></textarea>
         </p>
 
 
-          <p style="float: left;">
+          <p class="fl">
                     <input type="radio" name="OperationType" checked value="продаж" /><span>продаж</span>
                     <input class="nevedimkaRent" type="number" id="dol" min="1000" max="250000" placeholder="ціна в доларах" name="DollarPrice" size="3">
                     <input type="radio" value="оренда" name="OperationType" /><span>оренда</span>

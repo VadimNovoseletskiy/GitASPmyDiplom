@@ -9,7 +9,7 @@
 <form method="POST" action="/AdminApartment/Edit">
 
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Адресні дані </legend>
+        <legend class="adminPart">Адресні дані </legend>
         <input type="hidden" value="@Model.Id" name="Id" />
         <!--Населені пункти -->
         <p>
@@ -42,10 +42,10 @@
     <!-- +++++++++++++ Детальна інформація +++++++++++++++++ -->
     <fieldset>
 
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Детальна інформація</legend>
+        <legend class="adminPart">Детальна інформація</legend>
         <p>стан квартири :<b>@Model.ConditionOfApartment</b>  </p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red">змінити(залишити) стан на :</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити(залишити) стан на :</legend>
             <select name="ConditionOfApartment">
                 <option value="відмінний">відмінний</option>
                 <option value="хороший">хороший</option>
@@ -59,8 +59,8 @@
         <p>
             кількість кімнат :<b> @Model.RoomsApartment</b>
         </p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red">змінити(залишити) кількість кімнат на :</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити(залишити) кількість кімнат на :</legend>
             <select name="RoomsApartment">
                 <option value="1-но кімнатна">1 кімната</option>
                 <option value="2-во кімнатна">2 кімнати</option>
@@ -75,8 +75,8 @@
         </p>
         <!-- тип кімнат -->
         <p>тип кімнат : <b>@Model.RoomType</b> </p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red">змінити(залишити) тип кімнат на :</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити(залишити) тип кімнат на :</legend>
             <select name="RoomType">
                 <option value="окремі">окремі</option>
                 <option value="суміжні">суміжні</option>
@@ -86,8 +86,8 @@
 
         <!-- Готовність до заселення -->
         <p>готовність до заселення :<b> @Model.ReadinessApartment </b> </p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red">змінити(залишити) готовність до заселення на :</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити(залишити) готовність до заселення на :</legend>
             <select name="ReadinessApartment">
                 <option value="в єксплуатації">в єксплуатації</option>
                 <option value="новобудова">новобудова</option>
@@ -98,8 +98,8 @@
 
         <!-- Санвузол -->
         <p>cанвузол :<b>@Model.BathRoomApartment</b> </p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red">змінити(залишити) тип санвузола на : </legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити(залишити) тип санвузола на : </legend>
             <select name="BathRoomApartment">
                 <option value="роздільний">роздільний</option>
                 <option value="спільний">спільний</option>
@@ -109,8 +109,8 @@
         </fieldset>
         <!-- Кільксть балконів -->
         <p>кількість балконів <b> @Model.BalconyApartment </b></p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red">змінити(залишити) кількість балконів </legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити(залишити) кількість балконів </legend>
             <select name="BalconyApartment">
                 <option value="відсутні">відсутні</option>
                 <option value="1">1</option>
@@ -121,8 +121,8 @@
 
         <!-- Поверх -->
         <p> поверх :<b> @Model.FloorApartment</b></p>
-        <fieldset style="border: 2px solid red; width: 500px;">
-            <legend style="color: red">змінити(залишити) поверх:</legend>
+        <fieldset class="changeInfo">
+            <legend class="colorRed">змінити(залишити) поверх:</legend>
                 <select name="FloorApartment">
                     <option value="1-й поверх">1-й поверх</option>
                     <option value="2-й поверх">2-й поверх</option>
@@ -189,7 +189,7 @@
     </fieldset>
     <!-- +++++++++++++++++++   Додаткове обладнання ++++++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Додаткове обладнання</legend>
+        <legend class="adminPart">Додаткове обладнання</legend>
 
         <p>
         <p>
@@ -237,11 +237,11 @@
    
     <!-- +++++++++++++++++++++++++   Опис обєкту  ++++++++++++++++++++++++ -->
     <fieldset>
-        <legend style="color: blue; font-size: 25px; font-style: oblique;">Опис обєкту</legend>
+        <legend class="adminPart">Опис обєкту</legend>
 
         <!-- Заголовок -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">заголовок :</label><br />
+            <label class="admDetailsInfo">заголовок :</label><br />
             @Html.TextAreaFor(model => model.CaptionLink, 2, 69, new { htmlAttributes = new { @class = "form-control" } })
             @*<textarea id="" value="@Model.NameCaptionLink"  name="NameCaptionLink"  cols="120" rows="2"></textarea>*@
         </p>
@@ -249,12 +249,12 @@
 
         <!-- Детальна інформація -->
         <p>
-            <label style="color: crimson; font-size: 15px; font-style: oblique;">детальна інформація</label><br>
+            <label class="admDetailsInfo">детальна інформація</label><br>
             @Html.TextAreaFor(model => model.InfoDetails, 5, 69, new { htmlAttributes = new { @class = "form-control" } })
 
         </p>
        
-        <p style="float: left;">
+        <p class="fl">
             @Html.RadioButton("OperationType", "продаж")<span>продаж</span>
             <input class="nevedimkaRent" type="number" value="@Model.DollarPrice" id="dol" max="250000" placeholder="ціна в доларах" name="DollarPrice" size="3">
             @Html.RadioButton("OperationType", "оренда")<span>оренда</span>
