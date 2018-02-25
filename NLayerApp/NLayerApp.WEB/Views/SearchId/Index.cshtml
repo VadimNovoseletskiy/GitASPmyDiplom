@@ -18,7 +18,7 @@
             <!--Apartment-->
             if (Model.MyType == PropertyType.Apartment)
             {
-                <div class="main_information">
+                <div>
                     <table cols="4" style="width: 720px; float: right;">
                         <tr>
                             <td colspan="4" style="text-align: center">
@@ -155,7 +155,7 @@
 
             if (Model.MyType == PropertyType.House)
             {
-                <div class="main_information">
+                <div>
                     <table cols="4" width="590px" style="float: left;">
                         <tr>
                             <td colspan="4" style="text-align: center; color: #037ABD;">
@@ -350,8 +350,150 @@
             <!--Commercial -->
             if (Model.MyType == PropertyType.Commercial)
             {
-                <div class="main_information">
-                    
+                <div>
+                    <table cols="4" width="auto">
+                        <tr>
+                            <td colspan="4" style="text-align: center; color: #037ABD;">
+                                <p><b>@Model.CaptionLink</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">
+                                <table width="100">
+                                    <tr>
+                                        <td>
+                                            <img src="../../Image/house.jpg" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td> тип операції:<b> @Model.OperationType  |</b></td>
+                            <td style="text-align: right">
+                                ціна:<b>
+                                    @if (Model.OperationType == "оренда")
+                    {
+                                        @Model.GrnPrice <span> грн.</span>
+                                    }
+                                    else
+                                    {
+                                        @Model.DollarPrice <span>у.о.</span>
+
+                                    }
+                                </b>
+                            </td>
+                        </tr>
+
+                        <tr><td colspan="2"> @Model.Village  |  @Model.Region </td></tr>
+                        <tr>
+                            <td style="font-size: 18px" colspan="3">
+                                Загальна площа:  <b>@Model.TotalAreaInfo m <sup>2</sup></b>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>
+                        <label style="color: crimson; font-size: 18px; font-style:inherit"><b> Опис об'єкту:</b></label><br>
+                        @Html.TextAreaFor(model => model.InfoDetails, 8, 54, new { htmlAttributes = new { @class = "form-control" } })
+                    </p>
+                    <table>
+                        <!--детальна інформація -->
+                        <tr>
+                            <td colspan="4" style="text-align: center; background-color: #C9D8EA">
+                                <b>Детальна інформація</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Тип комерційної нерухомості:</td>
+                            <td colspan="2">@Model.TypeCommercial</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Стан:</td>
+                            <td colspan="2">@Model.StateCommercial</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Загальна кількість поверхів:</td>
+                            <td colspan="2">@Model.TotalFloorCommercial</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Поверх:</td>
+                            <td colspan="2">@Model.FloorCommercial</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Ефективна площа використання </td>
+                            <td colspan="2">@Model.EffectiveAreaCommercial m<sup>2</sup></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Матеріал підлоги:</td>
+                            <td colspan="2">@Model.FloorMaterial</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Матеріал стін:</td>
+                            <td colspan="2">@Model.WallMaterial</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"> Площа прилягаючої земельної ділянк:</td>
+                            <td colspan="2">@Model.LandAreaCommercial Га</td>
+                        </tr>
+
+
+                        <!--додаткове обладнання -->
+                        <tr> <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Додаткове обладнання</b></td></tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Boiler)Бойлер</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Intercom)Домофон</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.CableTv)Кабельне телебачення</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.FirePlace)Камін</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Air)Кондіціонер</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Furniture)Меблі</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Signaling)Сигналізація</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.SatelliteTv)Супутникове телебачення</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
+
+                        </tr>
+                        <tr>
+                            <td><p></p></td>
+                        </tr>
+
+
+                        <!--Коммунікації-->
+                        <tr>
+                            <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Коммунікації</b></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Gas)Газ</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.Electricity)Електроенергія</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.CentralSewerage)Центральна каналізація</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.AutonomousSewerage)Автономна каналізація</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.CentralWater)Центральне водопостачання</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.AutonomousWater)Автономне водопостачання</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.CentralHeating)Центральне отоплення</td>
+                            <td colspan="2">@Html.CheckBoxFor(model => model.AutonomusHeating)Автономне опалення </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.RailWay)Залізнична дорога</td>
+                        </tr>
+                        <tr>
+                            <td><p></p></td>
+                        </tr>
+
+                    </table>
                 </div>
             }
 
