@@ -17,7 +17,7 @@
         //или Model != null ? Model.Count : 0;
         <h2>Знайдені квартири</h2>
 
-        <table border="1" cols="4" >
+        <table class="tablCentr" border="1" cols="4" >
 
             
             @foreach (var b in Model)
@@ -34,12 +34,12 @@
                         </table>
                     </td>
                     <td colspan="2">
-                        <a href="/Apartment/OutDetailsInfoApartment/@b.Id" style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
+                        <a href="/Apartment/OutDetailsInfoApartment/@b.Id" class="captionLink"><b>@b.CaptionLink</b></a>
                     </td>
                 </tr>
                 <tr>
                     <td><b> @b.OperationType </b> </td>
-                    <td style="text-align: right"><b>ціна:
+                    <td class="tx-al-r"><b>ціна:
                         @if (b.OperationType == "оренда")
                         {
                             @b.GrnPrice<span>грн.</span> 

@@ -492,6 +492,25 @@ footer#footer article.icons a:hover{
 
 /* end  Админ панель общая */
 
+/*style table */
+.tablCentr {
+    margin: auto;
+}
+.captionLink {
+    font-size: 17px; 
+    text-align: center
+}
+
+.tx-al-r {
+    text-align: right;
+}
+
+.tx-al-c {
+    text-align: center;
+}
+
+/*end style table */
+
 
 
 

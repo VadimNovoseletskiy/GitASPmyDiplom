@@ -9,7 +9,7 @@
     @if ((Model?.Count ?? 0) > 0)
     {
         <h2>Знайдені будинки</h2>
-        <table border="1" cols="4" width="auto">
+        <table class="tablCentr" border="1" cols="4" width="auto">
 
             @foreach (var b in Model)
             {
@@ -25,13 +25,13 @@
                         </table>
                     </td>
                     <td colspan="2">
-                        <a href="/House/OutPutDetailsInfoHouse/@b.Id" style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
+                        <a href="/House/OutPutDetailsInfoHouse/@b.Id" class="captionLink"><b>@b.CaptionLink</b></a>
                     </td>
                 </tr>
 
                 <tr>
                     <td><b>@b.OperationType</b></td>
-                    <td style="text-align: right">
+                    <td class="tx-al-r">
                         <b>ціна:
                         @if (b.OperationType == "оренда")
                         {

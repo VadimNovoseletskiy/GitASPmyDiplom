@@ -17,7 +17,7 @@
         //return 0;
         //или Model != null ? Model.Count : 0;
         <h2>Знайдені земельні ділянки </h2>
-        <table border="1" cols="4" >
+        <table class="tablCentr" border="1" cols="4" >
 
             @foreach (var b in Model)
             {
@@ -33,13 +33,13 @@
                         </table>
                     </td>
                     <td colspan="3">
-                        <a href="/Land/OutPutDetailsInfoLand/@b.Id " style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
+                        <a href="/Land/OutPutDetailsInfoLand/@b.Id " class="captionLink"><b>@b.CaptionLink</b></a>
                     </td>
                 </tr>
 
                 <tr>
                     <td ><b>@b.OperationType</b></td>
-                    <td style="text-align: right" colspan="3">ціна:<b>@b.DollarPrice ( у.о.)</b></td>
+                    <td class="tx-al-r" colspan="3">ціна:<b>@b.DollarPrice ( у.о.)</b></td>
                 </tr>
 
                 <tr><td colspan="4">@b.Village,    @b.Region</td></tr>

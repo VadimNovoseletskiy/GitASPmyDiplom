@@ -17,7 +17,7 @@
         //или Model != null ? Model.Count : 0;
         <h2>Знайдені обєкти комерційної нерухомості</h2>
 
-        <table border="1" cols="4" >
+        <table class="tablCentr" border="1" cols="4" >
 
             <tr>
                 <td width="30">
@@ -25,7 +25,7 @@
                 </td>
 
                 <td colspan="3">
-                    <p style="text-align: center">Інформація</p>
+                    <p class="tx-al-c">Інформація</p>
                 </td>
             </tr>
 
@@ -43,13 +43,13 @@
                         </table>
                     </td>
                     <td colspan="2">
-                        <a href="/Commercial/OutPutDetailsInfoCommercial/@b.Id" style="font-size: 17px; text-align: center"><b>@b.CaptionLink</b></a>
+                        <a href="/Commercial/OutPutDetailsInfoCommercial/@b.Id" class="captionLink"><b>@b.CaptionLink</b></a>
                     </td>
                 </tr>
 
                 <tr>
                     <td >тип операції :<b> @b.OperationType </b> </td>
-                    <td style="text-align: right">ціна:<b>
+                    <td class="tx-al-r">ціна:<b>
                         @if (b.OperationType == "оренда")
                         {
                             @b.GrnPrice<span>грн.</span>
