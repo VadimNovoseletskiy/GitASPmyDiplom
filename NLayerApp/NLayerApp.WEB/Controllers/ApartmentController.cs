@@ -21,7 +21,9 @@ namespace NLayerApp.WEB.Controllers
         public ActionResult Index()
         {
             MySelect();
-            return View();
+            ApartmentHandlerAllOutPut myOutPut=new ApartmentHandlerAllOutPut(unitOfWork);
+            var result = myOutPut.GetAllApartment();
+            return View(result);
         }
 
         //POST:Apartment

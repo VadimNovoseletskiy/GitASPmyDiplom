@@ -21,7 +21,9 @@ namespace NLayerApp.WEB.Controllers
         public ActionResult Index()
         {
             MySelect();
-            return View();
+            HouseHandlerAllOutPut myOutPut=new HouseHandlerAllOutPut(unitOfWork);
+            var result = myOutPut.GetAllHouse();
+            return View(result);
         }
 
 

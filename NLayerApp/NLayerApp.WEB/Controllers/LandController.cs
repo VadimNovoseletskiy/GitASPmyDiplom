@@ -26,8 +26,9 @@ namespace NLayerApp.WEB.Controllers
         public ActionResult Index()
         {
            MySelect();
-                
-           return View();
+            LandHandlerAllOutPut myOutPut=new LandHandlerAllOutPut(unitOfWork);
+            var result = myOutPut.GetAllInformation();
+           return View(result);
         }
         
         //POST:Land 

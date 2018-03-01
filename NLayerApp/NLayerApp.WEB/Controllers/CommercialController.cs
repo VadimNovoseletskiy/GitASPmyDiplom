@@ -21,7 +21,9 @@ namespace NLayerApp.WEB.Controllers
         public ActionResult Index()
         {
             MySelect();
-            return View();
+            CommercialHandlerAllOutPut myOutPut=new CommercialHandlerAllOutPut(unitOfWork);
+            var result = myOutPut.GetAllCommercial();
+            return View(result);
         }
 
         [HttpPost]
