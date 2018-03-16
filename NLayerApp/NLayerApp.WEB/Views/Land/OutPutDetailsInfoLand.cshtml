@@ -17,17 +17,30 @@
         //return 0;
         //или Model != null ? Model.Count : 0;
         <h2>Детальна інформація по земельній ділянці</h2>
-        <table   style="width: 400px; " cols="4" >
+        <table   class="wd100" cols="4" >
             <tr>
-               
-                <td colspan="2" style="text-align: center">
+
+                <td colspan="2" class="captionName">
                     <b> @Model.CaptionLink</b>
                 </td>
             </tr>
 
             <tr>
-                <td>@Model.OperationType <b>( ціна:@Model.DollarPrice у.о.)</b></td>
-                <td style="text-align: right">код об'яви <b> № @Model.Id </b> </td>
+                <td rowspan="5">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="../../Image/apartment.jpg" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>@Model.OperationType <b> ціна:@Model.DollarPrice у.о.</b></td>
+                <td class="tx-al-r">код об'яви <b> № @Model.Id </b> </td>
             </tr>
 
             <tr><td colspan="2"> @Model.Village  ,@Model.Region</td></tr>
@@ -37,13 +50,13 @@
 
           <table>
                 <p>
-                    <label style="color: crimson; font-size: 15px; font-style: inherit;"><b>Детальний опис:</b></label><br>
-                    @Html.TextAreaFor(model => model.InfoDetails, 5, 40, new {htmlAttributes = new {@class = "form-control"}})
+                    <label class="descriptiObj"><b class="colorRed">Детальний опис:</b></label><br>
+                    @Html.TextAreaFor(model => model.InfoDetails, 4, 115, new {htmlAttributes = new {@class = "form-control"}})
                 </p>
          </table>
         <table>
 
-            <tr> <td colspan="4" style="text-align: center; background-color:#C9D8EA"><b>Детальна інформація по земельній ділянці</b></td></tr>
+            <tr> <td colspan="4" class="bg-col-table tx-al-c"><b>Детальна інформація по земельній ділянці</b></td></tr>
             <tr>
                 <td>Призначення земельної ділянки: </td>
                 <td colspan="3">@Model.TypeLand</td>
@@ -52,7 +65,7 @@
 
 
             <!--додаткове обладнання -->
-            <tr> <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Комунікації</b></td></tr>
+            <tr> <td colspan="4" class="bg-col-table tx-al-c"><b>Комунікації</b></td></tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Gas)Газ</td>
                 <td colspan="2">@Html.CheckBoxFor(model => model.RailWay)Залізнична колія</td>

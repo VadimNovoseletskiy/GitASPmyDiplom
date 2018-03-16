@@ -10,15 +10,30 @@
     @if ((Model?.Id ?? 0) > 0)
     {
         <h2>Детальна інформація по будинку</h2>
-        <table cols="4" width="490px" style="float: left;">
+
+        <table cols="4" class="wd100">
             <tr>
-                <td colspan="4" style="text-align: center; color: #037ABD;">
-                    <p><b>@Model.CaptionLink</b>
+                <td colspan="4" class="captionName">
+                    <p>
+                        <b>@Model.CaptionLink</b>
                     </p>
                 </td>
             </tr>
 
             <tr>
+                <td rowspan="5">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="../../Image/apartment.jpg" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+
                 <td>
                     @Model.OperationType,
                     <b>
@@ -34,7 +49,7 @@
                         }
                     </b>
                 </td>
-                <td style="float: right;">
+                <td colspan="2">
                     код об'яви <b> № @Model.Id </b>
                 </td>
 
@@ -43,83 +58,15 @@
             <tr><td colspan="2">@Model.Village, @Model.Region </td></tr>
             <tr><td colspan="2"> загальна площа: <b>@Model.TotalAreaInfo m <sup>2</sup></b></td></tr>
 
-            <tr>
-                <td colspan="4">
-                    <label style="color: crimson; font-size: 18px; font-style: inherit"><b> Опис об'єкту:</b></label><br>
-                    @Html.TextAreaFor(model => model.InfoDetails, 8, 54, new {htmlAttributes = new {@class = "form-control"}})
-                </td>
-            </tr>
-
         </table>
-
-        //slaider 
-        <table style="float: right; margin-top: 50px; margin-left: 40px;">
-            <tr>
-                <td style=" width: 400px; height: auto;">
-                    <div class="all">
-                        <input checked type="radio" name="respond" id="desktop">
-                        <article id="slider">
-                            <input checked type="radio" name="slider" id="switch1">
-                            <input type="radio" name="slider" id="switch2">
-                            <input type="radio" name="slider" id="switch3">
-                            <input type="radio" name="slider" id="switch4">
-                            <input type="radio" name="slider" id="switch5">
-                            <input type="radio" name="slider" id="switch6">
-                            <input type="radio" name="slider" id="switch7">
-                            <input type="radio" name="slider" id="switch8">
-                            <input type="radio" name="slider" id="switch9">
-                            <input type="radio" name="slider" id="switch10">
-                            <div id="slides">
-                                <div id="overflow">
-                                    <div class="image">
-                                        <article><img src="/Image/domik.jpg"></article>
-                                        <article><img src="/Image/domik1.jpg"></article>
-                                        <article><img src="/Image/domik2.jpg"></article>
-                                        <article><img src="/Image/4.jpg"></article>
-                                        <article><img src="/Image/5.jpg"></article>
-                                        <article><img src="/Image/1.jpg"></article>
-                                        <article><img src="/Image/2.jpg"></article>
-                                        <article><img src="/Image/3.jpg"></article>
-                                        <article><img src="/Image/4.jpg"></article>
-                                        <article><img src="/Image/5.jpg"></article>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="controls">
-                                <label for="switch1"></label>
-                                <label for="switch2"></label>
-                                <label for="switch3"></label>
-                                <label for="switch4"></label>
-                                <label for="switch5"></label>
-                                <label for="switch6"></label>
-                                <label for="switch7"></label>
-                                <label for="switch8"></label>
-                                <label for="switch9"></label>
-                                <label for="switch10"></label>
-                            </div>
-                            <div id="active">
-                                <label for="switch1"></label>
-                                <label for="switch2"></label>
-                                <label for="switch3"></label>
-                                <label for="switch4"></label>
-                                <label for="switch5"></label>
-                                <label for="switch6"></label>
-                                <label for="switch7"></label>
-                                <label for="switch8"></label>
-                                <label for="switch9"></label>
-                                <label for="switch10"></label>
-                            </div>
-                        </article>
-                    </div>
-
-                </td>
-            </tr>
-        </table>
-
-        <table width="490px" style="float: left;">
+        <p>
+            <label class="descriptiObj"><b class="colorRed"> Опис об'єкту:</b></label><br>
+            @Html.TextAreaFor(model => model.InfoDetails, 4, 115, new { htmlAttributes = new { @class = "form-control" } })
+        </p>
+        <table class="wd60">
             <!--детальна інформація -->
             <tr>
-                <td colspan="4" style="text-align: center; background-color: #C9D8EA">
+                <td colspan="4" class="bg-col-table tx-al-c">
                     <b>Детальна інформація</b>
                 </td>
             </tr>
@@ -165,7 +112,7 @@
             </tr>
 
             <!--додаткове обладнання -->
-            <tr> <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Додаткове обладнання</b></td></tr>
+            <tr> <td colspan="4" class="bg-col-table tx-al-c"><b>Додаткове обладнання</b></td></tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Boiler)Бойлер</td>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Intercom)Домофон</td>
@@ -183,7 +130,7 @@
                 <td colspan="2">@Html.CheckBoxFor(model => model.SatelliteTv)Супут.телеб.</td>
             </tr>
             <tr>
-                <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
+                <td colspan="4" class="tx-al-c">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
 
             </tr>
             <tr>
@@ -193,7 +140,7 @@
 
 
             <tr>
-                <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Надвірні побудови:</b> </td>
+                <td colspan="4" class="bg-col-table tx-al-c"><b>Надвірні побудови:</b> </td>
             </tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.BahtHouse) Баня</td>
@@ -212,7 +159,7 @@
                 <td colspan="2">@Html.CheckBoxFor(model => model.Well1) Скважина</td>
             </tr>
             <tr>
-                <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.GreenHouse)Теплиця</td>
+                <td colspan="4" class="tx-al-c">@Html.CheckBoxFor(model => model.GreenHouse)Теплиця</td>
             </tr>
             <tr>
                 <td><p></p></td>
@@ -220,7 +167,7 @@
 
             <!--Коммунікації-->
             <tr>
-                <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Коммунікації</b></td>
+                <td colspan="4" class="bg-col-table tx-al-c"><b>Коммунікації</b></td>
             </tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Gas)Газ</td>
@@ -231,29 +178,21 @@
                 <td colspan="2">@Html.CheckBoxFor(model => model.AutonomousSewerage)Авт.каналізація</td>
             </tr>
             <tr>
-                <td colspan="2">@Html.CheckBoxFor(model => model.CentralWater)Центр.водопостачання</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.CentralWater)Цент.водопостачання</td>
                 <td colspan="2">@Html.CheckBoxFor(model => model.AutonomousWater)Авт.водопост.</td>
             </tr>
             <tr>
-                <td colspan="2">@Html.CheckBoxFor(model => model.CentralHeating)Центральне отоплення</td>
+                <td colspan="2">@Html.CheckBoxFor(model => model.CentralHeating)Центр.отоплення</td>
                 <td colspan="2">@Html.CheckBoxFor(model => model.AutonomusHeating)Авт.опалення </td>
             </tr>
             <tr>
-                <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.RailWay)Залізнична дорога</td>
+                <td colspan="4" class="tx-al-c">@Html.CheckBoxFor(model => model.RailWay)Залізнична дорога</td>
             </tr>
             <tr>
                 <td><p></p></td>
             </tr>
-
         </table>
     }
-    else
-    {
-        <div class="resultSearchId">
-            <p>Об'єкт з таким Id за результатами пошуку відсутній </p>
-        </div>
-    }
-
 </div>
 
 

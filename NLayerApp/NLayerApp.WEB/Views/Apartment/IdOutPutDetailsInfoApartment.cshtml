@@ -9,15 +9,16 @@
     @if ((Model?.Id ?? 0) > 0)
     {
         <h2>Детальна інформація по квартирі </h2>
-        <table cols="4" style="width: 720px; float: right;">
+
+        <table cols="4" class="wd100">
             <tr>
-                <td colspan="4" style="text-align: center">
+                <td colspan="4" class="tx-al-c captionName">
                     <b>@Model.CaptionLink</b>
                 </td>
             </tr>
             <tr>
                 <td rowspan="5">
-                    <table width="100">
+                    <table>
                         <tr>
                             <td>
                                 <img src="../../Image/apartment.jpg" />
@@ -29,38 +30,43 @@
             </tr>
 
             <tr>
-                <td>Тип операції:<b>@Model.OperationType</b></td>
-                <td style="text-align: right"><b>Ціна:
-                 @if (Model.OperationType == "оренда")
-                 {
-                    @Model.GrnPrice<span>грн.</span> 
-                 }
-                 else
-                 {
-                     @Model.DollarPrice <span>у.о.</span> 
-                 }
-                     </b></td>
-            </tr>
+                <td>
+                    @Model.OperationType, <b>
+                    ціна:
+                    @if (Model.OperationType == "оренда")
+                    {
+                        @Model.GrnPrice
+                        <span>грн.</span>
+                    }
+                    else
+                    {
+                        @Model.DollarPrice<span>у.о.</span>
+                    }
+                </b>
+            </td>
+            <td class="tx-al-r">
+                код об'яви <b> № @Model.Id </b>
+            </td>
+        </tr>
 
-            <tr><td colspan="2"> Населений пункт: @Model.Village</td></tr>
-            <tr><td colspan="2">Район: @Model.Region </tr>
-            <tr>
-                <td style="font-size: 18px;" colspan="3">
-                    Загальна площа:<b>@Model.TotalAreaInfo m<sup>2</sup></b>
-                </td>
+        <tr><td> @Model.Village, @Model.Region</td>  </tr>
 
-            </tr>
+        <tr>
+            <td colspan="3">
+                загальна площа:<b>@Model.TotalAreaInfo m<sup>2</sup></b>
+            </td>
 
+        </tr>
 
-
-        </table>
+    </table>
         <p>
-            <label style="color: crimson; font-size: 15px; font-style:inherit;"><b>Детальний опис:</b></label><br>
-            @Html.TextAreaFor(model => model.InfoDetails, 5, 40, new { htmlAttributes = new { @class = "form-control" } })
+            <label class="descriptiObj"><b class="colorRed">Опис об'єкту:</b></label><br>
+            @Html.TextAreaFor(model => model.InfoDetails, 4, 115, new { htmlAttributes = new { @class = "form-control" } })
         </p>
-        <table>
 
-            <tr> <td colspan="4" style="text-align: center; background-color:#C9D8EA"><b>Детальна інформація по квартирі</b></td></tr>
+        <table class="wd60">
+
+            <tr> <td colspan="4" class="bg-col-table tx-al-c"><b>Детальна інформація по квартирі</b></td></tr>
             <tr>
                 <td>Готовність до заселення: </td>
                 <td colspan="3">@Model.ReadinessApartment</td>
@@ -112,7 +118,7 @@
 
 
             <!--додаткове обладнання -->
-            <tr> <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Додаткове обладнання</b></td></tr>
+            <tr> <td colspan="4" class="bg-col-table tx-al-c"><b>Додаткове обладнання</b></td></tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Boiler)Бойлер</td>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Intercom)Домофон</td>
@@ -135,12 +141,6 @@
             </tr>
 
         </table>
-    }
-    else
-    {
-        <div class="resultSearchId">
-            <p>Об'єкт з таким Id за результатами пошуку відсутній </p>
-        </div>
     }
 
 </div>

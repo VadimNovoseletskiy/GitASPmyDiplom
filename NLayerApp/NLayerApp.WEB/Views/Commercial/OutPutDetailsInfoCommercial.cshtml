@@ -9,9 +9,9 @@
     @if ((Model?.Id ?? 0) > 0)
     {
         <h2>Детальна інформація по об'єкту комерційної нерухомості</h2>
-        <table cols="4" width="auto">
+        <table cols="4" class="wd100">
             <tr>
-                <td colspan="4" style="text-align: center; color: #037ABD;">
+                <td colspan="4" class="captionName">
                     <p><b>@Model.CaptionLink</b></p>
                 </td>
             </tr>
@@ -29,9 +29,9 @@
             </tr>
 
             <tr>
-                <td> тип операції:<b> @Model.OperationType  |</b></td>
-                <td style="text-align: right">ціна:
-                    <b>
+                <td>  @Model.OperationType, <b>
+                        ціна:
+
                         @if (Model.OperationType == "оренда")
                         {
                             @Model.GrnPrice <span>грн.</span>
@@ -40,25 +40,26 @@
                         {
                             @Model.DollarPrice <span>у.о.</span>
                         }
-                         
-                    </b></td>
+                    </b>
+                </td>
+                <td class="tx-al-r">  код об'яви <b> № @Model.Id </b></td>
             </tr>
 
-            <tr><td colspan="2"> @Model.Village  |  @Model.Region  </td></tr>
+            <tr><td colspan="2"> @Model.Village  ,  @Model.Region  </td></tr>
             <tr>
-                <td style="font-size: 18px" colspan="3">
-                    Загальна площа:  <b>@Model.TotalArea m <sup>2</sup></b>
+                <td  colspan="3">
+                    загальна площа:  <b>@Model.TotalArea m <sup>2</sup></b>
                 </td>
             </tr>
         </table>
         <p>
-            <label style="color: crimson; font-size: 18px; font-style:inherit"><b> Опис об'єкту:</b></label><br>
-            @Html.TextAreaFor(model => model.InfoDetails, 8, 54, new { htmlAttributes = new { @class = "form-control" } })
+            <label class="descriptiObj"><b class="colorRed"> Опис об'єкту:</b></label><br>
+            @Html.TextAreaFor(model => model.InfoDetails, 4, 115, new { htmlAttributes = new { @class = "form-control" } })
         </p>
-        <table>
+        <table class="wd60">
             <!--детальна інформація -->
             <tr>
-                <td colspan="4" style="text-align: center; background-color: #C9D8EA">
+                <td colspan="4" class="bg-col-table tx-al-c">
                     <b>Детальна інформація</b>
                 </td>
             </tr>
@@ -97,7 +98,7 @@
            
 
             <!--додаткове обладнання -->
-            <tr> <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Додаткове обладнання</b></td></tr>
+            <tr> <td colspan="4" class="bg-col-table tx-al-c"><b>Додаткове обладнання</b></td></tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Boiler)Бойлер</td>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Intercom)Домофон</td>
@@ -115,7 +116,7 @@
                 <td colspan="2">@Html.CheckBoxFor(model => model.SatelliteTv)Супутникове телебачення</td>
             </tr>
             <tr>
-                <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
+                <td colspan="4" class="tx-al-c">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
 
             </tr>
             <tr>
@@ -125,7 +126,7 @@
 
             <!--Коммунікації-->
             <tr>
-                <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Коммунікації</b></td>
+                <td colspan="4" class="bg-col-table tx-al-c"><b>Коммунікації</b></td>
             </tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Gas)Газ</td>
@@ -144,7 +145,7 @@
                 <td colspan="2">@Html.CheckBoxFor(model => model.AutonomusHeating)Автономне опалення </td>
             </tr>
             <tr>
-                <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.RailWay)Залізнична дорога</td>
+                <td colspan="4" class="tx-al-c">@Html.CheckBoxFor(model => model.RailWay)Залізнична дорога</td>
             </tr>
             <tr>
                 <td><p></p></td>

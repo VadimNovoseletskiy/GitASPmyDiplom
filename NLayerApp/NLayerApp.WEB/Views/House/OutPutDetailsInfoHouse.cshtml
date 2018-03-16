@@ -10,14 +10,28 @@
     {
         <h2>Детальна інформація по будинку</h2>
 
-        <table cols="4" width="490px">
+        <table cols="4" class="wd100">
             <tr>
-                <td colspan="4" style="text-align: center; color: #037ABD;">
-                    <p><b>@Model.CaptionLink</b></p>
+                <td colspan="4" class="captionName">
+                    <p><b>@Model.CaptionLink</b>
+                    </p>
                 </td>
             </tr>
-           
+
             <tr>
+                <td rowspan="5">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="../../Image/apartment.jpg" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+               
                 <td> @Model.OperationType,
                     <b>ціна:
                         @if (Model.OperationType == "оренда")
@@ -31,10 +45,10 @@
                         }
                     </b>
                 </td>
-                <td style="float: right;">
+                <td colspan="2">
                     код об'яви <b> № @Model.Id </b>
                 </td>
-               
+
             </tr>
 
             <tr><td colspan="2">@Model.Village, @Model.Region </td></tr>
@@ -42,13 +56,13 @@
             
         </table>
         <p>
-            <label style="color: crimson; font-size: 18px; font-style:inherit"><b> Опис об'єкту:</b></label><br>
-            @Html.TextAreaFor(model => model.InfoDetails, 8, 54, new { htmlAttributes = new { @class = "form-control" } })
+            <label class="descriptiObj"><b class="colorRed"> Опис об'єкту:</b></label><br>
+            @Html.TextAreaFor(model => model.InfoDetails, 4, 115, new { htmlAttributes = new { @class = "form-control" } })
         </p>
-        <table width="490px">
+        <table class="wd60">
             <!--детальна інформація -->
             <tr>
-                <td colspan="4" style="text-align: center; background-color: #C9D8EA">
+                <td colspan="4" class="bg-col-table tx-al-c">
                     <b>Детальна інформація</b>
                 </td>
             </tr>
@@ -94,7 +108,7 @@
             </tr>
 
             <!--додаткове обладнання -->
-            <tr> <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Додаткове обладнання</b></td></tr>
+            <tr> <td colspan="4" class="bg-col-table tx-al-c"><b>Додаткове обладнання</b></td></tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Boiler)Бойлер</td>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Intercom)Домофон</td>
@@ -112,7 +126,7 @@
                 <td colspan="2">@Html.CheckBoxFor(model => model.SatelliteTv)Супут.телеб.</td>
             </tr>
             <tr>
-                <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
+                <td colspan="4" class="tx-al-c">@Html.CheckBoxFor(model => model.WashingMachine)Пральна машинка</td>
 
             </tr>
             <tr>
@@ -122,7 +136,7 @@
 
 
             <tr>
-                <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Надвірні побудови:</b> </td>
+                <td colspan="4" class="bg-col-table tx-al-c"><b>Надвірні побудови:</b> </td>
             </tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.BahtHouse) Баня</td>
@@ -141,7 +155,7 @@
                 <td colspan="2">@Html.CheckBoxFor(model => model.Well1) Скважина</td>
             </tr>
             <tr>
-                <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.GreenHouse)Теплиця</td>
+                <td colspan="4" class="tx-al-c">@Html.CheckBoxFor(model => model.GreenHouse)Теплиця</td>
             </tr>
             <tr>
                 <td><p></p></td>
@@ -149,7 +163,7 @@
 
             <!--Коммунікації-->
             <tr>
-                <td colspan="4" style="background-color: #C9D8EA; text-align: center"><b>Коммунікації</b></td>
+                <td colspan="4" class="bg-col-table tx-al-c"><b>Коммунікації</b></td>
             </tr>
             <tr>
                 <td colspan="2">@Html.CheckBoxFor(model => model.Gas)Газ</td>
@@ -168,7 +182,7 @@
                 <td colspan="2">@Html.CheckBoxFor(model => model.AutonomusHeating)Авт.опалення </td>
             </tr>
             <tr>
-                <td colspan="4" style="text-align: center">@Html.CheckBoxFor(model => model.RailWay)Залізнична дорога</td>
+                <td colspan="4" class="tx-al-c">@Html.CheckBoxFor(model => model.RailWay)Залізнична дорога</td>
             </tr>
             <tr>
                 <td><p></p></td>
