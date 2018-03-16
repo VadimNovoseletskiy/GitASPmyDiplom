@@ -509,6 +509,30 @@ footer#footer article.icons a:hover{
     text-align: center;
 }
 
+.wd100 {
+    width: 100%;
+}
+
+.wd60 {
+    width: 60%;
+}
+
+.captionName {
+    text-align: center; 
+    color: #037ABD;
+}
+
+.descriptiObj {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 0.8em;
+}
+
+.bg-col-table {
+    background-color: #C9D8EA;
+}
+
+
 /*end style table */
 
 
