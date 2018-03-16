@@ -9,12 +9,12 @@
     @if ((Model?.Count ?? 0) > 0)
     {
         <h2>Знайдені будинки</h2>
-        <table class="tablCentr" border="1" cols="4" width="auto">
+        <table class="tablCentr wd100" border="1" cols="4" >
 
             @foreach (var b in Model)
             {
                 <tr>
-                    <td rowspan="4">код № @b.Id</td>
+                    <td rowspan="4"> @b.Id</td>
                     <td rowspan="4">
                         <table width="100">
                             <tr>
@@ -30,23 +30,29 @@
                 </tr>
 
                 <tr>
-                    <td><b>@b.OperationType</b></td>
-                    <td class="tx-al-r">
-                        <b>ціна:
-                        @if (b.OperationType == "оренда")
-                        {
-                            @b.GrnPrice <span>грн.</span>
-                        }
-                        else
-                        {
-                            @b.DollarPrice<span>у.о.</span> 
-                        }
-                       </b>
+                    <td class="tx-al-c">@b.OperationType, <b>
+                            ціна:
+                            @if (b.OperationType == "оренда")
+                            {
+                                @b.GrnPrice
+                                <span>грн.</span>
+                            }
+                            else
+                            {
+                                @b.DollarPrice<span>у.о.</span>
+                            }
+                        </b>
+                    </td>
+
+                    <td class="tx-al-c">
+                        @b.Village,@b.Region
                     </td>
                 </tr>
 
-                <tr><td colspan="2"> @b.Village,@b.Region, <b>тип</b> : "@b.TypeHouse"  </td></tr>
-                <tr><td colspan="2"> кількість поверхів : @b.Floor, <b> загальна площа: @b.TotalArea m<sup>2</sup></b>  </td></tr>
+                <tr><td colspan="2"> тип: "@b.TypeHouse" <b class="colorBlue">|</b> кількість поверхів : @b.Floor <b class="colorBlue">|</b>
+                    матеріал стін: @b.WallMaterial <b class="colorBlue">|</b> матеріал підлоги: @b.FloorMaterial <b class="colorBlue">|</b>
+                    загальна площа: @b.TotalArea m<sup>2</sup> </td></tr>
+               
                
             }
         </table>

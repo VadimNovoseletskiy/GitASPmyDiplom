@@ -38,6 +38,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                      TypeHouse = p.House.TypeHouse,
                      Floor = p.House.FloorHouse,
                      TotalArea = p.TotalAreaInfo,
+                     WallMaterial = p.WallMaterial.NameWallMaterils,
+                     FloorMaterial = p.FloorMaterial.NameFloorMaterils,
                      DollarPrice = p.DollarPrice,
                      GrnPrice = p.GrnPrice,
                      ReadinessHouse = p.House.ReadinessHouse
