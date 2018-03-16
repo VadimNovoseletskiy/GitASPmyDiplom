@@ -509,6 +509,10 @@ footer#footer article.icons a:hover{
     text-align: center;
 }
 
+.tx-al-l {
+    text-align: left;
+}
+
 .wd100 {
     width: 100%;
 }
