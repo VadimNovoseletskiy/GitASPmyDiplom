@@ -17,7 +17,7 @@
         //или Model != null ? Model.Count : 0;
         <h2>Знайдені квартири</h2>
 
-        <table class="tablCentr" border="1" cols="4" >
+        <table class="tablCentr wd100" border="1" cols="4" >
 
             
             @foreach (var b in Model)
@@ -38,20 +38,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><b> @b.OperationType </b> </td>
-                    <td class="tx-al-r"><b>ціна:
+
+                    <td class="tx-al-c"> @b.OperationType, <b>ціна:
                         @if (b.OperationType == "оренда")
                         {
-                            @b.GrnPrice<span>грн.</span> 
+                            @b.GrnPrice<span>грн.</span>
                         }
                         else
                         {
-                            @b.DollarPrice <span>у.о.</span>
+                            @b.DollarPrice
+                            <span>у.о.</span>
                         }
-                        </b></td>
+                    </b></td>
+                    <td class="tx-al-c">@b.Village , @b.Region</td>
                 </tr>
 
-                <tr><td colspan="2"> @b.Village , @b.Region , @b.Floor , загальна площа: @b.TotalAreaInfo m<sup>2</sup> </td></tr>
+                <tr><td colspan="2">кіль-ть поверхів: @b.TotalFloorApartment <b class="colorBlue">|</b>  матеріал стін: @b.WallMaterial <b class="colorBlue">|</b> матеріал підлоги:@b.FloorMaterial <b class="colorBlue">|</b> @b.Floor <b class="colorBlue">|</b>  загальна площа: @b.TotalAreaInfo m<sup>2</sup> </td></tr>
             }
         </table>
     }
