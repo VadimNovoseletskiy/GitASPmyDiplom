@@ -17,24 +17,16 @@
         //или Model != null ? Model.Count : 0;
         <h2>Знайдені обєкти комерційної нерухомості</h2>
 
-        <table class="tablCentr" border="1" cols="4" >
+        <table class="tablCentr wd100" border="1" cols="4" >
 
-            <tr>
-                <td width="30">
-                    <p>Id </p>
-                </td>
-
-                <td colspan="3">
-                    <p class="tx-al-c">Інформація</p>
-                </td>
-            </tr>
+           
 
             @foreach (var b in Model)
             {
                 <tr>
                     <td rowspan="3">@b.Id</td>
                     <td rowspan="3">
-                        <table width="100">
+                        <table>
                             <tr>
                                 <td>
                                     <img src="../../Image/commercial.jpg" />
@@ -48,27 +40,24 @@
                 </tr>
 
                 <tr>
-                    <td >тип операції :<b> @b.OperationType </b> </td>
-                    <td class="tx-al-r">ціна:<b>
-                        @if (b.OperationType == "оренда")
-                        {
-                            @b.GrnPrice<span>грн.</span>
-                        }
-                        else
-                        {
-                            @b.DollarPrice <span>у.о.</span>
-                        }
-                    </b></td>
+                    <td class="tx-al-c" > @b.OperationType,<b>
+                                        ціна:
+                                        @if (b.OperationType == "оренда")
+                                        {
+                                            @b.GrnPrice<span>грн.</span>
+                                        }
+                                        else
+                                        {
+                                            @b.DollarPrice <span>у.о.</span>
+                                        }
+                                    </b> </td>
+                    <td class="tx-al-c">@b.Village , @b.Region</td>
                 </tr>
 
-                <tr><td colspan="2">@b.Village | @b.Region | стан:<b> @b.StateCommercial  </b> |     загальна площа:<b>  @b.TotalArea m<sup>2</sup>  </b> </td></tr>
+                <tr><td colspan="2"> стан: @b.StateCommercial <b class="colorBlue">|</b> кількість поверхів: @b.TotalFloorCommercial <b class="colorBlue">|</b> 
+                  поверх:@b.FloorCommercial <b class="colorBlue">|</b>  загальна площа:<b>  @b.TotalArea m<sup>2</sup>  </b> </td></tr>
                 
-                <tr>
-                    <td  colspan="3">
-                        
-                    </td>
-
-                </tr>
+               
             }
         </table>
     }

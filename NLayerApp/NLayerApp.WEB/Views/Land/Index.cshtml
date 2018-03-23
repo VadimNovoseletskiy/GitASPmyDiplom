@@ -17,14 +17,14 @@
         //return 0;
         //или Model != null ? Model.Count : 0;
         <h2>Знайдені земельні ділянки </h2>
-        <table class="tablCentr" border="1" cols="4" >
+        <table class="tablCentr wd100" border="1" cols="4" >
 
             @foreach (var b in Model)
             {
                 <tr>
-                    <td rowspan="5">код № @b.Id</td>
+                    <td rowspan="5"> @b.Id</td>
                     <td rowspan="5">
-                        <table width="100">
+                        <table>
                             <tr>
                                 <td>
                                     <img src="../../Image/land.jpg"/>
@@ -38,20 +38,19 @@
                 </tr>
 
                 <tr>
-                    <td ><b>@b.OperationType</b></td>
-                    <td class="tx-al-r" colspan="3">ціна:<b>@b.DollarPrice ( у.о.)</b></td>
+                    <td class="tx-al-c" colspan="2">@b.OperationType, ціна:<b>@b.DollarPrice ( у.о.)</b></td>
+                    <td class="tx-al-c" colspan="2">@b.Village,    @b.Region</td>
                 </tr>
 
-                <tr><td colspan="4">@b.Village,    @b.Region</td></tr>
-
-                <tr >
-                    <td colspan="2">
+               <tr >
+                    <td colspan="4">
                         кадастровий № <b> @b.CadastraNumber</b>
-                    </td>
-                    <td colspan="2">
+                        <b class="colorBlue">|</b>
+                        призначення: @b.SpecialLand
+                        <b class="colorBlue">|</b>
                         загальна площа:<b>@b.TotalAreaInfo Га</b>
                     </td>
-                </tr>
+               </tr>
             }
         </table>
     }

@@ -35,6 +35,8 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                    Region = p.Region.RegionName,
                    StateCommercial = p.Commercial.StateCommercial,
                    TotalArea = p.TotalAreaInfo,
+                   TotalFloorCommercial = p.Commercial.TotalFloorCommercial,
+                   FloorCommercial = p.Commercial.FloorCommercial,
                    DollarPrice = p.DollarPrice,
                    GrnPrice = p.GrnPrice,
                    CaptionLink = p.NameCaptionLink,

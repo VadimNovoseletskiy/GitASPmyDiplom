@@ -7,6 +7,7 @@
         public string Region { get; set; }
         public string Village{ get; set; }
         public string CadastraNumber  { get; set; }
+        public string SpecialLand { get; set; }
         public int DollarPrice { get; set; }
         public string OperationType { get; set; }
         public double TotalAreaInfo { get; set; }

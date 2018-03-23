@@ -16,6 +16,8 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string OperationType { get; set; }
         public string StateCommercial { get; set; }
         public double TotalArea { get; set; }
+        public int TotalFloorCommercial { get; set;}
+        public string FloorCommercial { get; set; }
         public int DollarPrice{ get; set; }
         public int GrnPrice{ get; set; }
     }
