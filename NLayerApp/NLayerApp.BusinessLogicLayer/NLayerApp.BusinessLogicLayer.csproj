@@ -71,7 +71,7 @@
     <Compile Include="Handler\GetImageHandler.cs" />
     <Compile Include="Handler\HouseHandlerAllOutPut.cs" />
     <Compile Include="Handler\LandHandlerAllOutPut.cs" />
-    <Compile Include="Handler\GetThumpnailHandler.cs" />
+    <Compile Include="Handler\GetThumbnailHandler.cs" />
     <Compile Include="Handler\SearchIdHandler.cs" />
     <Compile Include="Models\AdminAllObjectViewModel.cs" />
     <Compile Include="Models\DeleteAllimageViewModel.cs" />
@@ -133,7 +133,6 @@
     <Compile Include="Models\LandInsertUpdateViewModel.cs" />
     <Compile Include="Models\LandSearchParameters.cs" />
     <Compile Include="Models\LandViewModel.cs" />
-    <Compile Include="Models\MiniatureImageViewModel.cs" />
     <Compile Include="Models\RegionInputParameters.cs" />
     <Compile Include="Models\RegionViewModel.cs" />
     <Compile Include="Models\SearchIdViewModel.cs" />
