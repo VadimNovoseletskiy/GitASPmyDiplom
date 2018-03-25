@@ -13,7 +13,10 @@ namespace NLayerApp.DataAccessLayer.Domains.Models
         public string Name { get; set;}
         public byte[] Image { get; set; }
 
-       
+        public byte[] Thumbnail { get;set; }
+
+
+
 
         //Links
 
