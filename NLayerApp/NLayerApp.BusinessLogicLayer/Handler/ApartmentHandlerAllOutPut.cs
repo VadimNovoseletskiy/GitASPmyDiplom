@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             this.unitOfWork.GenericRepository<Info>()
                 .Get()
                 .Where(p => p.Type == PropertyType.Apartment)
+                .Include(p=>p.Pictures)
                 .Select(p => new ApartmentViewModel
                 {
                     Id = p.Id,
@@ -43,6 +45,13 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     TotalAreaInfo = p.TotalAreaInfo,
                     DollarPrice = p.DollarPrice,
                     GrnPrice = p.GrnPrice,
+
+
+                    //add id for picture 
+                    IdPicture = p.Pictures.Select(i => i.Id).FirstOrDefault(),
+                    //Image = p.Pictures.Select(i => i.Image).FirstOrDefault()
+
+
                 }).ToList<ApartmentViewModel>();
 
         
