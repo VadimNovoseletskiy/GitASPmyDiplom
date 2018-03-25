@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ImageResizer;
 using NLayerApp.BusinessLogicLayer.Models;
 using NLayerApp.DataAccessLayer.Domains.Models;
 using NLayerApp.DataAccessLayer.Interface;
@@ -15,7 +17,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
 
         public AdminImageHandler(IUnitOfWork unitOfWork)
         {
-            this.unitOfWork= unitOfWork;
+            this.unitOfWork = unitOfWork;
         }
 
         public AdminImageHandler()
@@ -23,7 +25,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
 
         }
 
-        public List<ImageInsertUpdateViewModel> GetAllImages(int ? id ) =>
+        public List<ImageInsertUpdateViewModel> GetAllImages(int? id) =>
             this.unitOfWork.GenericRepository<Picture>()
                 .Get()
                 .Where(p => p.InfoId == id)
@@ -33,11 +35,11 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     InfoId = p.InfoId.Value,
                     fotoName = p.Name,
                     Image = p.Image,
-                  
-                })
-                .ToList<ImageInsertUpdateViewModel>(); 
 
-       //?? 
+                })
+                .ToList<ImageInsertUpdateViewModel>();
+
+        //?? 
         public List<ImageInsertUpdateViewModel> FindInfoObject(int? id) =>
             this.unitOfWork.GenericRepository<Picture>()
                 .Get()
@@ -48,22 +50,34 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     InfoId = p.InfoId.Value,
                     fotoName = p.Name,
                     Image = p.Image
-                    
-                   
+
+
                 })
                 .ToList<ImageInsertUpdateViewModel>();
 
 
-       
+
         public void InsertImage(ImageParameters parameters)
         {
-            Picture myImage=new Picture
-            { 
+            var config = new ImageResizer.Configuration.Config();
+
+            var inputStream = new MemoryStream(parameters.Image);
+            inputStream.Seek(0, SeekOrigin.Begin);
+            var outputStream = new MemoryStream();
+
+            var job = new ImageJob(inputStream, outputStream, new Instructions("width=100"));
+
+            config.Build(job);
+            outputStream.Seek(0, SeekOrigin.Begin);
+
+            Picture myImage = new Picture
+            {
                 InfoId = parameters.InfoId,
                 Name = parameters.fotoName,
-                Image = parameters.Image
-
+                Image = parameters.Image,
+                Thumbnail = outputStream.GetBuffer()
             };
+
             this.unitOfWork.GenericRepository<Picture>().InsertGraph(myImage);
             this.unitOfWork.SaveChanges();
         }
