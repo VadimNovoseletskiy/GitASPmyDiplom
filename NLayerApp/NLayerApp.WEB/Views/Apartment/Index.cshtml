@@ -1,4 +1,6 @@
-﻿@model List<NLayerApp.BusinessLogicLayer.Models.ApartmentViewModel>
+﻿@using NLayerApp.DataAccessLayer.Domains.Models
+@using NLayerApp.WEB.Controllers
+@model List<NLayerApp.BusinessLogicLayer.Models.ApartmentViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_SearchApartmentForm.cshtml";
@@ -28,13 +30,22 @@
                         <table width="100">
                             <tr>
                                 <td>
-                                    <img src="../../Image/apartment.jpg"/>
-                                </td>
+
+                                    <img src="/Image/Thumbnail/@b.IdPicture" />
+                                    
+                                    @*second variant*@ 
+                                    @*@Html.Raw("<img style = 'width:80px; height:60px;' " + " src =\"data:image/jpeg;base64," + Convert.ToBase64String(b.Image) + "\" />")*@
+                                 </td>
                             </tr>
                         </table>
                     </td>
                     <td colspan="2">
-                        <a href="/Apartment/OutDetailsInfoApartment/@b.Id" class="captionLink"><b>@b.CaptionLink</b></a>
+                        
+                            @*@((ApartmentController)this.ViewContext.Controller).OutDetailsInfoApartment(@b.Id);
+                       
+                            http://localhost:56522/Apartment/OutDetailsInfoApartment/@b.Id*@
+                       
+                         <a href="/Apartment/OutDetailsInfoApartment/@b.Id" class="captionLink"><b>@b.CaptionLink</b></a>
                     </td>
                 </tr>
                 <tr>
