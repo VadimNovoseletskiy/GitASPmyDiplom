@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .GenericRepository<Info>()
                 .Get()
                 .Where(x => x.Id == id)
+                .Include(x=>x.Pictures)
                 .Select(
                     p => new TotalObjectViewModel
                     {
@@ -83,7 +85,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         CaptionLink = p.NameCaptionLink,
                         InfoDetails = p.DetailsInfo,
                         GrnPrice = p.GrnPrice,
-                        DollarPrice = p.DollarPrice
+                        DollarPrice = p.DollarPrice,
+
+                        idPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
                     }
                 )
                 .FirstOrDefault();
@@ -92,6 +96,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         this.unitOfWork.GenericRepository<Info>()
         .Get()
         .Where(x => x.Id == id)
+        .Include(x=>x.Pictures)
         .Select(
             p => new TotalObjectViewModel
             {
@@ -153,7 +158,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 CaptionLink = p.NameCaptionLink,
                 InfoDetails = p.DetailsInfo,
                 GrnPrice = p.GrnPrice,
-                DollarPrice = p.DollarPrice
+                DollarPrice = p.DollarPrice,
+
+                idPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
             }
         )
         .FirstOrDefault();
@@ -162,6 +169,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
            this.unitOfWork.GenericRepository<Info>()
                .Get()
                .Where(x => x.Id == id)
+               .Include(x=>x.Pictures)
                .Select(
                    p => new TotalObjectViewModel
                    {
@@ -209,7 +217,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                        InfoDetails = p.DetailsInfo,
                        TotalAreaInfo = p.TotalAreaInfo,
                        GrnPrice = p.GrnPrice,
-                       DollarPrice = p.DollarPrice
+                       DollarPrice = p.DollarPrice,
+
+                       idPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
                    }
                ).FirstOrDefault();
 
@@ -218,6 +228,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
            this.unitOfWork.GenericRepository<Info>()
                .Get()
                .Where(x => x.Id == id)
+               .Include(x=>x.Pictures)
                .Select(
                    p => new TotalObjectViewModel
                    {
@@ -240,7 +251,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                        InfoDetails = p.DetailsInfo,
                        LandArea = p.TotalAreaInfo,
                        GrnPrice = p.GrnPrice,
-                       DollarPrice = p.DollarPrice
+                       DollarPrice = p.DollarPrice,
+
+                       idPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
                    }
                )
                .FirstOrDefault();
