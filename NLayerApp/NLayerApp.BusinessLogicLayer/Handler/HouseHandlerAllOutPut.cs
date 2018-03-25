@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
              this.unitOfWork.GenericRepository<Info>()
                  .Get()
                  .Where(p => p.Type == PropertyType.House)
+                 .Include(p=>p.Pictures)
                  .Select(p => new HouseViewModel
                  {
                      Id = p.Id,
@@ -42,7 +44,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                      FloorMaterial = p.FloorMaterial.NameFloorMaterils,
                      DollarPrice = p.DollarPrice,
                      GrnPrice = p.GrnPrice,
-                     ReadinessHouse = p.House.ReadinessHouse
+                     ReadinessHouse = p.House.ReadinessHouse,
+
+                     IdPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
 
                  }
                  )

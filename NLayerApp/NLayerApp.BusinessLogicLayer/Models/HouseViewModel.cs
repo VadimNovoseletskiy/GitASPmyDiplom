@@ -24,5 +24,8 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public int DollarPrice { get; set; }
         public int GrnPrice { get; set; }
 
+        //add id for Imaage 
+        public int? IdPicture { get; set; }
+
     }
 }

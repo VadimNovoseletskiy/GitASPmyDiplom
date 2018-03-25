@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
             this.unitOfWork.GenericRepository<Info>()
                 .Get()
                 .Where(x => x.Id == id)
+                .Include(x=>x.Pictures)
                 .Select(
                     p => new HouseDetailsInfoViewModel
                     {
@@ -88,7 +90,10 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         CaptionLink = p.NameCaptionLink,
                         InfoDetails = p.DetailsInfo,
                         GrnPrice = p.GrnPrice,
-                        DollarPrice = p.DollarPrice
+                        DollarPrice = p.DollarPrice,
+
+                        IdPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
+                        
                     }
                 )
                 .FirstOrDefault();
@@ -98,6 +103,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .Get()
                 .Where(x => x.Id == id
                         && x.Type==PropertyType.House)
+                .Include(x=>x.Pictures)
                 .Select(
                     p => new HouseDetailsInfoViewModel
                     {
@@ -158,7 +164,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         CaptionLink = p.NameCaptionLink,
                         InfoDetails = p.DetailsInfo,
                         GrnPrice = p.GrnPrice,
-                        DollarPrice = p.DollarPrice
+                        DollarPrice = p.DollarPrice,
+
+                        IdPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
                     }
                 )
                 .FirstOrDefault();
