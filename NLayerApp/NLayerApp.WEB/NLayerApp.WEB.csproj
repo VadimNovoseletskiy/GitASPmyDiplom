@@ -218,6 +218,7 @@
     <Compile Include="Controllers\LandController.cs" />
     <Compile Include="Controllers\LandInputController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Controllers\SearchIdController.cs" />
     <Compile Include="Global.asax.cs">
