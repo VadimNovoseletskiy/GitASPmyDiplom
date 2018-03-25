@@ -23,5 +23,10 @@ namespace NLayerApp.BusinessLogicLayer.Models
          public int DollarPrice { get; set; }
          public int GrnPrice { get; set; }
 
+        //add image object
+         public int? IdPicture { get; set; }
+        //public byte[] Image { get; set; }
+
+
     }
 }
