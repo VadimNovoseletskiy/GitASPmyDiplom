@@ -21,7 +21,7 @@ namespace NLayerApp.WEB.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            GetThumpnailHandler myHandler=new GetThumpnailHandler(unitOfWork);
+            GetThumbnailHandler myHandler =new GetThumbnailHandler(unitOfWork);
             var result = myHandler.Execute(id);
 
             if (result == null)
