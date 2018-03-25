@@ -83,6 +83,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                 .Get()
                 .Where(x => x.Id == id
                             &&x.Type==PropertyType.Apartment)
+                .Include(x=>x.Pictures)
                 .Select(
                     p => new ApartmentDetailsInfoViewModel
                     {
@@ -123,7 +124,11 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                         CaptionLink = p.NameCaptionLink,
                         InfoDetails = p.DetailsInfo,
                         GrnPrice = p.GrnPrice,
-                        DollarPrice = p.DollarPrice
+                        DollarPrice = p.DollarPrice,
+
+                        IdPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
+
+
                     }
                 )
                 .FirstOrDefault();
