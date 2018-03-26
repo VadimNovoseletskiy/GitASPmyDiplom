@@ -20,5 +20,8 @@ namespace NLayerApp.BusinessLogicLayer.Models
         public string FloorCommercial { get; set; }
         public int DollarPrice{ get; set; }
         public int GrnPrice{ get; set; }
+
+        //add id for Image
+        public int? IdPicture { get; set; }
     }
 }

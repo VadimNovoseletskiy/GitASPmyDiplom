@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                             && p.GrnPrice <= parameters.GrnPriceTo
 
                 )
+                .Include(p=>p.Pictures)
                 .Select(p => new CommercialViewModel
                                 {
                                     Id = p.Id,
@@ -46,7 +48,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                     DollarPrice = p.DollarPrice,
                                     GrnPrice = p.GrnPrice,
                                     CaptionLink = p.NameCaptionLink,
-                                    OperationType = p.OperationType
+                                    OperationType = p.OperationType,
+
+                                    IdPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
                                 }
                 )
                 .ToList<CommercialViewModel>();
