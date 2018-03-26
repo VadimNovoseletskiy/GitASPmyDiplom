@@ -12,5 +12,8 @@
         public string OperationType { get; set; }
         public double TotalAreaInfo { get; set; }
 
+        //add id for Image
+        public int? IdPicture { get; set; }
+
     }
 }

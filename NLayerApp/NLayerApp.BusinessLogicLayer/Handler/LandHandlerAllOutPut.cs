@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace NLayerApp.BusinessLogicLayer.Handler
         {
             List<LandViewModel> resulst = this.unitOfWork.GenericRepository<Info>().Get()
                 .Where(p => p.Type == PropertyType.Land)
-
+                .Include(p=>p.Pictures)
                 .Select(p => new LandViewModel
                 {
                     Id = p.Id,
@@ -39,7 +40,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                     DollarPrice = p.DollarPrice,
                     CadastraNumber = p.Land.CadastralNumber,
                     TotalAreaInfo = p.TotalAreaInfo,
-                    SpecialLand = p.Land.SpecialLand
+                    SpecialLand = p.Land.SpecialLand,
+
+                    IdPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
                     
                 }
                         )

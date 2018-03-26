@@ -44,7 +44,9 @@ namespace NLayerApp.BusinessLogicLayer.Handler
                                                     Village = p.Village.VillageName,
                                                     DollarPrice = p.DollarPrice,
                                                     CadastraNumber= p.Land.CadastralNumber,
-                                                    TotalAreaInfo = p.TotalAreaInfo
+                                                    TotalAreaInfo = p.TotalAreaInfo,
+
+                                                    IdPicture = p.Pictures.Select(i=>i.Id).FirstOrDefault()
                                                 } 
                         )
                 .ToList<LandViewModel>();
