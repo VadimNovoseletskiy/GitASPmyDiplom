@@ -6,93 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title – приложение ASP.NET</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    @*<link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" />*@
 
     @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Font-awesome")
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+    @Scripts.Render("~/Scripts/menu.js")
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
 
 </head>
 <body>
-    <!-- header page -->
-    <div>
-        <header id="header">
+    <div class="my_container">
 
-            <article>
-                <div class="logo">
+        <!-- header page -->
+        <header>
+            <div class="my_row">
+                <div class="my_cols my_col-3 logo">
                     <img src="/Image/small_logo.JPG">
+
+
                 </div>
-                <div class="logo_1">
+                <div class="my_cols my_col-6 logo_1">
+                    <a id="touch-menu" class="mobile-menu" href="#"><span><i class="fa fa-align-justify"></i></span>меню</a>
+                    <ul class="my-mobile-menu">
+                        <li class="menu-text"><i class="icon-home"></i>@Html.ActionLink("головна", "Index", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("послуги", "Services", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("кредитування", "Kredit", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("контактна інформація", "MyContact", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("про нас", "MyAbout", "Home")</li>
+                    </ul>
                     <img src="/Image/logo_z.jpg">
                 </div>
-                <div class="logo_2">
-                    <img src="/Image/photoLogo3.jpg" />
+                <div class="my_cols my_col-3 logo_2 header-image-bg">
+                    <div class="new_logo">
+                        <p>8(067)-473-11-45</p>
+                    </div>
                 </div>
-            </article>
+            </div>
         </header>
-    </div>
-    <!-- end header page-->
-    <!-- новигация  -->
-    <nav id="nav">
-        <ul>
+        <!-- end header page-->
+        <!-- новигация  -->
+        <nav id="nav">
+            <div class="my_row">
+                <div class="my_cols my_col-12">
+                    <ul class="menu">
+                        <li class="menu-text">@Html.ActionLink("Головна", "Index", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Послуги", "Services", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Кредитування", "Kredit", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Контактна інформація", "MyContact", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Про Нас", "MyAbout", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--end новигация -->
+        <div class="my_row">
 
-            <li>@Html.ActionLink("Головна", "Index", "Home")</li>
-            <li>@Html.ActionLink("Послуги", "Services", "Home")</li>
-            <li>@Html.ActionLink("Кредитування", "Kredit", "Home")</li>
-            <li>@Html.ActionLink("Контактна інформація", "MyContact", "Home")</li>
-            <li>@Html.ActionLink("Про Нас", "MyAbout", "Home")</li>
-            <li>@Html.ActionLink("Вхід Адміністратора", "Index", "Administrator")</li>
-        </ul>
-    </nav>
-    <!--end новигация -->
-    <main id="main" role="main">
+            <main id="main" role="main">
+                <!--сайд бар рубрики -->
+                <div class="my_cols my_col-3">
+                    <details class="callMe">
+                        <summary><span><i class="fa fa-align-justify"></i></span><span class="callMeText">Зателефонувати:</span></summary>
+                            <ul class="callMeTel">
+                                <li><a href="tel:+380674731145"> 0674731145</a></li>
+                                <li><a href="tel:+380933342042"> 0933342042</a></li>
+                                <li><a href="tel:+380679474897"> 0679474897</a></li>
+                                <li><a href="tel:+380984971936"> 0984971936</a></li>
+                            </ul>
+                        
+                    </details>
+                    <aside id="sidebar">
+                        <h2>Розділи:</h2>
+                        <form method="GET" action="/SearchId/Index">
 
-        <!--сайд бар рубрики -->
-        <aside id="sidebar">
-            <h2>Розділи:</h2>
-            <form method="GET" action="/SearchId/Index">
-               
-                    <input  style="float: left; width: 120px; margin-left: 27px;" type="number"  placeholder="код об'яви" name="id" />
+                            <input style="float: left; width: 11em; margin-left: 27px;" type="number" placeholder="код об'яви" name="id" />
+
+                            <input style="float: right; height: 50px; margin-right:1em;" type="image" name="submit" src="../../Image/search.png" value="Пошук">
+
+                        </form>
+                        <ul>
+                            <li class="stolb" style="clear: both;">@Html.ActionLink("Квартири", "Index", "Apartment")</li>
+                            <li class="stolb"> @Html.ActionLink("Будинки", "Index", "House") </li>
+                            <li class="stolb">@Html.ActionLink("Комерційна нерухомість", "Index", "Commercial") </li>
+                            <li class="stolb"> @Html.ActionLink("Земельні ділянки", "Index", "Land")</li>
+                        </ul>
+                        <h2>Курси валют</h2>
+                        <p>
+                            <label class="valuta">$</label>
+                            <input class="valuta" type="radio" value="dollar" checked="" name="valuta">
+                            <a class="nevedimka" id="dollar" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp11_b15_c0_l1.png" border="0" alt="Курс долара"></a>
+                            <label class="valuta">€</label>
+                            <input class="valuta" type="radio" value="evro" name="valuta">
+                            <a class="nevedimka" id="evro" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp13_b15_c2_l1.png" border="0" alt="Курс євро"></a>
+                        </p>
+                    </aside>
+                </div>
+                <div class="my_cols my_col-9 ">
+                    <!--end сайд бар рубрика -->
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
+        <div class="my_row footer-bg footer-hg">
+
+            <div class="my_cols my_col-12 footer-searchId">
+
               
-                    <input style="float: right; height: 50px;" type="image" name="submit" src="../../Image/search.png" value="Пошук">
-             
+                <!-- иконки социальные сети -->
 
-            </form>
-            <ul>
-                <li class="stolb" style="clear: both;">@Html.ActionLink("Квартири", "Index", "Apartment")</li>
-                <li class="stolb"> @Html.ActionLink("Будинки", "Index", "House") </li>
-                <li class="stolb">@Html.ActionLink("Комерційна нерухомість", "Index", "Commercial") </li>
-                <li class="stolb"> @Html.ActionLink("Земельні ділянки", "Index", "Land")</li>
-            </ul>
+                <a class="footer-icons" href="https://www.facebook.com/ANzatyshok/" target="_blank">
+                    <img src="/Image/image_fb.jpg" alt="Ми на Facebook" />
+                </a>
+                <!-- end социальные сети-->
 
-            <h2>Курси валют</h2>
-            <p>
-
-                <label class="valuta">$</label>
-                <input class="valuta" type="radio" value="dollar" checked="" name="valuta">
-                <a class="nevedimka" id="dollar" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp11_b15_c0_l1.png" border="0" alt="Курс долара"></a>
-
-                <label class="valuta">€</label>
-                <input class="valuta" type="radio" value="evro" name="valuta">
-                <a class="nevedimka" id="evro" href="http://finance.i.ua/" target="_blank"><img src="http://f.i.ua/fp13_b15_c2_l1.png" border="0" alt="Курс євро"></a>
-
-            </p>
-
-        </aside>
-        <!--end сайд бар рубрика -->
-        @RenderBody()
-    </main>
-    <footer id="footer">
-        <!-- иконки социальные сети  -->
-        <article class="icons">
-            <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
-                <img src="/Image/image_fb.jpg" alt="Ми на Facebook">
-            </a>
-        </article>
-        <!-- end социальные сети-->
-    </footer>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
-
-
-
-

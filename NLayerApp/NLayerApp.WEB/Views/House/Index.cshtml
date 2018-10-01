@@ -9,8 +9,7 @@
     @if ((Model?.Count ?? 0) > 0)
     {
         <h2>Знайдені будинки</h2>
-        <table class="tablCentr wd100" border="1" cols="4" >
-
+        <table class="tablCentr wd100" border="1" cols="4">
             @foreach (var b in Model)
             {
                 <tr>
@@ -30,38 +29,45 @@
                 </tr>
 
                 <tr>
-                    <td class="tx-al-c">@b.OperationType, <b>
-                            ціна:
-                            @if (b.OperationType == "оренда")
-                            {
-                                @b.GrnPrice
-                                <span>грн.</span>
-                            }
-                            else
-                            {
-                                @b.DollarPrice<span>у.о.</span>
-                            }
-                        </b>
-                    </td>
-
                     <td class="tx-al-c">
-                        @b.Village,@b.Region
-                    </td>
-                </tr>
+                        @b.OperationType, <b>
+                        ціна:
+                        @if (b.OperationType == "оренда")
+                        {
+                            @b.GrnPrice
+                            <span>грн.</span>
+                        }
+                        else
+                        {
+                            @b.DollarPrice<span>у.о.</span>
+                        }
+                    </b>
+                </td>
+                <td class="tx-al-c">
+                    @b.Village,@b.Region
+                </td>
+            </tr>
 
-                <tr><td colspan="2"> тип: "@b.TypeHouse" <b class="colorBlue">|</b> кількість поверхів : @b.Floor <b class="colorBlue">|</b>
+            <tr>
+                <td colspan="2">
+                    тип: "@b.TypeHouse" <b class="colorBlue">|</b> кількість поверхів : @b.Floor <b class="colorBlue">|</b>
                     матеріал стін: @b.WallMaterial <b class="colorBlue">|</b> матеріал підлоги: @b.FloorMaterial <b class="colorBlue">|</b>
-                    загальна площа: @b.TotalArea m<sup>2</sup> </td></tr>
-               
-               
-            }
+                    загальна площа: @b.TotalArea m<sup>2</sup>
+                </td>
+            </tr>
+
+
+        }
         </table>
     }
     else
     {
-        <div>
-            <img src="../../Image/photo4house.jpg" />
+        <div class="my_row">
+            <div class="my_cols my_col-12 no-image-bg"  >
+                <img src="../../Image/photo4house.jpg" />
+            </div>
         </div>
+
     }
 </div>
 

@@ -6,7 +6,123 @@
     Layout = "~/Views/Shared/_SearchApartmentForm.cshtml";
 }
 
-<div class="idDetailsInfo">
+
+<div class="my_container">
+    @if ((Model?.Count ?? 0) > 0)
+    {
+        <div class="my_row">
+            <div class="my_cols my_col-12">
+                <h2>Результати пошуку:</h2>
+            </div>
+        </div>
+
+        <div class="my_row" >
+
+
+            @foreach (var b in Model)
+            {
+                <div class="my_cols my_col-12 resultSearchApartmentBorderBottom">
+
+                    <!--picture-->
+                    <div class="my_cols my_col-1">
+                        <div class="resultSearchApartmentBorderRight">
+                            <img src="/Image/Thumbnail/@b.IdPicture" />
+                        </div>
+                    </div>
+                    <div class="my_cols my_col-11" >
+                        <!--caption-->
+                        <div class="my_row">
+                            <div class="my_cols my_col-12 resultSearchApartmentTextMobile">
+                                <div class="resultSearchApartmentTextMobile">
+                                    <a href="/Apartment/OutDetailsInfoApartment/@b.Id" class="captionLink"><b>@b.CaptionLink</b></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!---->
+                        <div class="my_row">
+                            <div class="my_cols my_col-2">
+                                <div class="resultSearchApartmentTextMobile">
+                                    <b> об'єкт № @b.Id</b>
+                                </div>
+                            </div>
+                            <div class="my_cols my_col-3">
+                                <div class="resultSearchApartmentTextMobile">
+                                    @b.OperationType,
+                                    <b>
+                                        ціна:
+                                        @if (b.OperationType == "оренда")
+                                        {
+                                            @b.GrnPrice<span>грн.</span>
+                                        }
+                                        else
+                                        {
+                                            @b.DollarPrice
+                                            <span>у.о.</span>
+                                        }
+                                    </b>
+                                </div>
+                            </div>
+                            <div class="my_cols my_col-3">
+                                <div class="resultSearchApartmentTextMobile">
+                                    @b.Village , @b.Region
+                                </div>
+                            </div>
+                            <div class="my_cols my_col-4"></div>
+                        </div>
+                        <div class="my_row">
+                            <div class="my_cols my_col-3 resultSearchApartmentTextMobile" >
+                                <div class="resultSearchApartmentTextMobile">
+                                    загальна площа: @b.TotalAreaInfo m<sup>2</sup>
+                                    <b class="colorBlue">|</b>
+                                </div>
+                            </div>
+                            <div class="my_cols my_col-2">
+                                <div class="resultSearchApartmentTextMobile">
+                                    матеріал стін: @b.WallMaterial
+                                    <b class="colorBlue">|</b>
+                                </div>
+                            </div>
+                            <div class="my_cols my_col-3 ">
+                                <div class="resultSearchApartmentTextMobile">
+                                    матеріал підлоги:@b.FloorMaterial
+                                    <b class="colorBlue">|</b>
+                                </div>
+                            </div>
+                            <div class="my_cols my_col-2 ">
+                                <div class="resultSearchApartmentTextMobile">
+                                    поверх: @b.Floor
+                                    <b class="colorBlue">|</b>
+                                </div>
+                            </div>
+                            <div class=" my_cols my_col-2">
+                                <div class="resultSearchApartmentTextMobile">
+                                    кіль-ть поверхів: @b.TotalFloorApartment
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+    }
+    else
+    {
+        <div class="my_row">
+            <div class="my_cols my_col-12 no-image-bg">
+                <img src="../../Image/apartmFormSearch.jpg" />
+            </div>
+        </div>
+    }
+
+
+</div>
+
+
+
+@* ++   +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ *@
+<div class="idDetailsInfo" style="display:none;">
     @if ((Model?.Count ?? 0) > 0)
     {
         //когда просто открывается страница (метода ж два, а вьюха одна) то модель пустая а ты это не обработал
@@ -72,8 +188,10 @@
     }
     else
     {
-        <div>
-            <img  src="../../Image/apartmFormSearch.jpg" />
+        <div class="my_row">
+            <div class="my_cols my_col-12 no-image-bg">
+                <img src="../../Image/apartmFormSearch.jpg" />
+            </div>
         </div>
     }
 

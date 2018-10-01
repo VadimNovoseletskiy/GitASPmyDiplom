@@ -239,9 +239,12 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\index.css" />
-    <Content Include="Content\main.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="Font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Font-awesome\css\font-awesome.css" />
+    <Content Include="Font-awesome\css\font-awesome.min.css" />
+    <Content Include="Font-awesome\font\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -261,7 +264,9 @@
     <Content Include="Image\house.jpg" />
     <Content Include="Image\image_fb.jpg" />
     <Content Include="Image\image_myHome.jpg" />
+    <Content Include="Image\kyivstar.png" />
     <Content Include="Image\land.jpg" />
+    <Content Include="Image\Life.png" />
     <Content Include="Image\logo_z.jpg" />
     <Content Include="Image\next.png" />
     <Content Include="Image\photoImageContact.jpg" />
@@ -279,6 +284,19 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Font-awesome\font\FontAwesome.otf" />
+    <Content Include="Font-awesome\less\bootstrap.less" />
+    <Content Include="Font-awesome\less\core.less" />
+    <Content Include="Font-awesome\less\extras.less" />
+    <Content Include="Font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="Font-awesome\less\font-awesome.less" />
+    <Content Include="Font-awesome\less\icons.less" />
+    <Content Include="Font-awesome\less\mixins.less" />
+    <Content Include="Font-awesome\less\path.less" />
+    <Content Include="Font-awesome\less\variables.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -287,9 +305,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\sliderText.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Shared\Image\add.jpg" />
     <Content Include="Views\Shared\Image\image_fb.jpg" />

@@ -7,104 +7,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title – приложение ASP.NET</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+    @Scripts.Render("~/Scripts/menu.js")
+    @Scripts.Render("~/Scripts/sliderText.js")
 
-    @*@Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")*@
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <!-- header page -->
-    <div>
-        <header id="header">
-
-            <article>
-                <div class="logo">
+    <div class="my_container">
+        <!-- header page -->
+        <div class="my_row">
+            <header>
+                <div class="my_cols my_col-3 logo">
                     <img src="/Image/small_logo.JPG">
                 </div>
-                <div class="logo_1">
+                <div class="my_cols my_col-6 logo_1">
+                    <a id="touch-menu" class="mobile-menu" href="#"><span><i class="fa fa-align-justify"></i></span>меню</a>
+                    <ul class="my-mobile-menu">
+                        <li class="menu-text"><i class="icon-home"></i>@Html.ActionLink("головна", "Index", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("послуги", "Services", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("кредитування", "Kredit", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("контактна інформація", "MyContact", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("про нас", "MyAbout", "Home")</li>
+                    </ul>
                     <img src="/Image/logo_z.jpg">
+                    <h2 class="front-sections">Комерційна нерухомість:</h2>
                 </div>
-                <div class="logo_2">
-                    <img src="/Image/photoLogo3.jpg" />
+                <div class="my_cols my_col-3 logo_2 header-searchCommercial-bg">
+                    <div class="new_logo">
+                        <p>8(067)-473-11-45</p>
+                    </div>
                 </div>
-            </article>
-        </header>
+            </header>
+        </div>
+        <!-- end header page-->
+        <!-- новигация  -->
+        <nav id="nav">
+
+            <div class="my_row">
+                <div class="my_cols my_col-12">
+                    <ul class="menu">
+                        <li class="menu-text">@Html.ActionLink("Головна", "Index", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Послуги", "Services", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Кредитування", "Kredit", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Контактна інформація", "MyContact", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Про Нас", "MyAbout", "Home")</li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!--end новигация -->
+        <div class="my_row">
+            <div class="my_row">
+                <div class="my_cols my_col-12">
+                    <details class="callMe">
+                        <summary><span><i class="fa fa-align-justify"></i></span><span class="callMeText">Зателефонувати</span></summary>
+                        <ul class="callMeTel">
+                            <li><a href="tel:+380674731145"> 0674731145</a></li>
+                            <li><a href="tel:+380933342042"> 0933342042</a></li>
+                            <li><a href="tel:+380679474897"> 0679474897</a></li>
+                            <li><a href="tel:+380984971936"> 0984971936</a></li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+            <h2 class="sections">Комерційна нерухомість:</h2>
+            <div class="my_row">
+                <!-- форма выборки   -->
+                <form method="POST" action="/Commercial/Index">
+                    <div class="my_cols my_col-1"></div>
+                    <div class="my_cols my_col-1">
+                        <p class="searchText">
+                            <b style="color: red">пошук :</b>
+                        </p>
+                    </div>
+                    <div class="my_cols my_col-2">
+                        <p class="mobSeachMenu-padding">
+                            @Html.DropDownList("Region", ViewBag.regionName as SelectList, new { style = "height: 2.5em;" })
+                        </p>
+                    </div>
+                    <div class="my_cols my_col-1 mobSeachMenu-padding">
+                        <p class="mobSeachMenu-padding">
+                            @Html.DropDownList("Village", ViewBag.villageName as SelectList, new { style = "height: 2.5em;" })
+                        </p>
+                    </div>
+                    <div class="my_cols my_col-2">
+                        <p class="mobSeachMenu-padding">
+
+                            <select class="commercial_type" name="TypeCommercial" required>
+                                <option value="">призначення</option>
+                                <option value="офісно-адміністративне">офісно-адміністративне</option>
+                                <option value="виробниче">виробниче</option>
+                                <option value="складське">складське</option>
+                                <option value="торгове">торгове</option>
+                                <option value="розважальне">розважальне</option>
+                                <option value="гараж">гараж</option>
+                                <option value="вільне призначення">вільне призначення</option>
+                            </select>
+                        </p>
+
+                    </div>
+
+                    <div class="my_cols my_col-1">
+                        <label>
+                            <input type="radio" class="OperationType" name="OperationType" id="OperationType" checked value="продаж" aria-required="true" onchange="SelectedOperation(this)" /><span class="radioTypeText">продаж</span>
+                        </label>
+                    </div>
+                    <div class="my_cols my_col-1">
+                        <label>
+                            <input type="radio" class="OperationType" value="оренда" name="OperationType" id="OperationType" aria-required="true" onchange="SelectedOperation(this)" /><span class="radioTypeText">оренда</span>
+                        </label>
+                    </div>
+                    <div class="my_cols my_col-2">
+                        <input style="display:inline-block;" class="nevedimkaRent" type="number" id="dol" min="500" max="1000000" placeholder="ціна в доларах" name="DollarCostTo" size="3">
+
+                        <input class="nevedimkaRent" type="number" id="grn" min="500" max="70000" placeholder="ціна в гривні " name="GrnCostTo" size="3">
+                    </div>
+                    <div class="my_cols my_col-1">
+                        <p>
+                            <input class="mobileButtonSearch" type="submit" name="submit" value="пошук">
+                        </p>
+                        <p>
+                            <input class="buttonSearch" type="image" name="submit" src="../../Image/search.png" value="Пошук">
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <!--end форма выборки   -->
+            <div class="my_row">
+                <div class="my_cols my_col-12">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        
+        <div class="my_row footer-bg footer-hg">
+
+            <div class="my_cols my_col-12 footer-searchId">
+
+                <form method="GET" action="/Apartment/IdOutPutDetailsInfoApartment">
+                    код №
+                    <input type="number" name="id" />
+                    <input type="submit" value="пошук" />
+                </form>
+                <!-- иконки социальные сети -->
+                @*<a class="footer-icons" href="https://www.facebook.com/ANzatyshok/" target="_blank">
+                    <img src="/Image/image_fb.jpg" alt="Ми на Facebook" />
+                </a>*@
+                <!-- end социальные сети-->
+
+            </div>
+        </div>
     </div>
-    <!-- end header page-->
-    <!-- новигация  -->
-    <nav id="nav">
-        <ul>
-            <li>@Html.ActionLink("Головна", "Index", "Home")</li>
-            <li>@Html.ActionLink("Послуги", "Services", "Home")</li>
-            <li>@Html.ActionLink("Кредитування", "Kredit", "Home")</li>
-            <li>@Html.ActionLink("Контактна інформація", "MyContact", "Home")</li>
-            <li>@Html.ActionLink("Про Нас", "MyAbout", "Home")</li>
-            <li>@Html.ActionLink("Вхід Адміністратора", "Index", "Administrator")</li>
-        </ul>
-    </nav>
-    <!--end новигация -->
-    <main id="main" role="main">
-
-        <!-- форма выборки   -->
-        <section  >
-            
-
-            <form method="POST" action="/Commercial/Index">
-
-                <p style="float: left; ">
-                   <b style="color: red">пошук :</b> <span style="color: red;">@Html.DropDownList("Region", ViewBag.regionName as SelectList)</span> 
-                    @Html.DropDownList("Village", ViewBag.villageName as SelectList)
-                </p>
-                <p style="float: left; margin-left: 5px; "> 
-                    <select class="commercial_type" name="TypeCommercial" style="width: 180px;" required>
-                        <option value="">призначення</option>
-                        <option value="офісно-адміністративне">офісно-адміністративне</option>
-                        <option value="виробниче">виробниче</option>
-                        <option value="складське">складське</option>
-                        <option value="торгове">торгове</option>
-                        <option value="розважальне">розважальне</option>
-                        <option value="гараж">гараж</option>
-                        <option value="вільне призначення">вільне призначення</option>
-                    </select>
-                </p>
-                <p style="float: left;">
-                    <input type="radio" name="TypeOperation" checked value="продаж"/><span>продаж</span>
-                    <input class="nevedimkaRent"  type="number" id="dol" min="500" max="1000000" placeholder="ціна в доларах" name="DollarPriceTo" size="3">
-                    <input type="radio" value="оренда" name="TypeOperation" /><span>оренда</span>
-                    <input class="nevedimkaRent"   type="number" id="grn" min="500" max="70000" placeholder="ціна в гривні " name="GrnPriceTo" size="3">
-               </p>
-                <p >
-                    <!-- <input class="button" type="reset" name="" value="Очистити"> -->
-                    <input class="buttonSearch  " style="float: right; width:50px; height: 50px; " type="image" name="submit" src="../../Image/search.png" value="Пошук">
-                </p>
-            </form>
-           
-
-        </section>
-        <!--end форма выборки   -->
-
-
-        @RenderBody()
-
-    </main>
-<footer id="footer">
-    <article class="searchId">
-        <form method="GET" action="/Commercial/IdOutPutDetailsInfo">
-            код №
-            <input type="number" name="id" />
-            <input type="submit" value="пошук" />
-        </form>
-
-    </article>
-    <!-- иконки социальные сети -->
-    <article class="icons">
-        <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
-            <img src="/Image/image_fb.jpg" alt="Ми на Facebook">
-        </a>
-    </article>
-    <!-- end социальные сети-->
-</footer>
-
 </body>
 </html>
 

@@ -7,92 +7,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title – приложение ASP.NET</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+    @Scripts.Render("~/Scripts/menu.js")
+    @Scripts.Render("~/Scripts/sliderText.js")
 
-    @*@Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")*@
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <!-- header page -->
-    <div>
-        <header id="header">
+    <div class="my_container">
 
-            <article>
-                <div class="logo">
+        <!-- header page -->
+        <div class="my_row">
+            <header>
+                <div class="my_cols my_col-3 logo">
                     <img src="/Image/small_logo.JPG">
                 </div>
-                <div class="logo_1">
+                <div class="my_cols my_col-6 logo_1">
+                    <a id="touch-menu" class="mobile-menu" href="#"><span><i class="fa fa-align-justify"></i></span>меню</a>
+                    <ul class="my-mobile-menu">
+                        <li class="menu-text"><i class="icon-home"></i>@Html.ActionLink("головна", "Index", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("послуги", "Services", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("кредитування", "Kredit", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("контактна інформація", "MyContact", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("про нас", "MyAbout", "Home")</li>
+                    </ul>
                     <img src="/Image/logo_z.jpg">
+                    <h2 class="front-sections">Земельні ділянки:</h2>
                 </div>
-                <div class="logo_2">
-                    <img src="/Image/photoLogo3.jpg" />
+                <div class="my_cols my_col-3 logo_2 header-searchLand-bg">
+                    <div class="new_logo">
+                        <p>8(067)-473-11-45</p>
+                    </div>
                 </div>
-            </article>
-        </header>
-    </div>
-    <!-- end header page-->
-    <!-- новигация  -->
-    <nav id="nav">
-        <ul>
-            <li>@Html.ActionLink("Головна", "Index", "Home")</li>
-            <li>@Html.ActionLink("Послуги", "Services", "Home")</li>
-            <li>@Html.ActionLink("Кредитування", "Kredit", "Home")</li>
-            <li>@Html.ActionLink("Контактна інформація", "MyContact", "Home")</li>
-            <li>@Html.ActionLink("Про Нас", "MyAbout", "Home")</li>
-            <li>@Html.ActionLink("Вхід Адміністратора", "Index", "Administrator")</li>
-        </ul>
-    </nav>
-    <!--end новигация -->
-    <main id="main" role="main">
+            </header>
+        </div>
+        <!-- end header page-->
+        <!-- новигация  -->
+        <nav id="nav">
 
-        <!-- форма выборки -->
+            <div class="my_row">
+                <div class="my_cols my_col-12">
+                    <ul class="menu">
+                        <li class="menu-text">@Html.ActionLink("Головна", "Index", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Послуги", "Services", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Кредитування", "Kredit", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Контактна інформація", "MyContact", "Home")</li>
+                        <li class="menu-text">@Html.ActionLink("Про Нас", "MyAbout", "Home")</li>
+                    </ul>
 
+                </div>
+            </div>
+        </nav>
+        <!--end новигация -->
+        <div class="my_row">
+            <div class="my_row">
+                <div class="my_cols my_col-12">
+                    <details class="callMe">
+                        <summary><span><i class="fa fa-align-justify"></i></span><span class="callMeText">Зателефонувати</span></summary>
+                        <ul class="callMeTel">
+                            <li><a href="tel:+380674731145"> 0674731145</a></li>
+                            <li><a href="tel:+380933342042"> 0933342042</a></li>
+                            <li><a href="tel:+380679474897"> 0679474897</a></li>
+                            <li><a href="tel:+380984971936"> 0984971936</a></li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+            <h2 class="sections">Земельні ділянки:</h2>
+            <!-- форма выборки -->
+            <div class="my_row">
+                <form method="POST" action="/Land/Index">
+                    <div class="my_cols my_col-1"></div>
+                    <div class="my_cols my_col-1">
+                        <p class="searchText">
+                            <b style="color: red">пошук:</b>
+                        </p>
+                    </div>
+                    <div class="my_cols my_col-2">
+                        <p class="mobSeachMenu-padding">
+                            @Html.DropDownList("Region", ViewBag.regionName as SelectList, new { style = "height: 2.5em;" })
+                        </p>
+                    </div>
+                    <div class="my_cols my_col-1 mobSeachMenu-padding">
+                        <p class="mobSeachMenu-padding">
+                            @Html.DropDownList("Village", ViewBag.villageName as SelectList, new { style = "height: 2.5em;" })
+                        </p>
+                    </div>
+                    <div class="my_cols my_col-2 mobSeachMenu-padding">
+                        <p class="mobSeachMenu-padding">
+                            <select name="SpecialLand" class="kategory " required>
+                                <option value="">призначення</option>
+                                <option value="індивідуальне">індивідуальне</option>
+                                <option value="комерційне">комерційне</option>
+                                <option value="сільськогосподарське">сільськогосподарське</option>і
+                            </select>
+                        </p>
 
-        <section >
-          
+                    </div>
+                    <div class="my_cols my_col-1">
+                        <p style="color:red;">
+                            <b>продаж: </b>
+                        </p>
+                    </div>
+                    <div class="my_cols my_col-2">
+                        <input class="number_price" type="number" min="500" max="1000000" placeholder="ціна в доларах" name="CostTo" size="3">
+                    </div>
+                    <div class="my_cols my_col-1">
+                        <p>
+                            <input class="mobileButtonSearch" type="submit" name="submit" value="пошук">
+                        </p>
+                        <p>
+                            <input class="buttonSearch" type="image" name="submit" src="../../Image/search.png" value="Пошук">
+                        </p>
+                    </div>
+                    <div class="my_cols my_col-1">
 
-            <form method="POST" action="/Land/Index" >
-                <p>
-                    <b style="color: red">пошук:</b>
-                    @Html.DropDownList("Region", ViewBag.regionName as SelectList) 
-                    @Html.DropDownList("Village", ViewBag.villageName as SelectList)
-                    
-                    <select name="SpecialLand" class="kategory" required>
-                        <option value="">призначення</option>
-                        <option value="індивідуальне">індивідуальне</option>
-                        <option value="комерційне">комерційне</option>
-                        <option value="сільськогосподарське">сільськогосподарське</option>і
-                    </select>
-                    ціна:
-                    <input class="number_price" type="number" min="500" max="1000000" placeholder="ціна в доларах" name="CostTo" size="3">
-                    <input class="button" type="submit" name="search" value="Пошук">
-                </p>
-            </form>
-        </section>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <!--end форма выборки   -->
 
-
         @RenderBody()
+        <div class="my_row footer-bg footer-hg">
 
-    </main>
-<footer id="footer">
-    <article class="searchId" >
-        <form method="GET" action="/Land/IdOutPutDetaialsInfoLand">
-            код №
-            <input type="number" name="id"/>
-            <input type="submit" value="пошук"/>
-        </form>
-       
-    </article>
-    <!-- иконки социальные сети -->
-    <article class="icons">
-        <a href="https://www.facebook.com/ANzatyshok/" target="_blank">
-            <img src="/Image/image_fb.jpg" alt="Ми на Facebook">
-        </a>
-    </article>
-    <!-- end социальные сети-->
-</footer>
+            <div class="my_cols my_col-12 footer-searchId">
 
+                <form method="GET" action="/Apartment/IdOutPutDetailsInfoApartment">
+                    код №
+                    <input type="number" name="id" />
+                    <input type="submit" value="пошук" />
+                </form>
+                <!-- иконки социальные сети -->
+                @*<a class="footer-icons" href="https://www.facebook.com/ANzatyshok/" target="_blank">
+                    <img src="/Image/image_fb.jpg" alt="Ми на Facebook" />
+                </a>*@
+                <!-- end социальные сети-->
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
